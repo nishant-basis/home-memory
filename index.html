@@ -617,6 +617,76 @@
       margin-top: 28px;
     }
 
+    .compliment-content {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .memory-location {
+      color: #9d8069;
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .dialogue-card {
+      margin: 34px 0;
+      border: 1px solid rgba(210, 193, 176, 0.16);
+      background: rgba(20, 17, 15, 0.55);
+      padding: 28px 32px;
+    }
+
+    .dialogue-line {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .dialogue-line + .dialogue-line {
+      margin-top: 26px;
+      padding-top: 26px;
+      border-top: 1px solid rgba(210, 193, 176, 0.10);
+    }
+
+    .dialogue-line .speaker {
+      color: #9d8069;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+    }
+
+    .dialogue-line p {
+      margin: 0;
+      font-size: 24px !important;
+      line-height: 1.45;
+      font-style: italic;
+    }
+
+    .dialogue-line.her p {
+      text-align: right;
+    }
+
+    @media (max-width: 700px) {
+      .dialogue-card {
+        padding: 22px 20px;
+      }
+
+      .dialogue-line {
+        grid-template-columns: 1fr;
+        gap: 7px;
+      }
+
+      .dialogue-line.her p {
+        text-align: left;
+      }
+
+      .dialogue-line p {
+        font-size: 20px !important;
+      }
+    }
+
     /* Chapter timeline: decorative marker only, never a full-height column. */
     .memory {
       position: relative;
@@ -1291,7 +1361,7 @@
 
       <!-- MEMORY 03 -->
 
-      <article class="memory">
+      <article class="memory compliment-memory">
 
         <div class="memory-date">
           7 MARCH
@@ -1299,39 +1369,53 @@
 
         <div class="memory-marker">♡</div>
 
-        <div class="memory-content">
+        <div class="memory-content compliment-content">
+
+          <div class="memory-location">
+            DRUNKEN BOTANIST · CYBERRHUB · GURGAON
+          </div>
 
           <h2>The First Compliment</h2>
 
-          <div class="memory-place">
-            Drunken Botanist · CyberHub · Gurgaon
+          <p>
+            Somewhere between the party and gathering enough courage,
+            I finally told you:
+          </p>
+
+          <div class="dialogue-card">
+
+            <div class="dialogue-line me">
+              <span class="speaker">ME</span>
+              <p>"You are looking beautiful."</p>
+            </div>
+
+            <div class="dialogue-line her">
+              <span class="speaker">YOU</span>
+              <p>"What?"</p>
+            </div>
+
           </div>
 
           <p>
-            Somewhere between the party and gathering
-            enough courage, I told her:
-          </p>
-
-          <blockquote>
-            "You are looking beautiful."
-          </blockquote>
-
-          <p>
-            She said:
-          </p>
-
-          <blockquote>
-            "What?"
-          </blockquote>
-
-          <p>
-            And for approximately three seconds,
-            I was convinced I had completely fucked it up.
+            And suddenly, the confidence I had managed to collect
+            disappeared completely.
           </p>
 
           <p>
-            But somehow I gathered the courage
-            and repeated myself.
+            Because apparently, saying something nice is one thing.
+            Surviving the moment after saying it is another.
+          </p>
+
+          <p>
+            I had no clever follow-up.
+            No perfectly timed second line.
+            Just the very real feeling that I had probably
+            made things awkward.
+          </p>
+
+          <p class="handwritten">
+            And that was my first compliment to you.<br>
+            I still remember the "What?" ♡
           </p>
 
         </div>
