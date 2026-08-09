@@ -546,6 +546,249 @@
         font-size: 15px;
       }
     }
+     /* =========================
+       OUR STORY ROOM
+    ========================== */
+
+    .story-room {
+      display: none;
+      min-height: 100vh;
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          #241b17 0%,
+          #0d0e10 45%,
+          #050607 100%
+        );
+      padding: 35px 7vw 80px;
+    }
+
+    .story-room.show {
+      display: block;
+      animation: appear 1s ease forwards;
+    }
+
+    .story-top {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .story-label {
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: #98887b;
+    }
+
+    .back-button {
+      border: 1px solid rgba(210, 193, 176, 0.22);
+      background: transparent;
+      color: #c9beb3;
+      padding: 9px 18px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+    }
+
+    .back-button:hover {
+      background: #e9dfd3;
+      color: #171311;
+    }
+
+    .story-intro {
+      max-width: 850px;
+      margin: 110px auto 120px;
+      text-align: center;
+    }
+
+    .chapter-number {
+      font-size: 10px;
+      letter-spacing: 5px;
+      color: #9f8877;
+      margin-bottom: 25px;
+    }
+
+    .story-intro h1 {
+      font-size: clamp(52px, 8vw, 92px);
+      font-weight: 400;
+      letter-spacing: 3px;
+      margin-bottom: 25px;
+    }
+
+    .story-line {
+      width: 55px;
+      height: 1px;
+      background: #806957;
+      margin: 0 auto 30px;
+    }
+
+    .story-opening {
+      color: #b8aaa0;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .story-opening.italic {
+      color: #927d6e;
+      margin-top: 4px;
+    }
+
+    .story-timeline {
+      max-width: 850px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .story-timeline::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(170, 140, 115, 0.18);
+      transform: translateX(-50%);
+    }
+
+    .memory {
+      position: relative;
+      padding-bottom: 110px;
+    }
+
+    .memory-date {
+      text-align: center;
+      font-size: 9px;
+      letter-spacing: 4px;
+      color: #806f62;
+      margin-bottom: 15px;
+    }
+
+    .memory-marker {
+      position: relative;
+      z-index: 2;
+      width: 36px;
+      height: 36px;
+      margin: 0 auto 30px;
+      border: 1px solid rgba(180, 150, 125, 0.3);
+      border-radius: 50%;
+      background: #0b0c0d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #b99a7f;
+      font-size: 13px;
+    }
+
+    .memory-content {
+      max-width: 650px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 38px 45px;
+      border: 1px solid rgba(210, 193, 176, 0.12);
+      background: rgba(37, 29, 25, 0.45);
+    }
+
+    .memory-content h2 {
+      font-size: 31px;
+      font-weight: 400;
+      margin-bottom: 25px;
+    }
+
+    .memory-content p {
+      color: #b4a79d;
+      font-size: 15px;
+      line-height: 1.9;
+      margin-bottom: 17px;
+    }
+
+    .memory-content em {
+      color: #d0c1b5;
+    }
+
+    .memory-place {
+      color: #8d7767;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin: 25px 0;
+    }
+
+    blockquote {
+      margin: 28px auto;
+      padding: 20px 25px;
+      border-left: 1px solid #806957;
+      border-right: 1px solid #806957;
+      color: #d0c3b8;
+      font-size: 17px;
+      font-style: italic;
+      line-height: 1.7;
+    }
+
+    .story-ending {
+      max-width: 650px;
+      margin: 20px auto 0;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    .ending-symbol {
+      color: #a98c74;
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .story-ending p {
+      color: #a99b90;
+      font-size: 15px;
+      font-style: italic;
+      line-height: 1.8;
+    }
+
+    .story-ending h3 {
+      font-size: 30px;
+      font-weight: 400;
+      margin: 15px 0 35px;
+    }
+
+    .back-button.bottom {
+      margin-top: 10px;
+    }
+
+    @media (max-width: 700px) {
+
+      .story-room {
+        padding: 25px 18px 60px;
+      }
+
+      .story-intro {
+        margin-top: 80px;
+        margin-bottom: 80px;
+      }
+
+      .story-timeline::before {
+        display: none;
+      }
+
+      .memory {
+        padding-bottom: 70px;
+      }
+
+      .memory-content {
+        padding: 30px 22px;
+      }
+
+      .memory-content h2 {
+        font-size: 27px;
+      }
+
+      .memory-content p {
+        font-size: 14px;
+      }
+
+    } 
   </style>
 </head>
 
@@ -643,7 +886,7 @@
 
     <div class="rooms">
 
-      <div class="room-card" onclick="openMessage('Our Story')">
+      <div class="room-card" onclick="openStory()">
 
         <span class="room-number">01</span>
 
@@ -742,7 +985,375 @@
 
   </section>
 
+  <!-- =========================
+       OUR STORY
+  ========================== -->
 
+  <section class="story-room" id="storyRoom">
+
+    <div class="story-top">
+
+      <button class="back-button" onclick="closeStory()">
+        ← HOME
+      </button>
+
+      <div class="story-label">
+        OUR STORY
+      </div>
+
+    </div>
+
+
+    <div class="story-intro">
+
+      <div class="chapter-number">
+        CHAPTER I
+      </div>
+
+      <h1>Before Hello</h1>
+
+      <div class="story-line"></div>
+
+      <p class="story-opening">
+        Before there was a story,
+        there was simply a girl I noticed.
+      </p>
+
+      <p class="story-opening italic">
+        And somehow, she felt familiar.
+      </p>
+
+    </div>
+
+
+    <div class="story-timeline">
+
+
+      <!-- MEMORY 01 -->
+
+      <article class="memory">
+
+        <div class="memory-date">
+          BEFORE HELLO
+        </div>
+
+        <div class="memory-marker">✦</div>
+
+        <div class="memory-content">
+
+          <h2>The First Look</h2>
+
+          <p>
+            The strange thing is, I don't remember thinking
+            much about it at first.
+          </p>
+
+          <p>
+            I just remember seeing her and having this
+            ridiculously familiar feeling —
+            <em>I felt like I knew her from somewhere.</em>
+          </p>
+
+          <p>
+            I didn't know her.
+            Not really.
+          </p>
+
+          <p>
+            But something about her already felt
+            strangely known.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- MEMORY 02 -->
+
+      <article class="memory">
+
+        <div class="memory-date">
+          THE QUESTION
+        </div>
+
+        <div class="memory-marker">✦</div>
+
+        <div class="memory-content">
+
+          <h2>The Very Important Question</h2>
+
+          <p>
+            I could have simply gone and spoken to her.
+          </p>
+
+          <p>
+            Instead, I chose the most unnecessarily
+            complicated route possible.
+          </p>
+
+          <p>
+            I asked her friend, <em>right in front of her,</em>
+            which team she was from.
+          </p>
+
+          <p>
+            Apparently subtlety was never going to be
+            my strongest skill.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- MEMORY 03 -->
+
+      <article class="memory">
+
+        <div class="memory-date">
+          7 MARCH
+        </div>
+
+        <div class="memory-marker">♡</div>
+
+        <div class="memory-content">
+
+          <h2>The First Compliment</h2>
+
+          <p>
+            Then came the first office party.
+          </p>
+
+          <div class="memory-place">
+            Drunken Botanist · CyberHub · Gurgaon
+          </div>
+
+          <p>
+            Somewhere between the party and gathering
+            enough courage, I told her:
+          </p>
+
+          <blockquote>
+            "You are looking beautiful."
+          </blockquote>
+
+          <p>
+            She said:
+          </p>
+
+          <blockquote>
+            "What?"
+          </blockquote>
+
+          <p>
+            And for approximately three seconds,
+            I was convinced I had completely fucked it up.
+          </p>
+
+          <p>
+            But somehow I gathered the courage
+            and repeated myself.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- MEMORY 04 -->
+
+      <article class="memory">
+
+        <div class="memory-date">
+          THE FIRST COFFEE
+        </div>
+
+        <div class="memory-marker">☕</div>
+
+        <div class="memory-content">
+
+          <h2>A Very Carefully Designed Invitation</h2>
+
+          <p>
+            I wanted to ask her for coffee.
+          </p>
+
+          <p>
+            But asking directly felt far too dangerous.
+            What if she said no?
+          </p>
+
+          <p>
+            So I came up with a brilliant plan.
+          </p>
+
+          <p>
+            Something along the lines of:
+          </p>
+
+          <blockquote>
+            "I'm going to get coffee for myself.
+            If you want to come, come.
+            Otherwise just tell me what you want,
+            I'll take it for you."
+          </blockquote>
+
+          <p>
+            Basically, I had already prepared
+            an escape route in case of rejection.
+          </p>
+
+          <p>
+            And that same day came our first coffee.
+          </p>
+
+          <div class="memory-place">
+            Theobroma
+          </div>
+
+          <p>
+            Hot coffee.
+            No sugar.
+            Something she never even liked.
+          </p>
+
+          <p>
+            Funny how coffee eventually became
+            one of our things.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- MEMORY 05 -->
+
+      <article class="memory">
+
+        <div class="memory-date">
+          THE DIGITS
+        </div>
+
+        <div class="memory-marker">✦</div>
+
+        <div class="memory-content">
+
+          <h2>When I Already Had Her Number</h2>
+
+          <p>
+            There was also the small matter of getting
+            her number.
+          </p>
+
+          <p>
+            Except I already had it.
+          </p>
+
+          <p>
+            Yet somehow I still managed to ask her:
+          </p>
+
+          <blockquote>
+            "Do you have those things that people call
+            digits... that you dial on your phone
+            to talk to someone?"
+          </blockquote>
+
+          <p>
+            Looking back, I have no explanation.
+          </p>
+
+          <p>
+            Apparently flirting had temporarily
+            affected my vocabulary.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- MEMORY 06 -->
+
+      <article class="memory">
+
+        <div class="memory-date">
+          THE CHASE
+        </div>
+
+        <div class="memory-marker">♡</div>
+
+        <div class="memory-content">
+
+          <h2>She Ignored Me</h2>
+
+          <p>
+            She ignored me for weeks.
+          </p>
+
+          <p>
+            I would message her on Teams.
+            Being the senior, she had to reply.
+          </p>
+
+          <p>
+            But she somehow mastered the art of replying
+            while remaining completely formal.
+          </p>
+
+          <p>
+            I, meanwhile, had entered my
+            <em>flirtatious spree.</em>
+          </p>
+
+          <p>
+            Indirect hints.
+            Random messages.
+            Terrible shayari.
+          </p>
+
+          <blockquote>
+            "Mein badal badal ke badla hun."
+          </blockquote>
+
+          <p>
+            She never replied.
+          </p>
+
+          <p>
+            I continued anyway.
+          </p>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+
+    <div class="story-ending">
+
+      <div class="ending-symbol">✦</div>
+
+      <p>
+        And this was before we knew
+        what any of it would become.
+      </p>
+
+      <h3>
+        To be continued.
+      </h3>
+
+      <button class="back-button bottom" onclick="closeStory()">
+        Return to HOME
+      </button>
+
+    </div>
+
+  </section>
   <!-- =========================
        TEMPORARY MESSAGE
   ========================== -->
@@ -773,7 +1384,32 @@
 
   <script>
 
-    function enterHome() {
+    function enterHome()     function openStory() {
+
+      document.getElementById("home").style.display = "none";
+
+      document.getElementById("storyRoom").classList.add("show");
+
+      window.scrollTo({
+        top: 0,
+        behavior: "instant"
+      });
+
+    }
+
+
+    function closeStory() {
+
+      document.getElementById("storyRoom").classList.remove("show");
+
+      document.getElementById("home").style.display = "block";
+
+      window.scrollTo({
+        top: 0,
+        behavior: "instant"
+      });
+
+    } {
 
       const opening = document.getElementById("opening");
       const home = document.getElementById("home");
