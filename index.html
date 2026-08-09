@@ -499,15 +499,11 @@
       position: relative;
     }
 
+    /* The chapter used to have a full-height center timeline.
+       Chapter I now uses independent memory cards instead. */
     .story-timeline::before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: rgba(170, 140, 115, 0.18);
-      transform: translateX(-50%);
+      display: none !important;
+      content: none !important;
     }
 
     .memory {
