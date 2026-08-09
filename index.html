@@ -13,12 +13,17 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       min-height: 100vh;
       background:
         radial-gradient(circle at 50% 15%, #251c18 0%, #0c0e10 48%, #050607 100%);
       color: #f2ece3;
       font-family: Georgia, "Times New Roman", serif;
+      overflow-x: hidden;
     }
 
     button {
@@ -399,155 +404,7 @@
     }
 
     /* =========================
-       TEMPORARY MESSAGE
-    ========================== */
-
-    .message {
-      position: fixed;
-      inset: 0;
-      background: rgba(3, 4, 5, 0.88);
-      backdrop-filter: blur(8px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 25px;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.5s ease;
-      z-index: 20;
-    }
-
-    .message.show {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .message-box {
-      max-width: 500px;
-      text-align: center;
-      border: 1px solid rgba(210, 193, 176, 0.2);
-      background: #151313;
-      padding: 55px 45px;
-    }
-
-    .message-box .tiny {
-      font-size: 10px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: #a99a8c;
-      margin-bottom: 25px;
-    }
-
-    .message-box h3 {
-      font-size: 32px;
-      font-weight: 400;
-      margin-bottom: 18px;
-    }
-
-    .message-box p {
-      color: #b7aaa0;
-      font-style: italic;
-      line-height: 1.7;
-      margin-bottom: 30px;
-    }
-
-    .close-button {
-      border: 1px solid rgba(220, 205, 190, 0.3);
-      background: transparent;
-      color: #ddd2c7;
-      padding: 10px 25px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-size: 10px;
-      cursor: pointer;
-    }
-
-    /* =========================
-       ANIMATIONS
-    ========================== */
-
-    @keyframes appear {
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 0.2;
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: 0.7;
-        transform: scale(1.3);
-      }
-    }
-
-    @keyframes twinkle {
-      0%, 100% {
-        opacity: 0.15;
-        transform: scale(0.8);
-      }
-
-      50% {
-        opacity: 0.8;
-        transform: scale(1.35);
-      }
-    }
-
-    /* =========================
-       MOBILE
-    ========================== */
-
-    @media (max-width: 700px) {
-
-      .opening h1 {
-        letter-spacing: 7px;
-      }
-
-      .eyebrow {
-        letter-spacing: 3px;
-      }
-
-      .opening-text {
-        max-width: 340px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .home {
-        padding: 30px 18px 50px;
-      }
-
-      .memory-sky {
-        height: 270px;
-      }
-
-      .rooms {
-        grid-template-columns: 1fr;
-      }
-
-      .wide-card {
-        grid-column: span 1;
-      }
-
-      .room-card {
-        min-height: 190px;
-      }
-
-      .memory-quote p {
-        font-size: 15px;
-      }
-    }
-     /* =========================
-       OUR STORY ROOM
+       OUR STORY
     ========================== */
 
     .story-room {
@@ -716,7 +573,7 @@
       margin: 25px 0;
     }
 
-    blockquote {
+    .memory-content blockquote {
       margin: 28px auto;
       padding: 20px 25px;
       border-left: 1px solid #806957;
@@ -757,7 +614,153 @@
       margin-top: 10px;
     }
 
+    /* =========================
+       TEMPORARY MESSAGE
+    ========================== */
+
+    .message {
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 4, 5, 0.88);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.5s ease;
+      z-index: 20;
+    }
+
+    .message.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .message-box {
+      max-width: 500px;
+      text-align: center;
+      border: 1px solid rgba(210, 193, 176, 0.2);
+      background: #151313;
+      padding: 55px 45px;
+    }
+
+    .message-box .tiny {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #a99a8c;
+      margin-bottom: 25px;
+    }
+
+    .message-box h3 {
+      font-size: 32px;
+      font-weight: 400;
+      margin-bottom: 18px;
+    }
+
+    .message-box p {
+      color: #b7aaa0;
+      font-style: italic;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .close-button {
+      border: 1px solid rgba(220, 205, 190, 0.3);
+      background: transparent;
+      color: #ddd2c7;
+      padding: 10px 25px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 10px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       ANIMATIONS
+    ========================== */
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.2;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.7;
+        transform: scale(1.3);
+      }
+    }
+
+    @keyframes twinkle {
+      0%, 100% {
+        opacity: 0.15;
+        transform: scale(0.8);
+      }
+
+      50% {
+        opacity: 0.8;
+        transform: scale(1.35);
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
     @media (max-width: 700px) {
+
+      .opening h1 {
+        letter-spacing: 7px;
+      }
+
+      .eyebrow {
+        letter-spacing: 3px;
+      }
+
+      .opening-text {
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .home {
+        padding: 30px 18px 50px;
+      }
+
+      .memory-sky {
+        height: 270px;
+      }
+
+      .rooms {
+        grid-template-columns: 1fr;
+      }
+
+      .wide-card {
+        grid-column: span 1;
+      }
+
+      .room-card {
+        min-height: 190px;
+      }
+
+      .memory-quote p {
+        font-size: 15px;
+      }
 
       .story-room {
         padding: 25px 18px 60px;
@@ -788,7 +791,10 @@
         font-size: 14px;
       }
 
-    } 
+      .story-opening {
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
 
@@ -820,8 +826,8 @@
       </p>
 
       <button class="enter-button" id="enterButton" type="button">
-  Enter
-</button>
+        Enter
+      </button>
 
     </div>
 
@@ -985,6 +991,7 @@
 
   </section>
 
+
   <!-- =========================
        OUR STORY
   ========================== -->
@@ -1044,13 +1051,13 @@
           <h2>The First Look</h2>
 
           <p>
-            The strange thing is, I don't remember thinking
-            much about it at first.
+            The strange thing is, I don't remember
+            thinking much about it at first.
           </p>
 
           <p>
-            I just remember seeing her and having this
-            ridiculously familiar feeling —
+            I just remember seeing her and having
+            this ridiculously familiar feeling —
             <em>I felt like I knew her from somewhere.</em>
           </p>
 
@@ -1121,10 +1128,6 @@
 
           <h2>The First Compliment</h2>
 
-          <p>
-            Then came the first office party.
-          </p>
-
           <div class="memory-place">
             Drunken Botanist · CyberHub · Gurgaon
           </div>
@@ -1188,10 +1191,6 @@
             So I came up with a brilliant plan.
           </p>
 
-          <p>
-            Something along the lines of:
-          </p>
-
           <blockquote>
             "I'm going to get coffee for myself.
             If you want to come, come.
@@ -1200,8 +1199,8 @@
           </blockquote>
 
           <p>
-            Basically, I had already prepared
-            an escape route in case of rejection.
+            Basically, I had already prepared an
+            escape route in case of rejection.
           </p>
 
           <p>
@@ -1354,6 +1353,8 @@
     </div>
 
   </section>
+
+
   <!-- =========================
        TEMPORARY MESSAGE
   ========================== -->
@@ -1384,27 +1385,44 @@
 
   <script>
 
+    /* =========================
+       ENTER HOME
+    ========================== */
+
     document.addEventListener("DOMContentLoaded", function () {
 
       const enterButton = document.getElementById("enterButton");
-      const opening = document.getElementById("opening");
-      const home = document.getElementById("home");
 
       enterButton.addEventListener("click", function () {
 
-        opening.classList.add("hide");
-
-        setTimeout(function () {
-
-          home.classList.add("show");
-          document.body.style.overflow = "auto";
-
-        }, 700);
+        enterHome();
 
       });
 
     });
 
+
+    function enterHome() {
+
+      const opening = document.getElementById("opening");
+      const home = document.getElementById("home");
+
+      opening.classList.add("hide");
+
+      setTimeout(() => {
+
+        home.classList.add("show");
+
+        document.body.style.overflow = "auto";
+
+      }, 700);
+
+    }
+
+
+    /* =========================
+       TEMPORARY ROOMS
+    ========================== */
 
     function openMessage(title) {
 
@@ -1421,6 +1439,47 @@
 
     }
 
-</script>
+
+    /* =========================
+       OUR STORY
+    ========================== */
+
+    function openStory() {
+
+      const home = document.getElementById("home");
+      const storyRoom = document.getElementById("storyRoom");
+
+      home.style.display = "none";
+
+      storyRoom.classList.add("show");
+
+      window.scrollTo({
+        top: 0,
+        behavior: "instant"
+      });
+
+      document.body.style.overflow = "auto";
+
+    }
+
+
+    function closeStory() {
+
+      const storyRoom = document.getElementById("storyRoom");
+      const home = document.getElementById("home");
+
+      storyRoom.classList.remove("show");
+
+      home.style.display = "block";
+
+      window.scrollTo({
+        top: 0,
+        behavior: "instant"
+      });
+
+    }
+
+  </script>
+
 </body>
 </html>
