@@ -819,9 +819,9 @@
         Some are meant to be kept somewhere you can return to.
       </p>
 
-      <button class="enter-button" onclick="enterHome()">
-        Enter
-      </button>
+      <button class="enter-button" id="enterButton" type="button">
+  Enter
+</button>
 
     </div>
 
@@ -1384,43 +1384,26 @@
 
   <script>
 
-    function enterHome()     function openStory() {
+    document.addEventListener("DOMContentLoaded", function () {
 
-      document.getElementById("home").style.display = "none";
-
-      document.getElementById("storyRoom").classList.add("show");
-
-      window.scrollTo({
-        top: 0,
-        behavior: "instant"
-      });
-
-    }
-
-
-    function closeStory() {
-
-      document.getElementById("storyRoom").classList.remove("show");
-
-      document.getElementById("home").style.display = "block";
-
-      window.scrollTo({
-        top: 0,
-        behavior: "instant"
-      });
-
-    } {
-
+      const enterButton = document.getElementById("enterButton");
       const opening = document.getElementById("opening");
       const home = document.getElementById("home");
 
-      opening.classList.add("hide");
+      enterButton.addEventListener("click", function () {
 
-      setTimeout(() => {
-        home.classList.add("show");
-        document.body.style.overflow = "auto";
-      }, 700);
-    }
+        opening.classList.add("hide");
+
+        setTimeout(function () {
+
+          home.classList.add("show");
+          document.body.style.overflow = "auto";
+
+        }, 700);
+
+      });
+
+    });
 
 
     function openMessage(title) {
@@ -1438,7 +1421,6 @@
 
     }
 
-  </script>
-
+</script>
 </body>
 </html>
