@@ -844,36 +844,115 @@
       text-transform: uppercase;
       margin-bottom: 8px;
     }
-
     .magic-sky {
       position: absolute;
       inset: 0;
       pointer-events: none;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 42%, rgba(92, 69, 52, 0.10), transparent 34%),
+        radial-gradient(circle at 18% 24%, rgba(150, 116, 82, 0.05), transparent 20%),
+        radial-gradient(circle at 82% 70%, rgba(150, 116, 82, 0.045), transparent 22%);
+    }
+
+    .magic-sky::before,
+    .magic-sky::after {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      pointer-events: none;
+      opacity: 0.38;
+      background-image:
+        radial-gradient(circle, rgba(240, 231, 218, 0.78) 0 0.7px, transparent 1px),
+        radial-gradient(circle, rgba(198, 167, 137, 0.55) 0 0.8px, transparent 1.2px),
+        radial-gradient(circle, rgba(240, 231, 218, 0.48) 0 0.55px, transparent 1px);
+      background-size: 73px 61px, 97px 83px, 131px 117px;
+      background-position: 3px 8px, 22px 31px, 51px 14px;
+    }
+
+    .magic-sky::after {
+      opacity: 0.20;
+      transform: rotate(9deg);
+      background-size: 113px 91px, 151px 127px, 181px 149px;
+    }
+
+    .tiny-star {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: rgba(224, 211, 195, 0.70);
+      box-shadow: 0 0 4px rgba(224, 211, 195, 0.24);
+      pointer-events: none;
+      animation: tinyTwinkle var(--twinkle, 4s) ease-in-out infinite;
+      animation-delay: var(--delay, 0s);
+    }
+
+    .tiny-star.dim {
+      opacity: 0.38;
+      transform: scale(0.7);
+    }
+
+    @keyframes tinyTwinkle {
+      0%, 100% { opacity: 0.28; transform: scale(0.65); }
+      50% { opacity: 0.78; transform: scale(1); }
     }
 
     .magic-star {
       position: absolute;
-      width: 34px;
-      height: 34px;
+      width: 42px;
+      height: 42px;
       border: 0;
+      padding: 0;
       background: transparent;
-      color: #c5a587;
-      font-size: 18px;
+      color: #f0d0a4;
+      font-size: 22px;
+      line-height: 42px;
+      text-align: center;
       cursor: pointer;
-      transition: transform 0.25s ease, opacity 0.25s ease;
       pointer-events: auto;
+      z-index: 3;
+      text-shadow:
+        0 0 7px rgba(235, 190, 133, 0.80),
+        0 0 18px rgba(235, 190, 133, 0.42);
+      animation: specialTwinkle 2.8s ease-in-out infinite;
+      animation-delay: var(--delay, 0s);
+      transition: transform 0.25s ease, opacity 0.3s ease;
+    }
+
+    .magic-star::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff4df;
+      box-shadow:
+        0 0 7px 2px rgba(255, 225, 180, 0.95),
+        0 0 22px 7px rgba(214, 164, 106, 0.28);
     }
 
     .magic-star:hover {
-      transform: scale(1.45);
+      transform: scale(1.35);
     }
 
     .magic-star.found {
-      opacity: 0.28;
-      transform: scale(0.75);
+      opacity: 0.24;
+      transform: scale(0.78);
+      text-shadow: none;
+    }
+
+    @keyframes specialTwinkle {
+      0%, 100% { opacity: 0.66; transform: scale(0.86); }
+      50% { opacity: 1; transform: scale(1.08); }
     }
 
     .magic-note {
+      position: relative;
+      z-index: 5;
       width: min(540px, 82%);
       min-height: 92px;
       margin-top: 18px;
@@ -887,19 +966,22 @@
     }
 
     .magic-progress {
+      position: relative;
+      z-index: 5;
       margin-top: 18px;
-      color: #766557;
+      color: #9b8068;
       font-size: 9px;
       letter-spacing: 0.22em;
       text-transform: uppercase;
     }
 
     .magic-close {
+      z-index: 10;
       position: absolute;
       right: 24px;
       top: 22px;
       border: 1px solid rgba(220, 205, 190, 0.25);
-      background: transparent;
+      background: rgba(8, 8, 9, 0.34);
       color: #b9aa9d;
       padding: 8px 14px;
       letter-spacing: 0.16em;
@@ -1779,14 +1861,85 @@
       <div class="magic-topline">A small room for small surprises</div>
 
       <div class="magic-sky" aria-hidden="true">
-
-        <button class="magic-star" style="left:10%; top:18%;" data-note="Some memories arrive quietly. You only notice them when you stop looking for them.">✦</button>
-        <button class="magic-star" style="left:24%; top:38%;" data-note="There are little things about you that I remember for no logical reason at all.">✧</button>
-        <button class="magic-star" style="left:76%; top:20%;" data-note="This room is intentionally unfinished. I want to keep adding to it.">✦</button>
-        <button class="magic-star" style="left:88%; top:48%;" data-note="One day, this star will hold a memory that hasn't happened yet.">✧</button>
-        <button class="magic-star" style="left:17%; top:76%;" data-note="A tiny place for a tiny thought: I am glad you exist in my story.">✦</button>
-        <button class="magic-star" style="left:80%; top:78%;" data-note="Not every surprise needs a reason. Some are simply meant to make you smile.">✧</button>
-        <button class="magic-star" style="left:50%; top:12%;" data-note="You found one. Keep looking. There will always be another. ♡">✦</button>
+        <span class="tiny-star" style="left:67%; top:9%; width:2px; height:2px; --delay:-1.95s; --twinkle:3.38s;"></span>
+        <span class="tiny-star dim" style="left:19%; top:9%; width:2px; height:2px; --delay:-2.8s; --twinkle:5.03s;"></span>
+        <span class="tiny-star" style="left:35%; top:90%; width:2px; height:2px; --delay:-1.56s; --twinkle:6.19s;"></span>
+        <span class="tiny-star" style="left:16%; top:65%; width:4px; height:4px; --delay:-1.93s; --twinkle:4.68s;"></span>
+        <span class="tiny-star" style="left:56%; top:85%; width:3px; height:3px; --delay:-0.47s; --twinkle:5.17s;"></span>
+        <span class="tiny-star" style="left:60%; top:22%; width:2px; height:2px; --delay:-1.33s; --twinkle:5.4s;"></span>
+        <span class="tiny-star" style="left:59%; top:29%; width:2px; height:2px; --delay:-1.31s; --twinkle:6.45s;"></span>
+        <span class="tiny-star" style="left:28%; top:54%; width:2px; height:2px; --delay:-2.82s; --twinkle:4.91s;"></span>
+        <span class="tiny-star" style="left:49%; top:46%; width:2px; height:2px; --delay:-1.91s; --twinkle:5.91s;"></span>
+        <span class="tiny-star" style="left:48%; top:18%; width:3px; height:3px; --delay:-1.58s; --twinkle:4.6s;"></span>
+        <span class="tiny-star" style="left:12%; top:76%; width:2px; height:2px; --delay:-3.33s; --twinkle:4.45s;"></span>
+        <span class="tiny-star" style="left:22%; top:47%; width:2px; height:2px; --delay:-3.05s; --twinkle:5.15s;"></span>
+        <span class="tiny-star dim" style="left:68%; top:67%; width:4px; height:4px; --delay:-0.58s; --twinkle:3.81s;"></span>
+        <span class="tiny-star" style="left:69%; top:49%; width:4px; height:4px; --delay:-2.32s; --twinkle:5.1s;"></span>
+        <span class="tiny-star" style="left:10%; top:18%; width:2px; height:2px; --delay:-2.06s; --twinkle:6.21s;"></span>
+        <span class="tiny-star" style="left:83%; top:17%; width:2px; height:2px; --delay:-0.33s; --twinkle:4.32s;"></span>
+        <span class="tiny-star dim" style="left:52%; top:58%; width:3px; height:3px; --delay:-1.49s; --twinkle:4.05s;"></span>
+        <span class="tiny-star" style="left:26%; top:34%; width:2px; height:2px; --delay:-3.85s; --twinkle:4.02s;"></span>
+        <span class="tiny-star" style="left:10%; top:14%; width:2px; height:2px; --delay:-0.02s; --twinkle:6.24s;"></span>
+        <span class="tiny-star" style="left:20%; top:62%; width:2px; height:2px; --delay:-1.27s; --twinkle:6.62s;"></span>
+        <span class="tiny-star" style="left:9%; top:76%; width:2px; height:2px; --delay:-2.44s; --twinkle:5.44s;"></span>
+        <span class="tiny-star" style="left:55%; top:91%; width:2px; height:2px; --delay:-3.19s; --twinkle:5.29s;"></span>
+        <span class="tiny-star" style="left:78%; top:39%; width:2px; height:2px; --delay:-1.74s; --twinkle:3.83s;"></span>
+        <span class="tiny-star" style="left:18%; top:28%; width:4px; height:4px; --delay:-3.76s; --twinkle:4.55s;"></span>
+        <span class="tiny-star" style="left:5%; top:36%; width:2px; height:2px; --delay:-0.39s; --twinkle:6.7s;"></span>
+        <span class="tiny-star dim" style="left:55%; top:57%; width:2px; height:2px; --delay:-2.32s; --twinkle:6.79s;"></span>
+        <span class="tiny-star" style="left:15%; top:51%; width:2px; height:2px; --delay:-3.28s; --twinkle:5.82s;"></span>
+        <span class="tiny-star" style="left:20%; top:38%; width:4px; height:4px; --delay:-3.45s; --twinkle:3.63s;"></span>
+        <span class="tiny-star" style="left:61%; top:41%; width:2px; height:2px; --delay:-1.71s; --twinkle:6.73s;"></span>
+        <span class="tiny-star" style="left:6%; top:72%; width:2px; height:2px; --delay:-1.21s; --twinkle:3.51s;"></span>
+        <span class="tiny-star" style="left:32%; top:83%; width:2px; height:2px; --delay:-3.85s; --twinkle:5.08s;"></span>
+        <span class="tiny-star" style="left:12%; top:42%; width:2px; height:2px; --delay:-2.26s; --twinkle:5.31s;"></span>
+        <span class="tiny-star dim" style="left:53%; top:18%; width:4px; height:4px; --delay:-2.91s; --twinkle:5.59s;"></span>
+        <span class="tiny-star" style="left:32%; top:11%; width:3px; height:3px; --delay:-2.81s; --twinkle:6.18s;"></span>
+        <span class="tiny-star" style="left:24%; top:28%; width:4px; height:4px; --delay:-1.4s; --twinkle:6.38s;"></span>
+        <span class="tiny-star" style="left:8%; top:47%; width:2px; height:2px; --delay:-3.48s; --twinkle:5.06s;"></span>
+        <span class="tiny-star" style="left:93%; top:61%; width:2px; height:2px; --delay:-0.54s; --twinkle:6.23s;"></span>
+        <span class="tiny-star" style="left:74%; top:74%; width:2px; height:2px; --delay:-0.32s; --twinkle:5.58s;"></span>
+        <span class="tiny-star" style="left:67%; top:79%; width:3px; height:3px; --delay:-0.88s; --twinkle:5.55s;"></span>
+        <span class="tiny-star" style="left:74%; top:72%; width:2px; height:2px; --delay:-2.44s; --twinkle:5.2s;"></span>
+        <span class="tiny-star" style="left:70%; top:51%; width:3px; height:3px; --delay:-2.62s; --twinkle:6.58s;"></span>
+        <span class="tiny-star dim" style="left:13%; top:68%; width:4px; height:4px; --delay:-0.16s; --twinkle:6.53s;"></span>
+        <span class="tiny-star" style="left:31%; top:71%; width:2px; height:2px; --delay:-3.65s; --twinkle:3.46s;"></span>
+        <span class="tiny-star" style="left:66%; top:55%; width:4px; height:4px; --delay:-0.45s; --twinkle:5.21s;"></span>
+        <span class="tiny-star" style="left:64%; top:24%; width:2px; height:2px; --delay:-1.71s; --twinkle:4.77s;"></span>
+        <span class="tiny-star" style="left:88%; top:44%; width:2px; height:2px; --delay:-1.34s; --twinkle:4.24s;"></span>
+        <span class="tiny-star" style="left:31%; top:61%; width:3px; height:3px; --delay:-0.31s; --twinkle:5.43s;"></span>
+        <span class="tiny-star" style="left:68%; top:73%; width:2px; height:2px; --delay:-2.2s; --twinkle:4.51s;"></span>
+        <span class="tiny-star" style="left:75%; top:9%; width:3px; height:3px; --delay:-0.64s; --twinkle:6.5s;"></span>
+        <span class="tiny-star dim" style="left:90%; top:92%; width:4px; height:4px; --delay:-1.24s; --twinkle:4.88s;"></span>
+        <span class="tiny-star dim" style="left:61%; top:61%; width:2px; height:2px; --delay:-3.36s; --twinkle:5.99s;"></span>
+        <span class="tiny-star" style="left:96%; top:46%; width:3px; height:3px; --delay:-3.18s; --twinkle:3.37s;"></span>
+        <span class="tiny-star dim" style="left:76%; top:53%; width:2px; height:2px; --delay:-3.08s; --twinkle:4.73s;"></span>
+        <span class="tiny-star" style="left:83%; top:15%; width:2px; height:2px; --delay:-2.8s; --twinkle:5.78s;"></span>
+        <span class="tiny-star dim" style="left:19%; top:14%; width:2px; height:2px; --delay:-1.32s; --twinkle:4.53s;"></span>
+        <span class="tiny-star" style="left:47%; top:11%; width:4px; height:4px; --delay:-2.16s; --twinkle:6.55s;"></span>
+        <span class="tiny-star" style="left:4%; top:39%; width:2px; height:2px; --delay:-0.67s; --twinkle:5.16s;"></span>
+        <span class="tiny-star" style="left:57%; top:52%; width:4px; height:4px; --delay:-1.68s; --twinkle:6.37s;"></span>
+        <span class="tiny-star" style="left:67%; top:27%; width:4px; height:4px; --delay:-0.32s; --twinkle:4.06s;"></span>
+        <span class="tiny-star" style="left:86%; top:44%; width:2px; height:2px; --delay:-2.63s; --twinkle:4.93s;"></span>
+        <span class="tiny-star" style="left:53%; top:69%; width:3px; height:3px; --delay:-2.05s; --twinkle:4.22s;"></span>
+        <span class="tiny-star" style="left:76%; top:57%; width:4px; height:4px; --delay:-3.21s; --twinkle:4.18s;"></span>
+        <span class="tiny-star" style="left:44%; top:25%; width:3px; height:3px; --delay:-2.97s; --twinkle:4.07s;"></span>
+        <span class="tiny-star" style="left:87%; top:87%; width:4px; height:4px; --delay:-3.23s; --twinkle:3.99s;"></span>
+        <span class="tiny-star" style="left:30%; top:89%; width:3px; height:3px; --delay:-3.27s; --twinkle:6.1s;"></span>
+        <span class="tiny-star" style="left:36%; top:46%; width:2px; height:2px; --delay:-1.77s; --twinkle:6.1s;"></span>
+        <span class="tiny-star dim" style="left:68%; top:23%; width:2px; height:2px; --delay:-3.59s; --twinkle:5.17s;"></span>
+        <span class="tiny-star dim" style="left:41%; top:56%; width:2px; height:2px; --delay:-2.29s; --twinkle:3.8s;"></span>
+        <span class="tiny-star" style="left:41%; top:69%; width:2px; height:2px; --delay:-0.29s; --twinkle:5.58s;"></span>
+        <span class="tiny-star dim" style="left:55%; top:32%; width:3px; height:3px; --delay:-1.48s; --twinkle:3.88s;"></span>
+        <span class="tiny-star" style="left:27%; top:28%; width:3px; height:3px; --delay:-1.19s; --twinkle:3.28s;"></span>
+        <span class="tiny-star" style="left:92%; top:51%; width:2px; height:2px; --delay:-0.13s; --twinkle:4.53s;"></span>
+        <button class="magic-star" style="left:11%; top:21%; --delay:0s;" aria-label="Hidden star" data-note="Some memories arrive quietly. You only notice them when you stop looking for them.">✦</button>
+        <button class="magic-star" style="left:27%; top:64%; --delay:-0.5s;" aria-label="Hidden star" data-note="There are little things about you that I remember for no logical reason at all.">✦</button>
+        <button class="magic-star" style="left:48%; top:15%; --delay:-1.0s;" aria-label="Hidden star" data-note="This room is intentionally unfinished. I want to keep adding to it.">✦</button>
+        <button class="magic-star" style="left:72%; top:31%; --delay:-1.6s;" aria-label="Hidden star" data-note="One day, this star will hold a memory that hasn't happened yet.">✦</button>
+        <button class="magic-star" style="left:87%; top:57%; --delay:-0.9s;" aria-label="Hidden star" data-note="A tiny place for a tiny thought: I am glad you exist in my story.">✦</button>
+        <button class="magic-star" style="left:21%; top:84%; --delay:-1.9s;" aria-label="Hidden star" data-note="Not every surprise needs a reason. Some are simply meant to make you smile.">✦</button>
+        <button class="magic-star" style="left:77%; top:82%; --delay:-2.3s;" aria-label="Hidden star" data-note="You found one. Keep looking. There will always be another. ♡">✦</button>
 
       </div>
 
@@ -1800,7 +1953,7 @@
 
       <div class="magic-note" id="magicNote">
         The room is quiet for now.<br>
-        There are a few things hidden here.
+        Seven stars are brighter than the rest. Find them.
       </div>
 
       <div class="magic-progress" id="magicProgress">
@@ -1930,7 +2083,7 @@
 
             note.innerHTML =
               "You found all seven.<br>" +
-              "That means this room needs seven new surprises someday. ♡";
+              "Looks like you've discovered everything... for now. ♡";
 
           }
 
