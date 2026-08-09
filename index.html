@@ -539,13 +539,50 @@
       font-size: 13px;
     }
 
-    .memory-content {
-      max-width: 650px;
+    .memory-feature {
+      max-width: 900px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .memory-image-wrap {
+      border: 1px solid rgba(210, 193, 176, 0.14);
+      background: rgba(20, 17, 15, 0.75);
+      overflow: hidden;
+    }
+
+    .memory-image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+
+    .memory-image-caption {
+      padding: 14px 18px;
       text-align: center;
-      padding: 38px 45px;
+      color: #b99a7f;
+      font-size: 13px;
+      font-style: italic;
+    }
+
+    .memory-content {
+      max-width: none;
+      margin: 0;
+      text-align: left;
+      padding: 34px 34px;
       border: 1px solid rgba(210, 193, 176, 0.12);
       background: rgba(37, 29, 25, 0.45);
+    }
+
+    .handwritten {
+      color: #c49d7c !important;
+      font-style: italic;
+      font-size: 17px !important;
+      margin-top: 28px;
     }
 
     .memory-content h2 {
@@ -777,6 +814,14 @@
 
       .memory {
         padding-bottom: 70px;
+      }
+
+      .memory-feature {
+        grid-template-columns: 1fr;
+      }
+
+      .memory-image {
+        aspect-ratio: 4 / 5;
       }
 
       .memory-content {
@@ -1046,30 +1091,87 @@
 
         <div class="memory-marker">✦</div>
 
-        <div class="memory-content">
+        <div class="memory-feature">
 
-          <h2>The First Look</h2>
+          <div class="memory-image-wrap">
+            <img
+              src="first-look.png"
+              alt="The first time I saw you — our office party"
+              class="memory-image"
+            />
+            <div class="memory-image-caption">
+              The first time I saw you.
+            </div>
+          </div>
 
-          <p>
-            The strange thing is, I don't remember
-            thinking much about it at first.
-          </p>
+          <div class="memory-content">
 
-          <p>
-            I just remember seeing her and having
-            this ridiculously familiar feeling —
-            <em>I felt like I knew her from somewhere.</em>
-          </p>
+            <h2>The First Look</h2>
 
-          <p>
-            I didn't know her.
-            Not really.
-          </p>
+            <p>
+              I had just walked into the venue.
+              Most of the faces around me were familiar —
+              common friends, people from the team, the usual crowd.
+            </p>
 
-          <p>
-            But something about her already felt
-            strangely known.
-          </p>
+            <p>
+              I did what I normally do.
+              Started pulling everyone's leg.
+              My sense of humour was doing its usual job. 😄
+            </p>
+
+            <p>
+              And then, somewhere in the middle of all those familiar faces,
+              I noticed you.
+            </p>
+
+            <p>
+              A beautiful face.<br>
+              Those big, bright eyes.<br>
+              And strangely, there was something nostalgic about it.
+            </p>
+
+            <p>
+              I remember thinking:
+            </p>
+
+            <blockquote>
+              "I know her from somewhere."
+            </blockquote>
+
+            <p>
+              The funny part?<br>
+              I didn't.<br>
+              Or at least, I couldn't remember from where.
+            </p>
+
+            <p>
+              Your face reminded me of someone I knew,
+              but my brain had conveniently decided not to tell me who.
+            </p>
+
+            <p>
+              Maybe it wasn't even the face.
+              Maybe it was the way you carried yourself.
+              That quiet grace with which you seemed to pull everything off.
+            </p>
+
+            <p>
+              Whatever it was, for some reason,
+              you didn't feel completely new.
+              You felt familiar.
+            </p>
+
+            <p>
+              And I had absolutely no idea that this random feeling
+              was going to become the beginning of everything.
+            </p>
+
+            <p class="handwritten">
+              I should probably have just said hello. ♡
+            </p>
+
+          </div>
 
         </div>
 
