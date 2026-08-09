@@ -770,30 +770,18 @@
     .back-button.bottom {
       margin-top: 10px;
     }
-
-    
-    
-    document.addEventListener("DOMContentLoaded", function () {
-      const missCard = Array.from(document.querySelectorAll(".room-card")).find(card =>
-        card.textContent.includes("When I Miss You")
-      );
-
-      if (missCard) {
-        missCard.style.cursor = "pointer";
-        missCard.addEventListener("click", function (event) {
-          if (event.target.closest("button, a")) return;
-          openMissYou();
-        });
-      }
-    });
-
 /* =========================
        WHEN I MISS YOU
     ========================== */
 
-    .miss-room {
-      position: fixed;
-      inset: 0;
+        .miss-room {
+      position: fixed !important;
+      top: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      min-height: 100vh !important;
       background:
         radial-gradient(circle at 50% 25%, rgba(86, 60, 45, 0.16), transparent 34%),
         #0a0909;
@@ -803,14 +791,16 @@
       padding: 34px 24px;
       opacity: 0;
       visibility: hidden;
-      transition: opacity 0.45s ease;
-      z-index: 35;
+      pointer-events: none;
+      transition: opacity 0.45s ease, visibility 0.45s ease;
+      z-index: 9999;
       overflow-y: auto;
     }
 
     .miss-room.show {
       opacity: 1;
       visibility: visible;
+      pointer-events: auto;
     }
 
     .miss-shell {
@@ -974,16 +964,20 @@
     /* =========================
        WHEN I MISS YOU
     ========================== */
-
     function openMissYou() {
       const home = document.getElementById("home");
       const room = document.getElementById("missRoom");
 
-      if (home) home.style.display = "none";
-      if (room) room.classList.add("show");
+      if (!room) return;
 
+      if (home) {
+        home.classList.remove("show");
+        home.style.display = "none";
+      }
+
+      room.classList.add("show");
       document.body.style.overflow = "hidden";
-      window.scrollTo(0, 0);
+      room.scrollTop = 0;
     }
 
     function closeMissYou() {
@@ -991,9 +985,14 @@
       const room = document.getElementById("missRoom");
 
       if (room) room.classList.remove("show");
-      if (home) home.style.display = "block";
 
       document.body.style.overflow = "auto";
+
+      if (home) {
+        home.style.display = "";
+        requestAnimationFrame(() => home.classList.add("show"));
+      }
+
       window.scrollTo(0, 0);
     }
 
@@ -2316,6 +2315,19 @@
 
 
   <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const missCard = Array.from(document.querySelectorAll(".room-card"))
+        .find(card => card.textContent.includes("When I Miss You"));
+
+      if (missCard) {
+        missCard.style.cursor = "pointer";
+        missCard.addEventListener("click", function () {
+          openMissYou();
+        });
+      }
+    });
+
+
 
     /* =========================
        ENTER HOME
