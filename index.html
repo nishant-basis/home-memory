@@ -772,6 +772,158 @@
     }
 
     /* =========================
+       LITTLE MAGIC
+    ========================== */
+
+    .magic-room {
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 40%, rgba(93, 69, 52, 0.18), transparent 38%),
+        #08090a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.5s ease;
+      z-index: 30;
+      overflow: hidden;
+    }
+
+    .magic-room.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .magic-inner {
+      width: min(900px, 100%);
+      min-height: 650px;
+      position: relative;
+      border: 1px solid rgba(210, 193, 176, 0.14);
+      background: rgba(15, 14, 14, 0.62);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .magic-topline {
+      position: absolute;
+      top: 34px;
+      left: 0;
+      right: 0;
+      font-size: 9px;
+      letter-spacing: 0.34em;
+      color: #927763;
+      text-transform: uppercase;
+    }
+
+    .magic-inner h2 {
+      margin: 0 0 12px;
+      font-size: clamp(38px, 6vw, 64px);
+      font-weight: 400;
+      letter-spacing: 0.08em;
+    }
+
+    .magic-subtitle {
+      max-width: 520px;
+      margin: 0 auto 20px;
+      color: #b7aaa0;
+      font-style: italic;
+      line-height: 1.7;
+    }
+
+    .magic-instruction {
+      color: #8f7a68;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .magic-sky {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .magic-star {
+      position: absolute;
+      width: 34px;
+      height: 34px;
+      border: 0;
+      background: transparent;
+      color: #c5a587;
+      font-size: 18px;
+      cursor: pointer;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      pointer-events: auto;
+    }
+
+    .magic-star:hover {
+      transform: scale(1.45);
+    }
+
+    .magic-star.found {
+      opacity: 0.28;
+      transform: scale(0.75);
+    }
+
+    .magic-note {
+      width: min(540px, 82%);
+      min-height: 92px;
+      margin-top: 18px;
+      padding: 22px 28px;
+      border-top: 1px solid rgba(210, 193, 176, 0.18);
+      border-bottom: 1px solid rgba(210, 193, 176, 0.18);
+      color: #cbbdaf;
+      font-style: italic;
+      line-height: 1.7;
+      opacity: 0.85;
+    }
+
+    .magic-progress {
+      margin-top: 18px;
+      color: #766557;
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .magic-close {
+      position: absolute;
+      right: 24px;
+      top: 22px;
+      border: 1px solid rgba(220, 205, 190, 0.25);
+      background: transparent;
+      color: #b9aa9d;
+      padding: 8px 14px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 9px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 700px) {
+      .magic-room {
+        padding: 12px;
+      }
+
+      .magic-inner {
+        min-height: 92vh;
+      }
+
+      .magic-star {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    /* =========================
        TEMPORARY MESSAGE
     ========================== */
 
@@ -1130,7 +1282,7 @@
       </div>
 
 
-      <div class="room-card wide-card" onclick="openMessage('Little Magic')">
+      <div class="room-card wide-card" onclick="openMagic()">
 
         <div class="room-icon">✦</div>
 
@@ -1615,6 +1767,52 @@
 
 
   <!-- =========================
+       LITTLE MAGIC ROOM
+  ========================== -->
+
+  <section class="magic-room" id="magicRoom">
+
+    <div class="magic-inner">
+
+      <button class="magic-close" onclick="closeMagic()">← HOME</button>
+
+      <div class="magic-topline">A small room for small surprises</div>
+
+      <div class="magic-sky" aria-hidden="true">
+
+        <button class="magic-star" style="left:10%; top:18%;" data-note="Some memories arrive quietly. You only notice them when you stop looking for them.">✦</button>
+        <button class="magic-star" style="left:24%; top:38%;" data-note="There are little things about you that I remember for no logical reason at all.">✧</button>
+        <button class="magic-star" style="left:76%; top:20%;" data-note="This room is intentionally unfinished. I want to keep adding to it.">✦</button>
+        <button class="magic-star" style="left:88%; top:48%;" data-note="One day, this star will hold a memory that hasn't happened yet.">✧</button>
+        <button class="magic-star" style="left:17%; top:76%;" data-note="A tiny place for a tiny thought: I am glad you exist in my story.">✦</button>
+        <button class="magic-star" style="left:80%; top:78%;" data-note="Not every surprise needs a reason. Some are simply meant to make you smile.">✧</button>
+        <button class="magic-star" style="left:50%; top:12%;" data-note="You found one. Keep looking. There will always be another. ♡">✦</button>
+
+      </div>
+
+      <div class="magic-instruction">click a star</div>
+
+      <h2>Little Magic</h2>
+
+      <p class="magic-subtitle">
+        Some things are better discovered than explained.
+      </p>
+
+      <div class="magic-note" id="magicNote">
+        The room is quiet for now.<br>
+        There are a few things hidden here.
+      </div>
+
+      <div class="magic-progress" id="magicProgress">
+        0 of 7 discovered
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
        TEMPORARY MESSAGE
   ========================== -->
 
@@ -1677,6 +1875,70 @@
       }, 700);
 
     }
+
+
+    /* =========================
+       LITTLE MAGIC
+    ========================== */
+
+    let magicFound = 0;
+
+    function openMagic() {
+
+      document.getElementById("home").style.display = "none";
+      document.getElementById("magicRoom").classList.add("show");
+
+      window.scrollTo({
+        top: 0,
+        behavior: "instant"
+      });
+
+      document.body.style.overflow = "hidden";
+
+    }
+
+    function closeMagic() {
+
+      document.getElementById("magicRoom").classList.remove("show");
+      document.getElementById("home").style.display = "block";
+
+      document.body.style.overflow = "auto";
+
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const stars = document.querySelectorAll(".magic-star");
+      const note = document.getElementById("magicNote");
+      const progress = document.getElementById("magicProgress");
+
+      stars.forEach(function (star) {
+
+        star.addEventListener("click", function () {
+
+          if (!star.classList.contains("found")) {
+
+            star.classList.add("found");
+            magicFound++;
+
+          }
+
+          note.innerHTML = star.dataset.note;
+          progress.textContent = magicFound + " of 7 discovered";
+
+          if (magicFound === 7) {
+
+            note.innerHTML =
+              "You found all seven.<br>" +
+              "That means this room needs seven new surprises someday. ♡";
+
+          }
+
+        });
+
+      });
+
+    });
 
 
     /* =========================
