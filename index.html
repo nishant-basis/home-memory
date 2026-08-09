@@ -15,7 +15,667 @@
 
     body {
       min-height: 100vh;
+      background:<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>HOME</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
       background:
+        radial-gradient(circle at 50% 20%, #211a17 0%, #0b0d0f 55%, #050607 100%);
+      color: #f2ece3;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    /* =========================
+       OPENING SCREEN
+    ========================= */
+
+    .opening {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      padding: 30px;
+      transition: opacity 1.2s ease, visibility 1.2s ease;
+    }
+
+    .opening.hide {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .opening-content {
+      max-width: 850px;
+      animation: appear 2s ease forwards;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #b8aa9b;
+      margin-bottom: 35px;
+    }
+
+    .line {
+      width: 70px;
+      height: 1px;
+      background: #806b59;
+      margin: 0 auto 35px;
+    }
+
+    .opening h1 {
+      font-size: clamp(70px, 12vw, 145px);
+      font-weight: 400;
+      letter-spacing: 12px;
+      line-height: 1;
+      margin-bottom: 30px;
+    }
+
+    .opening-text {
+      font-size: clamp(16px, 2vw, 22px);
+      font-style: italic;
+      color: #c9beb2;
+      line-height: 1.7;
+      margin-bottom: 50px;
+    }
+
+    .enter-button {
+      padding: 15px 40px;
+      border: 1px solid rgba(220, 205, 190, 0.45);
+      background: transparent;
+      color: #eee5da;
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.5s ease;
+    }
+
+    .enter-button:hover {
+      background: #eee5da;
+      color: #171311;
+      transform: translateY(-2px);
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 28px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: #756960;
+      text-transform: uppercase;
+    }
+
+    .heart {
+      position: absolute;
+      color: #a77b6a;
+      opacity: 0.5;
+      animation: pulse 4s infinite ease-in-out;
+    }
+
+    .heart.one {
+      top: 20%;
+      left: 14%;
+    }
+
+    .heart.two {
+      top: 67%;
+      right: 14%;
+      animation-delay: 1.5s;
+    }
+
+    .heart.three {
+      top: 15%;
+      right: 25%;
+      animation-delay: 3s;
+    }
+
+    /* =========================
+       HOME ROOM
+    ========================= */
+
+    .home {
+      min-height: 100vh;
+      padding: 55px 7vw 70px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(25px);
+      transition:
+        opacity 1.3s ease,
+        transform 1.3s ease,
+        visibility 1.3s ease;
+    }
+
+    .home.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .home-header {
+      max-width: 1150px;
+      margin: 0 auto 55px;
+      text-align: center;
+    }
+
+    .home-header .small {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #a99a8c;
+      margin-bottom: 18px;
+    }
+
+    .home-header h2 {
+      font-size: clamp(40px, 6vw, 70px);
+      font-weight: 400;
+      letter-spacing: 5px;
+      margin-bottom: 18px;
+    }
+
+    .home-header p {
+      color: #a99c91;
+      font-size: 16px;
+      font-style: italic;
+    }
+
+    .divider {
+      width: 50px;
+      height: 1px;
+      background: #765f4f;
+      margin: 25px auto;
+    }
+
+    /* CARD GRID */
+
+    .rooms {
+      max-width: 1150px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .room-card {
+      min-height: 230px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(210, 193, 176, 0.14);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(52, 41, 34, 0.72),
+          rgba(15, 16, 17, 0.82)
+        );
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      cursor: pointer;
+      transition:
+        transform 0.5s ease,
+        border-color 0.5s ease,
+        background 0.5s ease;
+    }
+
+    .room-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        circle at top right,
+        rgba(174, 137, 109, 0.12),
+        transparent 45%
+      );
+      pointer-events: none;
+    }
+
+    .room-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(210, 193, 176, 0.35);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(62, 47, 38, 0.85),
+          rgba(17, 18, 19, 0.9)
+        );
+    }
+
+    .room-number {
+      position: absolute;
+      top: 25px;
+      right: 28px;
+      color: #66574d;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    .room-icon {
+      font-size: 27px;
+      color: #b79a82;
+      margin-bottom: auto;
+    }
+
+    .room-card h3 {
+      font-size: 28px;
+      font-weight: 400;
+      margin-bottom: 9px;
+      letter-spacing: 1px;
+    }
+
+    .room-card p {
+      color: #a99c91;
+      font-size: 14px;
+      line-height: 1.5;
+      max-width: 420px;
+    }
+
+    .wide-card {
+      grid-column: span 2;
+      min-height: 190px;
+      text-align: center;
+      align-items: center;
+    }
+
+    .wide-card .room-icon {
+      margin: 0 0 20px;
+    }
+
+    .wide-card p {
+      max-width: 550px;
+    }
+
+    .home-footer {
+      text-align: center;
+      margin-top: 60px;
+      color: #645951;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       MESSAGE
+    ========================= */
+
+    .message {
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 4, 5, 0.88);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.5s ease;
+      z-index: 20;
+    }
+
+    .message.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .message-box {
+      max-width: 500px;
+      text-align: center;
+      border: 1px solid rgba(210, 193, 176, 0.2);
+      background: #151313;
+      padding: 55px 45px;
+    }
+
+    .message-box .tiny {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #a99a8c;
+      margin-bottom: 25px;
+    }
+
+    .message-box h3 {
+      font-size: 32px;
+      font-weight: 400;
+      margin-bottom: 18px;
+    }
+
+    .message-box p {
+      color: #b7aaa0;
+      font-style: italic;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .close-button {
+      border: 1px solid rgba(220, 205, 190, 0.3);
+      background: transparent;
+      color: #ddd2c7;
+      padding: 10px 25px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 10px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       ANIMATIONS
+    ========================= */
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.25;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.8;
+        transform: scale(1.3);
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 700px) {
+
+      .opening h1 {
+        letter-spacing: 7px;
+      }
+
+      .eyebrow {
+        letter-spacing: 3px;
+      }
+
+      .opening-text {
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .rooms {
+        grid-template-columns: 1fr;
+      }
+
+      .wide-card {
+        grid-column: span 1;
+      }
+
+      .room-card {
+        min-height: 200px;
+      }
+
+      .home {
+        padding: 45px 20px 60px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       OPENING
+  ========================== -->
+
+  <section class="opening" id="opening">
+
+    <span class="heart one">♡</span>
+    <span class="heart two">♡</span>
+    <span class="heart three">♡</span>
+
+    <div class="opening-content">
+
+      <div class="eyebrow">
+        A place for everything we remember
+      </div>
+
+      <div class="line"></div>
+
+      <h1>HOME</h1>
+
+      <p class="opening-text">
+        Some memories are not meant to be kept in photographs.<br>
+        Some are meant to be kept somewhere you can return to.
+      </p>
+
+      <button class="enter-button" onclick="enterHome()">
+        Enter
+      </button>
+
+    </div>
+
+    <div class="footer">
+      Made of memories · Built one moment at a time
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       HOME ROOM
+  ========================== -->
+
+  <section class="home" id="home">
+
+    <header class="home-header">
+
+      <div class="small">
+        Welcome home
+      </div>
+
+      <h2>HOME</h2>
+
+      <div class="divider"></div>
+
+      <p>
+        A place for everything we remember.
+      </p>
+
+    </header>
+
+
+    <div class="rooms">
+
+      <div class="room-card" onclick="openMessage('Our Story')">
+
+        <span class="room-number">01</span>
+
+        <div class="room-icon">◌</div>
+
+        <h3>Our Story</h3>
+
+        <p>
+          Before hello, the first coffee, the chaos,
+          and everything that quietly followed.
+        </p>
+
+      </div>
+
+
+      <div class="room-card" onclick="openMessage('Our Places')">
+
+        <span class="room-number">02</span>
+
+        <div class="room-icon">⌖</div>
+
+        <h3>Our Places</h3>
+
+        <p>
+          Goa I · Goa II · Paris · Jim Corbett
+        </p>
+
+      </div>
+
+
+      <div class="room-card" onclick="openMessage('Our Little Things')">
+
+        <span class="room-number">03</span>
+
+        <div class="room-icon">☕</div>
+
+        <h3>Our Little Things</h3>
+
+        <p>
+          Coffee, LIT, momos, reels, food,
+          stories and all the tiny things that became ours.
+        </p>
+
+      </div>
+
+
+      <div class="room-card" onclick="openMessage('The Museum')">
+
+        <span class="room-number">04</span>
+
+        <div class="room-icon">◇</div>
+
+        <h3>The Museum</h3>
+
+        <p>
+          Photographs, objects, moments and little
+          pieces of a life worth remembering.
+        </p>
+
+      </div>
+
+
+      <div class="room-card wide-card" onclick="openMessage('When I Miss You')">
+
+        <div class="room-icon">♡</div>
+
+        <h3>When I Miss You</h3>
+
+        <p>
+          A place for the words that don't need
+          a particular date, occasion or reason.
+        </p>
+
+      </div>
+
+
+      <div class="room-card wide-card" onclick="openMessage('Little Magic')">
+
+        <div class="room-icon">✦</div>
+
+        <h3>Little Magic</h3>
+
+        <p>
+          Hidden memories, stars, surprises,
+          the birthday countdown and things waiting to be discovered.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="home-footer">
+      Some places are visited. Some are carried with you.
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       TEMPORARY MESSAGE
+  ========================== -->
+
+  <div class="message" id="message">
+
+    <div class="message-box">
+
+      <div class="tiny">
+        This room is waiting
+      </div>
+
+      <h3 id="messageTitle">HOME</h3>
+
+      <p>
+        We're going to build this part next.
+        For now, you found the door.
+      </p>
+
+      <button class="close-button" onclick="closeMessage()">
+        Close
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    function enterHome() {
+
+      const opening = document.getElementById("opening");
+      const home = document.getElementById("home");
+
+      opening.classList.add("hide");
+
+      setTimeout(() => {
+        home.classList.add("show");
+        document.body.style.overflow = "auto";
+      }, 700);
+    }
+
+
+    function openMessage(title) {
+
+      document.getElementById("messageTitle").textContent = title;
+
+      document.getElementById("message").classList.add("show");
+
+    }
+
+
+    function closeMessage() {
+
+      document.getElementById("message").classList.remove("show");
+
+    }
+
+  </script>
+
+</body>
+</html>
         radial-gradient(circle at 50% 35%, #241d19 0%, #0b0d0f 48%, #050607 100%);
       color: #f4eee5;
       font-family: Georgia, "Times New Roman", serif;
