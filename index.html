@@ -539,19 +539,43 @@
       font-size: 13px;
     }
 
+    .memory-image-wrap {
+      border: 1px solid rgba(210, 193, 176, 0.14);
+      background: rgba(20, 17, 15, 0.75);
+      overflow: hidden;
+    }
+
+    .memory-image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+
+    .memory-image-caption {
+      padding: 14px 18px;
+      text-align: center;
+      color: #b99a7f;
+      font-size: 13px;
+      font-style: italic;
+    }
+
     .memory-feature {
-      max-width: 900px;
+      max-width: 1050px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
       gap: 22px;
       align-items: start;
+      position: relative;
     }
 
     .memory-image-wrap {
       border: 1px solid rgba(210, 193, 176, 0.14);
       background: rgba(20, 17, 15, 0.75);
       overflow: hidden;
+      align-self: start;
+      height: fit-content;
     }
 
     .memory-image {
@@ -576,6 +600,8 @@
       padding: 34px 34px;
       border: 1px solid rgba(210, 193, 176, 0.12);
       background: rgba(37, 29, 25, 0.45);
+      height: fit-content;
+      align-self: start;
     }
 
     .handwritten {
@@ -583,6 +609,24 @@
       font-style: italic;
       font-size: 17px !important;
       margin-top: 28px;
+    }
+
+    /* Chapter timeline: decorative marker only, never a full-height column. */
+    .memory {
+      position: relative;
+    }
+
+    .memory::before {
+      display: none !important;
+    }
+
+    .memory::after {
+      display: none !important;
+    }
+
+    .memory-feature::before,
+    .memory-feature::after {
+      display: none !important;
     }
 
     .memory-content h2 {
@@ -814,10 +858,6 @@
 
       .memory {
         padding-bottom: 70px;
-      }
-
-      .memory-feature {
-        grid-template-columns: 1fr;
       }
 
       .memory-image {
