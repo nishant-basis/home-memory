@@ -801,6 +801,7 @@
       opacity: 1;
       visibility: visible;
       pointer-events: auto;
+      pointer-events: auto;
     }
 
     .miss-shell {
@@ -959,56 +960,6 @@
         font-size: 19px;
       }
     }
-
-
-    /* =========================
-       WHEN I MISS YOU
-    ========================== */
-    function openMissYou() {
-      const home = document.getElementById("home");
-      const room = document.getElementById("missRoom");
-
-      if (!room) return;
-
-      if (home) {
-        home.classList.remove("show");
-        home.style.display = "none";
-      }
-
-      room.classList.add("show");
-      document.body.style.overflow = "hidden";
-      room.scrollTop = 0;
-    }
-
-    function closeMissYou() {
-      const home = document.getElementById("home");
-      const room = document.getElementById("missRoom");
-
-      if (room) room.classList.remove("show");
-
-      document.body.style.overflow = "auto";
-
-      if (home) {
-        home.style.display = "";
-        requestAnimationFrame(() => home.classList.add("show"));
-      }
-
-      window.scrollTo(0, 0);
-    }
-
-    function toggleMissEntry(button) {
-      const entry = button.closest(".miss-entry");
-      const content = entry.querySelector(".miss-content");
-
-      if (entry.classList.contains("open")) {
-        entry.classList.remove("open");
-        content.style.maxHeight = "0px";
-      } else {
-        entry.classList.add("open");
-        content.style.maxHeight = content.scrollHeight + "px";
-      }
-    }
-
 
     /* =========================
        LITTLE MAGIC
@@ -2315,21 +2266,55 @@
 
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const missCard = Array.from(document.querySelectorAll(".room-card"))
-        .find(card => card.textContent.includes("When I Miss You"));
+    /* =========================
+       WHEN I MISS YOU
+    ========================== */
 
-      if (missCard) {
-        missCard.style.cursor = "pointer";
-        missCard.addEventListener("click", function () {
-          openMissYou();
-        });
+    function openMissYou() {
+      const home = document.getElementById("home");
+      const room = document.getElementById("missRoom");
+      if (!room) return;
+
+      if (home) home.style.display = "none";
+      room.classList.add("show");
+      document.body.style.overflow = "hidden";
+      room.scrollTop = 0;
+    }
+
+    function closeMissYou() {
+      const home = document.getElementById("home");
+      const room = document.getElementById("missRoom");
+      if (room) room.classList.remove("show");
+      document.body.style.overflow = "auto";
+      if (home) home.style.display = "block";
+      window.scrollTo(0, 0);
+    }
+
+    function toggleMissEntry(button) {
+      const entry = button.closest(".miss-entry");
+      const content = entry && entry.querySelector(".miss-content");
+      if (!entry || !content) return;
+
+      if (entry.classList.contains("open")) {
+        entry.classList.remove("open");
+        content.style.maxHeight = "0px";
+      } else {
+        entry.classList.add("open");
+        content.style.maxHeight = content.scrollHeight + "px";
       }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".room-card").forEach(function (card) {
+        if (card.textContent.includes("When I Miss You")) {
+          card.style.cursor = "pointer";
+          card.addEventListener("click", openMissYou);
+        }
+      });
     });
 
 
-
-    /* =========================
+/* =========================
        ENTER HOME
     ========================== */
 
