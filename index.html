@@ -16,7 +16,7 @@
     body {
       min-height: 100vh;
       background:
-        radial-gradient(circle at 50% 20%, #211a17 0%, #0b0d0f 55%, #050607 100%);
+        radial-gradient(circle at 50% 15%, #251c18 0%, #0c0e10 48%, #050607 100%);
       color: #f2ece3;
       font-family: Georgia, "Times New Roman", serif;
     }
@@ -26,8 +26,8 @@
     }
 
     /* =========================
-       OPENING SCREEN
-    ========================= */
+       OPENING
+    ========================== */
 
     .opening {
       min-height: 100vh;
@@ -112,6 +112,10 @@
       text-transform: uppercase;
     }
 
+    /* =========================
+       OPENING HEARTS
+    ========================== */
+
     .heart {
       position: absolute;
       color: #a77b6a;
@@ -137,12 +141,12 @@
     }
 
     /* =========================
-       HOME ROOM
-    ========================= */
+       HOME
+    ========================== */
 
     .home {
       min-height: 100vh;
-      padding: 55px 7vw 70px;
+      padding: 45px 7vw 65px;
       opacity: 0;
       visibility: hidden;
       transform: translateY(25px);
@@ -158,52 +162,145 @@
       transform: translateY(0);
     }
 
-    .home-header {
+    /* =========================
+       MEMORY SKY
+    ========================== */
+
+    .memory-sky {
+      position: relative;
       max-width: 1150px;
-      margin: 0 auto 55px;
-      text-align: center;
+      height: 300px;
+      margin: 0 auto 25px;
+      overflow: hidden;
     }
 
-    .home-header .small {
+    .sky-title {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      padding-top: 25px;
+    }
+
+    .sky-title .small {
       font-size: 11px;
       letter-spacing: 4px;
       text-transform: uppercase;
       color: #a99a8c;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
-    .home-header h2 {
-      font-size: clamp(40px, 6vw, 70px);
+    .sky-title h2 {
+      font-size: clamp(42px, 6vw, 72px);
       font-weight: 400;
-      letter-spacing: 5px;
+      letter-spacing: 6px;
       margin-bottom: 18px;
     }
 
-    .home-header p {
-      color: #a99c91;
-      font-size: 16px;
-      font-style: italic;
-    }
-
-    .divider {
+    .sky-divider {
       width: 50px;
       height: 1px;
       background: #765f4f;
-      margin: 25px auto;
+      margin: 0 auto 20px;
     }
 
-    /* CARD GRID */
+    .sky-title p {
+      color: #a99c91;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    /* stars */
+
+    .star {
+      position: absolute;
+      color: #b99b7f;
+      font-size: 15px;
+      opacity: 0.35;
+      animation: twinkle 4s infinite ease-in-out;
+    }
+
+    .star.s1 {
+      left: 12%;
+      top: 24%;
+    }
+
+    .star.s2 {
+      left: 24%;
+      top: 62%;
+      animation-delay: 1s;
+    }
+
+    .star.s3 {
+      right: 15%;
+      top: 25%;
+      animation-delay: 2s;
+    }
+
+    .star.s4 {
+      right: 27%;
+      top: 67%;
+      animation-delay: 3s;
+    }
+
+    .star.s5 {
+      left: 45%;
+      top: 8%;
+      animation-delay: 1.5s;
+    }
+
+    .sky-heart {
+      position: absolute;
+      color: #9f7766;
+      opacity: 0.35;
+      font-size: 14px;
+      animation: pulse 5s infinite ease-in-out;
+    }
+
+    .sky-heart.h1 {
+      left: 18%;
+      top: 45%;
+    }
+
+    .sky-heart.h2 {
+      right: 19%;
+      top: 50%;
+      animation-delay: 2s;
+    }
+
+    /* =========================
+       MEMORY QUOTE
+    ========================== */
+
+    .memory-quote {
+      max-width: 850px;
+      margin: 0 auto 55px;
+      text-align: center;
+      padding: 22px 20px;
+      border-top: 1px solid rgba(180, 155, 130, 0.12);
+      border-bottom: 1px solid rgba(180, 155, 130, 0.12);
+    }
+
+    .memory-quote p {
+      font-size: 17px;
+      line-height: 1.7;
+      font-style: italic;
+      color: #c6b9ad;
+    }
+
+    /* =========================
+       ROOMS
+    ========================== */
 
     .rooms {
       max-width: 1150px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
+      gap: 20px;
     }
 
     .room-card {
-      min-height: 230px;
+      min-height: 205px;
       position: relative;
       overflow: hidden;
       border: 1px solid rgba(210, 193, 176, 0.14);
@@ -213,7 +310,7 @@
           rgba(52, 41, 34, 0.72),
           rgba(15, 16, 17, 0.82)
         );
-      padding: 34px;
+      padding: 32px;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -228,11 +325,12 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(
-        circle at top right,
-        rgba(174, 137, 109, 0.12),
-        transparent 45%
-      );
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(174, 137, 109, 0.12),
+          transparent 45%
+        );
       pointer-events: none;
     }
 
@@ -249,21 +347,21 @@
 
     .room-number {
       position: absolute;
-      top: 25px;
-      right: 28px;
+      top: 22px;
+      right: 25px;
       color: #66574d;
-      font-size: 11px;
+      font-size: 10px;
       letter-spacing: 2px;
     }
 
     .room-icon {
-      font-size: 27px;
+      font-size: 25px;
       color: #b79a82;
       margin-bottom: auto;
     }
 
     .room-card h3 {
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 400;
       margin-bottom: 9px;
       letter-spacing: 1px;
@@ -271,29 +369,29 @@
 
     .room-card p {
       color: #a99c91;
-      font-size: 14px;
-      line-height: 1.5;
-      max-width: 420px;
+      font-size: 13px;
+      line-height: 1.55;
+      max-width: 430px;
     }
 
     .wide-card {
       grid-column: span 2;
-      min-height: 190px;
+      min-height: 165px;
       text-align: center;
       align-items: center;
     }
 
     .wide-card .room-icon {
-      margin: 0 0 20px;
+      margin: 0 0 18px;
     }
 
     .wide-card p {
-      max-width: 550px;
+      max-width: 560px;
     }
 
     .home-footer {
       text-align: center;
-      margin-top: 60px;
+      margin-top: 50px;
       color: #645951;
       font-size: 10px;
       letter-spacing: 3px;
@@ -301,8 +399,8 @@
     }
 
     /* =========================
-       MESSAGE
-    ========================= */
+       TEMPORARY MESSAGE
+    ========================== */
 
     .message {
       position: fixed;
@@ -366,7 +464,7 @@
 
     /* =========================
        ANIMATIONS
-    ========================= */
+    ========================== */
 
     @keyframes appear {
       from {
@@ -382,19 +480,31 @@
 
     @keyframes pulse {
       0%, 100% {
-        opacity: 0.25;
+        opacity: 0.2;
         transform: scale(1);
       }
 
       50% {
-        opacity: 0.8;
+        opacity: 0.7;
         transform: scale(1.3);
+      }
+    }
+
+    @keyframes twinkle {
+      0%, 100% {
+        opacity: 0.15;
+        transform: scale(0.8);
+      }
+
+      50% {
+        opacity: 0.8;
+        transform: scale(1.35);
       }
     }
 
     /* =========================
        MOBILE
-    ========================= */
+    ========================== */
 
     @media (max-width: 700px) {
 
@@ -412,6 +522,14 @@
         margin-right: auto;
       }
 
+      .home {
+        padding: 30px 18px 50px;
+      }
+
+      .memory-sky {
+        height: 270px;
+      }
+
       .rooms {
         grid-template-columns: 1fr;
       }
@@ -421,11 +539,11 @@
       }
 
       .room-card {
-        min-height: 200px;
+        min-height: 190px;
       }
 
-      .home {
-        padding: 45px 20px 60px;
+      .memory-quote p {
+        font-size: 15px;
       }
     }
   </style>
@@ -472,27 +590,56 @@
 
 
   <!-- =========================
-       HOME ROOM
+       HOME
   ========================== -->
 
   <section class="home" id="home">
 
-    <header class="home-header">
+    <!-- MEMORY SKY -->
 
-      <div class="small">
-        Welcome home
+    <div class="memory-sky">
+
+      <span class="star s1">✦</span>
+      <span class="star s2">✦</span>
+      <span class="star s3">✦</span>
+      <span class="star s4">✦</span>
+      <span class="star s5">✦</span>
+
+      <span class="sky-heart h1">♡</span>
+      <span class="sky-heart h2">♡</span>
+
+      <div class="sky-title">
+
+        <div class="small">
+          Welcome home
+        </div>
+
+        <h2>HOME</h2>
+
+        <div class="sky-divider"></div>
+
+        <p>
+          A place for everything we remember.
+        </p>
+
       </div>
 
-      <h2>HOME</h2>
+    </div>
 
-      <div class="divider"></div>
+
+    <!-- MEMORY QUOTE -->
+
+    <div class="memory-quote">
 
       <p>
-        A place for everything we remember.
+        Somewhere between coffee, chaos and countless little things,
+        we became HOME.
       </p>
 
-    </header>
+    </div>
 
+
+    <!-- ROOMS -->
 
     <div class="rooms">
 
