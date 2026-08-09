@@ -772,7 +772,22 @@
     }
 
     
-    /* =========================
+    
+    document.addEventListener("DOMContentLoaded", function () {
+      const missCard = Array.from(document.querySelectorAll(".room-card")).find(card =>
+        card.textContent.includes("When I Miss You")
+      );
+
+      if (missCard) {
+        missCard.style.cursor = "pointer";
+        missCard.addEventListener("click", function (event) {
+          if (event.target.closest("button, a")) return;
+          openMissYou();
+        });
+      }
+    });
+
+/* =========================
        WHEN I MISS YOU
     ========================== */
 
@@ -1577,7 +1592,7 @@
 
       <div class="room-card wide-card" onclick="openMissYou()">
 
-        <div class="room-icon">♡</div>
+        <div class="room-icon" onclick="openMissYou()">♡</div>
 
         <h3>When I Miss You</h3>
 
