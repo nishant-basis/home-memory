@@ -771,6 +771,231 @@
       margin-top: 10px;
     }
 
+    
+    /* =========================
+       WHEN I MISS YOU
+    ========================== */
+
+    .miss-room {
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 25%, rgba(86, 60, 45, 0.16), transparent 34%),
+        #0a0909;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 34px 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.45s ease;
+      z-index: 35;
+      overflow-y: auto;
+    }
+
+    .miss-room.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .miss-shell {
+      width: min(900px, 100%);
+      padding: 30px 0 70px;
+      text-align: center;
+    }
+
+    .miss-topline {
+      color: #927763;
+      font-size: 9px;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .miss-shell h2 {
+      margin: 0;
+      font-size: clamp(42px, 6vw, 72px);
+      font-weight: 400;
+      letter-spacing: 0.04em;
+    }
+
+    .miss-intro {
+      max-width: 620px;
+      margin: 18px auto 42px;
+      color: #b9aaa0;
+      font-style: italic;
+      line-height: 1.8;
+    }
+
+    .miss-entry {
+      text-align: left;
+      border: 1px solid rgba(210, 193, 176, 0.14);
+      background: rgba(24, 20, 18, 0.78);
+      margin: 18px 0;
+      overflow: hidden;
+    }
+
+    .miss-entry-button {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      color: #eee5dc;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      text-align: left;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .miss-entry-button:hover {
+      background: rgba(210, 193, 176, 0.035);
+    }
+
+    .miss-date {
+      display: block;
+      color: #8f7562;
+      font-size: 9px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      margin-bottom: 9px;
+    }
+
+    .miss-title {
+      font-size: 22px;
+      font-family: Georgia, serif;
+    }
+
+    .miss-symbol {
+      color: #b99778;
+      font-size: 18px;
+      transition: transform 0.3s ease;
+      flex: 0 0 auto;
+    }
+
+    .miss-entry.open .miss-symbol {
+      transform: rotate(45deg);
+    }
+
+    .miss-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+
+    .miss-content-inner {
+      padding: 0 28px 28px;
+      color: #b9aaa0;
+      line-height: 1.9;
+      font-size: 16px;
+    }
+
+    .miss-content-inner p {
+      margin: 0 0 16px;
+    }
+
+    .miss-content-inner p:last-child {
+      margin-bottom: 0;
+    }
+
+    .miss-writing {
+      color: #c4a283;
+      font-style: italic;
+    }
+
+    .miss-footer {
+      margin-top: 42px;
+      color: #6f5e52;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .miss-close {
+      position: fixed;
+      right: 28px;
+      top: 22px;
+      z-index: 2;
+      border: 1px solid rgba(220, 205, 190, 0.24);
+      background: rgba(8, 8, 8, 0.55);
+      color: #b9aa9d;
+      padding: 9px 15px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 9px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 700px) {
+      .miss-room {
+        padding: 26px 14px 50px;
+      }
+
+      .miss-shell {
+        padding-top: 42px;
+      }
+
+      .miss-close {
+        right: 14px;
+        top: 14px;
+      }
+
+      .miss-entry-button {
+        padding: 20px;
+      }
+
+      .miss-content-inner {
+        padding: 0 20px 22px;
+      }
+
+      .miss-title {
+        font-size: 19px;
+      }
+    }
+
+
+    /* =========================
+       WHEN I MISS YOU
+    ========================== */
+
+    function openMissYou() {
+      const home = document.getElementById("home");
+      const room = document.getElementById("missRoom");
+
+      if (home) home.style.display = "none";
+      if (room) room.classList.add("show");
+
+      document.body.style.overflow = "hidden";
+      window.scrollTo(0, 0);
+    }
+
+    function closeMissYou() {
+      const home = document.getElementById("home");
+      const room = document.getElementById("missRoom");
+
+      if (room) room.classList.remove("show");
+      if (home) home.style.display = "block";
+
+      document.body.style.overflow = "auto";
+      window.scrollTo(0, 0);
+    }
+
+    function toggleMissEntry(button) {
+      const entry = button.closest(".miss-entry");
+      const content = entry.querySelector(".miss-content");
+
+      if (entry.classList.contains("open")) {
+        entry.classList.remove("open");
+        content.style.maxHeight = "0px";
+      } else {
+        entry.classList.add("open");
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    }
+
+
     /* =========================
        LITTLE MAGIC
     ========================== */
@@ -1350,7 +1575,7 @@
       </div>
 
 
-      <div class="room-card wide-card" onclick="openMessage('When I Miss You')">
+      <div class="room-card wide-card" onclick="openMissYou()">
 
         <div class="room-icon">♡</div>
 
@@ -1845,6 +2070,88 @@
 
     </div>
 
+  </section>
+
+
+  <!-- =========================
+       WHEN I MISS YOU ROOM
+  ========================== -->
+
+  <section class="miss-room" id="missRoom">
+
+    <button class="miss-close" onclick="closeMissYou()">← HOME</button>
+
+    <div class="miss-shell">
+
+      <div class="miss-topline">A room for the words that don't need a reason</div>
+
+      <h2>When I Miss You</h2>
+
+      <p class="miss-intro">
+        Not every thought needs a particular date, occasion or reason.
+        Some simply arrive — and deserve somewhere to stay.
+      </p>
+
+      <article class="miss-entry">
+        <button class="miss-entry-button" onclick="toggleMissEntry(this)">
+          <span>
+            <span class="miss-date">The first page</span>
+            <span class="miss-title">For the days I don't know what to say</span>
+          </span>
+          <span class="miss-symbol">+</span>
+        </button>
+        <div class="miss-content">
+          <div class="miss-content-inner">
+            <p>
+              Some days there isn't a story to tell. Nothing happened that
+              deserves a chapter. I just thought of you.
+            </p>
+            <p class="miss-writing">
+              And somehow, that felt like enough of a reason to write.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="miss-entry">
+        <button class="miss-entry-button" onclick="toggleMissEntry(this)">
+          <span>
+            <span class="miss-date">A place waiting for a memory</span>
+            <span class="miss-title">This one will be written later</span>
+          </span>
+          <span class="miss-symbol">+</span>
+        </button>
+        <div class="miss-content">
+          <div class="miss-content-inner">
+            <p>This is deliberately unfinished.</p>
+            <p class="miss-writing">
+              One day, something will happen and I will know exactly why it belongs here.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="miss-entry">
+        <button class="miss-entry-button" onclick="toggleMissEntry(this)">
+          <span>
+            <span class="miss-date">For your birthday</span>
+            <span class="miss-title">25 September</span>
+          </span>
+          <span class="miss-symbol">+</span>
+        </button>
+        <div class="miss-content">
+          <div class="miss-content-inner">
+            <p><span class="miss-writing">This space is reserved.</span></p>
+            <p>The birthday note will live here when the time comes.</p>
+          </div>
+        </div>
+      </article>
+
+      <div class="miss-footer">
+        This room is allowed to keep growing.
+      </div>
+
+    </div>
   </section>
 
 
