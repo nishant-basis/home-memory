@@ -560,6 +560,16 @@
       font-style: italic;
     }
 
+
+    /* Final Chapter I layout: the marker is decorative; no connector line. */
+    .memory-marker::after,
+    .memory-marker::before,
+    .memory-date::after,
+    .memory-date::before {
+      display: none !important;
+      content: none !important;
+    }
+
     .memory-feature {
       max-width: 1050px;
       margin: 0 auto;
