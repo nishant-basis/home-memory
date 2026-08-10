@@ -1545,7 +1545,7 @@
 .places-room{
   position:fixed;
   inset:0;
-  z-index:9997;
+  z-index:99999;
   display:flex;
   justify-content:center;
   overflow-y:auto;
@@ -1764,7 +1764,8 @@
       </div>
 
 
-      <div class="room-card" onclick="openPlacesRoom()" style="cursor:pointer">
+      <div class="room-card" style="cursor:pointer"
+onclick="(function(){var h=document.getElementById('home'),p=document.getElementById('placesRoom'),g=document.getElementById('goaRoom'),g2=document.getElementById('goaRoom2');if(h)h.style.display='none';if(g)g.classList.remove('show');if(g2)g2.classList.remove('show');if(p){p.classList.add('show');p.scrollTop=0;}document.body.style.overflow='hidden';})()">
 
         <span class="room-number">02</span>
 
@@ -2314,7 +2315,7 @@
 
 <section class="places-room" id="placesRoom">
   <button class="goa-close" type="button"
-    onclick="closePlacesRoom()">← HOME</button>
+    onclick="document.getElementById('placesRoom').classList.remove('show');document.getElementById('home').style.display='block';document.body.style.overflow='auto';window.scrollTo(0,0);">← HOME</button>
 
   <div class="places-shell">
     <div class="goa-kicker">OUR PLACES</div>
@@ -2326,7 +2327,8 @@
     <div class="goa-line"></div>
 
     <div class="places-chapters">
-      <button class="places-chapter" type="button" onclick="openGoa()">
+      <button class="places-chapter" type="button"
+onclick="document.getElementById('placesRoom').classList.remove('show');document.getElementById('goaRoom').classList.add('show');document.body.style.overflow='hidden';">
         <div class="places-chapter-number">01</div>
         <div class="places-chapter-kicker">OUR FIRST ANNIVERSARY</div>
         <h3>GOA</h3>
@@ -2334,7 +2336,8 @@
         <span>Open chapter&nbsp; →</span>
       </button>
 
-      <button class="places-chapter" type="button" onclick="openGoa2()">
+      <button class="places-chapter" type="button"
+onclick="document.getElementById('placesRoom').classList.remove('show');document.getElementById('goaRoom2').classList.add('show');document.body.style.overflow='hidden';">
         <div class="places-chapter-number">02</div>
         <div class="places-chapter-kicker">OUR SECOND GOA TRIP</div>
         <h3>GOA AGAIN</h3>
@@ -2350,7 +2353,8 @@
 </section>
 
 <section class="goa-room" id="goaRoom">
-<button class="goa-close" type="button" onclick="closeGoaToPlaces()">← PLACES</button>
+<button class="goa-close" type="button"
+onclick="(function(){var r=document.getElementById('goaRoom'),d=document.getElementById('goaDetail'),p=document.getElementById('placesRoom');if(d)d.classList.remove('show');if(r)r.classList.remove('show');if(p){p.classList.add('show');p.scrollTop=0;}document.body.style.overflow='hidden';})()">← PLACES</button>
 <div class="goa-shell">
 <div class="goa-kicker">OUR PLACES · CHAPTER I</div>
 <div class="goa-anniversary">OUR FIRST ANNIVERSARY</div>
@@ -2365,7 +2369,8 @@
 <div class="goa-detail" id="goaDetail" onclick="closeGoaDetail(event)"><div class="goa-detail-box" onclick="event.stopPropagation()"><button class="goa-detail-close" onclick="closeGoaDetail()">×</button><h3 id="goaDetailTitle"></h3><div id="goaDetailBody"></div></div></div></section>
 
 <section class="goa-room" id="goaRoom2">
-<button class="goa-close" type="button" onclick="closePlacesRoom()">← HOME</button>
+<button class="goa-close" type="button"
+onclick="(function(){var r=document.getElementById('goaRoom2'),d=document.getElementById('goaDetail2'),p=document.getElementById('placesRoom');if(d)d.classList.remove('show');if(r)r.classList.remove('show');if(p){p.classList.add('show');p.scrollTop=0;}document.body.style.overflow='hidden';})()">← PLACES</button>
 <div class="goa-shell">
 <div class="goa-kicker">OUR PLACES · CHAPTER II</div>
 <div class="goa-anniversary">OUR SECOND GOA TRIP</div>
@@ -2710,7 +2715,100 @@ Instead, we fought. We laughed. We got irritated. We ate pasta. We worried about
   </div>
 
 
-  <script>
+  
+
+
+function openPlacesMenu(){
+  const menu = document.getElementById("placesMenu");
+  if (menu) menu.classList.add("show");
+}
+function closePlacesMenu(e){
+  if (e && e.target !== e.currentTarget) return;
+  const menu = document.getElementById("placesMenu");
+  if (menu) menu.classList.remove("show");
+}
+
+function openGoa2(){
+  const home = document.getElementById("home");
+  const room = document.getElementById("goaRoom2");
+  if (home) home.style.display = "none";
+  if (room) {
+    room.classList.add("show");
+    room.scrollTop = 0;
+  }
+  document.body.style.overflow = "hidden";
+}
+function closeGoa2(){
+  const room = document.getElementById("goaRoom2");
+  const detail = document.getElementById("goaDetail2");
+  const home = document.getElementById("home");
+  if (detail) detail.classList.remove("show");
+  if (room) room.classList.remove("show");
+  if (home) home.style.display = "block";
+  document.body.style.overflow = "auto";
+  window.scrollTo({top:0, behavior:"instant"});
+}
+
+const goaDetails2 = [
+  ["The Annual Tradition", "Goa became ours. After the first trip together, we decided it should become an annual thing. August was my birthday, September was yours, so we invented our own date in between — because the actual dates belonged with our families.<br><br><strong>Our birthdays, our Goa, our little tradition.</strong>"],
+  ["This Time, You Planned", "After Goa I, we discovered something important: we were probably better planners than MMT. 😂 And because I would always choose things based on price, you took the onus this time.<br><br>You planned everything. I mostly participated.<br><br><strong>And somehow, that became our system.</strong>"],
+  ["North Goa, Again", "It was a short trip, so we stayed in North Goa. Holitel was close to the beach and genuinely wonderful.<br><br>No attempt to conquer the whole state this time. Just the places we wanted, the food we liked, and our own little corner of Goa.<br><br><strong>North Goa was enough.</strong>"],
+  ["The Goa That Came With Work", "This Goa was different. It was hot, chaotic, and our old favourite places weren't serving food like they used to.<br><br>And work had somehow followed us. Europe was waiting right after the trip — passport submissions, forex card, MO raising, interview sections, last-minute and incomplete information, and a project lead making everything harder.<br><br>You were carrying so much in your head that eventually...<br><br><strong>we started fighting.</strong>"],
+  ["We Can Fight About Anything", "We can apparently fight about absolutely anything.<br><br>Including a document that was at your home, which you asked your brother to scan. And somehow I found a reason to fight about that too.<br><br>Does it make sense? Absolutely not.<br><br><strong>Did we fight anyway? Obviously. 😂</strong>"],
+  ["The Pasta Peace Treaty", "We had another fight. So naturally, we went to our pasta place. By now the waiters recognized us.<br><br>We ordered separately and stayed annoyed. Another couple opposite us had clearly noticed.<br><br>Then the food arrived. A fork of pasta came towards me. I refused. You scolded me. And somehow the entire fight disappeared.<br><br>The older couple started laughing at us.<br><br><strong>Apparently pasta is our version of couples therapy.</strong>"],
+  ["Your Aura", "We went into a shop and I stepped outside to get the car. The shopkeeper looked at you and asked, “Madam, stuff chahiye kya?”<br><br>We both burst out laughing.<br><br>Apparently your aura suggested: “Yes, this woman definitely knows where to get the stuff.”<br><br>Meanwhile I apparently looked like:<br><strong>“Don't worry, he drinks milk.” 😂</strong>"],
+  ["The Airport Fight", "And then came the ending. Naturally, it included another fight.<br><br>You threw your boarding pass. You hadn't eaten. My sugar was dropping on the plane. And you were still angry.<br><br>Then, in full irritation, you put chocolate into my mouth.<br><br>No cinematic romance. Just an angry girlfriend making sure I didn't go hungry.<br><br>And somehow, by the time the plane landed...<br><br><strong>we were love birds again. ❤️</strong>"]
+];
+
+function openGoaDetail2(index){
+  const x = goaDetails2[index];
+  if (!x) return;
+  document.getElementById("goaDetailTitle2").textContent = x[0];
+  document.getElementById("goaDetailBody2").innerHTML = "<p>" + x[1] + "</p>";
+  document.getElementById("goaDetail2").classList.add("show");
+}
+function closeGoaDetail2(e){
+  if (e && e.target !== e.currentTarget) return;
+  document.getElementById("goaDetail2").classList.remove("show");
+}
+
+
+function openPlacesRoom(){
+  const home=document.getElementById("home");
+  const room=document.getElementById("placesRoom");
+  if(home) home.style.display="none";
+  if(room){
+    room.classList.add("show");
+    room.scrollTop=0;
+  }
+  document.body.style.overflow="hidden";
+}
+function closePlacesRoom(){
+  const places=document.getElementById("placesRoom");
+  const goa=document.getElementById("goaRoom");
+  const goa2=document.getElementById("goaRoom2");
+  const home=document.getElementById("home");
+  if(places) places.classList.remove("show");
+  if(goa) goa.classList.remove("show");
+  if(goa2) goa2.classList.remove("show");
+  if(home) home.style.display="block";
+  document.body.style.overflow="auto";
+  window.scrollTo({top:0,behavior:"instant"});
+}
+
+
+function closeGoaToPlaces(){
+  const room=document.getElementById("goaRoom");
+  const detail=document.getElementById("goaDetail");
+  const places=document.getElementById("placesRoom");
+  if(detail) detail.classList.remove("show");
+  if(room) room.classList.remove("show");
+  if(places) places.classList.add("show");
+  document.body.style.overflow="hidden";
+}
+
+
+<script>
     /* =========================
        WHEN I MISS YOU
     ========================== */
@@ -2918,100 +3016,6 @@ Instead, we fought. We laughed. We got irritated. We ate pasta. We worried about
     }
 
   </script>
-
-
-function openPlacesMenu(){
-  const menu = document.getElementById("placesMenu");
-  if (menu) menu.classList.add("show");
-}
-function closePlacesMenu(e){
-  if (e && e.target !== e.currentTarget) return;
-  const menu = document.getElementById("placesMenu");
-  if (menu) menu.classList.remove("show");
-}
-
-function openGoa2(){
-  const home = document.getElementById("home");
-  const room = document.getElementById("goaRoom2");
-  if (home) home.style.display = "none";
-  if (room) {
-    room.classList.add("show");
-    room.scrollTop = 0;
-  }
-  document.body.style.overflow = "hidden";
-}
-function closeGoa2(){
-  const room = document.getElementById("goaRoom2");
-  const detail = document.getElementById("goaDetail2");
-  const home = document.getElementById("home");
-  if (detail) detail.classList.remove("show");
-  if (room) room.classList.remove("show");
-  if (home) home.style.display = "block";
-  document.body.style.overflow = "auto";
-  window.scrollTo({top:0, behavior:"instant"});
-}
-
-const goaDetails2 = [
-  ["The Annual Tradition", "Goa became ours. After the first trip together, we decided it should become an annual thing. August was my birthday, September was yours, so we invented our own date in between — because the actual dates belonged with our families.<br><br><strong>Our birthdays, our Goa, our little tradition.</strong>"],
-  ["This Time, You Planned", "After Goa I, we discovered something important: we were probably better planners than MMT. 😂 And because I would always choose things based on price, you took the onus this time.<br><br>You planned everything. I mostly participated.<br><br><strong>And somehow, that became our system.</strong>"],
-  ["North Goa, Again", "It was a short trip, so we stayed in North Goa. Holitel was close to the beach and genuinely wonderful.<br><br>No attempt to conquer the whole state this time. Just the places we wanted, the food we liked, and our own little corner of Goa.<br><br><strong>North Goa was enough.</strong>"],
-  ["The Goa That Came With Work", "This Goa was different. It was hot, chaotic, and our old favourite places weren't serving food like they used to.<br><br>And work had somehow followed us. Europe was waiting right after the trip — passport submissions, forex card, MO raising, interview sections, last-minute and incomplete information, and a project lead making everything harder.<br><br>You were carrying so much in your head that eventually...<br><br><strong>we started fighting.</strong>"],
-  ["We Can Fight About Anything", "We can apparently fight about absolutely anything.<br><br>Including a document that was at your home, which you asked your brother to scan. And somehow I found a reason to fight about that too.<br><br>Does it make sense? Absolutely not.<br><br><strong>Did we fight anyway? Obviously. 😂</strong>"],
-  ["The Pasta Peace Treaty", "We had another fight. So naturally, we went to our pasta place. By now the waiters recognized us.<br><br>We ordered separately and stayed annoyed. Another couple opposite us had clearly noticed.<br><br>Then the food arrived. A fork of pasta came towards me. I refused. You scolded me. And somehow the entire fight disappeared.<br><br>The older couple started laughing at us.<br><br><strong>Apparently pasta is our version of couples therapy.</strong>"],
-  ["Your Aura", "We went into a shop and I stepped outside to get the car. The shopkeeper looked at you and asked, “Madam, stuff chahiye kya?”<br><br>We both burst out laughing.<br><br>Apparently your aura suggested: “Yes, this woman definitely knows where to get the stuff.”<br><br>Meanwhile I apparently looked like:<br><strong>“Don't worry, he drinks milk.” 😂</strong>"],
-  ["The Airport Fight", "And then came the ending. Naturally, it included another fight.<br><br>You threw your boarding pass. You hadn't eaten. My sugar was dropping on the plane. And you were still angry.<br><br>Then, in full irritation, you put chocolate into my mouth.<br><br>No cinematic romance. Just an angry girlfriend making sure I didn't go hungry.<br><br>And somehow, by the time the plane landed...<br><br><strong>we were love birds again. ❤️</strong>"]
-];
-
-function openGoaDetail2(index){
-  const x = goaDetails2[index];
-  if (!x) return;
-  document.getElementById("goaDetailTitle2").textContent = x[0];
-  document.getElementById("goaDetailBody2").innerHTML = "<p>" + x[1] + "</p>";
-  document.getElementById("goaDetail2").classList.add("show");
-}
-function closeGoaDetail2(e){
-  if (e && e.target !== e.currentTarget) return;
-  document.getElementById("goaDetail2").classList.remove("show");
-}
-
-
-function openPlacesRoom(){
-  const home=document.getElementById("home");
-  const room=document.getElementById("placesRoom");
-  if(home) home.style.display="none";
-  if(room){
-    room.classList.add("show");
-    room.scrollTop=0;
-  }
-  document.body.style.overflow="hidden";
-}
-function closePlacesRoom(){
-  const places=document.getElementById("placesRoom");
-  const goa=document.getElementById("goaRoom");
-  const goa2=document.getElementById("goaRoom2");
-  const home=document.getElementById("home");
-  if(places) places.classList.remove("show");
-  if(goa) goa.classList.remove("show");
-  if(goa2) goa2.classList.remove("show");
-  if(home) home.style.display="block";
-  document.body.style.overflow="auto";
-  window.scrollTo({top:0,behavior:"instant"});
-}
-
-
-function closeGoaToPlaces(){
-  const room=document.getElementById("goaRoom");
-  const detail=document.getElementById("goaDetail");
-  const places=document.getElementById("placesRoom");
-  if(detail) detail.classList.remove("show");
-  if(room) room.classList.remove("show");
-  if(places) places.classList.add("show");
-  document.body.style.overflow="hidden";
-}
-
-</body>
-</html>
-
 <script>
 
 function openGoa(){
@@ -3047,5 +3051,36 @@ function openGoaDetail(i){
   document.getElementById('goaDetail').classList.add('show');
 }
 function closeGoaDetail(e){if(e&&e.target!==e.currentTarget)return;document.getElementById('goaDetail').classList.remove('show');}
-document.addEventListener('DOMContentLoaded',()=>{const c=[...document.querySelectorAll('.room-card')].find(x=>x.textContent.includes('Our Places'));if(c){c.onclick=()=>openGoa();c.style.cursor='pointer';}});
+
+
+function closeGoa2ToPlaces(){
+  const room=document.getElementById('goaRoom2');
+  const detail=document.getElementById('goaDetail2');
+  const places=document.getElementById('placesRoom');
+  if(detail) detail.classList.remove('show');
+  if(room) room.classList.remove('show');
+  if(places) places.classList.add('show');
+  document.body.style.overflow='hidden';
+}
+
 </script>
+
+<script>
+
+window.openPlacesRoom = function(){
+  var h=document.getElementById('home');
+  var p=document.getElementById('placesRoom');
+  var g=document.getElementById('goaRoom');
+  var g2=document.getElementById('goaRoom2');
+  if(h) h.style.display='none';
+  if(g) g.classList.remove('show');
+  if(g2) g2.classList.remove('show');
+  if(p) p.classList.add('show');
+  document.body.style.overflow='hidden';
+};
+
+</script>
+</body>
+</html>
+
+
