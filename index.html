@@ -1561,7 +1561,7 @@
       </div>
 
 
-      <div class="room-card" onclick="openGoa()">
+      <div class="room-card" onclick="document.getElementById('home').style.display='none';document.getElementById('goaRoom').classList.add('show');document.body.style.overflow='hidden';" style="cursor:pointer">
 
         <span class="room-number">02</span>
 
@@ -2108,7 +2108,7 @@
 
   
 <section class="goa-room" id="goaRoom">
-<button class="goa-close" type="button" onclick="closeGoa()">← HOME</button>
+<button class="goa-close" type="button" onclick="document.getElementById('goaRoom').classList.remove('show');document.getElementById('home').style.display='block';document.body.style.overflow='auto';window.scrollTo({top:0,behavior:'instant'});">← HOME</button>
 <div class="goa-shell">
 <div class="goa-kicker">OUR PLACES · CHAPTER II</div>
 <div class="goa-anniversary">OUR SECOND GOA TRIP</div>
