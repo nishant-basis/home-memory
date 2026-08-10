@@ -1738,6 +1738,27 @@
 
 /* Final interaction safeguard */
 .goa-again-fragment-modal { z-index:100000 !important; }
+
+/* GOA AGAIN — direct card-to-story interaction */
+#goaRoom2 .goa-story-link{
+  cursor:pointer;
+  pointer-events:auto !important;
+  user-select:none;
+}
+#goaRoom2 .goa-story-link:hover{
+  transform:translateY(-2px);
+}
+.goa-again-fragment-modal.show{
+  opacity:1 !important;
+  visibility:visible !important;
+  pointer-events:auto !important;
+}
+.goa-again-fragment-close{
+  border:0;
+  background:transparent;
+  cursor:pointer;
+}
+
 </style>
 </head>
 
@@ -2465,7 +2486,7 @@ onclick="(function(){var r=document.getElementById('goaRoom2'),d=document.getEle
 <p class="goa-subtitle">Because apparently once was never going to be enough.</p><div class="goa-line"></div>
 <img class="goa-photo hero" src="goa_again_hero.png" alt="Goa Again — another sunset together">
 
-<div class="goa-timeline"><a class="goa-card goa-story-link" href="#goaAgainStory1" aria-label="Open The Annual Tradition"><div class="goa-icon">💝</div><div class="goa-number">01 · THE ANNUAL TRADITION</div><h3>The Annual Tradition</h3><p>Goa became ours. We decided to come back at least once every year and celebrate our birthdays together in between.</p><span class="goa-arrow">+</span></a><a class="goa-card goa-story-link" href="#goaAgainStory2" aria-label="Open This Time, You Planned"><div class="goa-icon">🗺️</div><div class="goa-number">02 · THIS TIME, YOU PLANNED</div><h3>This Time, You Planned</h3><p>After Goa I, we realized we were better planners than MMT. You took charge this time. I just looked at prices. As always. 😂</p><span class="goa-arrow">+</span></a><a class="goa-card goa-story-link" href="#goaAgainStory3" aria-label="Open North Goa, Again"><div class="goa-icon">🏨</div><div class="goa-number">03 · NORTH GOA, AGAIN</div><h3>North Goa, Again</h3><p>A short trip, so we stayed at Holitel, close to the beach. North Goa was all we needed.</p><span class="goa-arrow">+</span></a><a class="goa-card goa-story-link" href="#goaAgainStory4" aria-label="Open The Goa That Came With Work"><div class="goa-icon">💼</div><div class="goa-number">04 · THE GOA THAT CAME WITH WORK</div><h3>The Goa That Came With Work</h3><p>Heat, office tension, Europe preparations, passports, forex, MO, interviews and last-minute chaos. Work followed us to Goa.</p><span class="goa-arrow">+</span></a><a class="goa-card goa-story-link" href="#goaAgainStory5" aria-label="Open We Can Fight About Anything"><div class="goa-icon">😡</div><div class="goa-number">05 · WE CAN FIGHT ABOUT ANYTHING</div><h3>We Can Fight About Anything</h3><p>We fought over a document that was at your home and you asked your brother to scan. Does that even make sense? But that's us. 😂</p><span class="goa-arrow">+</span></a><a class="goa-card goa-story-link" href="#goaAgainStory6" aria-label="Open The Pasta Peace Treaty"><div class="goa-icon">🍝</div><div class="goa-number">06 · THE PASTA PEACE TREATY</div><h3>The Pasta Peace Treaty</h3><p>We fought, went to our pasta place, ordered separately — and one fork of pasta somehow ended the entire fight.</p><span class="goa-arrow">+</span></a><a class="goa-card goa-story-link" href="#goaAgainStory7" aria-label="Open Your Aura"><div class="goa-icon">🥸</div><div class="goa-number">07 · YOUR AURA</div><h3>Your Aura</h3><p>A shopkeeper asked you, “Madam, stuff chahiye kya?” We couldn't stop laughing. Your aura said one thing. I looked like a milk-drinking boy. 😂</p><span class="goa-arrow">+</span></a><a class="goa-card goa-story-link" href="#goaAgainStory8" aria-label="Open The Airport Fight"><div class="goa-icon">✈️</div><div class="goa-number">08 · THE AIRPORT FIGHT</div><h3>The Airport Fight</h3><p>We fought at the airport, you threw your boarding pass, my sugar dropped on the plane — and you angrily put chocolate in my mouth. By landing, we were love birds again. ❤️</p><span class="goa-arrow">+</span></a></div><img class="goa-photo closing" src="goa_again_closing.png" alt="Goa Again — evening by the sea">
+<div class="goa-timeline"><div class="goa-card goa-story-link" role="button" tabindex="0" aria-label="Open The Annual Tradition" onclick="document.getElementById('goaAgainStory1').classList.add('show');document.body.style.overflow='hidden';" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"><div class="goa-icon">💝</div><div class="goa-number">01 · THE ANNUAL TRADITION</div><h3>The Annual Tradition</h3><p>Goa became ours. We decided to come back at least once every year and celebrate our birthdays together in between.</p><span class="goa-arrow">+</span></div><div class="goa-card goa-story-link" role="button" tabindex="0" aria-label="Open This Time, You Planned" onclick="document.getElementById('goaAgainStory2').classList.add('show');document.body.style.overflow='hidden';" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"><div class="goa-icon">🗺️</div><div class="goa-number">02 · THIS TIME, YOU PLANNED</div><h3>This Time, You Planned</h3><p>After Goa I, we realized we were better planners than MMT. You took charge this time. I just looked at prices. As always. 😂</p><span class="goa-arrow">+</span></div><div class="goa-card goa-story-link" role="button" tabindex="0" aria-label="Open North Goa, Again" onclick="document.getElementById('goaAgainStory3').classList.add('show');document.body.style.overflow='hidden';" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"><div class="goa-icon">🏨</div><div class="goa-number">03 · NORTH GOA, AGAIN</div><h3>North Goa, Again</h3><p>A short trip, so we stayed at Holitel, close to the beach. North Goa was all we needed.</p><span class="goa-arrow">+</span></div><div class="goa-card goa-story-link" role="button" tabindex="0" aria-label="Open The Goa That Came With Work" onclick="document.getElementById('goaAgainStory4').classList.add('show');document.body.style.overflow='hidden';" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"><div class="goa-icon">💼</div><div class="goa-number">04 · THE GOA THAT CAME WITH WORK</div><h3>The Goa That Came With Work</h3><p>Heat, office tension, Europe preparations, passports, forex, MO, interviews and last-minute chaos. Work followed us to Goa.</p><span class="goa-arrow">+</span></div><div class="goa-card goa-story-link" role="button" tabindex="0" aria-label="Open We Can Fight About Anything" onclick="document.getElementById('goaAgainStory5').classList.add('show');document.body.style.overflow='hidden';" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"><div class="goa-icon">😡</div><div class="goa-number">05 · WE CAN FIGHT ABOUT ANYTHING</div><h3>We Can Fight About Anything</h3><p>We fought over a document that was at your home and you asked your brother to scan. Does that even make sense? But that's us. 😂</p><span class="goa-arrow">+</span></div><div class="goa-card goa-story-link" role="button" tabindex="0" aria-label="Open The Pasta Peace Treaty" onclick="document.getElementById('goaAgainStory6').classList.add('show');document.body.style.overflow='hidden';" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"><div class="goa-icon">🍝</div><div class="goa-number">06 · THE PASTA PEACE TREATY</div><h3>The Pasta Peace Treaty</h3><p>We fought, went to our pasta place, ordered separately — and one fork of pasta somehow ended the entire fight.</p><span class="goa-arrow">+</span></div><div class="goa-card goa-story-link" role="button" tabindex="0" aria-label="Open Your Aura" onclick="document.getElementById('goaAgainStory7').classList.add('show');document.body.style.overflow='hidden';" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"><div class="goa-icon">🥸</div><div class="goa-number">07 · YOUR AURA</div><h3>Your Aura</h3><p>A shopkeeper asked you, “Madam, stuff chahiye kya?” We couldn't stop laughing. Your aura said one thing. I looked like a milk-drinking boy. 😂</p><span class="goa-arrow">+</span></div><div class="goa-card goa-story-link" role="button" tabindex="0" aria-label="Open The Airport Fight" onclick="document.getElementById('goaAgainStory8').classList.add('show');document.body.style.overflow='hidden';" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"><div class="goa-icon">✈️</div><div class="goa-number">08 · THE AIRPORT FIGHT</div><h3>The Airport Fight</h3><p>We fought at the airport, you threw your boarding pass, my sugar dropped on the plane — and you angrily put chocolate in my mouth. By landing, we were love birds again. ❤️</p><span class="goa-arrow">+</span></div></div><img class="goa-photo closing" src="goa_again_closing.png" alt="Goa Again — evening by the sea">
 <div class="goa-end">
 We came back to Goa thinking we'd celebrate our birthdays.<br><br>
 Instead, we fought. We laughed. We got irritated. We ate pasta. We worried about Europe. We made up.<br><br>
@@ -3198,7 +3219,7 @@ window.openPlacesRoom = function(){
 </script>
 <div class="goa-again-fragment-modal" id="goaAgainStory1">
   <div class="goa-again-fragment-box">
-    <a class="goa-again-fragment-close" href="#goaRoom2" aria-label="Close">×</a>
+    <button class="goa-again-fragment-close" type="button" aria-label="Close" onclick="document.getElementById('goaAgainStory1').classList.remove('show');document.body.style.overflow='hidden';">×</button>
     <h3>The Annual Tradition</h3>
     <div class="goa-line"></div>
     <p>Goa had quietly become something of our own.<br><br>
@@ -3210,7 +3231,7 @@ We were celebrating on a date that mattered to us.</p>
 </div>
 <div class="goa-again-fragment-modal" id="goaAgainStory2">
   <div class="goa-again-fragment-box">
-    <a class="goa-again-fragment-close" href="#goaRoom2" aria-label="Close">×</a>
+    <button class="goa-again-fragment-close" type="button" aria-label="Close" onclick="document.getElementById('goaAgainStory2').classList.remove('show');document.body.style.overflow='hidden';">×</button>
     <h3>This Time, You Planned</h3>
     <div class="goa-line"></div>
     <p>After our first Goa trip, we had learned something important:<br><br>
@@ -3223,7 +3244,7 @@ And honestly, I loved seeing you take charge of our little escape.</p>
 </div>
 <div class="goa-again-fragment-modal" id="goaAgainStory3">
   <div class="goa-again-fragment-box">
-    <a class="goa-again-fragment-close" href="#goaRoom2" aria-label="Close">×</a>
+    <button class="goa-again-fragment-close" type="button" aria-label="Close" onclick="document.getElementById('goaAgainStory3').classList.remove('show');document.body.style.overflow='hidden';">×</button>
     <h3>North Goa, Again</h3>
     <div class="goa-line"></div>
     <p>This time we kept things simple.<br><br>
@@ -3235,7 +3256,7 @@ Just us, the beach, the heat, the chaos and a few places that had slowly become 
 </div>
 <div class="goa-again-fragment-modal" id="goaAgainStory4">
   <div class="goa-again-fragment-box">
-    <a class="goa-again-fragment-close" href="#goaRoom2" aria-label="Close">×</a>
+    <button class="goa-again-fragment-close" type="button" aria-label="Close" onclick="document.getElementById('goaAgainStory4').classList.remove('show');document.body.style.overflow='hidden';">×</button>
     <h3>The Goa That Came With Work</h3>
     <div class="goa-line"></div>
     <p>This Goa came with something our first one didn't: work stress.<br><br>
@@ -3249,7 +3270,7 @@ Because apparently that's another one of our traditions.</p>
 </div>
 <div class="goa-again-fragment-modal" id="goaAgainStory5">
   <div class="goa-again-fragment-box">
-    <a class="goa-again-fragment-close" href="#goaRoom2" aria-label="Close">×</a>
+    <button class="goa-again-fragment-close" type="button" aria-label="Close" onclick="document.getElementById('goaAgainStory5').classList.remove('show');document.body.style.overflow='hidden';">×</button>
     <h3>We Can Fight About Anything</h3>
     <div class="goa-line"></div>
     <p>There is genuinely no subject too small for us to fight about.<br><br>
@@ -3265,7 +3286,7 @@ And then, somehow, we're completely fine again.</p>
 </div>
 <div class="goa-again-fragment-modal" id="goaAgainStory6">
   <div class="goa-again-fragment-box">
-    <a class="goa-again-fragment-close" href="#goaRoom2" aria-label="Close">×</a>
+    <button class="goa-again-fragment-close" type="button" aria-label="Close" onclick="document.getElementById('goaAgainStory6').classList.remove('show');document.body.style.overflow='hidden';">×</button>
     <h3>The Pasta Peace Treaty</h3>
     <div class="goa-line"></div>
     <p>We had fought.<br><br>
@@ -3284,7 +3305,7 @@ Apparently, pasta is our version of couples therapy.</p>
 </div>
 <div class="goa-again-fragment-modal" id="goaAgainStory7">
   <div class="goa-again-fragment-box">
-    <a class="goa-again-fragment-close" href="#goaRoom2" aria-label="Close">×</a>
+    <button class="goa-again-fragment-close" type="button" aria-label="Close" onclick="document.getElementById('goaAgainStory7').classList.remove('show');document.body.style.overflow='hidden';">×</button>
     <h3>Your Aura</h3>
     <div class="goa-line"></div>
     <p>This was one of those completely random moments that should mean absolutely nothing — and somehow became a memory.<br><br>
@@ -3300,7 +3321,7 @@ Which is probably why we remember it.</p>
 </div>
 <div class="goa-again-fragment-modal" id="goaAgainStory8">
   <div class="goa-again-fragment-box">
-    <a class="goa-again-fragment-close" href="#goaRoom2" aria-label="Close">×</a>
+    <button class="goa-again-fragment-close" type="button" aria-label="Close" onclick="document.getElementById('goaAgainStory8').classList.remove('show');document.body.style.overflow='hidden';">×</button>
     <h3>The Airport Fight</h3>
     <div class="goa-line"></div>
     <p>Even the ending had to be dramatic.<br><br>
