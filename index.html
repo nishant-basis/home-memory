@@ -1735,6 +1735,9 @@
   .goa-again-fragment-box p{font-size:15px;}
 }
 
+
+/* Final interaction safeguard */
+.goa-again-fragment-modal { z-index:100000 !important; }
 </style>
 </head>
 
@@ -2447,7 +2450,7 @@ onclick="(function(){var r=document.getElementById('goaRoom'),d=document.getElem
 <img class="goa-photo hero" src="goa_first_anniversary_hero.png" alt="Goa first anniversary sunset by the sea">
 
 <div class="goa-timeline">
-<article class="goa-card" onclick="openGoaDetail2(7)"><div class="goa-icon">✈️</div><div class="goa-number">01 · Operation Goa</div><h3>The Plan</h3><p>MMT, matching flights, edited PDFs & stories for parents. 😂</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(1)"><div class="goa-icon">🚗</div><div class="goa-number">02 · First Mission</div><h3>Find the Lens Solution</h3><p>Forget beaches. This was mission number one.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(2)"><div class="goa-icon">🌴</div><div class="goa-number">03 · Our Goa</div><h3>No Chinta. No Fikr.</h3><p>Sunscreen, matching outfits, wrong turns and nowhere we needed to be.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(3)"><div class="goa-icon">🏖️</div><div class="goa-number">04 · The Drive</div><h3>Varka</h3><p>Two hours of beautiful roads, quiet beaches and a completely different Goa.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(4)"><div class="goa-icon">🍸</div><div class="goa-number">05 · The Argument I Lost</div><h3>Tito's</h3><p>You wanted Tito's. I wanted my high-class clubs. You won. Obviously.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(5)"><div class="goa-icon">🏨</div><div class="goa-number">06 · The Little Place</div><h3>Ginger</h3><p>South Goa's hotel failed. We changed the plan and came back north.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(6)"><div class="goa-icon">👻</div><div class="goa-number">07 · Absolutely Not</div><h3>LPK</h3><p>We saw the property from the parking lot. That was enough. 😂</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(7)"><div class="goa-icon">🍝</div><div class="goa-number">08 · The Little Memories</div><h3>Delhi Darbar & More</h3><p>Ghazals, red-sauce pasta, matching clothes and everything in between.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(8)"><div class="goa-icon">🥥</div><div class="goa-number">09 · The Last Day</div><h3>Water or Coconut Water?</h3><p>Medicines, a waiting cab, an irritated shopkeeper and one final Goa debate.</p><span class="goa-arrow">+</span></article>
+<article class="goa-card" onclick="openGoaDetail(0)"><div class="goa-icon">✈️</div><div class="goa-number">01 · Operation Goa</div><h3>The Plan</h3><p>MMT, matching flights, edited PDFs & stories for parents. 😂</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(1)"><div class="goa-icon">🚗</div><div class="goa-number">02 · First Mission</div><h3>Find the Lens Solution</h3><p>Forget beaches. This was mission number one.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(2)"><div class="goa-icon">🌴</div><div class="goa-number">03 · Our Goa</div><h3>No Chinta. No Fikr.</h3><p>Sunscreen, matching outfits, wrong turns and nowhere we needed to be.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(3)"><div class="goa-icon">🏖️</div><div class="goa-number">04 · The Drive</div><h3>Varka</h3><p>Two hours of beautiful roads, quiet beaches and a completely different Goa.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(4)"><div class="goa-icon">🍸</div><div class="goa-number">05 · The Argument I Lost</div><h3>Tito's</h3><p>You wanted Tito's. I wanted my high-class clubs. You won. Obviously.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(5)"><div class="goa-icon">🏨</div><div class="goa-number">06 · The Little Place</div><h3>Ginger</h3><p>South Goa's hotel failed. We changed the plan and came back north.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(6)"><div class="goa-icon">👻</div><div class="goa-number">07 · Absolutely Not</div><h3>LPK</h3><p>We saw the property from the parking lot. That was enough. 😂</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(7)"><div class="goa-icon">🍝</div><div class="goa-number">08 · The Little Memories</div><h3>Delhi Darbar & More</h3><p>Ghazals, red-sauce pasta, matching clothes and everything in between.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(8)"><div class="goa-icon">🥥</div><div class="goa-number">09 · The Last Day</div><h3>Water or Coconut Water?</h3><p>Medicines, a waiting cab, an irritated shopkeeper and one final Goa debate.</p><span class="goa-arrow">+</span></article>
 </div><img class="goa-photo closing" src="goa_first_anniversary_closing.png" alt="Goa first anniversary evening walk by the sea">
 <div class="goa-end">We'd both been to Goa more than ten times before.<br>But this time was different.<br><br><strong>This was our first anniversary.</strong><br><br>And somewhere between the wrong turns, the arguments, the laughter and all the plans that went wrong...<br><strong>we made our first anniversary ours.</strong> ❤️</div></div>
 <div class="goa-detail" id="goaDetail" onclick="closeGoaDetail(event)"><div class="goa-detail-box" onclick="event.stopPropagation()"><button class="goa-detail-close" onclick="closeGoaDetail()">×</button><h3 id="goaDetailTitle"></h3><div id="goaDetailBody"></div></div></div></section>
@@ -2801,7 +2804,7 @@ Instead, we fought. We laughed. We got irritated. We ate pasta. We worried about
 
   
 
-
+<script>
 function openPlacesMenu(){
   const menu = document.getElementById("placesMenu");
   if (menu) menu.classList.add("show");
@@ -2917,6 +2920,8 @@ function closeGoaToPlaces(){
   if(places) places.classList.add("show");
   document.body.style.overflow="hidden";
 }
+
+</script>
 
 
 <script>
