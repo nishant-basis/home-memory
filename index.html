@@ -1651,6 +1651,90 @@
   .places-chapters{grid-template-columns:1fr;}
 }
 
+
+/* GOA AGAIN card interaction safeguard */
+#goaRoom2 .goa-timeline,
+#goaRoom2 .goa-card {
+  position: relative;
+}
+#goaRoom2 .goa-card {
+  z-index: 5;
+  pointer-events: auto !important;
+  cursor: pointer;
+}
+#goaDetail2 {
+  z-index: 9999 !important;
+}
+
+
+/* GOA AGAIN — zero-JavaScript story popups */
+#goaRoom2 .goa-story-link{
+  display:block;
+  color:inherit;
+  text-decoration:none;
+}
+#goaRoom2 .goa-story-link:focus-visible{
+  outline:1px solid #b28f6e;
+  outline-offset:3px;
+}
+.goa-again-fragment-modal{
+  position:fixed;
+  inset:0;
+  z-index:100000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:22px;
+  box-sizing:border-box;
+  background:rgba(5,5,5,.82);
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+.goa-again-fragment-modal:target{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+}
+.goa-again-fragment-box{
+  width:min(650px,100%);
+  max-height:82vh;
+  overflow-y:auto;
+  padding:34px;
+  border:1px solid rgba(215,198,181,.18);
+  background:#12100f;
+  text-align:left;
+  position:relative;
+  box-sizing:border-box;
+  box-shadow:0 25px 80px rgba(0,0,0,.55);
+}
+.goa-again-fragment-box h3{
+  margin:0 42px 20px 0;
+  font:400 31px Georgia,serif;
+  color:#eee5dc;
+}
+.goa-again-fragment-box p{
+  color:#bdb0a6;
+  line-height:1.85;
+  margin:0;
+  font:16px/1.85 Georgia,serif;
+}
+.goa-again-fragment-close{
+  position:absolute;
+  top:14px;
+  right:17px;
+  color:#9f8d7e;
+  font-size:21px;
+  text-decoration:none;
+  line-height:1;
+}
+.goa-again-fragment-close:hover{color:#eee5dc;}
+@media(max-width:600px){
+  .goa-again-fragment-box{padding:28px 23px;}
+  .goa-again-fragment-box h3{font-size:27px;}
+  .goa-again-fragment-box p{font-size:15px;}
+}
+
 </style>
 </head>
 
@@ -2363,7 +2447,7 @@ onclick="(function(){var r=document.getElementById('goaRoom'),d=document.getElem
 <img class="goa-photo hero" src="goa_first_anniversary_hero.png" alt="Goa first anniversary sunset by the sea">
 
 <div class="goa-timeline">
-<article class="goa-card" onclick="openGoaDetail(0)"><div class="goa-icon">✈️</div><div class="goa-number">01 · Operation Goa</div><h3>The Plan</h3><p>MMT, matching flights, edited PDFs & stories for parents. 😂</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(1)"><div class="goa-icon">🚗</div><div class="goa-number">02 · First Mission</div><h3>Find the Lens Solution</h3><p>Forget beaches. This was mission number one.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(2)"><div class="goa-icon">🌴</div><div class="goa-number">03 · Our Goa</div><h3>No Chinta. No Fikr.</h3><p>Sunscreen, matching outfits, wrong turns and nowhere we needed to be.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(3)"><div class="goa-icon">🏖️</div><div class="goa-number">04 · The Drive</div><h3>Varka</h3><p>Two hours of beautiful roads, quiet beaches and a completely different Goa.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(4)"><div class="goa-icon">🍸</div><div class="goa-number">05 · The Argument I Lost</div><h3>Tito's</h3><p>You wanted Tito's. I wanted my high-class clubs. You won. Obviously.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(5)"><div class="goa-icon">🏨</div><div class="goa-number">06 · The Little Place</div><h3>Ginger</h3><p>South Goa's hotel failed. We changed the plan and came back north.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(6)"><div class="goa-icon">👻</div><div class="goa-number">07 · Absolutely Not</div><h3>LPK</h3><p>We saw the property from the parking lot. That was enough. 😂</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(7)"><div class="goa-icon">🍝</div><div class="goa-number">08 · The Little Memories</div><h3>Delhi Darbar & More</h3><p>Ghazals, red-sauce pasta, matching clothes and everything in between.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(8)"><div class="goa-icon">🥥</div><div class="goa-number">09 · The Last Day</div><h3>Water or Coconut Water?</h3><p>Medicines, a waiting cab, an irritated shopkeeper and one final Goa debate.</p><span class="goa-arrow">+</span></article>
+<article class="goa-card" onclick="openGoaDetail2(7)"><div class="goa-icon">✈️</div><div class="goa-number">01 · Operation Goa</div><h3>The Plan</h3><p>MMT, matching flights, edited PDFs & stories for parents. 😂</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(1)"><div class="goa-icon">🚗</div><div class="goa-number">02 · First Mission</div><h3>Find the Lens Solution</h3><p>Forget beaches. This was mission number one.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(2)"><div class="goa-icon">🌴</div><div class="goa-number">03 · Our Goa</div><h3>No Chinta. No Fikr.</h3><p>Sunscreen, matching outfits, wrong turns and nowhere we needed to be.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(3)"><div class="goa-icon">🏖️</div><div class="goa-number">04 · The Drive</div><h3>Varka</h3><p>Two hours of beautiful roads, quiet beaches and a completely different Goa.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(4)"><div class="goa-icon">🍸</div><div class="goa-number">05 · The Argument I Lost</div><h3>Tito's</h3><p>You wanted Tito's. I wanted my high-class clubs. You won. Obviously.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(5)"><div class="goa-icon">🏨</div><div class="goa-number">06 · The Little Place</div><h3>Ginger</h3><p>South Goa's hotel failed. We changed the plan and came back north.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(6)"><div class="goa-icon">👻</div><div class="goa-number">07 · Absolutely Not</div><h3>LPK</h3><p>We saw the property from the parking lot. That was enough. 😂</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(7)"><div class="goa-icon">🍝</div><div class="goa-number">08 · The Little Memories</div><h3>Delhi Darbar & More</h3><p>Ghazals, red-sauce pasta, matching clothes and everything in between.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail(8)"><div class="goa-icon">🥥</div><div class="goa-number">09 · The Last Day</div><h3>Water or Coconut Water?</h3><p>Medicines, a waiting cab, an irritated shopkeeper and one final Goa debate.</p><span class="goa-arrow">+</span></article>
 </div><img class="goa-photo closing" src="goa_first_anniversary_closing.png" alt="Goa first anniversary evening walk by the sea">
 <div class="goa-end">We'd both been to Goa more than ten times before.<br>But this time was different.<br><br><strong>This was our first anniversary.</strong><br><br>And somewhere between the wrong turns, the arguments, the laughter and all the plans that went wrong...<br><strong>we made our first anniversary ours.</strong> ❤️</div></div>
 <div class="goa-detail" id="goaDetail" onclick="closeGoaDetail(event)"><div class="goa-detail-box" onclick="event.stopPropagation()"><button class="goa-detail-close" onclick="closeGoaDetail()">×</button><h3 id="goaDetailTitle"></h3><div id="goaDetailBody"></div></div></div></section>
@@ -2378,14 +2462,14 @@ onclick="(function(){var r=document.getElementById('goaRoom2'),d=document.getEle
 <p class="goa-subtitle">Because apparently once was never going to be enough.</p><div class="goa-line"></div>
 <img class="goa-photo hero" src="goa_again_hero.png" alt="Goa Again — another sunset together">
 
-<div class="goa-timeline"><article class="goa-card" onclick="openGoaDetail2(0)"><div class="goa-icon">💝</div><div class="goa-number">01 · THE ANNUAL TRADITION</div><h3>The Annual Tradition</h3><p>Goa became ours. We decided to come back at least once every year and celebrate our birthdays together in between.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail2(1)"><div class="goa-icon">🗺️</div><div class="goa-number">02 · THIS TIME, YOU PLANNED</div><h3>This Time, You Planned</h3><p>After Goa I, we realized we were better planners than MMT. You took charge this time. I just looked at prices. As always. 😂</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail2(2)"><div class="goa-icon">🏨</div><div class="goa-number">03 · NORTH GOA, AGAIN</div><h3>North Goa, Again</h3><p>A short trip, so we stayed at Holitel, close to the beach. North Goa was all we needed.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail2(3)"><div class="goa-icon">💼</div><div class="goa-number">04 · THE GOA THAT CAME WITH WORK</div><h3>The Goa That Came With Work</h3><p>Heat, office tension, Europe preparations, passports, forex, MO, interviews and last-minute chaos. Work followed us to Goa.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail2(4)"><div class="goa-icon">😡</div><div class="goa-number">05 · WE CAN FIGHT ABOUT ANYTHING</div><h3>We Can Fight About Anything</h3><p>We fought over a document that was at your home and you asked your brother to scan. Does that even make sense? But that's us. 😂</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail2(5)"><div class="goa-icon">🍝</div><div class="goa-number">06 · THE PASTA PEACE TREATY</div><h3>The Pasta Peace Treaty</h3><p>We fought, went to our pasta place, ordered separately — and one fork of pasta somehow ended the entire fight.</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail2(6)"><div class="goa-icon">🥸</div><div class="goa-number">07 · YOUR AURA</div><h3>Your Aura</h3><p>A shopkeeper asked you, “Madam, stuff chahiye kya?” We couldn't stop laughing. Your aura said one thing. I looked like a milk-drinking boy. 😂</p><span class="goa-arrow">+</span></article><article class="goa-card" onclick="openGoaDetail2(7)"><div class="goa-icon">✈️</div><div class="goa-number">08 · THE AIRPORT FIGHT</div><h3>The Airport Fight</h3><p>We fought at the airport, you threw your boarding pass, my sugar dropped on the plane — and you angrily put chocolate in my mouth. By landing, we were love birds again. ❤️</p><span class="goa-arrow">+</span></article></div><img class="goa-photo closing" src="goa_again_closing.png" alt="Goa Again — evening by the sea">
+<div class="goa-timeline"><a class="goa-card goa-story-link" href="#goaAgainStory1" aria-label="Open The Annual Tradition"><div class="goa-icon">💝</div><div class="goa-number">01 · THE ANNUAL TRADITION</div><h3>The Annual Tradition</h3><p>Goa became ours. We decided to come back at least once every year and celebrate our birthdays together in between.</p><span class="goa-arrow">+</span></a><a class="goa-card goa-story-link" href="#goaAgainStory2" aria-label="Open This Time, You Planned"><div class="goa-icon">🗺️</div><div class="goa-number">02 · THIS TIME, YOU PLANNED</div><h3>This Time, You Planned</h3><p>After Goa I, we realized we were better planners than MMT. You took charge this time. I just looked at prices. As always. 😂</p><span class="goa-arrow">+</span></a><a class="goa-card goa-story-link" href="#goaAgainStory3" aria-label="Open North Goa, Again"><div class="goa-icon">🏨</div><div class="goa-number">03 · NORTH GOA, AGAIN</div><h3>North Goa, Again</h3><p>A short trip, so we stayed at Holitel, close to the beach. North Goa was all we needed.</p><span class="goa-arrow">+</span></a><a class="goa-card goa-story-link" href="#goaAgainStory4" aria-label="Open The Goa That Came With Work"><div class="goa-icon">💼</div><div class="goa-number">04 · THE GOA THAT CAME WITH WORK</div><h3>The Goa That Came With Work</h3><p>Heat, office tension, Europe preparations, passports, forex, MO, interviews and last-minute chaos. Work followed us to Goa.</p><span class="goa-arrow">+</span></a><a class="goa-card goa-story-link" href="#goaAgainStory5" aria-label="Open We Can Fight About Anything"><div class="goa-icon">😡</div><div class="goa-number">05 · WE CAN FIGHT ABOUT ANYTHING</div><h3>We Can Fight About Anything</h3><p>We fought over a document that was at your home and you asked your brother to scan. Does that even make sense? But that's us. 😂</p><span class="goa-arrow">+</span></a><a class="goa-card goa-story-link" href="#goaAgainStory6" aria-label="Open The Pasta Peace Treaty"><div class="goa-icon">🍝</div><div class="goa-number">06 · THE PASTA PEACE TREATY</div><h3>The Pasta Peace Treaty</h3><p>We fought, went to our pasta place, ordered separately — and one fork of pasta somehow ended the entire fight.</p><span class="goa-arrow">+</span></a><a class="goa-card goa-story-link" href="#goaAgainStory7" aria-label="Open Your Aura"><div class="goa-icon">🥸</div><div class="goa-number">07 · YOUR AURA</div><h3>Your Aura</h3><p>A shopkeeper asked you, “Madam, stuff chahiye kya?” We couldn't stop laughing. Your aura said one thing. I looked like a milk-drinking boy. 😂</p><span class="goa-arrow">+</span></a><a class="goa-card goa-story-link" href="#goaAgainStory8" aria-label="Open The Airport Fight"><div class="goa-icon">✈️</div><div class="goa-number">08 · THE AIRPORT FIGHT</div><h3>The Airport Fight</h3><p>We fought at the airport, you threw your boarding pass, my sugar dropped on the plane — and you angrily put chocolate in my mouth. By landing, we were love birds again. ❤️</p><span class="goa-arrow">+</span></a></div><img class="goa-photo closing" src="goa_again_closing.png" alt="Goa Again — evening by the sea">
 <div class="goa-end">
 We came back to Goa thinking we'd celebrate our birthdays.<br><br>
 Instead, we fought. We laughed. We got irritated. We ate pasta. We worried about Europe. We made up.<br><br>
 <strong>Basically, we did what we always do.</strong><br>
 <em>We were us. ❤️</em>
 </div></div>
-<div class="goa-detail" id="goaDetail2" onclick="closeGoaDetail2(event)"><div class="goa-detail-box" onclick="event.stopPropagation()"><button class="goa-detail-close" onclick="closeGoaDetail2()">×</button><h3 id="goaDetailTitle2"></h3><div id="goaDetailBody2"></div></div></div></section>
+</section>
 
 <!-- =========================
        WHEN I MISS YOU ROOM
@@ -2749,28 +2833,55 @@ function closeGoa2(){
   window.scrollTo({top:0, behavior:"instant"});
 }
 
-const goaDetails2 = [
-  ["The Annual Tradition", "Goa became ours. After the first trip together, we decided it should become an annual thing. August was my birthday, September was yours, so we invented our own date in between — because the actual dates belonged with our families.<br><br><strong>Our birthdays, our Goa, our little tradition.</strong>"],
-  ["This Time, You Planned", "After Goa I, we discovered something important: we were probably better planners than MMT. 😂 And because I would always choose things based on price, you took the onus this time.<br><br>You planned everything. I mostly participated.<br><br><strong>And somehow, that became our system.</strong>"],
-  ["North Goa, Again", "It was a short trip, so we stayed in North Goa. Holitel was close to the beach and genuinely wonderful.<br><br>No attempt to conquer the whole state this time. Just the places we wanted, the food we liked, and our own little corner of Goa.<br><br><strong>North Goa was enough.</strong>"],
-  ["The Goa That Came With Work", "This Goa was different. It was hot, chaotic, and our old favourite places weren't serving food like they used to.<br><br>And work had somehow followed us. Europe was waiting right after the trip — passport submissions, forex card, MO raising, interview sections, last-minute and incomplete information, and a project lead making everything harder.<br><br>You were carrying so much in your head that eventually...<br><br><strong>we started fighting.</strong>"],
-  ["We Can Fight About Anything", "We can apparently fight about absolutely anything.<br><br>Including a document that was at your home, which you asked your brother to scan. And somehow I found a reason to fight about that too.<br><br>Does it make sense? Absolutely not.<br><br><strong>Did we fight anyway? Obviously. 😂</strong>"],
-  ["The Pasta Peace Treaty", "We had another fight. So naturally, we went to our pasta place. By now the waiters recognized us.<br><br>We ordered separately and stayed annoyed. Another couple opposite us had clearly noticed.<br><br>Then the food arrived. A fork of pasta came towards me. I refused. You scolded me. And somehow the entire fight disappeared.<br><br>The older couple started laughing at us.<br><br><strong>Apparently pasta is our version of couples therapy.</strong>"],
-  ["Your Aura", "We went into a shop and I stepped outside to get the car. The shopkeeper looked at you and asked, “Madam, stuff chahiye kya?”<br><br>We both burst out laughing.<br><br>Apparently your aura suggested: “Yes, this woman definitely knows where to get the stuff.”<br><br>Meanwhile I apparently looked like:<br><strong>“Don't worry, he drinks milk.” 😂</strong>"],
-  ["The Airport Fight", "And then came the ending. Naturally, it included another fight.<br><br>You threw your boarding pass. You hadn't eaten. My sugar was dropping on the plane. And you were still angry.<br><br>Then, in full irritation, you put chocolate into my mouth.<br><br>No cinematic romance. Just an angry girlfriend making sure I didn't go hungry.<br><br>And somehow, by the time the plane landed...<br><br><strong>we were love birds again. ❤️</strong>"]
-];
+const goaDetails2 = [["The Annual Tradition", "Goa had quietly become something of our own.<br><br><br><br>After the first trip, we decided that we should come back at least once every year. August is my birthday, September is yours, but the actual dates belong with our families — so, naturally, we invented our own date somewhere in the middle. 😂<br><br><br><br>And that's how Goa became our little birthday tradition.<br><br><br><br>We weren't celebrating on a date that mattered to the calendar.<br><br><br><br>We were celebrating on a date that mattered to us."], ["This Time, You Planned", "After our first Goa trip, we had learned something important:<br><br><br><br>We were probably better planners than MMT. 😂<br><br><br><br>And because you already knew that I would look at every hotel, restaurant and plan through one very important filter — \"how much?\" — you took the planning into your own hands this time.<br><br><br><br>You planned the trip using everything we had learned from Goa I.<br><br><br><br>I mostly just participated, checked prices and pretended I was helping.<br><br><br><br>And honestly, I loved seeing you take charge of our little escape."], ["North Goa, Again", "This time we kept things simple.<br><br><br><br>It was a short trip, so we stayed in North Goa at Holitel — close to the beach and genuinely wonderful.<br><br><br><br>We went around Calangute and Vagator, found our way back to places that already felt familiar, and let Goa be Goa.<br><br><br><br>There was no pressure to cover everything.<br><br><br><br>No giant checklist.<br><br><br><br>Just us, the beach, the heat, the chaos and a few places that had slowly become part of our own Goa map."], ["The Goa That Came With Work", "This Goa came with something our first one didn't: work stress.<br><br><br><br>It was hot. Chaotic. Some of our old favourite places weren't serving food like they used to. And, worst of all, Europe was waiting right after the trip.<br><br><br><br>Passport submissions. Forex card arrangements. MO raising. Interview sections. Last-minute information. Incomplete information. And a project lead who somehow managed to make everything more complicated.<br><br><br><br>You were carrying so much in your head that eventually it started spilling into us.<br><br><br><br>So yes, we fought.<br><br><br><br>Then we sorted it.<br><br><br><br>Because apparently that's another one of our traditions."], ["We Can Fight About Anything", "There is genuinely no subject too small for us to fight about.<br><br><br><br>One of my personal favourites from this trip was the document that was at your house and you asked your brother to scan.<br><br><br><br>Does that make any sense as a reason to fight?<br><br><br><br>Absolutely not.<br><br><br><br>Did we somehow turn it into a fight anyway?<br><br><br><br>Obviously. 😂<br><br><br><br>That's us.<br><br><br><br>We can take the smallest, most meaningless thing in the world and turn it into a full argument.<br><br><br><br>And then, somehow, five minutes later, we're completely fine again.<br><br><br><br>Our fights are rarely really about the thing we're fighting about.<br><br><br><br>They're just two stubborn people who care way too much."], ["The Pasta Peace Treaty", "We had fought.<br><br><br><br>So naturally, we went to our pasta place.<br><br><br><br>By now we were regular enough that the waiters had started recognizing us.<br><br><br><br>Another couple sitting opposite us apparently noticed the fight too. We were ordering separate things, sitting there with our serious faces, making it very clear that peace negotiations were nowhere close.<br><br><br><br>Then the food arrived.<br><br><br><br>A forkful of pasta came towards me.<br><br><br><br>I refused.<br><br><br><br>You scolded me.<br><br><br><br>I ate it.<br><br><br><br>And just like that, the war was over.<br><br><br><br>One second we were fighting. The next, we were being romantic again while the older couple across from us laughed at the entire performance. 😂<br><br><br><br>Apparently, pasta is our version of couples therapy."], ["Your Aura", "This was one of those completely random moments that should mean absolutely nothing — and somehow became a memory.<br><br><br><br>We went into a shop together to buy something. I stepped outside to get the car.<br><br><br><br>The shopkeeper looked at you and asked:<br><br><br><br>\"Madam, stuff chahiye kya?\"<br><br><br><br>We both burst out laughing.<br><br><br><br>Because apparently your aura says, \"I definitely know where to get the stuff.\"<br><br><br><br>And me?<br><br><br><br>Apparently I look like a milk-drinking innocent boy. 😂<br><br><br><br>It was completely stupid.<br><br><br><br>Which is probably why we remember it."], ["The Airport Fight", "Even the ending had to be dramatic.<br><br><br><br>We started fighting at the airport.<br><br><br><br>You threw your boarding pass.<br><br><br><br>You hadn't eaten.<br><br><br><br>My sugar was dropping on the plane.<br><br><br><br>Basically, the grand finale was going exactly as expected.<br><br><br><br>And then, while still completely angry, you put chocolate into my mouth.<br><br><br><br>Not because the fight was over.<br><br><br><br>Not because you had suddenly become romantic.<br><br><br><br>Just because, even while angry with me, you still knew I needed to eat.<br><br><br><br>Honestly, nothing could have been more romantic at that moment.<br><br><br><br>And by the time the plane landed...<br><br><br><br>we were love birds again. ❤️<br><br><br><br>That's probably the best way to describe us.<br><br><br><br>Chaos first.<br><br><br><br>Love immediately after."]];
 
 function openGoaDetail2(index){
   const x = goaDetails2[index];
-  if (!x) return;
-  document.getElementById("goaDetailTitle2").textContent = x[0];
-  document.getElementById("goaDetailBody2").innerHTML = "<p>" + x[1] + "</p>";
-  document.getElementById("goaDetail2").classList.add("show");
+  const modal = document.getElementById("goaDetail2");
+  const title = document.getElementById("goaDetailTitle2");
+  const body = document.getElementById("goaDetailBody2");
+
+  if (!x || !modal || !title || !body) return;
+
+  title.textContent = x[0];
+  body.innerHTML = "<p>" + x[1] + "</p>";
+
+  /* Use both the tested class mechanism and an explicit fallback. */
+  modal.classList.add("show");
+  modal.style.opacity = "1";
+  modal.style.visibility = "visible";
+  modal.style.pointerEvents = "auto";
+  document.body.style.overflow = "hidden";
 }
+
 function closeGoaDetail2(e){
-  if (e && e.target !== e.currentTarget) return;
-  document.getElementById("goaDetail2").classList.remove("show");
+  if (e && e.target !== e.currentTarget && !e.target.classList.contains("goa-detail-close")) return;
+
+  const modal = document.getElementById("goaDetail2");
+  if (!modal) return;
+
+  modal.classList.remove("show");
+  modal.style.opacity = "";
+  modal.style.visibility = "";
+  modal.style.pointerEvents = "";
+  document.body.style.overflow = "hidden";
 }
+
+/* GOA AGAIN: bind the cards directly as a second layer of protection.
+   This makes the cards work even if an inline onclick is altered by the browser. */
+document.addEventListener("DOMContentLoaded", function(){
+  const room = document.getElementById("goaRoom2");
+  if (!room) return;
+
+  room.querySelectorAll(".goa-card").forEach(function(card, index){
+    card.style.cursor = "pointer";
+    card.addEventListener("click", function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      openGoaDetail2(index);
+    });
+  });
+});
 
 
 function openPlacesRoom(){
@@ -3080,6 +3191,126 @@ window.openPlacesRoom = function(){
 };
 
 </script>
+<div class="goa-again-fragment-modal" id="goaAgainStory1">
+  <div class="goa-again-fragment-box">
+    <a class="goa-again-fragment-close" href="#goaRoom2" aria-label="Close">×</a>
+    <h3>The Annual Tradition</h3>
+    <div class="goa-line"></div>
+    <p>Goa had quietly become something of our own.<br><br>
+After the first trip, we decided that we should come back at least once every year. August is my birthday, September is yours, but the actual dates belong with our families — so, naturally, we invented our own date somewhere in the middle. 😂<br><br>
+And that's how Goa became our little birthday tradition.<br><br>
+We weren't celebrating on a date that mattered to the calendar.<br><br>
+We were celebrating on a date that mattered to us.</p>
+  </div>
+</div>
+<div class="goa-again-fragment-modal" id="goaAgainStory2">
+  <div class="goa-again-fragment-box">
+    <a class="goa-again-fragment-close" href="#goaRoom2" aria-label="Close">×</a>
+    <h3>This Time, You Planned</h3>
+    <div class="goa-line"></div>
+    <p>After our first Goa trip, we had learned something important:<br><br>
+We were probably better planners than MMT. 😂<br><br>
+And because you already knew that I would look at every hotel, restaurant and plan through one very important filter — "how much?" — you took the planning into your own hands this time.<br><br>
+You planned the trip using everything we had learned from Goa I.<br><br>
+I mostly just participated, checked prices and pretended I was helping.<br><br>
+And honestly, I loved seeing you take charge of our little escape.</p>
+  </div>
+</div>
+<div class="goa-again-fragment-modal" id="goaAgainStory3">
+  <div class="goa-again-fragment-box">
+    <a class="goa-again-fragment-close" href="#goaRoom2" aria-label="Close">×</a>
+    <h3>North Goa, Again</h3>
+    <div class="goa-line"></div>
+    <p>This time we kept things simple.<br><br>
+It was a short trip, so we stayed in North Goa at Holitel — close to the beach and genuinely wonderful.<br><br>
+We went around Calangute and Vagator, found our way back to places that already felt familiar, and let Goa be Goa.<br><br>
+There was no pressure to cover everything. No giant checklist.<br><br>
+Just us, the beach, the heat, the chaos and a few places that had slowly become part of our own Goa map.</p>
+  </div>
+</div>
+<div class="goa-again-fragment-modal" id="goaAgainStory4">
+  <div class="goa-again-fragment-box">
+    <a class="goa-again-fragment-close" href="#goaRoom2" aria-label="Close">×</a>
+    <h3>The Goa That Came With Work</h3>
+    <div class="goa-line"></div>
+    <p>This Goa came with something our first one didn't: work stress.<br><br>
+It was hot. Chaotic. Some of our old favourite places weren't serving food like they used to. And Europe was waiting right after the trip.<br><br>
+Passport submissions. Forex card arrangements. MO raising. Interview sections. Last-minute information. Incomplete information. And a project lead who somehow managed to make everything more complicated.<br><br>
+You were carrying so much in your head that eventually it started spilling into us.<br><br>
+So yes, we fought.<br><br>
+Then we sorted it.<br><br>
+Because apparently that's another one of our traditions.</p>
+  </div>
+</div>
+<div class="goa-again-fragment-modal" id="goaAgainStory5">
+  <div class="goa-again-fragment-box">
+    <a class="goa-again-fragment-close" href="#goaRoom2" aria-label="Close">×</a>
+    <h3>We Can Fight About Anything</h3>
+    <div class="goa-line"></div>
+    <p>There is genuinely no subject too small for us to fight about.<br><br>
+One of my personal favourites from this trip was the document that was at your house and you asked your brother to scan.<br><br>
+Does that make any sense as a reason to fight?<br><br>
+Absolutely not.<br><br>
+Did we somehow turn it into a fight anyway?<br><br>
+Obviously. 😂<br><br>
+That's us.<br><br>
+We can take the smallest, most meaningless thing in the world and turn it into a full argument.<br><br>
+And then, somehow, we're completely fine again.</p>
+  </div>
+</div>
+<div class="goa-again-fragment-modal" id="goaAgainStory6">
+  <div class="goa-again-fragment-box">
+    <a class="goa-again-fragment-close" href="#goaRoom2" aria-label="Close">×</a>
+    <h3>The Pasta Peace Treaty</h3>
+    <div class="goa-line"></div>
+    <p>We had fought.<br><br>
+So naturally, we went to our pasta place.<br><br>
+By now we were regular enough that the waiters had started recognizing us.<br><br>
+Another couple sitting opposite us apparently noticed the fight too. We were ordering separate things, sitting there with our serious faces, making it very clear that peace negotiations were nowhere close.<br><br>
+Then the food arrived.<br><br>
+A forkful of pasta came towards me.<br><br>
+I refused.<br><br>
+You scolded me.<br><br>
+I ate it.<br><br>
+And just like that, the war was over.<br><br>
+One second we were fighting. The next, we were being romantic again while the older couple across from us laughed at the entire performance. 😂<br><br>
+Apparently, pasta is our version of couples therapy.</p>
+  </div>
+</div>
+<div class="goa-again-fragment-modal" id="goaAgainStory7">
+  <div class="goa-again-fragment-box">
+    <a class="goa-again-fragment-close" href="#goaRoom2" aria-label="Close">×</a>
+    <h3>Your Aura</h3>
+    <div class="goa-line"></div>
+    <p>This was one of those completely random moments that should mean absolutely nothing — and somehow became a memory.<br><br>
+We went into a shop together to buy something. I stepped outside to get the car.<br><br>
+The shopkeeper looked at you and asked:<br><br>
+<strong>"Madam, stuff chahiye kya?"</strong><br><br>
+We both burst out laughing.<br><br>
+Because apparently your aura says, "I definitely know where to get the stuff."<br><br>
+And me? Apparently I look like a milk-drinking innocent boy. 😂<br><br>
+It was completely stupid.<br><br>
+Which is probably why we remember it.</p>
+  </div>
+</div>
+<div class="goa-again-fragment-modal" id="goaAgainStory8">
+  <div class="goa-again-fragment-box">
+    <a class="goa-again-fragment-close" href="#goaRoom2" aria-label="Close">×</a>
+    <h3>The Airport Fight</h3>
+    <div class="goa-line"></div>
+    <p>Even the ending had to be dramatic.<br><br>
+We started fighting at the airport.<br><br>
+You threw your boarding pass. You hadn't eaten. My sugar was dropping on the plane.<br><br>
+Basically, the grand finale was going exactly as expected.<br><br>
+And then, while still completely angry, you put chocolate into my mouth.<br><br>
+Not because the fight was over. Not because you had suddenly become romantic. Just because, even while angry with me, you still knew I needed to eat.<br><br>
+Honestly, nothing could have been more romantic at that moment.<br><br>
+And by the time the plane landed...<br><br>
+we were love birds again. ❤️<br><br>
+That's probably the best way to describe us.<br><br>
+Chaos first. Love immediately after.</p>
+  </div>
+</div>
 </body>
 </html>
 
