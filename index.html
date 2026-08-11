@@ -1759,6 +1759,165 @@
   cursor:pointer;
 }
 
+
+/* Our Places — Paris + Jim Corbett */
+.places-mini-room{
+  position:fixed;
+  inset:0;
+  z-index:99998;
+  display:flex;
+  justify-content:center;
+  overflow-y:auto;
+  padding:34px 24px 70px;
+  box-sizing:border-box;
+  background:
+    radial-gradient(circle at 50% 8%,rgba(125,92,52,.12),transparent 30%),
+    #0b0a09;
+  color:#eee5dc;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:.35s ease;
+}
+.places-mini-room.show{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+}
+.places-mini-shell{
+  width:min(900px,100%);
+  text-align:center;
+  padding:24px 0 70px;
+}
+.places-mini-title{
+  margin:0;
+  font:400 clamp(44px,7vw,72px) Georgia,serif;
+  color:#eee5dc;
+}
+.places-mini-subtitle{
+  margin:14px auto 0;
+  max-width:620px;
+  color:#b9afa5;
+  font:italic 18px Georgia,serif;
+  line-height:1.7;
+}
+.places-story-card{
+  position:relative;
+  display:block;
+  width:min(720px,100%);
+  min-height:310px;
+  margin:44px auto 0;
+  padding:34px;
+  text-align:left;
+  border:1px solid rgba(215,198,181,.18);
+  background:linear-gradient(145deg,#191513,#120f0e);
+  color:#eee5dc;
+  cursor:pointer;
+  transition:transform .25s ease,border-color .25s ease,background .25s ease;
+}
+.places-story-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(215,198,181,.4);
+  background:linear-gradient(145deg,#211b18,#15110f);
+}
+.places-story-icon{font-size:34px;margin-bottom:18px}
+.places-story-kicker{
+  color:#a08468;
+  font-size:9px;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+.places-story-card h3{
+  margin:0 0 14px;
+  font:400 36px Georgia,serif;
+}
+.places-story-card p{
+  margin:0;
+  max-width:620px;
+  color:#b9afa5;
+  font:italic 16px/1.75 Georgia,serif;
+}
+.places-story-card span{
+  position:absolute;
+  left:34px;
+  bottom:27px;
+  color:#c0a27f;
+  font-size:10px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.places-story-modal{
+  position:fixed;
+  inset:0;
+  z-index:100001;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:22px;
+  box-sizing:border-box;
+  background:rgba(5,5,5,.82);
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+.places-story-modal.show{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+}
+.places-story-box{
+  position:relative;
+  width:min(720px,100%);
+  max-height:82vh;
+  overflow-y:auto;
+  padding:38px 42px 44px;
+  box-sizing:border-box;
+  border:1px solid rgba(215,198,181,.2);
+  background:#12100f;
+  box-shadow:0 25px 80px rgba(0,0,0,.55);
+}
+.places-story-box h2{
+  margin:0;
+  color:#eee5dc;
+  font:400 38px Georgia,serif;
+}
+.places-story-box p{
+  margin:0;
+  color:#c3b7ac;
+  font:16px/1.85 Georgia,serif;
+}
+.places-story-close{
+  position:absolute;
+  top:14px;
+  right:18px;
+  border:0;
+  background:transparent;
+  color:#a58c76;
+  font-size:25px;
+  cursor:pointer;
+}
+.places-closing-line{
+  max-width:760px;
+  margin-left:auto;
+  margin-right:auto;
+  line-height:1.9;
+  text-transform:none;
+  letter-spacing:.02em;
+  font:italic 15px/1.9 Georgia,serif;
+  color:#9d8874;
+}
+@media(max-width:700px){
+  .places-chapters{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  .places-story-card{padding:28px;min-height:320px}
+  .places-story-card span{left:28px}
+  .places-story-box{padding:32px 24px 36px}
+  .places-story-box h2{font-size:30px}
+  .places-story-box p{font-size:15px;line-height:1.78}
+}
+
 </style>
 </head>
 
@@ -2452,11 +2611,73 @@ onclick="document.getElementById('placesRoom').classList.remove('show');document
         <p>Because apparently once was never going to be enough.</p>
         <span>Open chapter&nbsp; →</span>
       </button>
+
+      <button class="places-chapter" type="button"
+onclick="document.getElementById('placesRoom').classList.remove('show');document.getElementById('parisRoom').classList.add('show');document.body.style.overflow='hidden';">
+        <div class="places-chapter-number">03</div>
+        <div class="places-chapter-kicker">A TRIP I LIVED THROUGH YOU</div>
+        <h3>PARIS</h3>
+        <p>You were there. Somehow, I felt like I was there with you.</p>
+        <span>Open chapter&nbsp; →</span>
+      </button>
+
+      <button class="places-chapter" type="button"
+onclick="document.getElementById('placesRoom').classList.remove('show');document.getElementById('corbettRoom').classList.add('show');document.body.style.overflow='hidden';">
+        <div class="places-chapter-number">04</div>
+        <div class="places-chapter-kicker">THE TRIP YOU DON'T COUNT</div>
+        <h3>JIM CORBETT</h3>
+        <p>A road trip, a safari, a haunted shampoo bottle — and a memory you still don't count. 😂</p>
+        <span>Open chapter&nbsp; →</span>
+      </button>
     </div>
 
-    <p class="places-foot">
-      Goa was never just a destination. It became ours.
+    <p class="places-foot places-closing-line">
+      And then there are all the dates we never count — Themis, Raha, Mosaic, SK, and countless little places in between.<br>
+      Not trips. Not occasions. Just us. And somehow, those are memories too. ❤️
     </p>
+  </div>
+</section>
+
+
+<section class="places-mini-room" id="parisRoom">
+  <button class="goa-close" type="button"
+    onclick="document.getElementById('parisRoom').classList.remove('show');document.getElementById('placesRoom').classList.add('show');document.body.style.overflow='hidden';">← PLACES</button>
+  <div class="places-mini-shell">
+    <div class="goa-kicker">OUR PLACES · 03</div>
+    <div class="goa-anniversary">A TRIP I LIVED THROUGH YOU</div>
+    <h2 class="places-mini-title">Paris, From Far Away</h2>
+    <p class="places-mini-subtitle">You were travelling. Somehow, I felt like I was travelling with you.</p>
+    <div class="goa-line"></div>
+
+    <button class="places-story-card" type="button"
+      onclick="document.getElementById('parisStory').classList.add('show');document.body.style.overflow='hidden';">
+      <div class="places-story-icon">🇫🇷</div>
+      <div class="places-story-kicker">03 · A LITTLE MEMORY</div>
+      <h3>Paris, From Far Away</h3>
+      <p>Amsterdam. Belgium. Paris. Chocolates. Constant updates. And one Eiffel Tower that made me wish I was standing beside you.</p>
+      <span>Open memory&nbsp; →</span>
+    </button>
+  </div>
+</section>
+
+<section class="places-mini-room" id="corbettRoom">
+  <button class="goa-close" type="button"
+    onclick="document.getElementById('corbettRoom').classList.remove('show');document.getElementById('placesRoom').classList.add('show');document.body.style.overflow='hidden';">← PLACES</button>
+  <div class="places-mini-shell">
+    <div class="goa-kicker">OUR PLACES · 04</div>
+    <div class="goa-anniversary">THE TRIP YOU DON'T COUNT</div>
+    <h2 class="places-mini-title">Jim Corbett</h2>
+    <p class="places-mini-subtitle">Six hours on the road. One haunted shampoo bottle. And a safari we still remember.</p>
+    <div class="goa-line"></div>
+
+    <button class="places-story-card" type="button"
+      onclick="document.getElementById('corbettStory').classList.add('show');document.body.style.overflow='hidden';">
+      <div class="places-story-icon">🐾</div>
+      <div class="places-story-kicker">04 · A LITTLE MEMORY</div>
+      <h3>The Trip You Don't Count</h3>
+      <p>A road trip, a beautiful hotel, safari calls, bees, no tiger, and one very scared lioness at night.</p>
+      <span>Open memory&nbsp; →</span>
+    </button>
   </div>
 </section>
 
@@ -3337,6 +3558,71 @@ That's probably the best way to describe us.<br><br>
 Chaos first. Love immediately after.</p>
   </div>
 </div>
+
+<div class="places-story-modal" id="parisStory">
+  <div class="places-story-box">
+    <button class="places-story-close" type="button"
+      onclick="document.getElementById('parisStory').classList.remove('show');document.body.style.overflow='hidden';">×</button>
+    <div class="goa-kicker">PARIS · FROM FAR AWAY</div>
+    <h2>Paris, From Far Away</h2>
+    <div class="goa-line"></div>
+    <p>
+      Paris was supposed to be your trip.<br><br>
+      Amsterdam, weekends in Belgium, Paris, everything happening one after another.<br><br>
+      But somehow, I felt like I was travelling with you.<br><br>
+      You kept telling me everything — where you went, what you saw, what happened, what you bought. Every little thing.<br><br>
+      It felt like I was getting a running commentary of your entire trip, as if distance had somehow forgotten to exist between us.<br><br>
+      And then came the gifts. Chocolates from everywhere. Something for everyone. Little things you saw and thought someone would like.<br><br>
+      Because, of course, that's you. Even while travelling, you were thinking about everyone else.<br><br>
+      But somewhere in all those stories, Paris stayed with me differently.<br><br>
+      <strong>The Eiffel Tower.</strong><br><br>
+      That was the moment I thought...<br><br>
+      <strong>I should be there with you.</strong><br><br>
+      Not watching it through your pictures. Not hearing about it through your stories. Standing there beside you.<br><br>
+      And I remember thinking that I don't want this to remain one of those places you saw and I heard about.<br><br>
+      <strong>I promise we'll visit the Eiffel Tower again.</strong><br><br>
+      But next time, we'll be standing there together.<br><br>
+      And honestly, knowing everything you were juggling at the time makes me admire you even more.<br><br>
+      Last-minute shopping. Clothes. Packing. Work pressure. A thousand things happening at once.<br><br>
+      And somehow, you still managed all of it.<br><br>
+      <strong>You really are my lioness. 🦁❤️</strong>
+    </p>
+  </div>
+</div>
+
+<div class="places-story-modal" id="corbettStory">
+  <div class="places-story-box">
+    <button class="places-story-close" type="button"
+      onclick="document.getElementById('corbettStory').classList.remove('show');document.body.style.overflow='hidden';">×</button>
+    <div class="goa-kicker">JIM CORBETT · THE TRIP YOU DON'T COUNT</div>
+    <h2>The Trip You Don't Count</h2>
+    <div class="goa-line"></div>
+    <p>
+      We wanted a road trip.<br><br>
+      We thought about Ranthambore. Gir. And then, somehow, we landed on Jim Corbett.<br><br>
+      Partly because I remembered it. And partly because I already knew how much you love wildlife.<br><br>
+      So we packed up and drove.<br><br>
+      Six hours of road, conversations, little halts, random stops and that feeling that we were actually getting away for a while.<br><br>
+      And then we reached the hotel.<br><br>
+      Big room. Beautiful pool. Live music. Everything we could have asked for.<br><br>
+      We were genuinely so happy with our choice.<br><br>
+      And then night happened. 😂<br><br>
+      The shampoo bottle fell.<br><br>
+      We ignored it.<br><br>
+      Then it happened again the next night.<br><br>
+      And suddenly, we had a very serious paranormal investigation happening in our room.<br><br>
+      You were terrified. I tried everything to convince you that nothing was happening.<br><br>
+      But that's not even what I remember most.<br><br>
+      I remember the safari. The excitement. The odomas. The bees that gave us the most unexpected welcome.<br><br>
+      No tiger.<br><br>
+      But enough deer calls and jungle sounds to keep us entertained — and, of course, enough material for us to make fun of everything that happened. 😂<br><br>
+      It was short. It wasn't perfect. It probably won't even make <strong>your official list of trips</strong> because apparently this one "doesn't count." 😂<br><br>
+      But I remember it.<br><br>
+      And sometimes that's enough.
+    </p>
+  </div>
+</div>
+
 </body>
 </html>
 
