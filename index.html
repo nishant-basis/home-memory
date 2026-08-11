@@ -2338,6 +2338,247 @@
   text-shadow:0 0 9px rgba(184,59,82,.28) !important;
 }
 
+
+/* OUR STORY — Chapter I asymmetric editorial layout */
+.chapter-story-room{
+  background:
+    radial-gradient(ellipse 65% 28% at 50% 0%,rgba(126,91,66,.10),transparent 72%),
+    #0a0909;
+}
+.chapter-hero{
+  width:min(900px,90%);
+  margin:0 auto 56px;
+  text-align:center;
+}
+.chapter-hero .chapter-number{
+  color:#a78e77;
+  font-size:10px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+}
+.chapter-hero h1{
+  margin:10px 0 14px;
+  font:400 clamp(48px,7vw,76px) Georgia,serif;
+  color:#eee5dc;
+}
+.chapter-hero p{
+  margin:8px 0;
+  color:#aaa098;
+  font:italic 17px/1.7 Georgia,serif;
+}
+.chapter-collage{
+  width:min(980px,92%);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:170px 170px minmax(0,1fr);
+  grid-template-rows:auto auto auto;
+  gap:14px;
+  align-items:stretch;
+}
+.chapter-photo,
+.chapter-story{
+  border:1px solid rgba(213,193,173,.15);
+  background:linear-gradient(145deg,rgba(28,23,21,.94),rgba(15,13,13,.96));
+}
+.chapter-photo{
+  overflow:hidden;
+  position:relative;
+  min-height:170px;
+}
+.chapter-photo img{
+  width:100%;
+  height:100%;
+  min-height:170px;
+  display:block;
+  object-fit:cover;
+  filter:saturate(.78) contrast(.96);
+}
+.chapter-photo > span{
+  position:absolute;
+  left:12px;
+  right:12px;
+  bottom:10px;
+  padding:6px 7px;
+  background:rgba(7,7,7,.65);
+  color:#c9b8a8;
+  font:italic 11px Georgia,serif;
+}
+.photo-one{grid-column:1;grid-row:1}
+.photo-two{grid-column:1;grid-row:2}
+.story-one{
+  grid-column:3;
+  grid-row:1 / span 2;
+}
+.story-two{
+  grid-column:1 / span 3;
+  grid-row:3;
+  min-height:250px;
+  padding-right:190px;
+  position:relative;
+}
+.photo-three{
+  grid-column:3;
+  grid-row:3;
+  width:145px;
+  height:120px;
+  justify-self:end;
+  align-self:start;
+  margin:16px 16px 0 0;
+  z-index:2;
+}
+.story-three{
+  grid-column:1 / span 3;
+  grid-row:4;
+  min-height:250px;
+  padding-left:180px;
+  position:relative;
+  margin-top:0;
+}
+.photo-four{
+  grid-column:1;
+  grid-row:4;
+  width:150px;
+  height:120px;
+  justify-self:start;
+  align-self:start;
+  margin:16px 0 0 16px;
+  z-index:2;
+}
+.chapter-story{
+  padding:32px 34px;
+  color:#bcb0a6;
+  font:15px/1.8 Georgia,serif;
+}
+.chapter-story h2{
+  margin:7px 0 18px;
+  color:#eee5dc;
+  font:400 clamp(30px,4vw,43px) Georgia,serif;
+}
+.chapter-story p{margin:0 0 15px}
+.chapter-story .memory-date{
+  color:#9c8169;
+  font-size:9px;
+  letter-spacing:.22em;
+}
+.chapter-story blockquote{
+  margin:20px 0;
+  padding-left:20px;
+  border-left:1px solid #9b7b61;
+  color:#ddd0c4;
+  font-style:italic;
+  font-size:18px;
+}
+.handwritten{
+  color:#c19d80;
+  font-style:italic;
+}
+.dialogue-mini{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:18px 0 20px;
+}
+.dialogue-mini span{
+  flex:1 1 220px;
+  padding:13px 15px;
+  border:1px solid rgba(213,193,173,.12);
+  background:rgba(255,255,255,.018);
+  color:#d7cbc0;
+}
+.dialogue-mini b{
+  color:#a98b72;
+  font-size:9px;
+  letter-spacing:.2em;
+  margin-right:10px;
+}
+.photo-placeholder{
+  width:100%;
+  height:100%;
+  min-height:100%;
+  box-sizing:border-box;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:18px;
+  background:
+    radial-gradient(circle at 50% 40%,rgba(146,105,77,.12),transparent 55%),
+    linear-gradient(145deg,#1b1715,#100f0f);
+  color:#8e7764;
+}
+.photo-placeholder small{
+  font-size:9px;
+  letter-spacing:.22em;
+  margin-bottom:8px;
+}
+.photo-placeholder span{
+  color:#6f6258;
+  font:italic 11px/1.5 Georgia,serif;
+}
+.chapter-afterword{
+  width:min(720px,88%);
+  margin:55px auto 20px;
+  text-align:center;
+  color:#9d8e83;
+  font:italic 15px/1.8 Georgia,serif;
+}
+.chapter-afterword blockquote{
+  margin:12px 0;
+  color:#c4a58b;
+}
+@media(max-width:760px){
+  .chapter-collage{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:auto auto auto auto;
+  }
+  .photo-one{grid-column:1;grid-row:1}
+  .photo-two{grid-column:1;grid-row:2}
+  .story-one{grid-column:2;grid-row:1 / span 2}
+  .story-two{
+    grid-column:1 / span 2;
+    grid-row:3;
+    padding-right:34px;
+    min-height:0;
+  }
+  .photo-three{
+    position:absolute;
+    right:12px;
+    margin:0;
+  }
+  .story-three{
+    grid-column:1 / span 2;
+    grid-row:4;
+    padding-left:34px;
+    min-height:0;
+  }
+  .photo-four{
+    position:absolute;
+    margin:0;
+    left:12px;
+    width:120px;
+    height:100px;
+  }
+}
+@media(max-width:520px){
+  .chapter-collage{
+    display:flex;
+    flex-direction:column;
+  }
+  .chapter-photo{min-height:170px;width:100%;height:170px}
+  .story-one,.story-two,.story-three{
+    padding:25px 22px;
+  }
+  .story-one{order:3}
+  .photo-one{order:1}
+  .photo-two{order:2}
+  .story-two{order:4}
+  .photo-three{order:5}
+  .story-three{order:6}
+  .photo-four{order:7}
+  .chapter-story h2{font-size:30px}
+}
+
 </style>
 </head>
 
@@ -2540,465 +2781,151 @@ onclick="(function(){var h=document.getElementById('home'),p=document.getElement
        OUR STORY
   ========================== -->
 
-  <section class="story-room" id="storyRoom">
+  
+<section class="story-room chapter-story-room" id="storyRoom">
 
-    <div class="story-top">
+  <div class="story-top">
+    <button class="back-button" onclick="closeStory()">← HOME</button>
+    <div class="story-label">OUR STORY</div>
+  </div>
 
-      <button class="back-button" onclick="closeStory()">
-        ← HOME
-      </button>
+  <div class="chapter-hero">
+    <div class="chapter-number">CHAPTER I</div>
+    <h1>Before Hello</h1>
+    <div class="story-line"></div>
+    <p>Before there was a story, there was simply a girl I noticed.</p>
+    <p class="italic">And somehow, she felt familiar.</p>
+  </div>
 
-      <div class="story-label">
-        OUR STORY
+  <div class="chapter-collage">
+
+    <!-- TOP: two small photos + tall story -->
+    <div class="chapter-photo photo-one">
+      <img src="first-look.png" alt="The first time I saw you">
+      <span>The first time I saw you.</span>
+    </div>
+
+    <div class="chapter-photo photo-two">
+      <div class="photo-placeholder">
+        <small>PHOTO 02</small>
+        <span>A memory from before hello.</span>
       </div>
-
     </div>
 
+    <article class="chapter-story story-one">
+      <div class="memory-date">BEFORE HELLO · THE FIRST LOOK</div>
+      <h2>The First Look</h2>
+      <p>
+        I had just walked into the venue. Most of the faces around me were
+        familiar — common friends, people from the team, the usual crowd.
+      </p>
+      <p>
+        And then, somewhere in the middle of all those familiar faces,
+        I noticed you.
+      </p>
+      <p>
+        A beautiful face. Those big, bright eyes. And strangely,
+        there was something nostalgic about it.
+      </p>
+      <blockquote>“I know her from somewhere.”</blockquote>
+      <p>
+        The funny part? I didn't. Your face reminded me of someone I knew,
+        but my brain had conveniently decided not to tell me who.
+      </p>
+      <p class="handwritten">I should probably have just said hello. ♡</p>
+    </article>
 
-    <div class="story-intro">
+    <!-- MIDDLE: wide story + small photo -->
+    <article class="chapter-story story-two">
+      <div class="memory-date">THE QUESTION · 7 MARCH</div>
+      <h2>The Very Important Question</h2>
+      <p>
+        By this point, one thing had become clear.
+        <strong>I wanted to know who you were.</strong>
+      </p>
+      <p>
+        A sensible person would have walked over, introduced himself,
+        and simply asked.
+      </p>
+      <p>
+        Apparently, sensible was not the route I had chosen that evening.
+        So I asked your friend which team you were from.
+      </p>
+      <blockquote>You were standing right there.</blockquote>
+      <p>
+        Looking back, that was probably my first attempt at finding a way
+        into your story without actually having the courage to start it directly.
+      </p>
+      <p class="handwritten">Smooth move, Nishant. ♡</p>
+    </article>
 
-      <div class="chapter-number">
-        CHAPTER I
+    <div class="chapter-photo photo-three">
+      <div class="photo-placeholder">
+        <small>PHOTO 03</small>
+        <span>The night it started becoming real.</span>
       </div>
-
-      <h1>Before Hello</h1>
-
-      <div class="story-line"></div>
-
-      <p class="story-opening">
-        Before there was a story,
-        there was simply a girl I noticed.
-      </p>
-
-      <p class="story-opening italic">
-        And somehow, she felt familiar.
-      </p>
-
     </div>
 
-
-    <div class="story-timeline">
-
-
-      <!-- MEMORY 01 -->
-
-      <article class="memory">
-
-        <div class="memory-date">
-          BEFORE HELLO
-        </div>
-
-        <div class="memory-marker">✦</div>
-
-        <div class="memory-feature">
-
-          <div class="memory-image-wrap">
-            <img
-              src="first-look.png"
-              alt="The first time I saw you — our office party"
-              class="memory-image"
-            />
-            <div class="memory-image-caption">
-              The first time I saw you.
-            </div>
-          </div>
-
-          <div class="memory-content">
-
-            <h2>The First Look</h2>
-
-            <p>
-              I had just walked into the venue.
-              Most of the faces around me were familiar —
-              common friends, people from the team, the usual crowd.
-            </p>
-
-            <p>
-              I did what I normally do.
-              Started pulling everyone's leg.
-              My sense of humour was doing its usual job. 😄
-            </p>
-
-            <p>
-              And then, somewhere in the middle of all those familiar faces,
-              I noticed you.
-            </p>
-
-            <p>
-              A beautiful face.<br>
-              Those big, bright eyes.<br>
-              And strangely, there was something nostalgic about it.
-            </p>
-
-            <p>
-              I remember thinking:
-            </p>
-
-            <blockquote>
-              "I know her from somewhere."
-            </blockquote>
-
-            <p>
-              The funny part?<br>
-              I didn't.<br>
-              Or at least, I couldn't remember from where.
-            </p>
-
-            <p>
-              Your face reminded me of someone I knew,
-              but my brain had conveniently decided not to tell me who.
-            </p>
-
-            <p>
-              Maybe it wasn't even the face.
-              Maybe it was the way you carried yourself.
-              That quiet grace with which you seemed to pull everything off.
-            </p>
-
-            <p>
-              Whatever it was, for some reason,
-              you didn't feel completely new.
-              You felt familiar.
-            </p>
-
-            <p>
-              And I had absolutely no idea that this random feeling
-              was going to become the beginning of everything.
-            </p>
-
-            <p class="handwritten">
-              I should probably have just said hello. ♡
-            </p>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- MEMORY 02 -->
-
-      <article class="memory">
-
-        <div class="memory-date">
-          THE QUESTION
-        </div>
-
-        <div class="memory-marker">✦</div>
-
-        <div class="memory-content">
-
-          <h2>The Very Important Question</h2>
-
-          <p>
-            By this point, one thing had become clear.
-          </p>
-
-          <p>
-            I wanted to know who you were.
-          </p>
-
-          <p>
-            A sensible person would have walked over,
-            introduced himself, and simply asked.
-          </p>
-
-          <p>
-            Apparently, sensible was not the route I had
-            chosen that evening.
-          </p>
-
-          <p>
-            So I asked your friend which team you were from.
-          </p>
-
-          <p>
-            Nothing particularly strange about that...
-            except for one tiny detail.
-          </p>
-
-          <blockquote>
-            You were standing right there.
-          </blockquote>
-
-          <p>
-            Yes. I was asking someone else about you
-            while you were close enough to hear the whole thing.
-          </p>
-
-          <p>
-            Looking back, I suppose that was my very first
-            attempt at finding a way into your story without
-            actually having the courage to start it directly.
-          </p>
-
-          <p class="handwritten">
-            Smooth move, Nishant. ♡
-          </p>
-
-        </div>
-
-      </article>
-
-
-      <!-- MEMORY 03 -->
-
-      <article class="memory compliment-memory">
-
-        <div class="memory-date">
-          7 MARCH
-        </div>
-
-        <div class="memory-marker">♡</div>
-
-        <div class="memory-content compliment-content">
-
-          <div class="memory-location">
-            DRUNKEN BOTANIST · CYBERRHUB · GURGAON
-          </div>
-
-          <h2>The First Compliment</h2>
-
-          <p>
-            Somewhere between the party and gathering enough courage,
-            I finally told you:
-          </p>
-
-          <div class="dialogue-card">
-
-            <div class="dialogue-line me">
-              <span class="speaker">ME</span>
-              <p>"You are looking beautiful."</p>
-            </div>
-
-            <div class="dialogue-line her">
-              <span class="speaker">YOU</span>
-              <p>"What?"</p>
-            </div>
-
-          </div>
-
-          <p>
-            And suddenly, the confidence I had managed to collect
-            disappeared completely.
-          </p>
-
-          <p>
-            Because apparently, saying something nice is one thing.
-            Surviving the moment after saying it is another.
-          </p>
-
-          <p>
-            I had no clever follow-up.
-            No perfectly timed second line.
-            Just the very real feeling that I had probably
-            made things awkward.
-          </p>
-
-          <p class="handwritten">
-            And that was my first compliment to you.<br>
-            I still remember the "What?" ♡
-          </p>
-
-        </div>
-
-      </article>
-
-
-      <!-- MEMORY 04 -->
-
-      <article class="memory">
-
-        <div class="memory-date">
-          THE FIRST COFFEE
-        </div>
-
-        <div class="memory-marker">☕</div>
-
-        <div class="memory-content">
-
-          <h2>A Very Carefully Designed Invitation</h2>
-
-          <p>
-            I wanted to ask her for coffee.
-          </p>
-
-          <p>
-            But asking directly felt far too dangerous.
-            What if she said no?
-          </p>
-
-          <p>
-            So I came up with a brilliant plan.
-          </p>
-
-          <blockquote>
-            "I'm going to get coffee for myself.
-            If you want to come, come.
-            Otherwise just tell me what you want,
-            I'll take it for you."
-          </blockquote>
-
-          <p>
-            Basically, I had already prepared an
-            escape route in case of rejection.
-          </p>
-
-          <p>
-            And that same day came our first coffee.
-          </p>
-
-          <div class="memory-place">
-            Theobroma
-          </div>
-
-          <p>
-            Hot coffee.
-            No sugar.
-            Something she never even liked.
-          </p>
-
-          <p>
-            Funny how coffee eventually became
-            one of our things.
-          </p>
-
-        </div>
-
-      </article>
-
-
-      <!-- MEMORY 05 -->
-
-      <article class="memory">
-
-        <div class="memory-date">
-          THE DIGITS
-        </div>
-
-        <div class="memory-marker">✦</div>
-
-        <div class="memory-content">
-
-          <h2>When I Already Had Her Number</h2>
-
-          <p>
-            There was also the small matter of getting
-            her number.
-          </p>
-
-          <p>
-            Except I already had it.
-          </p>
-
-          <p>
-            Yet somehow I still managed to ask her:
-          </p>
-
-          <blockquote>
-            "Do you have those things that people call
-            digits... that you dial on your phone
-            to talk to someone?"
-          </blockquote>
-
-          <p>
-            Looking back, I have no explanation.
-          </p>
-
-          <p>
-            Apparently flirting had temporarily
-            affected my vocabulary.
-          </p>
-
-        </div>
-
-      </article>
-
-
-      <!-- MEMORY 06 -->
-
-      <article class="memory">
-
-        <div class="memory-date">
-          THE CHASE
-        </div>
-
-        <div class="memory-marker">♡</div>
-
-        <div class="memory-content">
-
-          <h2>She Ignored Me</h2>
-
-          <p>
-            She ignored me for weeks.
-          </p>
-
-          <p>
-            I would message her on Teams.
-            Being the senior, she had to reply.
-          </p>
-
-          <p>
-            But she somehow mastered the art of replying
-            while remaining completely formal.
-          </p>
-
-          <p>
-            I, meanwhile, had entered my
-            <em>flirtatious spree.</em>
-          </p>
-
-          <p>
-            Indirect hints.
-            Random messages.
-            Terrible shayari.
-          </p>
-
-          <blockquote>
-            "Mein badal badal ke badla hun."
-          </blockquote>
-
-          <p>
-            She never replied.
-          </p>
-
-          <p>
-            I continued anyway.
-          </p>
-
-        </div>
-
-      </article>
-
-
-    </div>
-
-
-    <div class="story-ending">
-
-      <div class="ending-symbol">✦</div>
+    <!-- BOTTOM: wide story + small photo -->
+    <article class="chapter-story story-three">
+      <div class="memory-date">THE FIRST COMPLIMENT · THE FIRST COFFEE</div>
+      <h2>“You Are Looking Beautiful.”</h2>
+
+      <div class="dialogue-mini">
+        <span><b>ME</b> “You are looking beautiful.”</span>
+        <span><b>YOU</b> “What?”</span>
+      </div>
 
       <p>
-        And this was before we knew
-        what any of it would become.
+        Somewhere between the party and gathering enough courage,
+        I finally told you.
       </p>
+      <p>
+        And suddenly, the confidence I had managed to collect disappeared
+        completely. I had no clever follow-up. Just the very real feeling
+        that I had probably made things awkward.
+      </p>
+      <p>
+        Then came the first coffee at <strong>Theobroma.</strong>
+        Hot. No sugar. A very carefully designed invitation with an
+        escape route in case you said no.
+      </p>
+      <blockquote>
+        “I'm going to get coffee for myself. If you want to come, come.
+        Otherwise just tell me what you want, I'll take it for you.”
+      </blockquote>
+      <p class="handwritten">
+        And somehow, coffee became one of our things. ♡
+      </p>
+    </article>
 
-      <h3>
-        To be continued.
-      </h3>
-
-      <button class="back-button bottom" onclick="closeStory()">
-        Return to HOME
-      </button>
-
+    <div class="chapter-photo photo-four">
+      <div class="photo-placeholder">
+        <small>PHOTO 04</small>
+        <span>The little beginning we didn't know was a beginning.</span>
+      </div>
     </div>
 
-  </section>
+  </div>
 
+  <div class="chapter-afterword">
+    <div class="ending-symbol">✦</div>
+    <p>
+      There was also the matter of the “digits”, formal Teams replies,
+      weeks of ignoring each other and some truly terrible shayari.
+    </p>
+    <blockquote>“Mein badal badal ke badla hun.”</blockquote>
+    <p class="italic">She never replied. I continued anyway. 😂</p>
+  </div>
 
-  
+  <div class="story-ending">
+    <div class="ending-symbol">✦</div>
+    <p>And this was before we knew what any of it would become.</p>
+    <h3>To be continued.</h3>
+    <button class="back-button bottom" onclick="closeStory()">Return to HOME</button>
+  </div>
 
+</section>
 
 <section class="places-room" id="placesRoom">
   <button class="goa-close" type="button"
