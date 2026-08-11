@@ -2726,6 +2726,51 @@
   }
 }
 
+
+/* CHAPTER I — First Look photo pane: two equal large halves */
+.chapter-collage{
+  grid-template-columns:240px minmax(0,1fr);
+  column-gap:28px;
+}
+.photo-one,
+.photo-two{
+  width:100%;
+  height:180px;
+  min-height:180px;
+}
+.photo-one img{
+  min-height:180px;
+  object-fit:cover;
+}
+.photo-one > span,
+.photo-two > span{
+  left:10px;
+  right:10px;
+  bottom:9px;
+}
+
+/* Keep the small inset photos in the later story panels exactly as they are */
+.photo-three,
+.photo-four{
+  width:145px;
+  height:110px;
+}
+
+@media(max-width:760px){
+  .chapter-collage{
+    grid-template-columns:180px minmax(0,1fr);
+    column-gap:18px;
+  }
+  .photo-one,
+  .photo-two{
+    height:160px;
+    min-height:160px;
+  }
+  .photo-one img{
+    min-height:160px;
+  }
+}
+
 </style>
 </head>
 
