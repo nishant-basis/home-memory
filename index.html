@@ -3842,6 +3842,8 @@ let memoryGameAnswered = false;
 
 function renderMemoryGame(){
   const q = memoryGameQuestions[memoryGameIndex];
+  const oldButton = document.getElementById("quizNextButton");
+  if(oldButton) oldButton.remove();
   document.getElementById("quizProgress").textContent =
     "Question " + (memoryGameIndex + 1) + " of " + memoryGameQuestions.length;
   document.getElementById("quizNumber").textContent =
@@ -3895,8 +3897,12 @@ function answerMemoryGame(choice){
 }
 
 function showNextButton(){
-  const options=document.getElementById("quizOptions");
+  const oldButton = document.getElementById("quizNextButton");
+  if(oldButton) oldButton.remove();
+
+  const card = document.getElementById("quizCard");
   const b=document.createElement("button");
+  b.id="quizNextButton";
   b.type="button";
   b.className="quiz-next";
   b.textContent=memoryGameIndex===memoryGameQuestions.length-1 ? "See My Score" : "Next →";
@@ -3908,7 +3914,7 @@ function showNextButton(){
       renderMemoryGame();
     }
   };
-  options.parentElement.appendChild(b);
+  card.appendChild(b);
 }
 
 function finishMemoryGame(){
@@ -3932,6 +3938,8 @@ function finishMemoryGame(){
 }
 
 function resetMemoryGame(){
+  const oldButton = document.getElementById("quizNextButton");
+  if(oldButton) oldButton.remove();
   memoryGameIndex=0;
   memoryGameScore=0;
   document.getElementById("quizCard").hidden=false;
