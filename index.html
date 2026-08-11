@@ -2104,6 +2104,181 @@
   font:italic 16px/1.8 Georgia,serif;
 }
 
+
+/* LITTLE MAGIC — Things I Hid For You */
+.magic-surprise-launch{margin-left:10px;}
+.hidden-surprises-room{
+  position:fixed;
+  inset:0;
+  z-index:100000;
+  display:flex;
+  justify-content:center;
+  overflow-y:auto;
+  padding:38px 22px 70px;
+  box-sizing:border-box;
+  background:
+    radial-gradient(circle at 50% 8%,rgba(125,92,52,.14),transparent 32%),
+    #08090a;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:.35s ease;
+}
+.hidden-surprises-room.show{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+}
+.hidden-surprises-shell{
+  width:min(900px,100%);
+  padding:22px 0 60px;
+  text-align:center;
+}
+.hidden-surprises-shell h2{
+  margin:0 0 12px;
+  color:#eee5dc;
+  font:400 clamp(42px,7vw,64px) Georgia,serif;
+}
+.hidden-surprises-intro{
+  max-width:600px;
+  margin:14px auto 40px;
+  color:#b9afa5;
+  font:italic 17px/1.85 Georgia,serif;
+}
+.hidden-surprises-intro strong{color:#eee5dc}
+.surprise-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  text-align:left;
+}
+.surprise-card{
+  position:relative;
+  min-height:245px;
+  padding:28px 28px 46px;
+  border:1px solid rgba(215,198,181,.16);
+  background:linear-gradient(145deg,#191513,#110f0e);
+  color:#eee5dc;
+  text-align:left;
+  cursor:pointer;
+  transition:.25s ease;
+}
+.surprise-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(215,198,181,.4);
+  background:linear-gradient(145deg,#211b18,#15110f);
+}
+.surprise-card-secret{
+  grid-column:1 / -1;
+  min-height:190px;
+  text-align:center;
+}
+.surprise-number{
+  position:absolute;
+  top:18px;
+  right:20px;
+  color:#776454;
+  font-size:10px;
+  letter-spacing:.2em;
+}
+.surprise-icon{
+  display:block;
+  font-size:32px;
+  margin-bottom:18px;
+}
+.surprise-title{
+  display:block;
+  margin-bottom:11px;
+  font:400 28px Georgia,serif;
+}
+.surprise-tease{
+  display:block;
+  max-width:470px;
+  color:#afa299;
+  font:italic 15px/1.7 Georgia,serif;
+}
+.surprise-open{
+  position:absolute;
+  bottom:20px;
+  left:28px;
+  color:#c0a27f;
+  font-size:9px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.surprise-card-secret .surprise-open{
+  left:50%;
+  transform:translateX(-50%);
+}
+.hidden-surprises-ending{
+  margin:48px auto 0;
+  max-width:620px;
+  color:#9d8874;
+  font:italic 15px/1.9 Georgia,serif;
+}
+.hidden-surprises-ending strong{color:#eee5dc}
+.hidden-surprise-modal{
+  position:fixed;
+  inset:0;
+  z-index:100002;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:22px;
+  box-sizing:border-box;
+  background:rgba(5,5,5,.84);
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+.hidden-surprise-modal.show{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+}
+.hidden-surprise-box{
+  position:relative;
+  width:min(700px,100%);
+  max-height:82vh;
+  overflow-y:auto;
+  padding:38px 42px 44px;
+  box-sizing:border-box;
+  border:1px solid rgba(215,198,181,.2);
+  background:#12100f;
+  box-shadow:0 25px 80px rgba(0,0,0,.55);
+}
+.hidden-surprise-box h3{
+  margin:0;
+  color:#eee5dc;
+  font:400 38px Georgia,serif;
+}
+.hidden-surprise-box p{
+  margin:0;
+  color:#c3b7ac;
+  font:16px/1.85 Georgia,serif;
+}
+.hidden-surprise-close{
+  position:absolute;
+  top:14px;
+  right:18px;
+  border:0;
+  background:transparent;
+  color:#a58c76;
+  font-size:25px;
+  cursor:pointer;
+}
+@media(max-width:700px){
+  .magic-surprise-launch{margin-left:0;margin-top:10px;}
+  .surprise-grid{grid-template-columns:1fr;}
+  .surprise-card-secret{grid-column:auto;}
+}
+@media(max-width:600px){
+  .hidden-surprise-box{padding:32px 24px 36px}
+  .hidden-surprise-box h3{font-size:30px}
+  .hidden-surprise-box p{font-size:15px;line-height:1.78}
+  .surprise-title{font-size:25px}
+}
+
 </style>
 </head>
 
@@ -2868,6 +3043,71 @@ onclick="document.getElementById('placesRoom').classList.remove('show');document
 </section>
 
 
+
+<section class="hidden-surprises-room" id="hiddenSurprisesRoom">
+  <button class="magic-close" type="button" onclick="closeHiddenSurprises()">← LITTLE MAGIC</button>
+
+  <div class="hidden-surprises-shell">
+    <div class="magic-game-kicker">A FEW THINGS I MANAGED TO HIDE</div>
+    <h2>Things I Hid For You</h2>
+    <p class="hidden-surprises-intro">
+      Surprising you is not easy.<br>
+      Somehow, your intuition catches everything.<br><br>
+      But every once in a while...<br>
+      <strong>I manage to hide something from you. 😏</strong>
+    </p>
+
+    <div class="surprise-grid">
+      <button class="surprise-card" type="button" onclick="openHiddenSurprise(0)">
+        <span class="surprise-number">01</span>
+        <span class="surprise-icon">🎀</span>
+        <span class="surprise-title">The Pink Cake</span>
+        <span class="surprise-tease">A cake that wasn't even on the menu.</span>
+        <span class="surprise-open">Open memory →</span>
+      </button>
+
+      <button class="surprise-card" type="button" onclick="openHiddenSurprise(1)">
+        <span class="surprise-number">02</span>
+        <span class="surprise-icon">👜</span>
+        <span class="surprise-title">The MK Purse</span>
+        <span class="surprise-tease">The surprise you almost accidentally ruined.</span>
+        <span class="surprise-open">Open memory →</span>
+      </button>
+
+      <button class="surprise-card" type="button" onclick="openHiddenSurprise(2)">
+        <span class="surprise-number">03</span>
+        <span class="surprise-icon">☕</span>
+        <span class="surprise-title">The Hazelnut Coffee</span>
+        <span class="surprise-tease">More creamy. Less sugar. Exactly right.</span>
+        <span class="surprise-open">Open memory →</span>
+      </button>
+
+      <button class="surprise-card" type="button" onclick="openHiddenSurprise(3)">
+        <span class="surprise-number">04</span>
+        <span class="surprise-icon">👕</span>
+        <span class="surprise-title">The Pink Shirt</span>
+        <span class="surprise-tease">A mall washroom. A quick change. One reaction.</span>
+        <span class="surprise-open">Open memory →</span>
+      </button>
+
+      <button class="surprise-card surprise-card-secret" type="button" onclick="openHiddenSurprise(4)">
+        <span class="surprise-number">05</span>
+        <span class="surprise-icon">🔐</span>
+        <span class="surprise-title">The One You Haven't Discovered Yet</span>
+        <span class="surprise-tease">This one is still a secret.</span>
+        <span class="surprise-open">Are you sure? →</span>
+      </button>
+    </div>
+
+    <div class="hidden-surprises-ending">
+      <strong>You always say you know everything.</strong><br><br>
+      Maybe you do.<br><br>
+      But every once in a while...<br>
+      <strong>let me surprise you. ❤️</strong>
+    </div>
+  </div>
+</section>
+
 <section class="memory-game-room" id="memoryGameRoom">
   <button class="magic-close" type="button" onclick="closeMemoryGame()">← LITTLE MAGIC</button>
 
@@ -3234,6 +3474,9 @@ Instead, we fought. We laughed. We got irritated. We ate pasta. We worried about
       </div>
       <button type="button" class="magic-game-launch" onclick="openMemoryGame()">
         PLAY OUR MEMORY GAME&nbsp; →
+      </button>
+      <button type="button" class="magic-game-launch magic-surprise-launch" onclick="openHiddenSurprises()">
+        THINGS I HID FOR YOU&nbsp; →
       </button>
       
 
@@ -4036,6 +4279,153 @@ function closeMemoryGame(){
   const room=document.getElementById("memoryGameRoom");
   if(!room) return;
   room.classList.remove("show");
+  document.body.style.overflow="hidden";
+}
+</script>
+
+
+<div class="hidden-surprise-modal" id="hiddenSurprise0">
+  <div class="hidden-surprise-box">
+    <button class="hidden-surprise-close" type="button" onclick="closeHiddenSurprise(0)">×</button>
+    <div class="magic-game-kicker">RAHA · THE PINK CAKE</div>
+    <h3>The Pink Cake</h3>
+    <div class="goa-line"></div>
+    <p>
+      You probably don't remember asking for this.<br><br>
+      Because technically... you didn't.<br><br>
+      You were at RAHA, and somehow I knew I wanted to do something a little different.<br><br>
+      The pink cake wasn't even on their menu.<br><br>
+      So I asked.<br><br>
+      Somehow, the staff agreed. The chef agreed.<br><br>
+      And suddenly there was a <strong>pink cake that wasn't supposed to exist.</strong> 😂<br><br>
+      I think that's one of the things I love doing for you.<br><br>
+      Taking something that isn't available...<br><br>
+      and somehow making it happen.
+    </p>
+  </div>
+</div>
+
+<div class="hidden-surprise-modal" id="hiddenSurprise1">
+  <div class="hidden-surprise-box">
+    <button class="hidden-surprise-close" type="button" onclick="closeHiddenSurprise(1)">×</button>
+    <div class="magic-game-kicker">THE SURPRISE THAT ALMOST FAILED</div>
+    <h3>The MK Purse</h3>
+    <div class="goa-line"></div>
+    <p>
+      This one was <strong>stressful.</strong> 😂<br><br>
+      I already knew I wanted to get you the MK purse.<br><br>
+      Then you decided that you wanted to buy <strong>the exact same one.</strong><br><br>
+      And because mine was supposed to be a surprise, I couldn't exactly say:<br><br>
+      <em>“PLEASE DON'T BUY THAT. I HAVE ALREADY BOUGHT IT.”</em> 😂<br><br>
+      So instead... I had to manipulate you.<br><br>
+      <em>“Are you sure about this colour?”</em><br>
+      <em>“Pink is very specific.”</em><br>
+      <em>“Maybe take another colour.”</em><br>
+      <em>“I'm not sure this one looks that good.”</em><br><br>
+      We had already fought that day.<br><br>
+      And somehow, through all the chaos...<br><br>
+      <strong>I actually managed to stop you from buying it.</strong><br><br>
+      Mission accomplished. 😎
+    </p>
+  </div>
+</div>
+
+<div class="hidden-surprise-modal" id="hiddenSurprise2">
+  <div class="hidden-surprise-box">
+    <button class="hidden-surprise-close" type="button" onclick="closeHiddenSurprise(2)">×</button>
+    <div class="magic-game-kicker">THE LITTLE THINGS</div>
+    <h3>The Hazelnut Coffee</h3>
+    <div class="goa-line"></div>
+    <p>
+      You were coming by metro.<br><br>
+      It was hot.<br><br>
+      You were completely exhausted and sweating by the time you reached.<br><br>
+      And I knew exactly what would make that moment a little better.<br><br>
+      So I got your <strong>hazelnut coffee</strong> ready beforehand.<br><br>
+      More creamy.<br>
+      Less sugar.<br><br>
+      Exactly how you like it.<br><br>
+      Thanks to a very cooperative Costa barista who somehow managed to get it exactly right. 😂<br><br>
+      It wasn't some grand surprise.<br><br>
+      It was just coffee.<br><br>
+      But that's the point.<br><br>
+      <strong>Sometimes loving you is remembering the exact way you like your coffee.</strong>
+    </p>
+  </div>
+</div>
+
+<div class="hidden-surprise-modal" id="hiddenSurprise3">
+  <div class="hidden-surprise-box">
+    <button class="hidden-surprise-close" type="button" onclick="closeHiddenSurprise(3)">×</button>
+    <div class="magic-game-kicker">THE TWINNING ERA</div>
+    <h3>The Pink Shirt</h3>
+    <div class="goa-line"></div>
+    <p>
+      There was a time when we had started this little habit of <strong>twinning.</strong><br><br>
+      And then we had a date.<br><br>
+      Except...<br><br>
+      I didn't have a pink shirt.<br><br>
+      So what did I do?<br><br>
+      I went early.<br>
+      Bought myself a pink shirt.<br>
+      Went into the mall washroom.<br>
+      Changed.<br><br>
+      And walked out pretending like nothing had happened.<br><br>
+      All because I wanted to see <strong>your face when you noticed.</strong> 😂<br><br>
+      Honestly...<br><br>
+      I don't even remember what else happened that day.<br><br>
+      I remember the reaction.<br><br>
+      And that's probably why I did it.
+    </p>
+  </div>
+</div>
+
+<div class="hidden-surprise-modal hidden-surprise-secret-modal" id="hiddenSurprise4">
+  <div class="hidden-surprise-box">
+    <button class="hidden-surprise-close" type="button" onclick="closeHiddenSurprise(4)">×</button>
+    <div class="magic-game-kicker">CLASSIFIED · DO NOT SPOIL</div>
+    <h3>The One You Haven't Discovered Yet</h3>
+    <div class="goa-line"></div>
+    <p>
+      This one is different.<br><br>
+      Because technically...<br><br>
+      <strong>I haven't revealed it yet.</strong><br><br>
+      And considering your intuition, I'm actually taking a risk here by even mentioning it. 😂<br><br>
+      Let's just say...<br><br>
+      there is something I've been working on quietly.<br><br>
+      Something you haven't seen yet.<br><br>
+      Something I've managed to keep to myself.<br><br>
+      <strong>For now.</strong><br><br>
+      And when you finally discover it...<br><br>
+      I hope your face gives me exactly the reaction I've been waiting for. ❤️
+    </p>
+  </div>
+</div>
+
+
+<script>
+function openHiddenSurprises(){
+  const room=document.getElementById("hiddenSurprisesRoom");
+  if(!room) return;
+  room.classList.add("show");
+  document.body.style.overflow="hidden";
+}
+function closeHiddenSurprises(){
+  document.querySelectorAll(".hidden-surprise-modal.show").forEach(function(m){m.classList.remove("show");});
+  const room=document.getElementById("hiddenSurprisesRoom");
+  if(room) room.classList.remove("show");
+  document.body.style.overflow="hidden";
+}
+function openHiddenSurprise(index){
+  const modal=document.getElementById("hiddenSurprise"+index);
+  if(!modal) return;
+  modal.classList.add("show");
+  document.body.style.overflow="hidden";
+}
+function closeHiddenSurprise(index){
+  const modal=document.getElementById("hiddenSurprise"+index);
+  if(!modal) return;
+  modal.classList.remove("show");
   document.body.style.overflow="hidden";
 }
 </script>
