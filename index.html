@@ -40,7 +40,9 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      position: relative;
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
       padding: 30px;
       transition: opacity 1.2s ease, visibility 1.2s ease;
     }
@@ -2277,6 +2279,63 @@
   .hidden-surprise-box h3{font-size:30px}
   .hidden-surprise-box p{font-size:15px;line-height:1.78}
   .surprise-title{font-size:25px}
+}
+
+
+/* HOME TOP SPACE — subtle, intentional atmosphere */
+#home{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse 75% 38% at 50% 2%,
+      rgba(118,87,65,.10),
+      transparent 70%);
+}
+#home::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:0;
+  width:min(980px,94vw);
+  height:330px;
+  transform:translateX(-50%);
+  background:
+    radial-gradient(ellipse at 50% 15%,
+      rgba(184,143,104,.11) 0%,
+      rgba(132,98,73,.045) 34%,
+      transparent 70%);
+  pointer-events:none;
+  z-index:0;
+}
+#home::after{
+  content:"";
+  position:absolute;
+  left:10%;
+  right:10%;
+  top:285px;
+  height:75px;
+  border-top:1px solid rgba(194,167,141,.075);
+  border-radius:50%;
+  box-shadow:0 -15px 45px rgba(150,110,80,.025);
+  pointer-events:none;
+  z-index:0;
+}
+#home > *{
+  position:relative;
+  z-index:1;
+}
+#home .memory-sky .star,
+#home .memory-sky .sky-heart{
+  filter:drop-shadow(0 0 7px rgba(207,175,145,.28));
+}
+
+
+/* HOME — tiny hearts stay warm red while stars remain soft */
+#home .memory-sky .sky-heart,
+#home .memory-sky .sky-heart::before,
+#home .memory-sky .sky-heart::after{
+  color:#b83b52 !important;
+  text-shadow:0 0 9px rgba(184,59,82,.28) !important;
 }
 
 </style>
