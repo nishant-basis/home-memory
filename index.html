@@ -2579,6 +2579,79 @@
   .chapter-story h2{font-size:30px}
 }
 
+
+/* OUR STORY — alignment pass: match the hand-drawn composition cleanly */
+.chapter-collage{
+  width:min(820px,92%);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:170px minmax(0,1fr);
+  grid-template-rows:auto auto auto;
+  column-gap:28px;
+  row-gap:14px;
+  align-items:stretch;
+}
+.photo-one{
+  grid-column:1;
+  grid-row:1;
+  height:170px;
+}
+.photo-two{
+  grid-column:1;
+  grid-row:2;
+  height:170px;
+}
+.story-one{
+  grid-column:2;
+  grid-row:1 / span 2;
+  min-height:354px;
+}
+.story-two{
+  grid-column:1 / span 2;
+  grid-row:3;
+  min-height:220px;
+  padding-right:190px;
+  position:relative;
+}
+.photo-three{
+  position:absolute;
+  right:16px;
+  top:16px;
+  width:145px;
+  height:110px;
+  margin:0;
+  z-index:3;
+}
+.story-three{
+  grid-column:1 / span 2;
+  grid-row:4;
+  min-height:220px;
+  padding-left:190px;
+  position:relative;
+  margin-top:0;
+}
+.photo-four{
+  position:absolute;
+  left:16px;
+  top:16px;
+  width:145px;
+  height:110px;
+  margin:0;
+  z-index:3;
+}
+
+/* Keep all chapter cards on the same visual edges */
+.chapter-story,
+.chapter-photo{
+  box-sizing:border-box;
+}
+
+/* Give the lower story blocks a little more visual breathing room */
+.story-two h2,
+.story-three h2{
+  margin-top:4px;
+}
+
 </style>
 </head>
 
