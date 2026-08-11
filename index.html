@@ -2827,6 +2827,20 @@
   }
 }
 
+
+.chapter-photo img{
+  width:100%;
+  height:100%;
+  min-height:0;
+  display:block;
+  object-fit:cover;
+  filter:saturate(.82) contrast(.98);
+}
+.photo-three img,
+.photo-four img{
+  object-fit:cover;
+}
+
 </style>
 </head>
 
@@ -3049,15 +3063,13 @@ onclick="(function(){var h=document.getElementById('home'),p=document.getElement
 
     <!-- TOP: two small photos + tall story -->
     <div class="chapter-photo photo-one">
-      <img src="first-look.png" alt="The first time I saw you">
+      <img src="photo-01-first-look.png" alt="The first time I saw you">
       <span>The first time I saw you.</span>
     </div>
 
     <div class="chapter-photo photo-two">
-      <div class="photo-placeholder">
-        <small>PHOTO 02</small>
-        <span>A memory from before hello.</span>
-      </div>
+      <img src="photo-02-her-in-the-limelight.png" alt="The moment everything else faded and I noticed you">
+      <span>The moment everything else faded.</span>
     </div>
 
     <article class="chapter-story story-one">
@@ -3108,10 +3120,8 @@ onclick="(function(){var h=document.getElementById('home'),p=document.getElement
     </article>
 
     <div class="chapter-photo photo-three">
-      <div class="photo-placeholder">
-        <small>PHOTO 03</small>
-        <span>The night it started becoming real.</span>
-      </div>
+      <img src="photo-03-important-question.png" alt="The night the important question began">
+      <span>The night it started becoming real.</span>
     </div>
 
     <!-- BOTTOM: wide story + small photo -->
@@ -3148,10 +3158,8 @@ onclick="(function(){var h=document.getElementById('home'),p=document.getElement
     </article>
 
     <div class="chapter-photo photo-four">
-      <div class="photo-placeholder">
-        <small>PHOTO 04</small>
-        <span>The little beginning we didn't know was a beginning.</span>
-      </div>
+      <img src="photo-04-coffee-moment.png" alt="The coffee moment">
+      <span>The little beginning we didn't know was a beginning.</span>
     </div>
 
   </div>
