@@ -3001,215 +3001,50 @@
 }
 
 
-/* =========================================================
-   OUR STORY — CHAPTER V
-   ========================================================= */
-.chapter5-page{
-  width:min(1180px,96vw);
-  margin:0 auto;
-  background:#eee5d5;
-  color:#27231f;
-  box-shadow:0 25px 70px rgba(0,0,0,.5);
-  padding:clamp(24px,5vw,62px);
-  position:relative;
-  overflow:hidden;
-}
-.chapter5-page:before,
-.chapter5-page:after{
-  content:"";
-  position:absolute;
-  inset:18px;
-  border:1px solid rgba(185,170,148,.38);
-  pointer-events:none;
-}
-.chapter5-header{
-  position:relative;
-  text-align:center;
-  padding:20px 10px 48px;
-}
-.chapter5-eyebrow{
-  font:11px Arial,sans-serif;
-  letter-spacing:4px;
-  color:#71685d;
-}
-.chapter5-header h1{
-  font:400 clamp(42px,7vw,82px)/.95 Georgia,serif;
-  margin:18px 0 8px;
-  color:#27231f;
-}
-.chapter5-chapter{
-  font:13px Arial,sans-serif;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  color:#8f3f36;
-}
-.chapter5-intro{
-  max-width:760px;
-  margin:28px auto 0;
-  font:italic 19px/1.7 Georgia,serif;
-  color:#71685d;
-}
-.chapter5-visual{
-  margin:10px 0 18px;
-  overflow:hidden;
-  background:#ddd0bd;
-  border:1px solid #b9aa94;
-  box-shadow:0 16px 35px rgba(0,0,0,.16);
-}
-.chapter5-visual img{
-  display:block;
-  width:100%;
-  height:auto;
-}
-.chapter5-caption{
-  text-align:center;
-  font:italic 15px/1.6 Georgia,serif;
-  color:#71685d;
-  margin:0 auto 45px;
-}
-.chapter5-section{
-  position:relative;
-  margin:46px 0;
-  padding:30px 0;
-  border-top:1px dashed #a99a84;
-}
-.chapter5-section:first-of-type{
-  margin-top:0;
-}
-.chapter5-num{
-  font:11px Arial,sans-serif;
-  letter-spacing:3px;
-  color:#8f3f36;
-}
-.chapter5-section h2{
-  font:400 clamp(28px,4vw,43px) Georgia,serif;
-  color:#27231f;
-  margin:10px 0 18px;
-}
-.chapter5-copy{
-  max-width:820px;
-  font:16px/1.9 Georgia,serif;
-  color:#514a43;
-}
-.chapter5-copy p{
-  margin:0 0 15px;
-}
-.chapter5-copy strong{
-  color:#302b27;
-}
-.chapter5-note{
-  margin-top:22px;
-  padding:18px 22px;
-  border-left:3px solid #9b4a42;
-  background:rgba(255,255,255,.42);
-  font:italic 17px/1.7 Georgia,serif;
-  color:#6c554b;
-}
-.chapter5-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:22px;
-}
-.chapter5-grid .chapter5-section{
-  margin:0;
-  padding:28px 24px;
-  border:1px solid rgba(169,154,132,.65);
-  background:rgba(255,255,255,.28);
-}
-.chapter5-grid .chapter5-section h2{
-  font-size:30px;
-}
-.chapter5-grid .chapter5-copy{
-  font-size:15px;
-  line-height:1.8;
-}
-.chapter5-gussa{
-  margin:18px 0 20px;
-  padding:20px 22px;
-  background:#292522;
-  color:#eee5d5;
-  border-left:4px solid #9b4a42;
-}
-.chapter5-gussa .label{
-  font:10px Arial,sans-serif;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  color:#c8a897;
-  margin-bottom:10px;
-}
-.chapter5-gussa p{
-  margin:5px 0;
-  font:15px/1.75 Georgia,serif;
-}
-.chapter5-object-list{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:10px 28px;
-  margin-top:18px;
-}
-.chapter5-object-list div{
-  padding:11px 0;
-  border-bottom:1px dotted rgba(143,63,54,.35);
-  font:italic 15px/1.6 Georgia,serif;
-  color:#5e554d;
-}
-.chapter5-final{
-  margin-top:54px;
-  padding:52px 24px 38px;
-  text-align:center;
-  border-top:1px solid #b8aa95;
-}
-.chapter5-final .big{
-  max-width:820px;
-  margin:0 auto;
-  font:italic clamp(21px,3vw,29px)/1.8 Georgia,serif;
-  color:#51463f;
-}
-.chapter5-final .big strong{
-  color:#8f3f36;
-}
-.chapter5-weus{
-  margin:30px 0 8px;
-  font:400 clamp(38px,6vw,68px) Georgia,serif;
-  letter-spacing:5px;
-  color:#8f3f36;
-}
-.chapter5-together{
-  font:italic 18px Georgia,serif;
-  color:#71685d;
-}
-.chapter5-nav{
-  margin-top:34px;
-  padding-top:20px;
-  border-top:1px solid rgba(40,35,31,.15);
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-}
-.chapter5-nav button{
-  border:1px solid #b8aa95;
-  background:#292522;
-  color:#eee5d5;
-  padding:12px 19px;
-  font:11px Arial,sans-serif;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  cursor:pointer;
-  transition:.25s ease;
-}
-.chapter5-nav button:hover{
-  background:#8f3f36;
-}
-@media(max-width:760px){
-  .chapter5-grid,
-  .chapter5-object-list{
-    grid-template-columns:1fr;
-  }
-  .chapter5-grid .chapter5-section{
-    padding:24px 20px;
-  }
-}
+/* =========================
+   BIRTHDAY COUNTDOWN + REVEAL
+========================= */
+.birthday-countdown-wrap{max-width:1120px;margin:26px auto 8px;padding:0 24px;position:relative;z-index:5}
+.birthday-countdown{position:relative;overflow:hidden;border:1px solid rgba(239,209,161,.45);border-radius:20px;background:linear-gradient(135deg,rgba(25,17,17,.96),rgba(45,29,28,.94));box-shadow:0 18px 50px rgba(0,0,0,.24);padding:22px 24px 20px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+.birthday-countdown:before{content:"";position:absolute;inset:-50%;background:radial-gradient(circle at 78% 45%,rgba(255,208,157,.13),transparent 28%),radial-gradient(circle at 20% 20%,rgba(180,95,95,.10),transparent 25%);pointer-events:none}
+.birthday-countdown-copy,.birthday-countdown-action{position:relative;z-index:1}
+.birthday-eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#e8cda8;margin-bottom:7px}
+.birthday-date{font-family:Georgia,serif;font-size:28px;letter-spacing:5px;color:#f8ead3;margin-bottom:5px}
+.birthday-subtitle{font-family:Georgia,serif;font-style:italic;color:rgba(255,244,226,.72);font-size:15px}
+.birthday-timer{display:flex;gap:8px;margin-top:15px;flex-wrap:wrap}
+.birthday-unit{min-width:78px;padding:9px 10px;border:1px solid rgba(239,209,161,.25);border-radius:10px;text-align:center;background:rgba(0,0,0,.16)}
+.birthday-unit strong{display:block;font-family:Georgia,serif;font-size:23px;font-weight:400;color:#fff2dc;line-height:1}
+.birthday-unit span{display:block;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,236,211,.55);margin-top:6px}
+.birthday-cake-button{border:0;background:none;color:#fff;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;padding:4px 8px;transition:transform .25s ease}
+.birthday-cake-button:hover{transform:translateY(-3px) scale(1.03)}
+.birthday-cake{font-size:55px;line-height:1;filter:drop-shadow(0 7px 14px rgba(0,0,0,.28));animation:cakeFloat 3s ease-in-out infinite}
+.birthday-cake-label{font-family:Georgia,serif;font-style:italic;font-size:13px;color:#f2d8b5}
+@keyframes cakeFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-5px) rotate(2deg)}}
+
+.birthday-reveal{position:fixed;inset:0;z-index:100000;display:none;overflow:hidden;background:radial-gradient(circle at 50% 22%,#4b302c 0%,#211617 42%,#0e0b0c 100%);color:#fff2df}
+.birthday-reveal.show{display:block;animation:revealIn .55s ease both}
+@keyframes revealIn{from{opacity:0}to{opacity:1}}
+.birthday-reveal-backdrop{position:absolute;inset:0;background:radial-gradient(circle at 50% 10%,rgba(255,211,158,.12),transparent 27%),linear-gradient(180deg,rgba(20,11,11,.16),rgba(10,7,8,.62))}
+.birthday-lights{position:absolute;top:0;left:0;right:0;height:135px;opacity:.82;background:radial-gradient(circle at 5% 45%,#ffe1ad 0 2px,transparent 4px),radial-gradient(circle at 14% 65%,#ffd39a 0 2px,transparent 4px),radial-gradient(circle at 25% 32%,#ffe9c4 0 2px,transparent 4px),radial-gradient(circle at 36% 68%,#ffd39a 0 2px,transparent 4px),radial-gradient(circle at 49% 38%,#ffe9c4 0 2px,transparent 4px),radial-gradient(circle at 62% 70%,#ffd39a 0 2px,transparent 4px),radial-gradient(circle at 75% 34%,#ffe9c4 0 2px,transparent 4px),radial-gradient(circle at 87% 65%,#ffd39a 0 2px,transparent 4px),radial-gradient(circle at 97% 42%,#ffe9c4 0 2px,transparent 4px);filter:drop-shadow(0 0 8px rgba(255,212,155,.7))}
+.birthday-reveal-close,.birthday-music-toggle{position:absolute;top:20px;width:42px;height:42px;border:1px solid rgba(255,231,201,.38);border-radius:50%;background:rgba(20,12,13,.52);color:#ffe9ca;z-index:20;cursor:pointer;font-size:17px}
+.birthday-reveal-close{right:20px}.birthday-music-toggle{right:72px}
+.birthday-reveal-inner{position:relative;z-index:5;min-height:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:70px 24px 36px;text-align:center}
+.birthday-kicker{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#e8cba3;margin-bottom:7px}
+.birthday-reveal h2{font-family:cursive,Georgia,serif;font-size:clamp(48px,7vw,92px);font-weight:400;line-height:.92;margin:0 0 7px;color:#ffe7c7;text-shadow:0 5px 28px rgba(0,0,0,.35)}
+.birthday-reveal-name{font-family:cursive,Georgia,serif;font-size:24px;color:#f4b8aa;margin-bottom:14px}
+.birthday-characters{position:relative;width:min(440px,76vw);height:210px;margin:0 auto 5px;display:flex;justify-content:center;align-items:flex-end;pointer-events:none}
+.birthday-characters:after{content:"";position:absolute;left:12%;right:12%;bottom:5px;height:22px;background:rgba(0,0,0,.25);filter:blur(15px);border-radius:50%}
+.birthday-character-img{position:relative;z-index:2;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 15px 16px rgba(0,0,0,.3));animation:duBubuFloat 3.6s ease-in-out infinite}
+@keyframes duBubuFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.birthday-cake-stage{position:absolute;bottom:0;left:50%;transform:translateX(-50%);z-index:3;font-size:46px;filter:drop-shadow(0 5px 10px rgba(0,0,0,.25));animation:cakePop .8s .25s both}
+@keyframes cakePop{from{opacity:0;transform:translateX(-50%) translateY(25px) scale(.7)}to{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}}
+.birthday-letter{width:min(640px,92vw);padding:21px 25px 20px;background:#f5e5ca;color:#2e2220;box-shadow:0 16px 45px rgba(0,0,0,.32);border-radius:2px;transform:rotate(-.6deg);position:relative}
+.birthday-letter:before{content:"";position:absolute;inset:6px;border:1px solid rgba(112,69,45,.17);pointer-events:none}
+.birthday-letter h3{font-family:cursive,Georgia,serif;font-size:28px;font-weight:400;margin:0 0 7px}.birthday-letter p{font-family:Georgia,serif;font-size:15px;line-height:1.55;margin:6px auto;max-width:540px}.birthday-letter .birthday-highlight{font-family:cursive,Georgia,serif;font-size:21px;color:#8c4b49;margin:10px 0}
+.birthday-enter{margin-top:19px;padding:12px 28px;border:1px solid #d9b886;border-radius:999px;background:#1c1212;color:#f6dfbd;font-family:Georgia,serif;letter-spacing:3px;text-transform:uppercase;font-size:11px;cursor:pointer;box-shadow:0 9px 24px rgba(0,0,0,.25);transition:transform .2s ease,background .2s ease}.birthday-enter:hover{transform:translateY(-2px);background:#2a1a1a}
+.birthday-confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:10}.confetti-piece{position:absolute;top:-30px;width:8px;height:15px;border-radius:2px;animation:confettiFall linear forwards}.confetti-piece:nth-child(3n){width:6px;height:10px;transform:rotate(22deg)}.confetti-piece:nth-child(4n){border-radius:50%;width:7px;height:7px}.confetti-piece:nth-child(5n){width:10px;height:5px}
+@keyframes confettiFall{to{transform:translate3d(var(--drift),110vh,0) rotate(720deg);opacity:.85}}
+@media(max-width:700px){.birthday-countdown-wrap{padding:0 14px}.birthday-countdown{grid-template-columns:1fr;padding:18px}.birthday-countdown-action{position:absolute;right:10px;top:10px}.birthday-cake{font-size:43px}.birthday-timer{padding-right:62px}.birthday-unit{min-width:66px}.birthday-unit strong{font-size:20px}.birthday-reveal-inner{padding-top:60px}.birthday-reveal h2{font-size:54px}.birthday-characters{height:165px}.birthday-letter{padding:18px 18px}.birthday-letter p{font-size:13.5px}.birthday-letter h3{font-size:25px}.birthday-music-toggle{right:70px}}
 
 </style>
 </head>
@@ -3259,6 +3094,32 @@
   ========================== -->
 
   <section class="home" id="home">
+
+
+
+    <!-- BIRTHDAY COUNTDOWN -->
+    <div class="birthday-countdown-wrap">
+      <div class="birthday-countdown">
+        <div class="birthday-countdown-copy">
+          <div class="birthday-eyebrow">♡ Counting down to you ♡</div>
+          <div class="birthday-date">24 · 09 · 2026</div>
+          <div class="birthday-subtitle">Something special is getting closer...</div>
+          <div class="birthday-timer" aria-live="polite">
+            <div class="birthday-unit"><strong id="bdDays">--</strong><span>Days</span></div>
+            <div class="birthday-unit"><strong id="bdHours">--</strong><span>Hours</span></div>
+            <div class="birthday-unit"><strong id="bdMinutes">--</strong><span>Minutes</span></div>
+            <div class="birthday-unit"><strong id="bdSeconds">--</strong><span>Seconds</span></div>
+          </div>
+        </div>
+        <div class="birthday-countdown-action">
+          <button class="birthday-cake-button" type="button" onclick="openBirthdayReveal()" aria-label="Open birthday surprise">
+            <span class="birthday-cake">🎂</span>
+            <span class="birthday-cake-label">Tap the cake ♡</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
 
     <!-- MEMORY SKY -->
 
@@ -4544,315 +4405,40 @@ Instead, we fought. We laughed. We got irritated. We ate pasta. We worried about
 
     <div class="chapter4-nav">
       <button onclick="backToChapter3()">← Chapter III</button>
-      <button onclick="openStoryChapter(5)">Chapter V →</button>
       <button onclick="closeStory()">Return to HOME</button>
     </div>
   </main>
 </section>
 
 
-<!-- =========================================================
-     OUR STORY — CHAPTER V
-     ========================================================= -->
-<section class="integrated-chapter" id="storyChapter5">
-  <div class="integrated-top">
-    <button class="back-button" onclick="backToChapter4()">← CHAPTER IV</button>
-    <div class="integrated-label">OUR STORY · CHAPTER V</div>
-  </div>
 
-  <div class="integrated-hero">
-    <div class="integrated-kicker">CHAPTER V</div>
-    <h1>Our Kind of Normal</h1>
-    <div class="integrated-rule"></div>
-    <p class="subtitle">“Because apparently, normal for us means eating too much, judging strangers, fighting over nothing, and somehow ending every day together.”</p>
-  </div>
-
-  <main class="chapter5-page">
-    <header class="chapter5-header">
-      <div class="chapter5-eyebrow">OUR STORY</div>
-      <h1>Our Kind of Normal</h1>
-      <div class="chapter5-chapter">Chapter V</div>
-      <div class="integrated-rule"></div>
-      <p class="chapter5-intro">
-        Maybe we never became the couple who does dates the way other people do.
-        Maybe we became something much better — a little world with its own habits,
-        phases, jokes, rituals, food and completely unnecessary arguments.
-      </p>
-    </header>
-
-    <div class="chapter5-visual">
-      <img src="chapter5-collage.png" alt="Our Story — Chapter V: Our Kind of Normal">
+  <!-- =========================
+       BIRTHDAY REVEAL
+  ========================== -->
+  <section class="birthday-reveal" id="birthdayReveal" aria-hidden="true">
+    <div class="birthday-reveal-backdrop"></div>
+    <div class="birthday-lights"></div>
+    <button class="birthday-music-toggle" id="birthdayMusicToggle" type="button" onclick="toggleBirthdayMusic()" aria-label="Toggle music">♫</button>
+    <button class="birthday-reveal-close" type="button" onclick="closeBirthdayReveal()" aria-label="Close birthday surprise">×</button>
+    <div class="birthday-confetti" id="birthdayConfetti"></div>
+    <div class="birthday-reveal-inner">
+      <div class="birthday-kicker">A little something before HOME</div>
+      <h2>Happy Birthday</h2>
+      <div class="birthday-reveal-name">My Bubu ♡</div>
+      <div class="birthday-characters">
+        <img class="birthday-character-img" src="dudu-bubu.png" alt="Dudu and Bubu together">
+        <div class="birthday-cake-stage">🎂</div>
+      </div>
+      <div class="birthday-letter">
+        <h3>Hey you... ❤️</h3>
+        <p>Before you explore HOME, there is one thing I need to say.</p>
+        <div class="birthday-highlight">Happy Birthday.</div>
+        <p>I hope this little place makes you smile, laugh at some stupid memories, remember some beautiful ones, and maybe... fall in love with us all over again.</p>
+        <p><strong>This HOME was made for you.</strong></p>
+      </div>
+      <button class="birthday-enter" type="button" onclick="enterBirthdayHome()">Now go inside →</button>
     </div>
-    <p class="chapter5-caption">
-      Not a perfect relationship. Not a perfect life. Just a little world that somehow feels completely ours.
-    </p>
-
-    <div class="chapter5-grid">
-
-      <section class="chapter5-section">
-        <div class="chapter5-num">01 · WE DON'T DATE. WE EAT.</div>
-        <h2>Apparently, we were born bhukkads.</h2>
-        <div class="chapter5-copy">
-          <p>
-            I've seen people go on dates. Take one drink. Sit there. Talk for hours.
-          </p>
-          <p>
-            We are completely different.
-          </p>
-          <p>
-            We go somewhere and almost immediately ask for our dish. Get it.
-            Finish it. Look at each other. <strong>“Aur?”</strong>
-          </p>
-          <p>
-            Then the next thing. And then we leave.
-          </p>
-          <p>
-            No grand romantic mood. No perfectly timed dinner.
-            Just two people who apparently arrived on this earth with a very serious
-            relationship with food. 😂
-          </p>
-        </div>
-        <div class="chapter5-note">“Humare dates mein romance se pehle menu aa jata hai.” 😂</div>
-      </section>
-
-      <section class="chapter5-section">
-        <div class="chapter5-num">02 · THE SPOT PHASE</div>
-        <h2>Find a place. Become regulars. Eventually leave.</h2>
-        <div class="chapter5-copy">
-          <p>
-            We have this strange little pattern.
-          </p>
-          <p>
-            We find a spot. We start going there regularly. We become known there.
-            It becomes <em>our place.</em>
-          </p>
-          <p>
-            And then one fine day, the place spoils our taste.
-            The food changes. Something isn't right anymore.
-          </p>
-          <p>
-            And just like that... we leave and start looking for another spot.
-          </p>
-        </div>
-        <div class="chapter5-object-list">
-          <div>Logix</div>
-          <div>Bakebook</div>
-          <div>Spectrum</div>
-          <div>Jungle Café · Goa</div>
-          <div>Delhi Darbar</div>
-          <div>Ching's · our Chinese phase</div>
-          <div>Yeti · our momo palace</div>
-          <div>Chelvi's</div>
-        </div>
-      </section>
-
-    </div>
-
-    <section class="chapter5-section">
-      <div class="chapter5-num">03 · FOOD PHASES</div>
-      <h2>We don't eat things. We enter phases.</h2>
-      <div class="chapter5-copy">
-        <p>
-          Momo phase. Coffee phase. Nachos phase. Daru phase.
-        </p>
-        <p>
-          We pick one thing and eat it until we reach the point where even the
-          sight of it feels like <em>“bas, ab nahi.”</em>
-        </p>
-        <p>
-          Then we abandon it and move on to the next obsession.
-        </p>
-        <p>
-          It makes absolutely no sense.
-          And somehow, it is one of the most fun things about us.
-        </p>
-      </div>
-      <div class="chapter5-note">“One thing at a time. Until atti nahi ho jaati.” 😂</div>
-    </section>
-
-    <section class="chapter5-section">
-      <div class="chapter5-num">04 · OUR FAVOURITE SPORT</div>
-      <h2>Judging people who didn't ask to be judged.</h2>
-      <div class="chapter5-copy">
-        <p>
-          Sometimes I think people imagine couples sitting together and having
-          romantic conversations.
-        </p>
-        <p>
-          We sit together, point at somebody, and immediately start finding
-          everything wrong with them.
-        </p>
-        <p>
-          Their face. Their dressing. Their attitude. Their harkatein.
-          Someone says something weird. Someone does something stupid.
-          Somehow, everyone becomes a discussion topic.
-        </p>
-        <p>
-          Kajul. Vikash. Neha. Aman. Nisarg. Nikita.
-          I am pretty sure some of them have suffered enough because of us. 😂
-        </p>
-        <p>
-          Sometimes I genuinely feel that out of those four people the world
-          keeps talking about, <strong>two of them are probably us.</strong>
-        </p>
-        <p>
-          We don't leave anyone.
-          And honestly, I think that's one of our favourite forms of entertainment.
-        </p>
-      </div>
-      <div class="chapter5-note">“Kisi ko nahi chodte.” 😂</div>
-    </section>
-
-    <section class="chapter5-section">
-      <div class="chapter5-num">05 · FROM GOOD MORNING TO GOOD NIGHT</div>
-      <h2>Our Gussa Meter.</h2>
-      <div class="chapter5-copy">
-        <p>
-          Somewhere along the way, wishing each other good morning and good night
-          stopped being a thing we consciously did.
-        </p>
-        <p>
-          It became a habit.
-        </p>
-        <p>
-          From the first wish in the morning to the last sweet dream at night,
-          it became part of our day.
-        </p>
-      </div>
-
-      <div class="chapter5-gussa">
-        <div class="label">THE OFFICIAL GUSSA METER</div>
-        <p><strong>Angry?</strong> No wishes.</p>
-        <p><strong>Normal?</strong> Everything.</p>
-        <p><strong>Completely fine?</strong> Good morning. Good night. Everything in between. ❤️</p>
-        <p style="margin-top:12px;"><em>Also known as: conditional love.</em> 😂</p>
-      </div>
-
-      <div class="chapter5-copy">
-        <p>
-          I still remember you naming it.
-          And honestly, the name fits perfectly.
-        </p>
-      </div>
-    </section>
-
-    <section class="chapter5-section">
-      <div class="chapter5-num">06 · LITTLE THINGS THAT LIVE WITH ME</div>
-      <h2>A small museum of you.</h2>
-      <div class="chapter5-copy">
-        <p>
-          My Harry Potter tumbler — your precious little gift.
-          I didn't use it for the longest time because I didn't have a place
-          where it could look beautiful.
-        </p>
-        <p>
-          Now I use it every day.
-          And every time I pick it up, I remember you.
-        </p>
-        <p>
-          It took me months to find our <strong>Dudu Bubu</strong> to sit in my study
-          as our favourite storytellers.
-        </p>
-        <p>
-          That Miniso penguin and its baby.
-          The tiny little bunny that was supposed to be at your place,
-          but somehow ended up here because you left it with me.
-        </p>
-        <p>
-          Your scented candles are still with me too.
-        </p>
-        <p>
-          My place is literally full of these small, almost ridiculous things.
-        </p>
-        <p>
-          And somehow, every one of them keeps a little piece of you around.
-        </p>
-      </div>
-      <div class="chapter5-note">
-        “Small things. Small objects. Somehow, they make the place feel more like home.”
-      </div>
-    </section>
-
-    <section class="chapter5-section">
-      <div class="chapter5-num">07 · WE KNOW EACH OTHER NOW</div>
-      <h2>More understanding. Still more silly fights.</h2>
-      <div class="chapter5-copy">
-        <p>
-          Slowly, with time, we have become more and more understanding.
-        </p>
-        <p>
-          We know each other much better now.
-          The moods. The silences. The expressions.
-          The things that need to be said and the things that don't.
-        </p>
-        <p>
-          We still fight.
-        </p>
-        <p>
-          Of course we do.
-        </p>
-        <p>
-          We are still us. 😂
-        </p>
-        <p>
-          But somewhere along the way, we learned how to understand the person
-          underneath the argument.
-        </p>
-      </div>
-      <div class="chapter5-note">“More understanding. More us. And, unfortunately, still more silly fights.”</div>
-    </section>
-
-    <section class="chapter5-section">
-      <div class="chapter5-num">08 · CHEERS TO US</div>
-      <h2>To health. To beauty. To you. ❤️</h2>
-      <div class="chapter5-copy">
-        <p>
-          Cheers to our health — so no sugars.
-        </p>
-        <p>
-          Cheers to beauty — so I always wear sunscreen and actually try to
-          follow what you say.
-        </p>
-        <p>
-          <em>Just kidding.</em> 😂
-        </p>
-        <p>
-          At least I try not to make you mad.
-        </p>
-        <p>
-          And through all the food phases, the spot phases, the judgement,
-          the wishes, the objects, the arguments and the endless nonsense...
-        </p>
-        <p>
-          <strong>I always love you.</strong>
-        </p>
-      </div>
-    </section>
-
-    <section class="chapter5-final">
-      <p class="big">
-        Maybe this is what normal became for us.<br><br>
-        Not candlelight dinners.<br>
-        Not perfectly planned dates.<br>
-        Not always saying the right thing.<br><br>
-        Sometimes it's just<br>
-        “Kahan chalna hai?” · “Kuch khaate hain.” · “Woh banda dekh.” · “Uski kya problem hai?” 😂<br><br>
-        And then food. And laughter. And another stupid conversation.
-        And eventually...<br>
-        Good night.<br><br>
-        And tomorrow, again...
-      </p>
-
-      <h2 class="chapter5-weus">WE → US</h2>
-      <div class="chapter5-together">Our kind of normal. ❤️</div>
-    </section>
-
-    <div class="chapter5-nav">
-      <button onclick="backToChapter4()">← Chapter IV</button>
-      <button onclick="closeStory()">Return to HOME</button>
-    </div>
-  </main>
-</section>
+  </section>
 
 
 <script>
@@ -5176,15 +4762,11 @@ function closeGoaToPlaces(){
       const storyRoom = document.getElementById("storyRoom");
       const chapter2 = document.getElementById("storyChapter2");
       const chapter3 = document.getElementById("storyChapter3");
-      const chapter4 = document.getElementById("storyChapter4");
-      const chapter5 = document.getElementById("storyChapter5");
       const home = document.getElementById("home");
 
       storyRoom.classList.remove("show");
       if (chapter2) chapter2.classList.remove("show");
       if (chapter3) chapter3.classList.remove("show");
-      if (chapter4) chapter4.classList.remove("show");
-      if (chapter5) chapter5.classList.remove("show");
 
       home.style.display = "block";
 
@@ -5786,7 +5368,7 @@ function closeHiddenSurprise(index){
 <script>
 /* OUR STORY — integrated chapter navigation */
 function hideAllStoryChapters(){
-  const ids=['storyRoom','storyChapter2','storyChapter3','storyChapter4','storyChapter5'];
+  const ids=['storyRoom','storyChapter2','storyChapter3','storyChapter4'];
   ids.forEach(function(id){
     const el=document.getElementById(id);
     if(el) el.classList.remove('show');
@@ -5817,9 +5399,94 @@ function backToChapter2(){
 function backToChapter3(){
   openStoryChapter(3);
 }
-function backToChapter4(){
-  openStoryChapter(4);
+</script>
+
+
+<script>
+/* =========================
+   BIRTHDAY COUNTDOWN + REVEAL
+========================= */
+(function(){
+  const target = new Date('2026-09-24T12:59:59+05:30').getTime();
+  function updateBirthdayCountdown(){
+    const diff = Math.max(0, target - Date.now());
+    const total = Math.floor(diff/1000);
+    const days = Math.floor(total/86400);
+    const hours = Math.floor((total%86400)/3600);
+    const minutes = Math.floor((total%3600)/60);
+    const seconds = total%60;
+    const set=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=String(v).padStart(2,'0');};
+    set('bdDays',days); set('bdHours',hours); set('bdMinutes',minutes); set('bdSeconds',seconds);
+  }
+  updateBirthdayCountdown();
+  setInterval(updateBirthdayCountdown,1000);
+})();
+
+let birthdayMusicCtx=null, birthdayMusicTimer=null, birthdayMusicPlaying=false;
+function playBirthdayNote(freq,start,duration,volume){
+  if(!birthdayMusicCtx) return;
+  const osc=birthdayMusicCtx.createOscillator();
+  const gain=birthdayMusicCtx.createGain();
+  osc.type='sine'; osc.frequency.value=freq;
+  gain.gain.setValueAtTime(0.0001,start);
+  gain.gain.exponentialRampToValueAtTime(volume,start+0.025);
+  gain.gain.exponentialRampToValueAtTime(0.0001,start+duration);
+  osc.connect(gain); gain.connect(birthdayMusicCtx.destination);
+  osc.start(start); osc.stop(start+duration+0.03);
 }
+function startBirthdayMusic(){
+  if(birthdayMusicPlaying) return;
+  const AC=window.AudioContext||window.webkitAudioContext;
+  if(!AC) return;
+  birthdayMusicCtx=birthdayMusicCtx||new AC();
+  birthdayMusicCtx.resume();
+  birthdayMusicPlaying=true;
+  const melody=[523.25,659.25,783.99,659.25,587.33,698.46,880,698.46,523.25,659.25,783.99,1046.5];
+  let i=0;
+  const loop=()=>{
+    if(!birthdayMusicPlaying) return;
+    const now=birthdayMusicCtx.currentTime;
+    melody.forEach((f,n)=>playBirthdayNote(f,now+n*.38,.42,.035));
+    birthdayMusicTimer=setTimeout(loop,melody.length*380+650);
+  };
+  loop();
+  const b=document.getElementById('birthdayMusicToggle'); if(b)b.textContent='♫';
+}
+function stopBirthdayMusic(){
+  birthdayMusicPlaying=false;
+  if(birthdayMusicTimer) clearTimeout(birthdayMusicTimer);
+  const b=document.getElementById('birthdayMusicToggle'); if(b)b.textContent='♪';
+}
+function toggleBirthdayMusic(){ birthdayMusicPlaying ? stopBirthdayMusic() : startBirthdayMusic(); }
+function createBirthdayConfetti(){
+  const box=document.getElementById('birthdayConfetti'); if(!box)return;
+  box.innerHTML='';
+  const pieces=72;
+  for(let i=0;i<pieces;i++){
+    const el=document.createElement('span'); el.className='confetti-piece';
+    el.style.left=(Math.random()*100)+'%';
+    el.style.animationDuration=(4.5+Math.random()*4)+'s';
+    el.style.animationDelay=(Math.random()*1.2)+'s';
+    el.style.setProperty('--drift',((Math.random()-.5)*220)+'px');
+    const colors=['#e8b7a7','#f2d3a4','#f7e7c9','#c9817e','#b89b75','#ffffff'];
+    el.style.background=colors[Math.floor(Math.random()*colors.length)];
+    box.appendChild(el);
+  }
+}
+function openBirthdayReveal(){
+  const r=document.getElementById('birthdayReveal'); if(!r)return;
+  r.classList.add('show'); r.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+  createBirthdayConfetti();
+  startBirthdayMusic();
+}
+function closeBirthdayReveal(){
+  const r=document.getElementById('birthdayReveal'); if(!r)return;
+  r.classList.remove('show'); r.setAttribute('aria-hidden','true');
+  stopBirthdayMusic();
+  document.body.style.overflow='auto';
+}
+function enterBirthdayHome(){ closeBirthdayReveal(); }
 </script>
 
 </body>
