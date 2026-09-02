@@ -3021,30 +3021,208 @@
 .birthday-cake-label{font-family:Georgia,serif;font-style:italic;font-size:13px;color:#f2d8b5}
 @keyframes cakeFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-5px) rotate(2deg)}}
 
-.birthday-reveal{position:fixed;inset:0;z-index:100000;display:none;overflow:hidden;background:radial-gradient(circle at 50% 22%,#4b302c 0%,#211617 42%,#0e0b0c 100%);color:#fff2df}
-.birthday-reveal.show{display:block;animation:revealIn .55s ease both}
+
+.birthday-reveal{
+  position:fixed;inset:0;z-index:100000;display:none;overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 18%,rgba(111,69,60,.48),transparent 28%),
+    radial-gradient(circle at 50% 100%,rgba(105,62,48,.20),transparent 38%),
+    #0d090a;color:#fff2df;
+}
+.birthday-reveal.show{display:block;animation:revealIn .65s ease both}
 @keyframes revealIn{from{opacity:0}to{opacity:1}}
-.birthday-reveal-backdrop{position:absolute;inset:0;background:radial-gradient(circle at 50% 10%,rgba(255,211,158,.12),transparent 27%),linear-gradient(180deg,rgba(20,11,11,.16),rgba(10,7,8,.62))}
-.birthday-lights{position:absolute;top:0;left:0;right:0;height:135px;opacity:.82;background:radial-gradient(circle at 5% 45%,#ffe1ad 0 2px,transparent 4px),radial-gradient(circle at 14% 65%,#ffd39a 0 2px,transparent 4px),radial-gradient(circle at 25% 32%,#ffe9c4 0 2px,transparent 4px),radial-gradient(circle at 36% 68%,#ffd39a 0 2px,transparent 4px),radial-gradient(circle at 49% 38%,#ffe9c4 0 2px,transparent 4px),radial-gradient(circle at 62% 70%,#ffd39a 0 2px,transparent 4px),radial-gradient(circle at 75% 34%,#ffe9c4 0 2px,transparent 4px),radial-gradient(circle at 87% 65%,#ffd39a 0 2px,transparent 4px),radial-gradient(circle at 97% 42%,#ffe9c4 0 2px,transparent 4px);filter:drop-shadow(0 0 8px rgba(255,212,155,.7))}
-.birthday-reveal-close,.birthday-music-toggle{position:absolute;top:20px;width:42px;height:42px;border:1px solid rgba(255,231,201,.38);border-radius:50%;background:rgba(20,12,13,.52);color:#ffe9ca;z-index:20;cursor:pointer;font-size:17px}
+
+.birthday-reveal-backdrop{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 50% 18%,rgba(255,214,166,.10),transparent 24%),
+    linear-gradient(180deg,rgba(19,10,11,.10),rgba(8,6,7,.78));
+}
+.birthday-lights{
+  position:absolute;top:0;left:0;right:0;height:170px;opacity:.86;
+  background:
+    radial-gradient(circle at 5% 48%,#ffe1ad 0 2px,transparent 4px),
+    radial-gradient(circle at 14% 65%,#ffd39a 0 2px,transparent 4px),
+    radial-gradient(circle at 25% 32%,#ffe9c4 0 2px,transparent 4px),
+    radial-gradient(circle at 36% 68%,#ffd39a 0 2px,transparent 4px),
+    radial-gradient(circle at 49% 38%,#ffe9c4 0 2px,transparent 4px),
+    radial-gradient(circle at 62% 70%,#ffd39a 0 2px,transparent 4px),
+    radial-gradient(circle at 75% 34%,#ffe9c4 0 2px,transparent 4px),
+    radial-gradient(circle at 87% 65%,#ffd39a 0 2px,transparent 4px),
+    radial-gradient(circle at 97% 42%,#ffe9c4 0 2px,transparent 4px);
+  filter:drop-shadow(0 0 8px rgba(255,212,155,.7));
+}
+
+.birthday-reveal-close,.birthday-music-toggle{
+  position:absolute;top:20px;width:42px;height:42px;border:1px solid rgba(255,231,201,.38);
+  border-radius:50%;background:rgba(20,12,13,.52);color:#ffe9ca;z-index:30;
+  cursor:pointer;font-size:17px;backdrop-filter:blur(5px);
+}
 .birthday-reveal-close{right:20px}.birthday-music-toggle{right:72px}
-.birthday-reveal-inner{position:relative;z-index:5;min-height:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:70px 24px 36px;text-align:center}
-.birthday-kicker{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#e8cba3;margin-bottom:7px}
-.birthday-reveal h2{font-family:cursive,Georgia,serif;font-size:clamp(48px,7vw,92px);font-weight:400;line-height:.92;margin:0 0 7px;color:#ffe7c7;text-shadow:0 5px 28px rgba(0,0,0,.35)}
-.birthday-reveal-name{font-family:cursive,Georgia,serif;font-size:24px;color:#f4b8aa;margin-bottom:14px}
-.birthday-characters{position:relative;width:min(440px,76vw);height:210px;margin:0 auto 5px;display:flex;justify-content:center;align-items:flex-end;pointer-events:none}
-.birthday-characters:after{content:"";position:absolute;left:12%;right:12%;bottom:5px;height:22px;background:rgba(0,0,0,.25);filter:blur(15px);border-radius:50%}
-.birthday-character-img{position:relative;z-index:2;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 15px 16px rgba(0,0,0,.3));animation:duBubuFloat 3.6s ease-in-out infinite}
-@keyframes duBubuFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-.birthday-cake-stage{position:absolute;bottom:0;left:50%;transform:translateX(-50%);z-index:3;font-size:46px;filter:drop-shadow(0 5px 10px rgba(0,0,0,.25));animation:cakePop .8s .25s both}
-@keyframes cakePop{from{opacity:0;transform:translateX(-50%) translateY(25px) scale(.7)}to{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}}
-.birthday-letter{width:min(640px,92vw);padding:21px 25px 20px;background:#f5e5ca;color:#2e2220;box-shadow:0 16px 45px rgba(0,0,0,.32);border-radius:2px;transform:rotate(-.6deg);position:relative}
+
+.birthday-reveal-inner{
+  position:relative;z-index:5;min-height:100%;height:100%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:44px 24px 24px;text-align:center;
+}
+
+.birthday-kicker{
+  font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#e8cba3;
+  margin-bottom:8px;opacity:0;transform:translateY(10px);
+}
+.birthday-reveal.show .birthday-kicker{animation:riseIn .7s .15s ease forwards}
+
+.birthday-reveal h2{
+  font-family:cursive,Georgia,serif;font-size:clamp(48px,6.2vw,78px);font-weight:400;
+  line-height:.9;margin:0;color:#ffe7c7;text-shadow:0 5px 28px rgba(0,0,0,.35);
+  opacity:0;transform:translateY(18px) scale(.97);
+}
+.birthday-reveal.show h2{animation:titleReveal .9s .35s cubic-bezier(.2,.8,.2,1) forwards}
+.birthday-reveal-name{
+  font-family:cursive,Georgia,serif;font-size:22px;color:#f4b8aa;
+  margin:9px 0 12px;opacity:0;transform:translateY(8px);
+}
+.birthday-reveal.show .birthday-reveal-name{animation:riseIn .65s .75s ease forwards}
+
+@keyframes riseIn{to{opacity:1;transform:translateY(0)}}
+@keyframes titleReveal{to{opacity:1;transform:translateY(0) scale(1)}}
+
+/* The characters are deliberately separate so Dudu and Bubu can enter independently. */
+.birthday-characters{
+  position:relative;width:min(560px,78vw);height:230px;margin:0 auto 6px;
+  display:flex;justify-content:center;align-items:flex-end;pointer-events:none;
+}
+.birthday-characters:after{
+  content:"";position:absolute;left:18%;right:18%;bottom:3px;height:24px;
+  background:rgba(0,0,0,.34);filter:blur(15px);border-radius:50%;opacity:0;
+}
+.birthday-reveal.show .birthday-characters:after{animation:shadowIn .8s 1.05s ease forwards}
+@keyframes shadowIn{to{opacity:1}}
+
+.birthday-character{
+  position:absolute;bottom:6px;width:min(170px,24vw);height:205px;
+  object-fit:contain;filter:drop-shadow(0 14px 15px rgba(0,0,0,.34));
+  opacity:0;z-index:2;
+}
+.birthday-dudu{
+  left:calc(50% - 150px);
+  transform:translateX(-105px) translateY(30px) rotate(-5deg) scale(.72);
+}
+.birthday-bubu{
+  right:calc(50% - 150px);
+  transform:translateX(105px) translateY(30px) rotate(5deg) scale(.72);
+}
+.birthday-reveal.show .birthday-dudu{
+  animation:duduEnter 1.05s 1s cubic-bezier(.18,.9,.25,1.12) forwards,
+             characterFloat 4s 2.15s ease-in-out infinite;
+}
+.birthday-reveal.show .birthday-bubu{
+  animation:bubuEnter 1.05s 1.16s cubic-bezier(.18,.9,.25,1.12) forwards,
+             characterFloat 4s 2.31s ease-in-out infinite;
+}
+@keyframes duduEnter{
+  0%{opacity:0;transform:translateX(-105px) translateY(30px) rotate(-8deg) scale(.72)}
+  72%{opacity:1;transform:translateX(10px) translateY(-4px) rotate(3deg) scale(1.04)}
+  100%{opacity:1;transform:translateX(0) translateY(0) rotate(-2deg) scale(1)}
+}
+@keyframes bubuEnter{
+  0%{opacity:0;transform:translateX(105px) translateY(30px) rotate(8deg) scale(.72)}
+  72%{opacity:1;transform:translateX(-10px) translateY(-4px) rotate(-3deg) scale(1.04)}
+  100%{opacity:1;transform:translateX(0) translateY(0) rotate(2deg) scale(1)}
+}
+@keyframes characterFloat{
+  0%,100%{margin-bottom:0}
+  50%{margin-bottom:5px}
+}
+
+/* A proper little cake instead of an emoji: it can pop up and glow with the scene. */
+.birthday-cake-stage{
+  position:absolute;left:50%;bottom:3px;z-index:8;
+  width:92px;height:76px;transform:translateX(-50%) translateY(35px) scale(.7);
+  opacity:0;
+  filter:drop-shadow(0 7px 12px rgba(0,0,0,.3));
+}
+.birthday-reveal.show .birthday-cake-stage{animation:cakeReveal .8s 1.72s cubic-bezier(.18,.9,.25,1.1) forwards}
+@keyframes cakeReveal{
+  0%{opacity:0;transform:translateX(-50%) translateY(35px) scale(.7)}
+  70%{opacity:1;transform:translateX(-50%) translateY(-3px) scale(1.05)}
+  100%{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}
+}
+.cake-candle{position:absolute;top:0;width:6px;height:25px;border-radius:4px;background:#f4dfb9}
+.cake-candle:nth-child(1){left:28px}.cake-candle:nth-child(2){left:43px}.cake-candle:nth-child(3){left:58px}
+.cake-flame{
+  position:absolute;top:-10px;left:50%;width:8px;height:12px;transform:translateX(-50%);
+  border-radius:60% 60% 60% 60%;background:#ffd36f;
+  box-shadow:0 0 13px rgba(255,205,110,.95);animation:flame 1s ease-in-out infinite;
+}
+@keyframes flame{50%{transform:translateX(-50%) scale(.82) translateY(2px);opacity:.82}}
+.cake-top{
+  position:absolute;left:8px;right:8px;top:20px;height:21px;border-radius:8px 8px 5px 5px;
+  background:#f5d4c0;border:2px solid #6d3f35;
+}
+.cake-icing{
+  position:absolute;left:8px;right:8px;top:35px;height:9px;border-radius:0 0 8px 8px;
+  background:#e9a99e;border:2px solid #6d3f35;border-top:0;
+}
+.cake-base{
+  position:absolute;left:4px;right:4px;top:42px;height:27px;border-radius:4px 4px 12px 12px;
+  background:#f1e0c8;border:2px solid #6d3f35;
+}
+.cake-dot{position:absolute;width:5px;height:5px;border-radius:50%;background:#b86b65;top:54px}
+.cake-dot:nth-child(5){left:21px}.cake-dot:nth-child(6){left:44px}.cake-dot:nth-child(7){right:20px}
+
+.birthday-letter{
+  width:min(650px,90vw);padding:19px 25px 18px;background:#f5e5ca;color:#2e2220;
+  box-shadow:0 18px 52px rgba(0,0,0,.38);border-radius:2px;transform:rotate(-.6deg);
+  position:relative;opacity:0;transform-origin:center;
+}
+.birthday-reveal.show .birthday-letter{animation:letterReveal .8s 2.12s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes letterReveal{
+  from{opacity:0;transform:translateY(24px) rotate(-.6deg) scale(.97)}
+  to{opacity:1;transform:translateY(0) rotate(-.6deg) scale(1)}
+}
 .birthday-letter:before{content:"";position:absolute;inset:6px;border:1px solid rgba(112,69,45,.17);pointer-events:none}
-.birthday-letter h3{font-family:cursive,Georgia,serif;font-size:28px;font-weight:400;margin:0 0 7px}.birthday-letter p{font-family:Georgia,serif;font-size:15px;line-height:1.55;margin:6px auto;max-width:540px}.birthday-letter .birthday-highlight{font-family:cursive,Georgia,serif;font-size:21px;color:#8c4b49;margin:10px 0}
-.birthday-enter{margin-top:19px;padding:12px 28px;border:1px solid #d9b886;border-radius:999px;background:#1c1212;color:#f6dfbd;font-family:Georgia,serif;letter-spacing:3px;text-transform:uppercase;font-size:11px;cursor:pointer;box-shadow:0 9px 24px rgba(0,0,0,.25);transition:transform .2s ease,background .2s ease}.birthday-enter:hover{transform:translateY(-2px);background:#2a1a1a}
-.birthday-confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:10}.confetti-piece{position:absolute;top:-30px;width:8px;height:15px;border-radius:2px;animation:confettiFall linear forwards}.confetti-piece:nth-child(3n){width:6px;height:10px;transform:rotate(22deg)}.confetti-piece:nth-child(4n){border-radius:50%;width:7px;height:7px}.confetti-piece:nth-child(5n){width:10px;height:5px}
+.birthday-letter h3{font-family:cursive,Georgia,serif;font-size:30px;font-weight:400;margin:0 0 7px}
+.birthday-letter p{font-family:Georgia,serif;font-size:15px;line-height:1.55;margin:6px auto;max-width:580px}
+.birthday-letter .birthday-highlight{font-family:cursive,Georgia,serif;font-size:22px;color:#8c4b49;margin:10px 0}
+
+.birthday-enter{
+  margin-top:18px;padding:12px 29px;border:1px solid #d9b886;border-radius:999px;
+  background:#1c1212;color:#f6dfbd;font-family:Georgia,serif;letter-spacing:3px;
+  text-transform:uppercase;font-size:11px;cursor:pointer;box-shadow:0 9px 24px rgba(0,0,0,.25);
+  opacity:0;transform:translateY(8px);
+}
+.birthday-reveal.show .birthday-enter{animation:riseIn .65s 2.62s ease forwards}
+.birthday-enter:hover{transform:translateY(-2px);background:#2a1a1a}
+
+.birthday-confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:10}
+.confetti-piece{position:absolute;top:-30px;width:8px;height:15px;border-radius:2px;animation:confettiFall linear forwards}
+.confetti-piece:nth-child(3n){width:6px;height:10px;transform:rotate(22deg)}
+.confetti-piece:nth-child(4n){border-radius:50%;width:7px;height:7px}
+.confetti-piece:nth-child(5n){width:10px;height:5px}
 @keyframes confettiFall{to{transform:translate3d(var(--drift),110vh,0) rotate(720deg);opacity:.85}}
-@media(max-width:700px){.birthday-countdown-wrap{padding:0 14px}.birthday-countdown{grid-template-columns:1fr;padding:18px}.birthday-countdown-action{position:absolute;right:10px;top:10px}.birthday-cake{font-size:43px}.birthday-timer{padding-right:62px}.birthday-unit{min-width:66px}.birthday-unit strong{font-size:20px}.birthday-reveal-inner{padding-top:60px}.birthday-reveal h2{font-size:54px}.birthday-characters{height:165px}.birthday-letter{padding:18px 18px}.birthday-letter p{font-size:13.5px}.birthday-letter h3{font-size:25px}.birthday-music-toggle{right:70px}}
+
+@media(max-width:700px){
+  .birthday-countdown-wrap{padding:0 14px}
+  .birthday-countdown{grid-template-columns:1fr;padding:18px}
+  .birthday-countdown-action{position:absolute;right:10px;top:10px}
+  .birthday-cake{font-size:43px}
+  .birthday-timer{padding-right:62px}
+  .birthday-unit{min-width:66px}
+  .birthday-unit strong{font-size:20px}
+  .birthday-reveal-inner{padding:54px 14px 22px;justify-content:center}
+  .birthday-reveal h2{font-size:52px}
+  .birthday-reveal-name{font-size:22px}
+  .birthday-characters{height:170px;width:100%;margin-bottom:3px}
+  .birthday-pair{width:260px;max-width:74vw}
+  .birthday-cake-stage{transform:translateX(-50%) translateY(35px) scale(.75)}
+  .birthday-letter{padding:17px 17px 16px}
+  .birthday-letter p{font-size:13px;line-height:1.48}
+  .birthday-letter h3{font-size:25px}
+  .birthday-letter .birthday-highlight{font-size:20px}
+  .birthday-enter{margin-top:14px}
+  .birthday-music-toggle{right:70px}
+}
 
 </style>
 </head>
@@ -4421,14 +4599,29 @@ Instead, we fought. We laughed. We got irritated. We ate pasta. We worried about
     <button class="birthday-music-toggle" id="birthdayMusicToggle" type="button" onclick="toggleBirthdayMusic()" aria-label="Toggle music">♫</button>
     <button class="birthday-reveal-close" type="button" onclick="closeBirthdayReveal()" aria-label="Close birthday surprise">×</button>
     <div class="birthday-confetti" id="birthdayConfetti"></div>
+
     <div class="birthday-reveal-inner">
       <div class="birthday-kicker">A little something before HOME</div>
       <h2>Happy Birthday</h2>
       <div class="birthday-reveal-name">My Bubu ♡</div>
-      <div class="birthday-characters">
-        <img class="birthday-character-img" src="dudu-bubu.png" alt="Dudu and Bubu together">
-        <div class="birthday-cake-stage">🎂</div>
+
+      <div class="birthday-characters" aria-hidden="true">
+        <img class="birthday-character birthday-dudu" src="dudu.png" alt="">
+        <img class="birthday-character birthday-bubu" src="bubu.png" alt="">
+
+        <div class="birthday-cake-stage">
+          <div class="cake-candle"><span class="cake-flame"></span></div>
+          <div class="cake-candle"><span class="cake-flame"></span></div>
+          <div class="cake-candle"><span class="cake-flame"></span></div>
+          <div class="cake-top"></div>
+          <div class="cake-icing"></div>
+          <div class="cake-base"></div>
+          <div class="cake-dot"></div>
+          <div class="cake-dot"></div>
+          <div class="cake-dot"></div>
+        </div>
       </div>
+
       <div class="birthday-letter">
         <h3>Hey you... ❤️</h3>
         <p>Before you explore HOME, there is one thing I need to say.</p>
@@ -4436,6 +4629,7 @@ Instead, we fought. We laughed. We got irritated. We ate pasta. We worried about
         <p>I hope this little place makes you smile, laugh at some stupid memories, remember some beautiful ones, and maybe... fall in love with us all over again.</p>
         <p><strong>This HOME was made for you.</strong></p>
       </div>
+
       <button class="birthday-enter" type="button" onclick="enterBirthdayHome()">Now go inside →</button>
     </div>
   </section>
