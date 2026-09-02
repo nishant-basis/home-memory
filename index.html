@@ -3000,6 +3000,217 @@
  .chapter3-copy{font-size:17px}.integrated-top{align-items:flex-start}.integrated-label{padding-top:10px}
 }
 
+
+/* =========================================================
+   OUR STORY — CHAPTER V
+   ========================================================= */
+.chapter5-page{
+  width:min(1180px,96vw);
+  margin:0 auto;
+  background:#eee5d5;
+  color:#27231f;
+  box-shadow:0 25px 70px rgba(0,0,0,.5);
+  padding:clamp(24px,5vw,62px);
+  position:relative;
+  overflow:hidden;
+}
+.chapter5-page:before,
+.chapter5-page:after{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(185,170,148,.38);
+  pointer-events:none;
+}
+.chapter5-header{
+  position:relative;
+  text-align:center;
+  padding:20px 10px 48px;
+}
+.chapter5-eyebrow{
+  font:11px Arial,sans-serif;
+  letter-spacing:4px;
+  color:#71685d;
+}
+.chapter5-header h1{
+  font:400 clamp(42px,7vw,82px)/.95 Georgia,serif;
+  margin:18px 0 8px;
+  color:#27231f;
+}
+.chapter5-chapter{
+  font:13px Arial,sans-serif;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#8f3f36;
+}
+.chapter5-intro{
+  max-width:760px;
+  margin:28px auto 0;
+  font:italic 19px/1.7 Georgia,serif;
+  color:#71685d;
+}
+.chapter5-visual{
+  margin:10px 0 18px;
+  overflow:hidden;
+  background:#ddd0bd;
+  border:1px solid #b9aa94;
+  box-shadow:0 16px 35px rgba(0,0,0,.16);
+}
+.chapter5-visual img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+.chapter5-caption{
+  text-align:center;
+  font:italic 15px/1.6 Georgia,serif;
+  color:#71685d;
+  margin:0 auto 45px;
+}
+.chapter5-section{
+  position:relative;
+  margin:46px 0;
+  padding:30px 0;
+  border-top:1px dashed #a99a84;
+}
+.chapter5-section:first-of-type{
+  margin-top:0;
+}
+.chapter5-num{
+  font:11px Arial,sans-serif;
+  letter-spacing:3px;
+  color:#8f3f36;
+}
+.chapter5-section h2{
+  font:400 clamp(28px,4vw,43px) Georgia,serif;
+  color:#27231f;
+  margin:10px 0 18px;
+}
+.chapter5-copy{
+  max-width:820px;
+  font:16px/1.9 Georgia,serif;
+  color:#514a43;
+}
+.chapter5-copy p{
+  margin:0 0 15px;
+}
+.chapter5-copy strong{
+  color:#302b27;
+}
+.chapter5-note{
+  margin-top:22px;
+  padding:18px 22px;
+  border-left:3px solid #9b4a42;
+  background:rgba(255,255,255,.42);
+  font:italic 17px/1.7 Georgia,serif;
+  color:#6c554b;
+}
+.chapter5-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+}
+.chapter5-grid .chapter5-section{
+  margin:0;
+  padding:28px 24px;
+  border:1px solid rgba(169,154,132,.65);
+  background:rgba(255,255,255,.28);
+}
+.chapter5-grid .chapter5-section h2{
+  font-size:30px;
+}
+.chapter5-grid .chapter5-copy{
+  font-size:15px;
+  line-height:1.8;
+}
+.chapter5-gussa{
+  margin:18px 0 20px;
+  padding:20px 22px;
+  background:#292522;
+  color:#eee5d5;
+  border-left:4px solid #9b4a42;
+}
+.chapter5-gussa .label{
+  font:10px Arial,sans-serif;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#c8a897;
+  margin-bottom:10px;
+}
+.chapter5-gussa p{
+  margin:5px 0;
+  font:15px/1.75 Georgia,serif;
+}
+.chapter5-object-list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px 28px;
+  margin-top:18px;
+}
+.chapter5-object-list div{
+  padding:11px 0;
+  border-bottom:1px dotted rgba(143,63,54,.35);
+  font:italic 15px/1.6 Georgia,serif;
+  color:#5e554d;
+}
+.chapter5-final{
+  margin-top:54px;
+  padding:52px 24px 38px;
+  text-align:center;
+  border-top:1px solid #b8aa95;
+}
+.chapter5-final .big{
+  max-width:820px;
+  margin:0 auto;
+  font:italic clamp(21px,3vw,29px)/1.8 Georgia,serif;
+  color:#51463f;
+}
+.chapter5-final .big strong{
+  color:#8f3f36;
+}
+.chapter5-weus{
+  margin:30px 0 8px;
+  font:400 clamp(38px,6vw,68px) Georgia,serif;
+  letter-spacing:5px;
+  color:#8f3f36;
+}
+.chapter5-together{
+  font:italic 18px Georgia,serif;
+  color:#71685d;
+}
+.chapter5-nav{
+  margin-top:34px;
+  padding-top:20px;
+  border-top:1px solid rgba(40,35,31,.15);
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.chapter5-nav button{
+  border:1px solid #b8aa95;
+  background:#292522;
+  color:#eee5d5;
+  padding:12px 19px;
+  font:11px Arial,sans-serif;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:.25s ease;
+}
+.chapter5-nav button:hover{
+  background:#8f3f36;
+}
+@media(max-width:760px){
+  .chapter5-grid,
+  .chapter5-object-list{
+    grid-template-columns:1fr;
+  }
+  .chapter5-grid .chapter5-section{
+    padding:24px 20px;
+  }
+}
+
 </style>
 </head>
 
@@ -4333,10 +4544,316 @@ Instead, we fought. We laughed. We got irritated. We ate pasta. We worried about
 
     <div class="chapter4-nav">
       <button onclick="backToChapter3()">← Chapter III</button>
+      <button onclick="openStoryChapter(5)">Chapter V →</button>
       <button onclick="closeStory()">Return to HOME</button>
     </div>
   </main>
 </section>
+
+
+<!-- =========================================================
+     OUR STORY — CHAPTER V
+     ========================================================= -->
+<section class="integrated-chapter" id="storyChapter5">
+  <div class="integrated-top">
+    <button class="back-button" onclick="backToChapter4()">← CHAPTER IV</button>
+    <div class="integrated-label">OUR STORY · CHAPTER V</div>
+  </div>
+
+  <div class="integrated-hero">
+    <div class="integrated-kicker">CHAPTER V</div>
+    <h1>Our Kind of Normal</h1>
+    <div class="integrated-rule"></div>
+    <p class="subtitle">“Because apparently, normal for us means eating too much, judging strangers, fighting over nothing, and somehow ending every day together.”</p>
+  </div>
+
+  <main class="chapter5-page">
+    <header class="chapter5-header">
+      <div class="chapter5-eyebrow">OUR STORY</div>
+      <h1>Our Kind of Normal</h1>
+      <div class="chapter5-chapter">Chapter V</div>
+      <div class="integrated-rule"></div>
+      <p class="chapter5-intro">
+        Maybe we never became the couple who does dates the way other people do.
+        Maybe we became something much better — a little world with its own habits,
+        phases, jokes, rituals, food and completely unnecessary arguments.
+      </p>
+    </header>
+
+    <div class="chapter5-visual">
+      <img src="chapter5-collage.png" alt="Our Story — Chapter V: Our Kind of Normal">
+    </div>
+    <p class="chapter5-caption">
+      Not a perfect relationship. Not a perfect life. Just a little world that somehow feels completely ours.
+    </p>
+
+    <div class="chapter5-grid">
+
+      <section class="chapter5-section">
+        <div class="chapter5-num">01 · WE DON'T DATE. WE EAT.</div>
+        <h2>Apparently, we were born bhukkads.</h2>
+        <div class="chapter5-copy">
+          <p>
+            I've seen people go on dates. Take one drink. Sit there. Talk for hours.
+          </p>
+          <p>
+            We are completely different.
+          </p>
+          <p>
+            We go somewhere and almost immediately ask for our dish. Get it.
+            Finish it. Look at each other. <strong>“Aur?”</strong>
+          </p>
+          <p>
+            Then the next thing. And then we leave.
+          </p>
+          <p>
+            No grand romantic mood. No perfectly timed dinner.
+            Just two people who apparently arrived on this earth with a very serious
+            relationship with food. 😂
+          </p>
+        </div>
+        <div class="chapter5-note">“Humare dates mein romance se pehle menu aa jata hai.” 😂</div>
+      </section>
+
+      <section class="chapter5-section">
+        <div class="chapter5-num">02 · THE SPOT PHASE</div>
+        <h2>Find a place. Become regulars. Eventually leave.</h2>
+        <div class="chapter5-copy">
+          <p>
+            We have this strange little pattern.
+          </p>
+          <p>
+            We find a spot. We start going there regularly. We become known there.
+            It becomes <em>our place.</em>
+          </p>
+          <p>
+            And then one fine day, the place spoils our taste.
+            The food changes. Something isn't right anymore.
+          </p>
+          <p>
+            And just like that... we leave and start looking for another spot.
+          </p>
+        </div>
+        <div class="chapter5-object-list">
+          <div>Logix</div>
+          <div>Bakebook</div>
+          <div>Spectrum</div>
+          <div>Jungle Café · Goa</div>
+          <div>Delhi Darbar</div>
+          <div>Ching's · our Chinese phase</div>
+          <div>Yeti · our momo palace</div>
+          <div>Chelvi's</div>
+        </div>
+      </section>
+
+    </div>
+
+    <section class="chapter5-section">
+      <div class="chapter5-num">03 · FOOD PHASES</div>
+      <h2>We don't eat things. We enter phases.</h2>
+      <div class="chapter5-copy">
+        <p>
+          Momo phase. Coffee phase. Nachos phase. Daru phase.
+        </p>
+        <p>
+          We pick one thing and eat it until we reach the point where even the
+          sight of it feels like <em>“bas, ab nahi.”</em>
+        </p>
+        <p>
+          Then we abandon it and move on to the next obsession.
+        </p>
+        <p>
+          It makes absolutely no sense.
+          And somehow, it is one of the most fun things about us.
+        </p>
+      </div>
+      <div class="chapter5-note">“One thing at a time. Until atti nahi ho jaati.” 😂</div>
+    </section>
+
+    <section class="chapter5-section">
+      <div class="chapter5-num">04 · OUR FAVOURITE SPORT</div>
+      <h2>Judging people who didn't ask to be judged.</h2>
+      <div class="chapter5-copy">
+        <p>
+          Sometimes I think people imagine couples sitting together and having
+          romantic conversations.
+        </p>
+        <p>
+          We sit together, point at somebody, and immediately start finding
+          everything wrong with them.
+        </p>
+        <p>
+          Their face. Their dressing. Their attitude. Their harkatein.
+          Someone says something weird. Someone does something stupid.
+          Somehow, everyone becomes a discussion topic.
+        </p>
+        <p>
+          Kajul. Vikash. Neha. Aman. Nisarg. Nikita.
+          I am pretty sure some of them have suffered enough because of us. 😂
+        </p>
+        <p>
+          Sometimes I genuinely feel that out of those four people the world
+          keeps talking about, <strong>two of them are probably us.</strong>
+        </p>
+        <p>
+          We don't leave anyone.
+          And honestly, I think that's one of our favourite forms of entertainment.
+        </p>
+      </div>
+      <div class="chapter5-note">“Kisi ko nahi chodte.” 😂</div>
+    </section>
+
+    <section class="chapter5-section">
+      <div class="chapter5-num">05 · FROM GOOD MORNING TO GOOD NIGHT</div>
+      <h2>Our Gussa Meter.</h2>
+      <div class="chapter5-copy">
+        <p>
+          Somewhere along the way, wishing each other good morning and good night
+          stopped being a thing we consciously did.
+        </p>
+        <p>
+          It became a habit.
+        </p>
+        <p>
+          From the first wish in the morning to the last sweet dream at night,
+          it became part of our day.
+        </p>
+      </div>
+
+      <div class="chapter5-gussa">
+        <div class="label">THE OFFICIAL GUSSA METER</div>
+        <p><strong>Angry?</strong> No wishes.</p>
+        <p><strong>Normal?</strong> Everything.</p>
+        <p><strong>Completely fine?</strong> Good morning. Good night. Everything in between. ❤️</p>
+        <p style="margin-top:12px;"><em>Also known as: conditional love.</em> 😂</p>
+      </div>
+
+      <div class="chapter5-copy">
+        <p>
+          I still remember you naming it.
+          And honestly, the name fits perfectly.
+        </p>
+      </div>
+    </section>
+
+    <section class="chapter5-section">
+      <div class="chapter5-num">06 · LITTLE THINGS THAT LIVE WITH ME</div>
+      <h2>A small museum of you.</h2>
+      <div class="chapter5-copy">
+        <p>
+          My Harry Potter tumbler — your precious little gift.
+          I didn't use it for the longest time because I didn't have a place
+          where it could look beautiful.
+        </p>
+        <p>
+          Now I use it every day.
+          And every time I pick it up, I remember you.
+        </p>
+        <p>
+          It took me months to find our <strong>Dudu Bubu</strong> to sit in my study
+          as our favourite storytellers.
+        </p>
+        <p>
+          That Miniso penguin and its baby.
+          The tiny little bunny that was supposed to be at your place,
+          but somehow ended up here because you left it with me.
+        </p>
+        <p>
+          Your scented candles are still with me too.
+        </p>
+        <p>
+          My place is literally full of these small, almost ridiculous things.
+        </p>
+        <p>
+          And somehow, every one of them keeps a little piece of you around.
+        </p>
+      </div>
+      <div class="chapter5-note">
+        “Small things. Small objects. Somehow, they make the place feel more like home.”
+      </div>
+    </section>
+
+    <section class="chapter5-section">
+      <div class="chapter5-num">07 · WE KNOW EACH OTHER NOW</div>
+      <h2>More understanding. Still more silly fights.</h2>
+      <div class="chapter5-copy">
+        <p>
+          Slowly, with time, we have become more and more understanding.
+        </p>
+        <p>
+          We know each other much better now.
+          The moods. The silences. The expressions.
+          The things that need to be said and the things that don't.
+        </p>
+        <p>
+          We still fight.
+        </p>
+        <p>
+          Of course we do.
+        </p>
+        <p>
+          We are still us. 😂
+        </p>
+        <p>
+          But somewhere along the way, we learned how to understand the person
+          underneath the argument.
+        </p>
+      </div>
+      <div class="chapter5-note">“More understanding. More us. And, unfortunately, still more silly fights.”</div>
+    </section>
+
+    <section class="chapter5-section">
+      <div class="chapter5-num">08 · CHEERS TO US</div>
+      <h2>To health. To beauty. To you. ❤️</h2>
+      <div class="chapter5-copy">
+        <p>
+          Cheers to our health — so no sugars.
+        </p>
+        <p>
+          Cheers to beauty — so I always wear sunscreen and actually try to
+          follow what you say.
+        </p>
+        <p>
+          <em>Just kidding.</em> 😂
+        </p>
+        <p>
+          At least I try not to make you mad.
+        </p>
+        <p>
+          And through all the food phases, the spot phases, the judgement,
+          the wishes, the objects, the arguments and the endless nonsense...
+        </p>
+        <p>
+          <strong>I always love you.</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="chapter5-final">
+      <p class="big">
+        Maybe this is what normal became for us.<br><br>
+        Not candlelight dinners.<br>
+        Not perfectly planned dates.<br>
+        Not always saying the right thing.<br><br>
+        Sometimes it's just<br>
+        “Kahan chalna hai?” · “Kuch khaate hain.” · “Woh banda dekh.” · “Uski kya problem hai?” 😂<br><br>
+        And then food. And laughter. And another stupid conversation.
+        And eventually...<br>
+        Good night.<br><br>
+        And tomorrow, again...
+      </p>
+
+      <h2 class="chapter5-weus">WE → US</h2>
+      <div class="chapter5-together">Our kind of normal. ❤️</div>
+    </section>
+
+    <div class="chapter5-nav">
+      <button onclick="backToChapter4()">← Chapter IV</button>
+      <button onclick="closeStory()">Return to HOME</button>
+    </div>
+  </main>
+</section>
+
 
 <script>
 function openPlacesMenu(){
@@ -4659,11 +5176,15 @@ function closeGoaToPlaces(){
       const storyRoom = document.getElementById("storyRoom");
       const chapter2 = document.getElementById("storyChapter2");
       const chapter3 = document.getElementById("storyChapter3");
+      const chapter4 = document.getElementById("storyChapter4");
+      const chapter5 = document.getElementById("storyChapter5");
       const home = document.getElementById("home");
 
       storyRoom.classList.remove("show");
       if (chapter2) chapter2.classList.remove("show");
       if (chapter3) chapter3.classList.remove("show");
+      if (chapter4) chapter4.classList.remove("show");
+      if (chapter5) chapter5.classList.remove("show");
 
       home.style.display = "block";
 
@@ -5265,7 +5786,7 @@ function closeHiddenSurprise(index){
 <script>
 /* OUR STORY — integrated chapter navigation */
 function hideAllStoryChapters(){
-  const ids=['storyRoom','storyChapter2','storyChapter3','storyChapter4'];
+  const ids=['storyRoom','storyChapter2','storyChapter3','storyChapter4','storyChapter5'];
   ids.forEach(function(id){
     const el=document.getElementById(id);
     if(el) el.classList.remove('show');
@@ -5295,6 +5816,9 @@ function backToChapter2(){
 }
 function backToChapter3(){
   openStoryChapter(3);
+}
+function backToChapter4(){
+  openStoryChapter(4);
 }
 </script>
 
