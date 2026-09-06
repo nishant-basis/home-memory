@@ -3001,230 +3001,218 @@
 }
 
 
-/* =========================
-   BIRTHDAY COUNTDOWN + REVEAL
-========================= */
-.birthday-countdown-wrap{max-width:1120px;margin:26px auto 8px;padding:0 24px;position:relative;z-index:5}
-.birthday-countdown{position:relative;overflow:hidden;border:1px solid rgba(239,209,161,.45);border-radius:20px;background:linear-gradient(135deg,rgba(25,17,17,.96),rgba(45,29,28,.94));box-shadow:0 18px 50px rgba(0,0,0,.24);padding:22px 24px 20px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
-.birthday-countdown:before{content:"";position:absolute;inset:-50%;background:radial-gradient(circle at 78% 45%,rgba(255,208,157,.13),transparent 28%),radial-gradient(circle at 20% 20%,rgba(180,95,95,.10),transparent 25%);pointer-events:none}
-.birthday-countdown-copy,.birthday-countdown-action{position:relative;z-index:1}
-.birthday-eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#e8cda8;margin-bottom:7px}
-.birthday-date{font-family:Georgia,serif;font-size:28px;letter-spacing:5px;color:#f8ead3;margin-bottom:5px}
-.birthday-subtitle{font-family:Georgia,serif;font-style:italic;color:rgba(255,244,226,.72);font-size:15px}
-.birthday-timer{display:flex;gap:8px;margin-top:15px;flex-wrap:wrap}
-.birthday-unit{min-width:78px;padding:9px 10px;border:1px solid rgba(239,209,161,.25);border-radius:10px;text-align:center;background:rgba(0,0,0,.16)}
-.birthday-unit strong{display:block;font-family:Georgia,serif;font-size:23px;font-weight:400;color:#fff2dc;line-height:1}
-.birthday-unit span{display:block;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,236,211,.55);margin-top:6px}
-.birthday-cake-button{border:0;background:none;color:#fff;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;padding:4px 8px;transition:transform .25s ease}
-.birthday-cake-button:hover{transform:translateY(-3px) scale(1.03)}
-.birthday-cake{font-size:55px;line-height:1;filter:drop-shadow(0 7px 14px rgba(0,0,0,.28));animation:cakeFloat 3s ease-in-out infinite}
-.birthday-cake-label{font-family:Georgia,serif;font-style:italic;font-size:13px;color:#f2d8b5}
-@keyframes cakeFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-5px) rotate(2deg)}}
-
-
-.birthday-reveal{
-  position:fixed;inset:0;z-index:100000;display:none;overflow:hidden;
-  background:
-    radial-gradient(circle at 50% 18%,rgba(111,69,60,.48),transparent 28%),
-    radial-gradient(circle at 50% 100%,rgba(105,62,48,.20),transparent 38%),
-    #0d090a;color:#fff2df;
+/* =========================================================
+   OUR STORY — CHAPTER V
+   ========================================================= */
+.chapter5-page{
+  width:min(1180px,96vw);
+  margin:0 auto;
+  background:#eee5d5;
+  color:#27231f;
+  box-shadow:0 25px 70px rgba(0,0,0,.5);
+  padding:clamp(24px,5vw,62px);
+  position:relative;
+  overflow:hidden;
 }
-.birthday-reveal.show{display:block;animation:revealIn .65s ease both}
-@keyframes revealIn{from{opacity:0}to{opacity:1}}
-
-.birthday-reveal-backdrop{
-  position:absolute;inset:0;
-  background:
-    radial-gradient(circle at 50% 18%,rgba(255,214,166,.10),transparent 24%),
-    linear-gradient(180deg,rgba(19,10,11,.10),rgba(8,6,7,.78));
+.chapter5-page:before,
+.chapter5-page:after{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(185,170,148,.38);
+  pointer-events:none;
 }
-.birthday-lights{
-  position:absolute;top:0;left:0;right:0;height:170px;opacity:.86;
-  background:
-    radial-gradient(circle at 5% 48%,#ffe1ad 0 2px,transparent 4px),
-    radial-gradient(circle at 14% 65%,#ffd39a 0 2px,transparent 4px),
-    radial-gradient(circle at 25% 32%,#ffe9c4 0 2px,transparent 4px),
-    radial-gradient(circle at 36% 68%,#ffd39a 0 2px,transparent 4px),
-    radial-gradient(circle at 49% 38%,#ffe9c4 0 2px,transparent 4px),
-    radial-gradient(circle at 62% 70%,#ffd39a 0 2px,transparent 4px),
-    radial-gradient(circle at 75% 34%,#ffe9c4 0 2px,transparent 4px),
-    radial-gradient(circle at 87% 65%,#ffd39a 0 2px,transparent 4px),
-    radial-gradient(circle at 97% 42%,#ffe9c4 0 2px,transparent 4px);
-  filter:drop-shadow(0 0 8px rgba(255,212,155,.7));
+.chapter5-header{
+  position:relative;
+  text-align:center;
+  padding:20px 10px 48px;
 }
-
-.birthday-reveal-close,.birthday-music-toggle{
-  position:absolute;top:20px;width:42px;height:42px;border:1px solid rgba(255,231,201,.38);
-  border-radius:50%;background:rgba(20,12,13,.52);color:#ffe9ca;z-index:30;
-  cursor:pointer;font-size:17px;backdrop-filter:blur(5px);
+.chapter5-eyebrow{
+  font:11px Arial,sans-serif;
+  letter-spacing:4px;
+  color:#71685d;
 }
-.birthday-reveal-close{right:20px}.birthday-music-toggle{right:72px}
-
-.birthday-reveal-inner{
-  position:relative;z-index:5;min-height:100%;height:100%;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  padding:44px 24px 24px;text-align:center;
+.chapter5-header h1{
+  font:400 clamp(42px,7vw,82px)/.95 Georgia,serif;
+  margin:18px 0 8px;
+  color:#27231f;
 }
-
-.birthday-kicker{
-  font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#e8cba3;
-  margin-bottom:8px;opacity:0;transform:translateY(10px);
+.chapter5-chapter{
+  font:13px Arial,sans-serif;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#8f3f36;
 }
-.birthday-reveal.show .birthday-kicker{animation:riseIn .7s .15s ease forwards}
-
-.birthday-reveal h2{
-  font-family:cursive,Georgia,serif;font-size:clamp(48px,6.2vw,78px);font-weight:400;
-  line-height:.9;margin:0;color:#ffe7c7;text-shadow:0 5px 28px rgba(0,0,0,.35);
-  opacity:0;transform:translateY(18px) scale(.97);
+.chapter5-intro{
+  max-width:760px;
+  margin:28px auto 0;
+  font:italic 19px/1.7 Georgia,serif;
+  color:#71685d;
 }
-.birthday-reveal.show h2{animation:titleReveal .9s .35s cubic-bezier(.2,.8,.2,1) forwards}
-.birthday-reveal-name{
-  font-family:cursive,Georgia,serif;font-size:22px;color:#f4b8aa;
-  margin:9px 0 12px;opacity:0;transform:translateY(8px);
+.chapter5-visual{
+  margin:10px 0 18px;
+  overflow:hidden;
+  background:#ddd0bd;
+  border:1px solid #b9aa94;
+  box-shadow:0 16px 35px rgba(0,0,0,.16);
 }
-.birthday-reveal.show .birthday-reveal-name{animation:riseIn .65s .75s ease forwards}
-
-@keyframes riseIn{to{opacity:1;transform:translateY(0)}}
-@keyframes titleReveal{to{opacity:1;transform:translateY(0) scale(1)}}
-
-/* The characters are deliberately separate so Dudu and Bubu can enter independently. */
-.birthday-characters{
-  position:relative;width:min(560px,78vw);height:230px;margin:0 auto 6px;
-  display:flex;justify-content:center;align-items:flex-end;pointer-events:none;
+.chapter5-visual img{
+  display:block;
+  width:100%;
+  height:auto;
 }
-.birthday-characters:after{
-  content:"";position:absolute;left:18%;right:18%;bottom:3px;height:24px;
-  background:rgba(0,0,0,.34);filter:blur(15px);border-radius:50%;opacity:0;
+.chapter5-caption{
+  text-align:center;
+  font:italic 15px/1.6 Georgia,serif;
+  color:#71685d;
+  margin:0 auto 45px;
 }
-.birthday-reveal.show .birthday-characters:after{animation:shadowIn .8s 1.05s ease forwards}
-@keyframes shadowIn{to{opacity:1}}
-
-.birthday-character{
-  position:absolute;bottom:6px;width:min(170px,24vw);height:205px;
-  object-fit:contain;filter:drop-shadow(0 14px 15px rgba(0,0,0,.34));
-  opacity:0;z-index:2;
+.chapter5-section{
+  position:relative;
+  margin:46px 0;
+  padding:30px 0;
+  border-top:1px dashed #a99a84;
 }
-.birthday-dudu{
-  left:calc(50% - 150px);
-  transform:translateX(-105px) translateY(30px) rotate(-5deg) scale(.72);
+.chapter5-section:first-of-type{
+  margin-top:0;
 }
-.birthday-bubu{
-  right:calc(50% - 150px);
-  transform:translateX(105px) translateY(30px) rotate(5deg) scale(.72);
+.chapter5-num{
+  font:11px Arial,sans-serif;
+  letter-spacing:3px;
+  color:#8f3f36;
 }
-.birthday-reveal.show .birthday-dudu{
-  animation:duduEnter 1.05s 1s cubic-bezier(.18,.9,.25,1.12) forwards,
-             characterFloat 4s 2.15s ease-in-out infinite;
+.chapter5-section h2{
+  font:400 clamp(28px,4vw,43px) Georgia,serif;
+  color:#27231f;
+  margin:10px 0 18px;
 }
-.birthday-reveal.show .birthday-bubu{
-  animation:bubuEnter 1.05s 1.16s cubic-bezier(.18,.9,.25,1.12) forwards,
-             characterFloat 4s 2.31s ease-in-out infinite;
+.chapter5-copy{
+  max-width:820px;
+  font:16px/1.9 Georgia,serif;
+  color:#514a43;
 }
-@keyframes duduEnter{
-  0%{opacity:0;transform:translateX(-105px) translateY(30px) rotate(-8deg) scale(.72)}
-  72%{opacity:1;transform:translateX(10px) translateY(-4px) rotate(3deg) scale(1.04)}
-  100%{opacity:1;transform:translateX(0) translateY(0) rotate(-2deg) scale(1)}
+.chapter5-copy p{
+  margin:0 0 15px;
 }
-@keyframes bubuEnter{
-  0%{opacity:0;transform:translateX(105px) translateY(30px) rotate(8deg) scale(.72)}
-  72%{opacity:1;transform:translateX(-10px) translateY(-4px) rotate(-3deg) scale(1.04)}
-  100%{opacity:1;transform:translateX(0) translateY(0) rotate(2deg) scale(1)}
+.chapter5-copy strong{
+  color:#302b27;
 }
-@keyframes characterFloat{
-  0%,100%{margin-bottom:0}
-  50%{margin-bottom:5px}
+.chapter5-note{
+  margin-top:22px;
+  padding:18px 22px;
+  border-left:3px solid #9b4a42;
+  background:rgba(255,255,255,.42);
+  font:italic 17px/1.7 Georgia,serif;
+  color:#6c554b;
 }
-
-/* A proper little cake instead of an emoji: it can pop up and glow with the scene. */
-.birthday-cake-stage{
-  position:absolute;left:50%;bottom:3px;z-index:8;
-  width:92px;height:76px;transform:translateX(-50%) translateY(35px) scale(.7);
-  opacity:0;
-  filter:drop-shadow(0 7px 12px rgba(0,0,0,.3));
+.chapter5-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
 }
-.birthday-reveal.show .birthday-cake-stage{animation:cakeReveal .8s 1.72s cubic-bezier(.18,.9,.25,1.1) forwards}
-@keyframes cakeReveal{
-  0%{opacity:0;transform:translateX(-50%) translateY(35px) scale(.7)}
-  70%{opacity:1;transform:translateX(-50%) translateY(-3px) scale(1.05)}
-  100%{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}
+.chapter5-grid .chapter5-section{
+  margin:0;
+  padding:28px 24px;
+  border:1px solid rgba(169,154,132,.65);
+  background:rgba(255,255,255,.28);
 }
-.cake-candle{position:absolute;top:0;width:6px;height:25px;border-radius:4px;background:#f4dfb9}
-.cake-candle:nth-child(1){left:28px}.cake-candle:nth-child(2){left:43px}.cake-candle:nth-child(3){left:58px}
-.cake-flame{
-  position:absolute;top:-10px;left:50%;width:8px;height:12px;transform:translateX(-50%);
-  border-radius:60% 60% 60% 60%;background:#ffd36f;
-  box-shadow:0 0 13px rgba(255,205,110,.95);animation:flame 1s ease-in-out infinite;
+.chapter5-grid .chapter5-section h2{
+  font-size:30px;
 }
-@keyframes flame{50%{transform:translateX(-50%) scale(.82) translateY(2px);opacity:.82}}
-.cake-top{
-  position:absolute;left:8px;right:8px;top:20px;height:21px;border-radius:8px 8px 5px 5px;
-  background:#f5d4c0;border:2px solid #6d3f35;
+.chapter5-grid .chapter5-copy{
+  font-size:15px;
+  line-height:1.8;
 }
-.cake-icing{
-  position:absolute;left:8px;right:8px;top:35px;height:9px;border-radius:0 0 8px 8px;
-  background:#e9a99e;border:2px solid #6d3f35;border-top:0;
+.chapter5-gussa{
+  margin:18px 0 20px;
+  padding:20px 22px;
+  background:#292522;
+  color:#eee5d5;
+  border-left:4px solid #9b4a42;
 }
-.cake-base{
-  position:absolute;left:4px;right:4px;top:42px;height:27px;border-radius:4px 4px 12px 12px;
-  background:#f1e0c8;border:2px solid #6d3f35;
+.chapter5-gussa .label{
+  font:10px Arial,sans-serif;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#c8a897;
+  margin-bottom:10px;
 }
-.cake-dot{position:absolute;width:5px;height:5px;border-radius:50%;background:#b86b65;top:54px}
-.cake-dot:nth-child(5){left:21px}.cake-dot:nth-child(6){left:44px}.cake-dot:nth-child(7){right:20px}
-
-.birthday-letter{
-  width:min(650px,90vw);padding:19px 25px 18px;background:#f5e5ca;color:#2e2220;
-  box-shadow:0 18px 52px rgba(0,0,0,.38);border-radius:2px;transform:rotate(-.6deg);
-  position:relative;opacity:0;transform-origin:center;
+.chapter5-gussa p{
+  margin:5px 0;
+  font:15px/1.75 Georgia,serif;
 }
-.birthday-reveal.show .birthday-letter{animation:letterReveal .8s 2.12s cubic-bezier(.2,.8,.2,1) forwards}
-@keyframes letterReveal{
-  from{opacity:0;transform:translateY(24px) rotate(-.6deg) scale(.97)}
-  to{opacity:1;transform:translateY(0) rotate(-.6deg) scale(1)}
+.chapter5-object-list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px 28px;
+  margin-top:18px;
 }
-.birthday-letter:before{content:"";position:absolute;inset:6px;border:1px solid rgba(112,69,45,.17);pointer-events:none}
-.birthday-letter h3{font-family:cursive,Georgia,serif;font-size:30px;font-weight:400;margin:0 0 7px}
-.birthday-letter p{font-family:Georgia,serif;font-size:15px;line-height:1.55;margin:6px auto;max-width:580px}
-.birthday-letter .birthday-highlight{font-family:cursive,Georgia,serif;font-size:22px;color:#8c4b49;margin:10px 0}
-
-.birthday-enter{
-  margin-top:18px;padding:12px 29px;border:1px solid #d9b886;border-radius:999px;
-  background:#1c1212;color:#f6dfbd;font-family:Georgia,serif;letter-spacing:3px;
-  text-transform:uppercase;font-size:11px;cursor:pointer;box-shadow:0 9px 24px rgba(0,0,0,.25);
-  opacity:0;transform:translateY(8px);
+.chapter5-object-list div{
+  padding:11px 0;
+  border-bottom:1px dotted rgba(143,63,54,.35);
+  font:italic 15px/1.6 Georgia,serif;
+  color:#5e554d;
 }
-.birthday-reveal.show .birthday-enter{animation:riseIn .65s 2.62s ease forwards}
-.birthday-enter:hover{transform:translateY(-2px);background:#2a1a1a}
-
-.birthday-confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:10}
-.confetti-piece{position:absolute;top:-30px;width:8px;height:15px;border-radius:2px;animation:confettiFall linear forwards}
-.confetti-piece:nth-child(3n){width:6px;height:10px;transform:rotate(22deg)}
-.confetti-piece:nth-child(4n){border-radius:50%;width:7px;height:7px}
-.confetti-piece:nth-child(5n){width:10px;height:5px}
-@keyframes confettiFall{to{transform:translate3d(var(--drift),110vh,0) rotate(720deg);opacity:.85}}
-
-@media(max-width:700px){
-  .birthday-countdown-wrap{padding:0 14px}
-  .birthday-countdown{grid-template-columns:1fr;padding:18px}
-  .birthday-countdown-action{position:absolute;right:10px;top:10px}
-  .birthday-cake{font-size:43px}
-  .birthday-timer{padding-right:62px}
-  .birthday-unit{min-width:66px}
-  .birthday-unit strong{font-size:20px}
-  .birthday-reveal-inner{padding:54px 14px 22px;justify-content:center}
-  .birthday-reveal h2{font-size:52px}
-  .birthday-reveal-name{font-size:22px}
-  .birthday-characters{height:170px;width:100%;margin-bottom:3px}
-  .birthday-pair{width:260px;max-width:74vw}
-  .birthday-cake-stage{transform:translateX(-50%) translateY(35px) scale(.75)}
-  .birthday-letter{padding:17px 17px 16px}
-  .birthday-letter p{font-size:13px;line-height:1.48}
-  .birthday-letter h3{font-size:25px}
-  .birthday-letter .birthday-highlight{font-size:20px}
-  .birthday-enter{margin-top:14px}
-  .birthday-music-toggle{right:70px}
+.chapter5-final{
+  margin-top:54px;
+  padding:52px 24px 38px;
+  text-align:center;
+  border-top:1px solid #b8aa95;
+}
+.chapter5-final .big{
+  max-width:820px;
+  margin:0 auto;
+  font:italic clamp(21px,3vw,29px)/1.8 Georgia,serif;
+  color:#51463f;
+}
+.chapter5-final .big strong{
+  color:#8f3f36;
+}
+.chapter5-weus{
+  margin:30px 0 8px;
+  font:400 clamp(38px,6vw,68px) Georgia,serif;
+  letter-spacing:5px;
+  color:#8f3f36;
+}
+.chapter5-together{
+  font:italic 18px Georgia,serif;
+  color:#71685d;
+}
+.chapter5-nav{
+  margin-top:34px;
+  padding-top:20px;
+  border-top:1px solid rgba(40,35,31,.15);
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.chapter5-nav button{
+  border:1px solid #b8aa95;
+  background:#292522;
+  color:#eee5d5;
+  padding:12px 19px;
+  font:11px Arial,sans-serif;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:.25s ease;
+}
+.chapter5-nav button:hover{
+  background:#8f3f36;
+}
+@media(max-width:760px){
+  .chapter5-grid,
+  .chapter5-object-list{
+    grid-template-columns:1fr;
+  }
+  .chapter5-grid .chapter5-section{
+    padding:24px 20px;
+  }
 }
 
 </style>
+<style id="museum-room-style">.museum-room{position:fixed;inset:0;z-index:7000;display:none;overflow:auto;background:radial-gradient(circle at 15% 10%,rgba(255,255,255,.05),transparent 25%),radial-gradient(circle at 85% 75%,rgba(157,118,66,.10),transparent 28%),#151210;color:#eee5d7}.museum-room.show{display:block}.museum-shell{max-width:1400px;margin:0 auto;padding:34px 34px 70px}.museum-back{position:sticky;top:18px;z-index:20;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(232,214,183,.28);background:rgba(21,18,16,.82);color:#e9dcc8;padding:10px 15px;border-radius:999px;letter-spacing:.12em;font-size:11px;cursor:pointer;backdrop-filter:blur(10px);text-transform:uppercase}.museum-head{padding:62px 8px 42px;text-align:center}.museum-kicker{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#b99a6b;margin-bottom:18px}.museum-title{font-family:Georgia,'Times New Roman',serif;font-size:clamp(46px,7vw,92px);font-weight:400;letter-spacing:.03em;margin:0;line-height:.9;color:#f3eadc}.museum-sub{max-width:680px;margin:24px auto 0;color:#bfb3a4;font-size:15px;line-height:1.8}.museum-rule{width:110px;height:1px;background:#b99a6b;margin:27px auto 0;opacity:.7}.museum-stat{margin-top:17px;color:#8f8275;font-size:10px;letter-spacing:.22em;text-transform:uppercase}.museum-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;align-items:start}.museum-card{position:relative;background:#e8dece;color:#261e19;padding:10px 10px 14px;box-shadow:0 16px 35px rgba(0,0,0,.24);cursor:pointer;transition:transform .25s ease,box-shadow .25s ease;transform:rotate(var(--tilt))}.museum-card:nth-child(3n){--tilt:1.1deg}.museum-card:nth-child(3n+1){--tilt:-.8deg}.museum-card:nth-child(3n+2){--tilt:.35deg}.museum-card:hover{transform:translateY(-7px) rotate(0deg);box-shadow:0 22px 45px rgba(0,0,0,.34);z-index:3}.museum-photo{display:block;width:100%;height:205px;object-fit:cover;background:#29231f;filter:saturate(.9) contrast(1.03)}.museum-meta{padding:12px 5px 0}.museum-num{font-size:9px;letter-spacing:.2em;color:#8e7150;text-transform:uppercase}.museum-name{font-family:Georgia,'Times New Roman',serif;font-size:19px;margin:5px 0 4px;line-height:1.1}.museum-caption{font-size:11px;color:#75695d;line-height:1.45}.museum-pin{position:absolute;right:12px;top:8px;font-size:14px;color:#8e7150}.museum-footer{text-align:center;padding:55px 10px 10px;color:#8f8275;font-family:Georgia,serif;font-size:17px;line-height:1.7}.museum-footer strong{color:#e9dcc8;font-weight:400}.museum-lightbox{position:fixed;inset:0;z-index:7100;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(8,7,6,.9);backdrop-filter:blur(12px)}.museum-lightbox.show{display:flex}.museum-lightbox-inner{width:min(1120px,96vw);max-height:94vh;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(260px,.65fr);background:#eee4d5;color:#241c17;box-shadow:0 30px 90px rgba(0,0,0,.5)}.museum-lightbox-img{width:100%;height:min(78vh,720px);object-fit:contain;background:#1a1715}.museum-lightbox-copy{padding:34px;display:flex;flex-direction:column;justify-content:center}.museum-lightbox-copy .museum-num{margin-bottom:12px}.museum-lightbox-copy h3{font:400 36px/1.05 Georgia,serif;margin:0 0 15px}.museum-lightbox-copy p{font-size:14px;line-height:1.8;color:#675b50;margin:0}.museum-close{position:absolute;right:24px;top:20px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(0,0,0,.3);color:white;font-size:21px;cursor:pointer}@media(max-width:1000px){.museum-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.museum-lightbox-inner{grid-template-columns:1fr;max-height:92vh;overflow:auto}.museum-lightbox-img{height:52vh}.museum-lightbox-copy{padding:24px}}@media(max-width:700px){.museum-shell{padding:22px 14px 50px}.museum-head{padding:50px 5px 32px}.museum-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.museum-photo{height:170px}.museum-name{font-size:16px}.museum-caption{font-size:10px}.museum-card{padding:7px 7px 10px}.museum-lightbox{padding:12px}.museum-lightbox-copy h3{font-size:28px}}@media(max-width:470px){.museum-grid{grid-template-columns:1fr}.museum-photo{height:235px}}</style>
 </head>
 
 <body>
@@ -3272,32 +3260,6 @@
   ========================== -->
 
   <section class="home" id="home">
-
-
-
-    <!-- BIRTHDAY COUNTDOWN -->
-    <div class="birthday-countdown-wrap">
-      <div class="birthday-countdown">
-        <div class="birthday-countdown-copy">
-          <div class="birthday-eyebrow">♡ Counting down to you ♡</div>
-          <div class="birthday-date">24 · 09 · 2026</div>
-          <div class="birthday-subtitle">Something special is getting closer...</div>
-          <div class="birthday-timer" aria-live="polite">
-            <div class="birthday-unit"><strong id="bdDays">--</strong><span>Days</span></div>
-            <div class="birthday-unit"><strong id="bdHours">--</strong><span>Hours</span></div>
-            <div class="birthday-unit"><strong id="bdMinutes">--</strong><span>Minutes</span></div>
-            <div class="birthday-unit"><strong id="bdSeconds">--</strong><span>Seconds</span></div>
-          </div>
-        </div>
-        <div class="birthday-countdown-action">
-          <button class="birthday-cake-button" type="button" onclick="openBirthdayReveal()" aria-label="Open birthday surprise">
-            <span class="birthday-cake">🎂</span>
-            <span class="birthday-cake-label">Tap the cake ♡</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
 
     <!-- MEMORY SKY -->
 
@@ -3395,7 +3357,7 @@ onclick="(function(){var h=document.getElementById('home'),p=document.getElement
       </div>
 
 
-      <div class="room-card" onclick="openMessage('The Museum')">
+      <div class="room-card" onclick="openMuseum()">
 
         <span class="room-number">04</span>
 
@@ -3832,6 +3794,16 @@ Instead, we fought. We laughed. We got irritated. We ate pasta. We worried about
 <strong>Basically, we did what we always do.</strong><br>
 <em>We were us. ❤️</em>
 </div></div>
+</section>
+
+<!-- ========================= THE MUSEUM · 22 PLACES ========================== --><section aria-label="The Museum" class="museum-room" id="museumRoom">
+<div class="museum-shell">
+<button class="museum-back" onclick="closeMuseum()">← HOME</button>
+<header class="museum-head"><div class="museum-kicker">ROOM 04 · THE ARCHIVE</div><h1 class="museum-title">THE MUSEUM</h1><p class="museum-sub">Thirty-one places. Different versions of us. Some were planned. Some just happened. And somehow, every one left something behind.</p><div class="museum-rule"></div><div class="museum-stat">31 places · countless conversations · one HOME</div></header>
+<div class="museum-grid"><article class="museum-card" onclick="openMuseumItem(0)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-01-westside.png" alt="Westside"><div class="museum-meta"><div class="museum-num">01 · THE RITUAL</div><h3 class="museum-name">Westside</h3><div class="museum-caption">Kuch pasand aaye ya na aaye, Westside jaana toh ritual hai. 😌</div></div></article><article class="museum-card" onclick="openMuseumItem(1)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-02-bakebook.png" alt="Bakebook"><div class="museum-meta"><div class="museum-num">02 · THE COFFEE PHASE</div><h3 class="museum-name">Bakebook</h3><div class="museum-caption">Zehar jaisi meethi coffee. But because it’s with you, it’s still the best one. Fries aur cookies achi hain though. 😂</div></div></article><article class="museum-card" onclick="openMuseumItem(2)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-03-big-chill-noida.png" alt="The Big Chill — Noida"><div class="museum-meta"><div class="museum-num">03 · OUR PASTA SPOT</div><h3 class="museum-name">The Big Chill — Noida</h3><div class="museum-caption">Our pasta spot. Bas pasta bolo, destination automatically decide ho jaata hai.</div></div></article><article class="museum-card" onclick="openMuseumItem(3)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-04-big-chill-saket.png" alt="The Big Chill — Saket"><div class="museum-meta"><div class="museum-num">04 · THE RAVIOLI</div><h3 class="museum-name">The Big Chill — Saket</h3><div class="museum-caption">Ravioli yaad hai? Uske baad hum wapas hi nahi gaye. 😂</div></div></article><article class="museum-card" onclick="openMuseumItem(4)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-05-chelvies.png" alt="Chelvies"><div class="museum-meta"><div class="museum-num">05 · THE OVERRATED ONE</div><h3 class="museum-name">Chelvies</h3><div class="museum-caption">Our most overrated coffee place. But last mein inhone bhi hug de hi diya. 😂</div></div></article><article class="museum-card" onclick="openMuseumItem(5)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-06-ching-singh.png" alt="Ching Singh"><div class="museum-meta"><div class="museum-num">06 · OUR CHINESE SPOT</div><h3 class="museum-name">Ching Singh</h3><div class="museum-caption">Our Chinese spot. Kuch phases khatam ho jaate hain, Ching Singh ka phase nahi.</div></div></article><article class="museum-card" onclick="openMuseumItem(6)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-07-delhi-darbar.png" alt="Delhi Darbar"><div class="museum-meta"><div class="museum-num">07 · THE GOA SAVIOUR</div><h3 class="museum-name">Delhi Darbar</h3><div class="museum-caption">Goa mein jab kuch samajh na aaye — Delhi Darbar is the saviour.</div></div></article><article class="museum-card" onclick="openMuseumItem(7)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-08-mall-of-india.png" alt="The Mall of India"><div class="museum-meta"><div class="museum-num">08 · THE MALL DAY</div><h3 class="museum-name">The Mall of India</h3><div class="museum-caption">Shopping ke liye jaana, khaana khaana, thoda ghoomna… aur somehow poora din nikal jaana.</div></div></article><article class="museum-card" onclick="openMuseumItem(8)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-09-drunken-botanist.png" alt="The Drunken Botanist"><div class="museum-meta"><div class="museum-num">09 · THE FIRST LOOK</div><h3 class="museum-name">The Drunken Botanist</h3><div class="museum-caption">The first time I saw you. And somehow, that one look started all this. ❤️</div></div></article><article class="museum-card" onclick="openMuseumItem(9)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-10-flying-dutchman.png" alt="The Flying Dutchman"><div class="museum-meta"><div class="museum-num">10 · THE EMPTY FAVOURITE</div><h3 class="museum-name">The Flying Dutchman</h3><div class="museum-caption">Food achha. Ambience achha. Sab achha. Bas jab hum aate hain, koi aur kyun nahi aata? 😂</div></div></article><article class="museum-card" onclick="openMuseumItem(10)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-11-holitel.png" alt="Holitel Goa"><div class="museum-meta"><div class="museum-num">11 · THE GETAWAY</div><h3 class="museum-name">Holitel Goa</h3><div class="museum-caption">Short stay, beach ke paas, aur woh apni wali feeling. ❤️</div></div></article><article class="museum-card" onclick="openMuseumItem(11)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-12-i-sacked-newton.png" alt="I Sacked Newton"><div class="museum-meta"><div class="museum-num">12 · THE OREO SHAKE</div><h3 class="museum-name">I Sacked Newton</h3><div class="museum-caption">That Oreo shake. Still remember it. :D</div></div></article><article class="museum-card" onclick="openMuseumItem(12)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-13-local.png" alt="Local"><div class="museum-meta"><div class="museum-num">13 · THE AFTER-PARTY</div><h3 class="museum-name">Local</h3><div class="museum-caption">Can’t forget the after-party. Kuch nights dinner se zyada yaad reh jaati hain. 😂</div></div></article><article class="museum-card" onclick="openMuseumItem(13)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-14-logix.png" alt="Logix City Centre"><div class="museum-meta"><div class="museum-num">14 · THE SECOND HOME</div><h3 class="museum-name">Logix City Centre</h3><div class="museum-caption">Our second home. Itna jaana hua hai ki jagah se zyada routine lagta hai.</div></div></article><article class="museum-card" onclick="openMuseumItem(14)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-15-manhattan.png" alt="Manhattan Bar Exchange"><div class="museum-meta"><div class="museum-num">15 · THE PARTY RECORD</div><h3 class="museum-name">Manhattan Bar Exchange</h3><div class="museum-caption">Only two party places where we have a 100% attendance together. Attendance record toh maintain hona chahiye. 😂</div></div></article><article class="museum-card" onclick="openMuseumItem(15)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-16-meltado.png" alt="Meltado"><div class="museum-meta"><div class="museum-num">16 · THE CHEESE SANDWICH</div><h3 class="museum-name">Meltado</h3><div class="museum-caption">Cheese sandwich and spices. :D Don’t ask. Bas apni yaadein hain.</div></div></article><article class="museum-card" onclick="openMuseumItem(16)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-17-mosaic.png" alt="Mosaic"><div class="museum-meta"><div class="museum-num">17 · THE BATHTUB</div><h3 class="museum-name">Mosaic</h3><div class="museum-caption">The bathtub. 😉</div></div></article><article class="museum-card" onclick="openMuseumItem(17)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-18-raha.png" alt="RAHA"><div class="museum-meta"><div class="museum-num">18 · THE BUTTERFLIES</div><h3 class="museum-name">RAHA</h3><div class="museum-caption">Can’t forget this place. It still gives me butterflies. ❤️</div></div></article><article class="museum-card" onclick="openMuseumItem(18)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-19-select-citywalk.png" alt="Select Citywalk"><div class="museum-meta"><div class="museum-num">19 · THE MOMO RITUAL</div><h3 class="museum-name">Select Citywalk</h3><div class="museum-caption">Momo cravings = Select Citywalk. Must-visit ritual. No discussion.</div></div></article><article class="museum-card" onclick="openMuseumItem(19)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-20-sk-premium-park.png" alt="SK Premium Park"><div class="museum-meta"><div class="museum-num">20 · THE HIDDEN PLACE</div><h3 class="museum-name">SK Premium Park</h3><div class="museum-caption">Our hidden place. Kuch jagah famous hone ke liye nahi, sirf apni hone ke liye hoti hain.</div></div></article><article class="museum-card" onclick="openMuseumItem(20)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-21-skyhouse.png" alt="Skyhouse"><div class="museum-meta"><div class="museum-num">21 · THE CCTV STORY</div><h3 class="museum-name">Skyhouse</h3><div class="museum-caption">Yahan ke CCTV wale tumhe pooch rahe the. Bas itna hi kehna tha. 😂</div></div></article><article class="museum-card" onclick="openMuseumItem(21)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-22-social-dlf.png" alt="Social DLF"><div class="museum-meta"><div class="museum-num">22 · THE COMBINATION</div><h3 class="museum-name">Social DLF</h3><div class="museum-caption">Pizza and toffee wali daru. Some combinations just become memories. 😂</div></div></article><article class="museum-card" onclick="openMuseumItem(22)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-23-social-hauz-khas.png" alt="Social Hauz Khas"><div class="museum-meta"><div class="museum-num">23 · THE WAIT</div><h3 class="museum-name">Social Hauz Khas</h3><div class="museum-caption">Inki waiting hi khatam nahi ho rahi thi. Restaurant kam, patience test zyada tha. 😂</div></div></article><article class="museum-card" onclick="openMuseumItem(23)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-24-social-saket.png" alt="Social Saket"><div class="museum-meta"><div class="museum-num">24 · THE WASHROOM STORY</div><h3 class="museum-name">Social Saket</h3><div class="museum-caption">The real fun was when you entered the gents’ washroom. 😂</div></div></article><article class="museum-card" onclick="openMuseumItem(24)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-25-spectrum.png" alt="Spectrum Mall"><div class="museum-meta"><div class="museum-num">25 · THE NEW SPOT</div><h3 class="museum-name">Spectrum Mall</h3><div class="museum-caption">Our new spot for everything. Khana, shopping, ghoomna — abhi toh iska phase chal raha hai.</div></div></article><article class="museum-card" onclick="openMuseumItem(25)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-26-summit-hotel-goa.png" alt="The Summit Hotel Goa"><div class="museum-meta"><div class="museum-num">26 · WHERE IT STARTED</div><h3 class="museum-name">The Summit Hotel Goa</h3><div class="museum-caption">The place where a lot started. Some places don’t need an explanation. ❤️</div></div></article><article class="museum-card" onclick="openMuseumItem(26)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-27-themis.png" alt="Themis"><div class="museum-meta"><div class="museum-num">27 · YOUR PLACE</div><h3 class="museum-name">Themis</h3><div class="museum-caption">That’s your place. You love it, and whatever you love… I love it too. ❤️</div></div></article><article class="museum-card" onclick="openMuseumItem(27)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-28-themis-farmhouse.png" alt="Themis Farmhouse"><div class="museum-meta"><div class="museum-num">28 · THE FIRST OUTSIDE-DELHI TRIP</div><h3 class="museum-name">Themis Farmhouse</h3><div class="museum-caption">Our first trip outside Delhi. First of many, hopefully. ❤️</div></div></article><article class="museum-card" onclick="openMuseumItem(28)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-29-theobroma.png" alt="Theobroma"><div class="museum-meta"><div class="museum-num">29 · THE FIRST COFFEE</div><h3 class="museum-name">Theobroma</h3><div class="museum-caption">Our first coffee together. Hot. No sugar. And the beginning of something much bigger. ❤️</div></div></article><article class="museum-card" onclick="openMuseumItem(29)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-30-titos-lane.png" alt="Tito’s Lane Goa"><div class="museum-meta"><div class="museum-num">30 · THE WAY YOU GET YOUR WAY</div><h3 class="museum-name">Tito’s Lane Goa</h3><div class="museum-caption">You know exactly how to get your way. Aur somehow, you always do. 😂</div></div></article><article class="museum-card" onclick="openMuseumItem(30)"><span class="museum-pin">◇</span><img class="museum-photo" src="museum-31-toybox.png" alt="Toybox Gurgaon"><div class="museum-meta"><div class="museum-num">31 · THE DENIAL</div><h3 class="museum-name">Toybox Gurgaon</h3><div class="museum-caption">“Sorry aunty, I don’t know who?” 😂</div></div></article></div>
+<div class="museum-footer"><strong>Maybe that’s what a museum really is.</strong><br>Not a collection of important places.<br>Just a collection of places that became important because we were there. ❤️</div>
+</div>
+<div class="museum-lightbox" id="museumLightbox" role="dialog" aria-modal="true" aria-label="Museum exhibit"><button class="museum-close" onclick="closeMuseumItem()" aria-label="Close">×</button><div class="museum-lightbox-inner"><img class="museum-lightbox-img" id="museumLightboxImg" src="" alt=""><div class="museum-lightbox-copy"><div class="museum-num" id="museumLightboxNum"></div><h3 id="museumLightboxTitle"></h3><p id="museumLightboxText"></p></div></div></div>
 </section>
 
 <!-- =========================
@@ -4583,58 +4555,318 @@ Instead, we fought. We laughed. We got irritated. We ate pasta. We worried about
 
     <div class="chapter4-nav">
       <button onclick="backToChapter3()">← Chapter III</button>
+      <button onclick="openStoryChapter(5)">Chapter V →</button>
       <button onclick="closeStory()">Return to HOME</button>
     </div>
   </main>
 </section>
 
 
+<!-- =========================================================
+     OUR STORY — CHAPTER V
+     ========================================================= -->
+<section class="integrated-chapter" id="storyChapter5">
+  <div class="integrated-top">
+    <button class="back-button" onclick="backToChapter4()">← CHAPTER IV</button>
+    <div class="integrated-label">OUR STORY · CHAPTER V</div>
+  </div>
 
-  <!-- =========================
-       BIRTHDAY REVEAL
-  ========================== -->
-  <section class="birthday-reveal" id="birthdayReveal" aria-hidden="true">
-    <div class="birthday-reveal-backdrop"></div>
-    <div class="birthday-lights"></div>
-    <button class="birthday-music-toggle" id="birthdayMusicToggle" type="button" onclick="toggleBirthdayMusic()" aria-label="Toggle music">♫</button>
-    <button class="birthday-reveal-close" type="button" onclick="closeBirthdayReveal()" aria-label="Close birthday surprise">×</button>
-    <div class="birthday-confetti" id="birthdayConfetti"></div>
+  <div class="integrated-hero">
+    <div class="integrated-kicker">CHAPTER V</div>
+    <h1>Our Kind of Normal</h1>
+    <div class="integrated-rule"></div>
+    <p class="subtitle">“Because apparently, normal for us means eating too much, judging strangers, fighting over nothing, and somehow ending every day together.”</p>
+  </div>
 
-    <div class="birthday-reveal-inner">
-      <div class="birthday-kicker">A little something before HOME</div>
-      <h2>Happy Birthday</h2>
-      <div class="birthday-reveal-name">My Bubu ♡</div>
+  <main class="chapter5-page">
+    <header class="chapter5-header">
+      <div class="chapter5-eyebrow">OUR STORY</div>
+      <h1>Our Kind of Normal</h1>
+      <div class="chapter5-chapter">Chapter V</div>
+      <div class="integrated-rule"></div>
+      <p class="chapter5-intro">
+        Maybe we never became the couple who does dates the way other people do.
+        Maybe we became something much better — a little world with its own habits,
+        phases, jokes, rituals, food and completely unnecessary arguments.
+      </p>
+    </header>
 
-      <div class="birthday-characters" aria-hidden="true">
-        <img class="birthday-character birthday-dudu" src="dudu.png" alt="">
-        <img class="birthday-character birthday-bubu" src="bubu.png" alt="">
-
-        <div class="birthday-cake-stage">
-          <div class="cake-candle"><span class="cake-flame"></span></div>
-          <div class="cake-candle"><span class="cake-flame"></span></div>
-          <div class="cake-candle"><span class="cake-flame"></span></div>
-          <div class="cake-top"></div>
-          <div class="cake-icing"></div>
-          <div class="cake-base"></div>
-          <div class="cake-dot"></div>
-          <div class="cake-dot"></div>
-          <div class="cake-dot"></div>
-        </div>
-      </div>
-
-      <div class="birthday-letter">
-        <h3>Hey you... ❤️</h3>
-        <p>Before you explore HOME, there is one thing I need to say.</p>
-        <div class="birthday-highlight">Happy Birthday.</div>
-        <p>I hope this little place makes you smile, laugh at some stupid memories, remember some beautiful ones, and maybe... fall in love with us all over again.</p>
-        <p><strong>This HOME was made for you.</strong></p>
-      </div>
-
-      <button class="birthday-enter" type="button" onclick="enterBirthdayHome()">Now go inside →</button>
+    <div class="chapter5-visual">
+      <img src="chapter5-collage.png" alt="Our Story — Chapter V: Our Kind of Normal">
     </div>
-  </section>
+    <p class="chapter5-caption">
+      Not a perfect relationship. Not a perfect life. Just a little world that somehow feels completely ours.
+    </p>
+
+    <div class="chapter5-grid">
+
+      <section class="chapter5-section">
+        <div class="chapter5-num">01 · WE DON'T DATE. WE EAT.</div>
+        <h2>Apparently, we were born bhukkads.</h2>
+        <div class="chapter5-copy">
+          <p>
+            I've seen people go on dates. Take one drink. Sit there. Talk for hours.
+          </p>
+          <p>
+            We are completely different.
+          </p>
+          <p>
+            We go somewhere and almost immediately ask for our dish. Get it.
+            Finish it. Look at each other. <strong>“Aur?”</strong>
+          </p>
+          <p>
+            Then the next thing. And then we leave.
+          </p>
+          <p>
+            No grand romantic mood. No perfectly timed dinner.
+            Just two people who apparently arrived on this earth with a very serious
+            relationship with food. 😂
+          </p>
+        </div>
+        <div class="chapter5-note">“Humare dates mein romance se pehle menu aa jata hai.” 😂</div>
+      </section>
+
+      <section class="chapter5-section">
+        <div class="chapter5-num">02 · THE SPOT PHASE</div>
+        <h2>Find a place. Become regulars. Eventually leave.</h2>
+        <div class="chapter5-copy">
+          <p>
+            We have this strange little pattern.
+          </p>
+          <p>
+            We find a spot. We start going there regularly. We become known there.
+            It becomes <em>our place.</em>
+          </p>
+          <p>
+            And then one fine day, the place spoils our taste.
+            The food changes. Something isn't right anymore.
+          </p>
+          <p>
+            And just like that... we leave and start looking for another spot.
+          </p>
+        </div>
+        <div class="chapter5-object-list">
+          <div>Logix</div>
+          <div>Bakebook</div>
+          <div>Spectrum</div>
+          <div>Jungle Café · Goa</div>
+          <div>Delhi Darbar</div>
+          <div>Ching's · our Chinese phase</div>
+          <div>Yeti · our momo palace</div>
+          <div>Chelvi's</div>
+        </div>
+      </section>
+
+    </div>
+
+    <section class="chapter5-section">
+      <div class="chapter5-num">03 · FOOD PHASES</div>
+      <h2>We don't eat things. We enter phases.</h2>
+      <div class="chapter5-copy">
+        <p>
+          Momo phase. Coffee phase. Nachos phase. Daru phase.
+        </p>
+        <p>
+          We pick one thing and eat it until we reach the point where even the
+          sight of it feels like <em>“bas, ab nahi.”</em>
+        </p>
+        <p>
+          Then we abandon it and move on to the next obsession.
+        </p>
+        <p>
+          It makes absolutely no sense.
+          And somehow, it is one of the most fun things about us.
+        </p>
+      </div>
+      <div class="chapter5-note">“One thing at a time. Until atti nahi ho jaati.” 😂</div>
+    </section>
+
+    <section class="chapter5-section">
+      <div class="chapter5-num">04 · OUR FAVOURITE SPORT</div>
+      <h2>Judging people who didn't ask to be judged.</h2>
+      <div class="chapter5-copy">
+        <p>
+          Sometimes I think people imagine couples sitting together and having
+          romantic conversations.
+        </p>
+        <p>
+          We sit together, point at somebody, and immediately start finding
+          everything wrong with them.
+        </p>
+        <p>
+          Their face. Their dressing. Their attitude. Their harkatein.
+          Someone says something weird. Someone does something stupid.
+          Somehow, everyone becomes a discussion topic.
+        </p>
+        <p>
+          Kajul. Vikash. Neha. Aman. Nisarg. Nikita.
+          I am pretty sure some of them have suffered enough because of us. 😂
+        </p>
+        <p>
+          Sometimes I genuinely feel that out of those four people the world
+          keeps talking about, <strong>two of them are probably us.</strong>
+        </p>
+        <p>
+          We don't leave anyone.
+          And honestly, I think that's one of our favourite forms of entertainment.
+        </p>
+      </div>
+      <div class="chapter5-note">“Kisi ko nahi chodte.” 😂</div>
+    </section>
+
+    <section class="chapter5-section">
+      <div class="chapter5-num">05 · FROM GOOD MORNING TO GOOD NIGHT</div>
+      <h2>Our Gussa Meter.</h2>
+      <div class="chapter5-copy">
+        <p>
+          Somewhere along the way, wishing each other good morning and good night
+          stopped being a thing we consciously did.
+        </p>
+        <p>
+          It became a habit.
+        </p>
+        <p>
+          From the first wish in the morning to the last sweet dream at night,
+          it became part of our day.
+        </p>
+      </div>
+
+      <div class="chapter5-gussa">
+        <div class="label">THE OFFICIAL GUSSA METER</div>
+        <p><strong>Angry?</strong> No wishes.</p>
+        <p><strong>Normal?</strong> Everything.</p>
+        <p><strong>Completely fine?</strong> Good morning. Good night. Everything in between. ❤️</p>
+        <p style="margin-top:12px;"><em>Also known as: conditional love.</em> 😂</p>
+      </div>
+
+      <div class="chapter5-copy">
+        <p>
+          I still remember you naming it.
+          And honestly, the name fits perfectly.
+        </p>
+      </div>
+    </section>
+
+    <section class="chapter5-section">
+      <div class="chapter5-num">06 · LITTLE THINGS THAT LIVE WITH ME</div>
+      <h2>A small museum of you.</h2>
+      <div class="chapter5-copy">
+        <p>
+          My Harry Potter tumbler — your precious little gift.
+          I didn't use it for the longest time because I didn't have a place
+          where it could look beautiful.
+        </p>
+        <p>
+          Now I use it every day.
+          And every time I pick it up, I remember you.
+        </p>
+        <p>
+          It took me months to find our <strong>Dudu Bubu</strong> to sit in my study
+          as our favourite storytellers.
+        </p>
+        <p>
+          That Miniso penguin and its baby.
+          The tiny little bunny that was supposed to be at your place,
+          but somehow ended up here because you left it with me.
+        </p>
+        <p>
+          Your scented candles are still with me too.
+        </p>
+        <p>
+          My place is literally full of these small, almost ridiculous things.
+        </p>
+        <p>
+          And somehow, every one of them keeps a little piece of you around.
+        </p>
+      </div>
+      <div class="chapter5-note">
+        “Small things. Small objects. Somehow, they make the place feel more like home.”
+      </div>
+    </section>
+
+    <section class="chapter5-section">
+      <div class="chapter5-num">07 · WE KNOW EACH OTHER NOW</div>
+      <h2>More understanding. Still more silly fights.</h2>
+      <div class="chapter5-copy">
+        <p>
+          Slowly, with time, we have become more and more understanding.
+        </p>
+        <p>
+          We know each other much better now.
+          The moods. The silences. The expressions.
+          The things that need to be said and the things that don't.
+        </p>
+        <p>
+          We still fight.
+        </p>
+        <p>
+          Of course we do.
+        </p>
+        <p>
+          We are still us. 😂
+        </p>
+        <p>
+          But somewhere along the way, we learned how to understand the person
+          underneath the argument.
+        </p>
+      </div>
+      <div class="chapter5-note">“More understanding. More us. And, unfortunately, still more silly fights.”</div>
+    </section>
+
+    <section class="chapter5-section">
+      <div class="chapter5-num">08 · CHEERS TO US</div>
+      <h2>To health. To beauty. To you. ❤️</h2>
+      <div class="chapter5-copy">
+        <p>
+          Cheers to our health — so no sugars.
+        </p>
+        <p>
+          Cheers to beauty — so I always wear sunscreen and actually try to
+          follow what you say.
+        </p>
+        <p>
+          <em>Just kidding.</em> 😂
+        </p>
+        <p>
+          At least I try not to make you mad.
+        </p>
+        <p>
+          And through all the food phases, the spot phases, the judgement,
+          the wishes, the objects, the arguments and the endless nonsense...
+        </p>
+        <p>
+          <strong>I always love you.</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="chapter5-final">
+      <p class="big">
+        Maybe this is what normal became for us.<br><br>
+        Not candlelight dinners.<br>
+        Not perfectly planned dates.<br>
+        Not always saying the right thing.<br><br>
+        Sometimes it's just<br>
+        “Kahan chalna hai?” · “Kuch khaate hain.” · “Woh banda dekh.” · “Uski kya problem hai?” 😂<br><br>
+        And then food. And laughter. And another stupid conversation.
+        And eventually...<br>
+        Good night.<br><br>
+        And tomorrow, again...
+      </p>
+
+      <h2 class="chapter5-weus">WE → US</h2>
+      <div class="chapter5-together">Our kind of normal. ❤️</div>
+    </section>
+
+    <div class="chapter5-nav">
+      <button onclick="backToChapter4()">← Chapter IV</button>
+      <button onclick="closeStory()">Return to HOME</button>
+    </div>
+  </main>
+</section>
 
 
+<script>const museumItems=[['01 · THE RITUAL', 'Westside', 'Kuch pasand aaye ya na aaye, Westside jaana toh ritual hai. 😌'], ['02 · THE COFFEE PHASE', 'Bakebook', 'Zehar jaisi meethi coffee. But because it’s with you, it’s still the best one. Fries aur cookies achi hain though. 😂'], ['03 · OUR PASTA SPOT', 'The Big Chill — Noida', 'Our pasta spot. Bas pasta bolo, destination automatically decide ho jaata hai.'], ['04 · THE RAVIOLI', 'The Big Chill — Saket', 'Ravioli yaad hai? Uske baad hum wapas hi nahi gaye. 😂'], ['05 · THE OVERRATED ONE', 'Chelvies', 'Our most overrated coffee place. But last mein inhone bhi hug de hi diya. 😂'], ['06 · OUR CHINESE SPOT', 'Ching Singh', 'Our Chinese spot. Kuch phases khatam ho jaate hain, Ching Singh ka phase nahi.'], ['07 · THE GOA SAVIOUR', 'Delhi Darbar', 'Goa mein jab kuch samajh na aaye — Delhi Darbar is the saviour.'], ['08 · THE MALL DAY', 'The Mall of India', 'Shopping ke liye jaana, khaana khaana, thoda ghoomna… aur somehow poora din nikal jaana.'], ['09 · THE FIRST LOOK', 'The Drunken Botanist', 'The first time I saw you. And somehow, that one look started all this. ❤️'], ['10 · THE EMPTY FAVOURITE', 'The Flying Dutchman', 'Food achha. Ambience achha. Sab achha. Bas jab hum aate hain, koi aur kyun nahi aata? 😂'], ['11 · THE GETAWAY', 'Holitel Goa', 'Short stay, beach ke paas, aur woh apni wali feeling. ❤️'], ['12 · THE OREO SHAKE', 'I Sacked Newton', 'That Oreo shake. Still remember it. :D'], ['13 · THE AFTER-PARTY', 'Local', 'Can’t forget the after-party. Kuch nights dinner se zyada yaad reh jaati hain. 😂'], ['14 · THE SECOND HOME', 'Logix City Centre', 'Our second home. Itna jaana hua hai ki jagah se zyada routine lagta hai.'], ['15 · THE PARTY RECORD', 'Manhattan Bar Exchange', 'Only two party places where we have a 100% attendance together. Attendance record toh maintain hona chahiye. 😂'], ['16 · THE CHEESE SANDWICH', 'Meltado', 'Cheese sandwich and spices. :D Don’t ask. Bas apni yaadein hain.'], ['17 · THE BATHTUB', 'Mosaic', 'The bathtub. 😉'], ['18 · THE BUTTERFLIES', 'RAHA', 'Can’t forget this place. It still gives me butterflies. ❤️'], ['19 · THE MOMO RITUAL', 'Select Citywalk', 'Momo cravings = Select Citywalk. Must-visit ritual. No discussion.'], ['20 · THE HIDDEN PLACE', 'SK Premium Park', 'Our hidden place. Kuch jagah famous hone ke liye nahi, sirf apni hone ke liye hoti hain.'], ['21 · THE CCTV STORY', 'Skyhouse', 'Yahan ke CCTV wale tumhe pooch rahe the. Bas itna hi kehna tha. 😂'], ['22 · THE COMBINATION', 'Social DLF', 'Pizza and toffee wali daru. Some combinations just become memories. 😂'], ['23 · THE WAIT', 'Social Hauz Khas', 'Inki waiting hi khatam nahi ho rahi thi. Restaurant kam, patience test zyada tha. 😂'], ['24 · THE WASHROOM STORY', 'Social Saket', 'The real fun was when you entered the gents’ washroom. 😂'], ['25 · THE NEW SPOT', 'Spectrum Mall', 'Our new spot for everything. Khana, shopping, ghoomna — abhi toh iska phase chal raha hai.'], ['26 · WHERE IT STARTED', 'The Summit Hotel Goa', 'The place where a lot started. Some places don’t need an explanation. ❤️'], ['27 · YOUR PLACE', 'Themis', 'That’s your place. You love it, and whatever you love… I love it too. ❤️'], ['28 · THE FIRST OUTSIDE-DELHI TRIP', 'Themis Farmhouse', 'Our first trip outside Delhi. First of many, hopefully. ❤️'], ['29 · THE FIRST COFFEE', 'Theobroma', 'Our first coffee together. Hot. No sugar. And the beginning of something much bigger. ❤️'], ['30 · THE WAY YOU GET YOUR WAY', 'Tito’s Lane Goa', 'You know exactly how to get your way. Aur somehow, you always do. 😂'], ['31 · THE DENIAL', 'Toybox Gurgaon', '“Sorry aunty, I don’t know who?” 😂']];const museumImages=['museum-01-westside.png', 'museum-02-bakebook.png', 'museum-03-big-chill-noida.png', 'museum-04-big-chill-saket.png', 'museum-05-chelvies.png', 'museum-06-ching-singh.png', 'museum-07-delhi-darbar.png', 'museum-08-mall-of-india.png', 'museum-09-drunken-botanist.png', 'museum-10-flying-dutchman.png', 'museum-11-holitel.png', 'museum-12-i-sacked-newton.png', 'museum-13-local.png', 'museum-14-logix.png', 'museum-15-manhattan.png', 'museum-16-meltado.png', 'museum-17-mosaic.png', 'museum-18-raha.png', 'museum-19-select-citywalk.png', 'museum-20-sk-premium-park.png', 'museum-21-skyhouse.png', 'museum-22-social-dlf.png', 'museum-23-social-hauz-khas.png', 'museum-24-social-saket.png', 'museum-25-spectrum.png', 'museum-26-summit-hotel-goa.png', 'museum-27-themis.png', 'museum-28-themis-farmhouse.png', 'museum-29-theobroma.png', 'museum-30-titos-lane.png', 'museum-31-toybox.png'];function openMuseum(){const h=document.getElementById("home"),r=document.getElementById("museumRoom");if(h)h.style.display="none";if(r){r.classList.add("show");r.scrollTop=0}document.body.style.overflow="hidden";window.scrollTo({top:0,behavior:"instant"})}function closeMuseum(){closeMuseumItem();const r=document.getElementById("museumRoom"),h=document.getElementById("home");if(r)r.classList.remove("show");if(h)h.style.display="block";document.body.style.overflow="auto";window.scrollTo({top:0,behavior:"instant"})}function openMuseumItem(i){const x=museumItems[i];if(!x)return;document.getElementById("museumLightboxNum").textContent=x[0];document.getElementById("museumLightboxTitle").textContent=x[1];document.getElementById("museumLightboxText").textContent=x[2];const im=document.getElementById("museumLightboxImg");im.src=museumImages[i];im.alt=x[1];document.getElementById("museumLightbox").classList.add("show")}function closeMuseumItem(){const x=document.getElementById("museumLightbox");if(x)x.classList.remove("show")}document.addEventListener("keydown",e=>{if(e.key==="Escape")closeMuseumItem()});document.addEventListener("click",e=>{const x=document.getElementById("museumLightbox");if(x&&e.target===x)closeMuseumItem()});</script>
 <script>
 function openPlacesMenu(){
   const menu = document.getElementById("placesMenu");
@@ -4956,11 +5188,15 @@ function closeGoaToPlaces(){
       const storyRoom = document.getElementById("storyRoom");
       const chapter2 = document.getElementById("storyChapter2");
       const chapter3 = document.getElementById("storyChapter3");
+      const chapter4 = document.getElementById("storyChapter4");
+      const chapter5 = document.getElementById("storyChapter5");
       const home = document.getElementById("home");
 
       storyRoom.classList.remove("show");
       if (chapter2) chapter2.classList.remove("show");
       if (chapter3) chapter3.classList.remove("show");
+      if (chapter4) chapter4.classList.remove("show");
+      if (chapter5) chapter5.classList.remove("show");
 
       home.style.display = "block";
 
@@ -5562,7 +5798,7 @@ function closeHiddenSurprise(index){
 <script>
 /* OUR STORY — integrated chapter navigation */
 function hideAllStoryChapters(){
-  const ids=['storyRoom','storyChapter2','storyChapter3','storyChapter4'];
+  const ids=['storyRoom','storyChapter2','storyChapter3','storyChapter4','storyChapter5'];
   ids.forEach(function(id){
     const el=document.getElementById(id);
     if(el) el.classList.remove('show');
@@ -5593,94 +5829,9 @@ function backToChapter2(){
 function backToChapter3(){
   openStoryChapter(3);
 }
-</script>
-
-
-<script>
-/* =========================
-   BIRTHDAY COUNTDOWN + REVEAL
-========================= */
-(function(){
-  const target = new Date('2026-09-24T12:59:59+05:30').getTime();
-  function updateBirthdayCountdown(){
-    const diff = Math.max(0, target - Date.now());
-    const total = Math.floor(diff/1000);
-    const days = Math.floor(total/86400);
-    const hours = Math.floor((total%86400)/3600);
-    const minutes = Math.floor((total%3600)/60);
-    const seconds = total%60;
-    const set=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=String(v).padStart(2,'0');};
-    set('bdDays',days); set('bdHours',hours); set('bdMinutes',minutes); set('bdSeconds',seconds);
-  }
-  updateBirthdayCountdown();
-  setInterval(updateBirthdayCountdown,1000);
-})();
-
-let birthdayMusicCtx=null, birthdayMusicTimer=null, birthdayMusicPlaying=false;
-function playBirthdayNote(freq,start,duration,volume){
-  if(!birthdayMusicCtx) return;
-  const osc=birthdayMusicCtx.createOscillator();
-  const gain=birthdayMusicCtx.createGain();
-  osc.type='sine'; osc.frequency.value=freq;
-  gain.gain.setValueAtTime(0.0001,start);
-  gain.gain.exponentialRampToValueAtTime(volume,start+0.025);
-  gain.gain.exponentialRampToValueAtTime(0.0001,start+duration);
-  osc.connect(gain); gain.connect(birthdayMusicCtx.destination);
-  osc.start(start); osc.stop(start+duration+0.03);
+function backToChapter4(){
+  openStoryChapter(4);
 }
-function startBirthdayMusic(){
-  if(birthdayMusicPlaying) return;
-  const AC=window.AudioContext||window.webkitAudioContext;
-  if(!AC) return;
-  birthdayMusicCtx=birthdayMusicCtx||new AC();
-  birthdayMusicCtx.resume();
-  birthdayMusicPlaying=true;
-  const melody=[523.25,659.25,783.99,659.25,587.33,698.46,880,698.46,523.25,659.25,783.99,1046.5];
-  let i=0;
-  const loop=()=>{
-    if(!birthdayMusicPlaying) return;
-    const now=birthdayMusicCtx.currentTime;
-    melody.forEach((f,n)=>playBirthdayNote(f,now+n*.38,.42,.035));
-    birthdayMusicTimer=setTimeout(loop,melody.length*380+650);
-  };
-  loop();
-  const b=document.getElementById('birthdayMusicToggle'); if(b)b.textContent='♫';
-}
-function stopBirthdayMusic(){
-  birthdayMusicPlaying=false;
-  if(birthdayMusicTimer) clearTimeout(birthdayMusicTimer);
-  const b=document.getElementById('birthdayMusicToggle'); if(b)b.textContent='♪';
-}
-function toggleBirthdayMusic(){ birthdayMusicPlaying ? stopBirthdayMusic() : startBirthdayMusic(); }
-function createBirthdayConfetti(){
-  const box=document.getElementById('birthdayConfetti'); if(!box)return;
-  box.innerHTML='';
-  const pieces=72;
-  for(let i=0;i<pieces;i++){
-    const el=document.createElement('span'); el.className='confetti-piece';
-    el.style.left=(Math.random()*100)+'%';
-    el.style.animationDuration=(4.5+Math.random()*4)+'s';
-    el.style.animationDelay=(Math.random()*1.2)+'s';
-    el.style.setProperty('--drift',((Math.random()-.5)*220)+'px');
-    const colors=['#e8b7a7','#f2d3a4','#f7e7c9','#c9817e','#b89b75','#ffffff'];
-    el.style.background=colors[Math.floor(Math.random()*colors.length)];
-    box.appendChild(el);
-  }
-}
-function openBirthdayReveal(){
-  const r=document.getElementById('birthdayReveal'); if(!r)return;
-  r.classList.add('show'); r.setAttribute('aria-hidden','false');
-  document.body.style.overflow='hidden';
-  createBirthdayConfetti();
-  startBirthdayMusic();
-}
-function closeBirthdayReveal(){
-  const r=document.getElementById('birthdayReveal'); if(!r)return;
-  r.classList.remove('show'); r.setAttribute('aria-hidden','true');
-  stopBirthdayMusic();
-  document.body.style.overflow='auto';
-}
-function enterBirthdayHome(){ closeBirthdayReveal(); }
 </script>
 
 </body>
