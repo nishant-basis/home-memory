@@ -3434,6 +3434,35 @@
 }
 
 
+
+/* LITTLE THINGS — EXPANDABLE MEMORY VIEW */
+.lt-modal{z-index:120000;padding:28px;background:rgba(8,7,6,.88);backdrop-filter:blur(14px)}
+.lt-modal-box{
+  width:min(1120px,94vw);max-height:90vh;overflow:auto;
+  padding:0;background:#efe6d7;color:#2a2520;border:1px solid rgba(155,128,96,.55);
+  box-shadow:0 35px 110px rgba(0,0,0,.65);position:relative;
+}
+.lt-modal-media{background:#161310;display:flex;align-items:center;justify-content:center;padding:26px;min-height:430px}
+.lt-modal-media img{display:block;width:100%;max-height:62vh;object-fit:contain;object-position:center;border:1px solid rgba(214,177,120,.42);background:#0f0e0d}
+.lt-modal-copy{padding:30px 42px 36px}
+.lt-modal-copy h2{font-family:Georgia,serif;font-size:42px;font-weight:400;margin:0 42px 8px 0;color:#2a2520}
+.lt-modal-copy .lt-rule{width:55px;height:1px;background:#9b8060;margin:16px 0 20px}
+.lt-modal-copy p{font-size:17px;line-height:1.85;margin:0;color:#51483e;max-width:900px}
+.lt-modal-close{
+  position:absolute;right:18px;top:14px;z-index:3;float:none;
+  width:38px;height:38px;border:1px solid rgba(81,72,62,.35);border-radius:50%;
+  background:rgba(239,230,215,.88);font-size:22px;cursor:pointer;color:#51483e;
+}
+.lt-card{cursor:pointer}
+@media(max-width:700px){
+ .lt-modal{padding:12px}
+ .lt-modal-media{padding:14px;min-height:260px}
+ .lt-modal-media img{max-height:55vh}
+ .lt-modal-copy{padding:24px 22px 28px}
+ .lt-modal-copy h2{font-size:31px}
+ .lt-modal-copy p{font-size:15px}
+}
+
 </style>
 <style id="museum-room-style">.museum-room{position:fixed;inset:0;z-index:7000;display:none;overflow:auto;background:radial-gradient(circle at 15% 10%,rgba(255,255,255,.05),transparent 25%),radial-gradient(circle at 85% 75%,rgba(157,118,66,.10),transparent 28%),#151210;color:#eee5d7}.museum-room.show{display:block}.museum-shell{max-width:1400px;margin:0 auto;padding:34px 34px 70px}.museum-back{position:sticky;top:18px;z-index:20;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(232,214,183,.28);background:rgba(21,18,16,.82);color:#e9dcc8;padding:10px 15px;border-radius:999px;letter-spacing:.12em;font-size:11px;cursor:pointer;backdrop-filter:blur(10px);text-transform:uppercase}.museum-head{padding:62px 8px 42px;text-align:center}.museum-kicker{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#b99a6b;margin-bottom:18px}.museum-title{font-family:Georgia,'Times New Roman',serif;font-size:clamp(46px,7vw,92px);font-weight:400;letter-spacing:.03em;margin:0;line-height:.9;color:#f3eadc}.museum-sub{max-width:680px;margin:24px auto 0;color:#bfb3a4;font-size:15px;line-height:1.8}.museum-rule{width:110px;height:1px;background:#b99a6b;margin:27px auto 0;opacity:.7}.museum-stat{margin-top:17px;color:#8f8275;font-size:10px;letter-spacing:.22em;text-transform:uppercase}.museum-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;align-items:start}.museum-card{position:relative;background:#e8dece;color:#261e19;padding:10px 10px 14px;box-shadow:0 16px 35px rgba(0,0,0,.24);cursor:pointer;transition:transform .25s ease,box-shadow .25s ease;transform:rotate(var(--tilt))}.museum-card:nth-child(3n){--tilt:1.1deg}.museum-card:nth-child(3n+1){--tilt:-.8deg}.museum-card:nth-child(3n+2){--tilt:.35deg}.museum-card:hover{transform:translateY(-7px) rotate(0deg);box-shadow:0 22px 45px rgba(0,0,0,.34);z-index:3}.museum-photo{display:block;width:100%;height:205px;object-fit:cover;background:#29231f;filter:saturate(.9) contrast(1.03)}.museum-meta{padding:12px 5px 0}.museum-num{font-size:9px;letter-spacing:.2em;color:#8e7150;text-transform:uppercase}.museum-name{font-family:Georgia,'Times New Roman',serif;font-size:19px;margin:5px 0 4px;line-height:1.1}.museum-caption{font-size:11px;color:#75695d;line-height:1.45}.museum-pin{position:absolute;right:12px;top:8px;font-size:14px;color:#8e7150}.museum-footer{text-align:center;padding:55px 10px 10px;color:#8f8275;font-family:Georgia,serif;font-size:17px;line-height:1.7}.museum-footer strong{color:#e9dcc8;font-weight:400}.museum-lightbox{position:fixed;inset:0;z-index:7100;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(8,7,6,.9);backdrop-filter:blur(12px)}.museum-lightbox.show{display:flex}.museum-lightbox-inner{width:min(1120px,96vw);max-height:94vh;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(260px,.65fr);background:#eee4d5;color:#241c17;box-shadow:0 30px 90px rgba(0,0,0,.5)}.museum-lightbox-img{width:100%;height:min(78vh,720px);object-fit:contain;background:#1a1715}.museum-lightbox-copy{padding:34px;display:flex;flex-direction:column;justify-content:center}.museum-lightbox-copy .museum-num{margin-bottom:12px}.museum-lightbox-copy h3{font:400 36px/1.05 Georgia,serif;margin:0 0 15px}.museum-lightbox-copy p{font-size:14px;line-height:1.8;color:#675b50;margin:0}.museum-close{position:absolute;right:24px;top:20px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(0,0,0,.3);color:white;font-size:21px;cursor:pointer}@media(max-width:1000px){.museum-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.museum-lightbox-inner{grid-template-columns:1fr;max-height:92vh;overflow:auto}.museum-lightbox-img{height:52vh}.museum-lightbox-copy{padding:24px}}@media(max-width:700px){.museum-shell{padding:22px 14px 50px}.museum-head{padding:50px 5px 32px}.museum-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.museum-photo{height:170px}.museum-name{font-size:16px}.museum-caption{font-size:10px}.museum-card{padding:7px 7px 10px}.museum-lightbox{padding:12px}.museum-lightbox-copy h3{font-size:28px}}@media(max-width:470px){.museum-grid{grid-template-columns:1fr}.museum-photo{height:235px}}</style>
 <style>
@@ -6045,8 +6074,10 @@ function backToChapter4(){
 </section>
 <div class="lt-modal" id="littleThingModal" onclick="if(event.target===this)closeLittleThing()">
 <div class="lt-modal-box">
-<button class="lt-modal-close" onclick="closeLittleThing()">×</button>
-<div id="littleThingModalContent"></div>
+<button class="lt-modal-close" onclick="closeLittleThing()" aria-label="Close">×</button>
+<div class="lt-modal-media"><img id="littleThingModalImage" src="" alt=""></div>
+<div class="lt-modal-copy" id="littleThingModalContent"></div>
+</div>
 </div>
 </div>
 <script>
@@ -6069,10 +6100,24 @@ function backToChapter4(){
   };
   window.openLittleThing=function(key){
     const d=ltData[key]; if(!d)return;
+    const imageMap={
+      jaguar:'little-panel-01.jpg', tumbler:'little-panel-02.jpg', bunny:'little-panel-03.jpg',
+      candles:'little-panel-04.jpg', adidas:'little-panel-05.jpg', armani:'little-panel-06.jpg',
+      dudu:'little-panel-07.jpg', penguins:'little-panel-08.jpg', mugs:'little-panel-09.jpg',
+      food:'little-panel-10.jpg', firstBirthday:'little-panel-11.jpg', secondBirthday:'little-panel-12.jpg',
+      parisSweaters:'little-panel-13.jpg', tulips:'little-panel-14.jpg'
+    };
+    const img=document.getElementById('littleThingModalImage');
+    img.src=imageMap[key]||'';
+    img.alt=d[0];
     document.getElementById('littleThingModalContent').innerHTML='<h2>'+d[0]+'</h2><div class="lt-rule"></div><p>'+d[1]+'</p>';
     document.getElementById('littleThingModal').classList.add('active');
+    document.body.style.overflow='hidden';
   };
-  window.closeLittleThing=function(){document.getElementById('littleThingModal').classList.remove('active')};
+  window.closeLittleThing=function(){
+    document.getElementById('littleThingModal').classList.remove('active');
+    document.body.style.overflow='';
+  };
   window.openLittleThings=function(){
     document.querySelectorAll('.little-things-room').forEach(x=>x.classList.add('active'));
     document.body.style.overflow='hidden';
