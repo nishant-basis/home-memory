@@ -5236,6 +5236,9 @@ function closeGoaToPlaces(){
       magicResetPending = false;
     }
 
+    // Public hook used by the HOME secret layer.
+    window.resetMagicDiscovery = resetMagicDiscovery;
+
     function openMagic() {
 
       document.getElementById("home").style.display = "none";
