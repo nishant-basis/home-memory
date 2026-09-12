@@ -6441,6 +6441,7 @@ function enterBirthdayHome(){ closeBirthdayReveal(); }
     if(whisper && n>=6)whisper.innerHTML='You found almost everything. <em>Almost.</em>';
   }
   function addSecret(id){const a=loadSecrets();if(!a.includes(id)){a.push(id);saveSecrets(a)}refreshSecrets()}
+  function resetHomeSecrets(){try{localStorage.removeItem(SECRET_KEY)}catch(e){}refreshSecrets()}
   let activeSecretKind=null;
   window.openHomeSecret=function(kind){
     if(kind==='complete' && loadSecrets().length<6)return;
@@ -6463,6 +6464,13 @@ function enterBirthdayHome(){ closeBirthdayReveal(); }
     document.body.style.overflow='auto';
     if(activeSecretKind==='magic' && window.resetMagicDiscovery && magicResetPending){
       window.resetMagicDiscovery();
+    }
+    /* Completing the full HOME secret hunt is a repeatable experience.
+       Once the final message has been read and closed, start the hunt again at 0/7. */
+    if(activeSecretKind==='complete'){
+      resetHomeSecrets();
+      const sp=document.getElementById('secretSpark');
+      if(sp)sp.classList.remove('found');
     }
     activeSecretKind=null;
   };
