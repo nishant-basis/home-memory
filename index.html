@@ -3545,6 +3545,19 @@ body{background:radial-gradient(ellipse 70% 32% at 50% 5%,rgba(88,30,48,.34),tra
 @media(max-width:760px){.secret-clue{right:10px;bottom:9px}.story-two h2 .secret-clue{right:-28px}.home-secret-box{background:radial-gradient(circle at 50% 0%,rgba(106,32,51,.3),transparent 55%),rgba(24,10,14,.98)!important}}
 </style>
 
+
+<style id="interaction-hardening">
+/* Final interaction hardening */
+#littleThingModal.lt-modal.active{
+  position:fixed !important;
+  inset:0 !important;
+  z-index:2147483647 !important;
+}
+#littleThingModal.lt-modal.active .lt-modal-box{
+  position:relative;
+  z-index:2147483647 !important;
+}
+</style>
 </head>
 <body>
 <!-- =========================
@@ -5210,6 +5223,18 @@ function closeGoaToPlaces(){
     ========================== */
 
     let magicFound = 0;
+    let magicResetPending = false;
+
+    function resetMagicDiscovery() {
+      const stars = document.querySelectorAll(".magic-star");
+      stars.forEach(function(star){ star.classList.remove("found"); });
+      magicFound = 0;
+      const progress = document.getElementById("magicProgress");
+      const note = document.getElementById("magicNote");
+      if(progress) progress.textContent = "0 of 7 discovered";
+      if(note) note.innerHTML = "The room is quiet for now.<br/>Seven stars are brighter than the rest. Find them.";
+      magicResetPending = false;
+    }
 
     function openMagic() {
 
@@ -5259,6 +5284,7 @@ function closeGoaToPlaces(){
             note.innerHTML =
               "You found all seven.<br>" +
               "Looks like you've discovered everything... for now. ♡";
+            magicResetPending = true;
             if(window.openHomeSecret) setTimeout(function(){ window.openHomeSecret("magic"); }, 450);
 
           }
@@ -6194,11 +6220,23 @@ function backToChapter4(){
       food:'little-panel-10.jpg', firstBirthday:'little-panel-11.jpg', secondBirthday:'little-panel-12.jpg',
       parisSweaters:'little-panel-13.jpg', tulips:'little-panel-14.jpg'
     };
+    const modal=document.getElementById('littleThingModal');
+    if(!modal)return;
+
+    /* Always hoist the modal to <body>. This prevents the Little Things
+       room's stacking context from ever putting the popup behind the room. */
+    if(modal.parentElement !== document.body){
+      document.body.appendChild(modal);
+    }
+    modal.style.position='fixed';
+    modal.style.inset='0';
+    modal.style.zIndex='2147483647';
+
     const img=document.getElementById('littleThingModalImage');
     img.src=imageMap[key]||'';
     img.alt=d[0];
     document.getElementById('littleThingModalContent').innerHTML='<h2>'+d[0]+'</h2><div class="lt-rule"></div><p>'+d[1]+'</p>';
-    document.getElementById('littleThingModal').classList.add('active');
+    modal.classList.add('active');
     document.body.style.overflow='hidden';
   };
   window.closeLittleThing=function(){
@@ -6400,8 +6438,10 @@ function enterBirthdayHome(){ closeBirthdayReveal(); }
     if(whisper && n>=6)whisper.innerHTML='You found almost everything. <em>Almost.</em>';
   }
   function addSecret(id){const a=loadSecrets();if(!a.includes(id)){a.push(id);saveSecrets(a)}refreshSecrets()}
+  let activeSecretKind=null;
   window.openHomeSecret=function(kind){
     if(kind==='complete' && loadSecrets().length<6)return;
+    activeSecretKind=kind;
     const data=secrets[kind]||secrets.spark,m=document.getElementById('homeSecretModal');if(!m)return;
     document.getElementById('homeSecretKicker').textContent=data.k;document.getElementById('homeSecretTitle').textContent=data.t;
     document.getElementById('homeSecretText').innerHTML=data.p.replace(/\n\n/g,'<br><br>').replace(/\n/g,'<br>');
@@ -6409,7 +6449,15 @@ function enterBirthdayHome(){ closeBirthdayReveal(); }
     if(kind!=='complete'){addSecret(kind);if(kind==='spark'){const sp=document.getElementById('secretSpark');if(sp)sp.classList.add('found')}}
     if(kind==='complete')addSecret('final');
   };
-  window.closeHomeSecret=function(){const m=document.getElementById('homeSecretModal');if(m){m.classList.remove('show');m.setAttribute('aria-hidden','true')}document.body.style.overflow='auto'};
+  window.closeHomeSecret=function(){
+    const m=document.getElementById('homeSecretModal');
+    if(m){m.classList.remove('show');m.setAttribute('aria-hidden','true')}
+    document.body.style.overflow='auto';
+    if(activeSecretKind==='magic' && window.resetMagicDiscovery && magicResetPending){
+      window.resetMagicDiscovery();
+    }
+    activeSecretKind=null;
+  };
   function clue(cls,id,label){
     if(document.querySelector('.secret-clue.'+cls))return;
     const b=document.createElement('button');b.type='button';b.className='secret-clue '+cls;b.setAttribute('aria-label',label);b.innerHTML='♡';
