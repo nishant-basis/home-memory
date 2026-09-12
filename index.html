@@ -3491,7 +3491,41 @@
  .little-things-room .lt-name{font-size:25px;}
  .little-things-room .lt-tease{font-size:15px;}
 }
-</style></head>
+</style>
+<style id="home-experience-layer">
+/* HOME — experience layer */
+.home-experience{max-width:1120px;margin:0 auto 34px;padding:0 24px}
+.home-experience-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:18px;align-items:stretch}
+.experience-card{position:relative;overflow:hidden;border:1px solid rgba(239,209,161,.18);border-radius:18px;background:linear-gradient(145deg,rgba(30,22,21,.92),rgba(21,17,17,.86));box-shadow:0 14px 40px rgba(0,0,0,.16);padding:24px 25px;color:#eadfce}
+.experience-card:after{content:"";position:absolute;width:180px;height:180px;right:-85px;top:-95px;border-radius:50%;background:radial-gradient(circle,rgba(239,209,161,.09),transparent 68%);pointer-events:none}
+.experience-kicker{font-size:9px;letter-spacing:.27em;text-transform:uppercase;color:#b99a6b;margin-bottom:9px}
+.experience-title{font:400 28px/1.08 Georgia,serif;margin:0 0 9px;color:#f1e8da}
+.experience-copy{font-size:12px;line-height:1.7;color:#9f9386;margin:0}
+.then-now{display:flex;align-items:center;gap:14px;margin-top:20px}
+.then-now .moment{flex:1;min-width:0}.then-now .moment span{display:block;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#8d7b68;margin-bottom:5px}.then-now .moment strong{display:block;font:400 17px Georgia,serif;color:#e9ddcc}.then-now .arrow{color:#b99a6b;font-size:18px}
+.fragment-list{display:grid;gap:9px;margin-top:16px}
+.fragment{font:italic 14px/1.55 Georgia,serif;color:#d8ccbc;padding-left:15px;position:relative;transition:opacity .25s ease,transform .25s ease}
+.fragment:before{content:"♡";position:absolute;left:0;top:1px;color:#b77a76;font-style:normal;font-size:11px}
+.home-whisper{max-width:720px;margin:0 auto 26px;text-align:center;color:#8e8174;font:italic 13px Georgia,serif;min-height:20px;transition:opacity .3s ease}
+.home-whisper em{color:#b99a6b;font-style:normal}
+.secret-spark{position:absolute;right:8%;bottom:14%;z-index:5;border:0;background:transparent;color:rgba(255,220,190,.42);font-size:13px;cursor:pointer;padding:8px;opacity:.65;transition:transform .3s ease,color .3s ease,opacity .3s ease}
+.secret-spark:hover{transform:scale(1.25) rotate(8deg);color:#f0c8a9;opacity:1}
+.secret-spark.found{color:#e7a9a0;opacity:1;animation:sparkPulse 1.2s ease both}
+@keyframes sparkPulse{0%{transform:scale(.8)}45%{transform:scale(1.45)}100%{transform:scale(1)}}
+.discovery-badge{display:none;position:fixed;right:18px;bottom:18px;z-index:6800;border:1px solid rgba(239,209,161,.3);background:rgba(24,19,18,.92);color:#eadfce;padding:10px 14px;border-radius:999px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 12px 30px rgba(0,0,0,.25);backdrop-filter:blur(10px)}
+.discovery-badge.show{display:block;animation:badgeIn .55s ease both}
+@keyframes badgeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.home-secret-modal{position:fixed;inset:0;z-index:99000;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(8,6,6,.82);backdrop-filter:blur(14px)}
+.home-secret-modal.show{display:flex}
+.home-secret-box{width:min(620px,92vw);padding:44px 42px;text-align:center;border:1px solid rgba(239,209,161,.25);border-radius:22px;background:radial-gradient(circle at 50% 0%,rgba(185,154,107,.11),transparent 42%),#191414;box-shadow:0 35px 100px rgba(0,0,0,.55);animation:secretIn .55s ease both}
+@keyframes secretIn{from{opacity:0;transform:translateY(15px) scale(.98)}to{opacity:1;transform:none}}
+.home-secret-mark{font-size:24px;color:#d49a92;margin-bottom:18px}.home-secret-box .experience-kicker{margin-bottom:12px}.home-secret-box h3{font:400 38px/1.05 Georgia,serif;color:#f2e8da;margin:0 0 17px}.home-secret-box p{font:italic 16px/1.85 Georgia,serif;color:#c8baaa;margin:0 auto 25px;max-width:490px}.home-secret-close{border:1px solid rgba(239,209,161,.25);background:transparent;color:#d9cbb9;border-radius:999px;padding:10px 18px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
+.room-card.room-visited{border-color:rgba(239,209,161,.2)}
+.room-card.room-visited:after{content:"♡";position:absolute;right:14px;top:12px;color:rgba(212,154,146,.65);font-size:11px}
+@media(max-width:760px){.home-experience{padding:0 14px}.home-experience-grid{grid-template-columns:1fr}.experience-card{padding:21px}.experience-title{font-size:25px}.then-now{gap:9px}.then-now .moment strong{font-size:15px}.fragment{font-size:13px}.home-secret-box{padding:34px 24px}.home-secret-box h3{font-size:31px}.discovery-badge{right:12px;bottom:12px;font-size:9px}}
+</style>
+
+</head>
 <body>
 <!-- =========================
        OPENING
@@ -3555,6 +3589,7 @@
 <span class="star s5">✦</span>
 <span class="sky-heart h1">♡</span>
 <span class="sky-heart h2">♡</span>
+<button class="secret-spark" id="secretSpark" type="button" aria-label="A tiny secret" onclick="openHomeSecret('spark')">✦</button>
 <div class="sky-title">
 <div class="small">
           Welcome home
@@ -3573,6 +3608,36 @@
         we became HOME.
       </p>
 </div>
+
+
+<!-- HOME EXPERIENCE LAYER -->
+<div class="home-whisper" id="homeWhisper">Some memories are meant to be discovered slowly. <em>♡</em></div>
+<div class="home-experience">
+  <div class="home-experience-grid">
+    <section class="experience-card" aria-label="Then and now">
+      <div class="experience-kicker">A little time machine</div>
+      <h3 class="experience-title">Then → Now</h3>
+      <p class="experience-copy">It started with one look. Somewhere along the way, “me” quietly became “us”.</p>
+      <div class="then-now">
+        <div class="moment"><span>THEN</span><strong>“Who is she?”</strong></div>
+        <div class="arrow">→</div>
+        <div class="moment"><span>NOW</span><strong>“Where are we going?”</strong></div>
+      </div>
+    </section>
+    <section class="experience-card" aria-label="Things I never wrote down">
+      <div class="experience-kicker">Things I never wrote down</div>
+      <h3 class="experience-title">Just between us.</h3>
+      <div class="fragment-list">
+        <div class="fragment">I noticed you before I knew why.</div>
+        <div class="fragment">I still remember that first hot, no-sugar coffee.</div>
+        <div class="fragment">You taught me that together is better than alone.</div>
+        <div class="fragment">I love listening to your chattar pattar.</div>
+        <div class="fragment">Now when I imagine the future, I imagine us.</div>
+      </div>
+    </section>
+  </div>
+</div>
+
 <!-- ROOMS -->
 <div class="rooms">
 <div class="room-card" onclick="openStory()">
@@ -3584,7 +3649,7 @@
           and everything that quietly followed.
         </p>
 </div>
-<div class="room-card" onclick="(function(){var h=document.getElementById('home'),p=document.getElementById('placesRoom'),g=document.getElementById('goaRoom'),g2=document.getElementById('goaRoom2');if(h)h.style.display='none';if(g)g.classList.remove('show');if(g2)g2.classList.remove('show');if(p){p.classList.add('show');p.scrollTop=0;}document.body.style.overflow='hidden';})()" style="cursor:pointer">
+<div class="room-card" onclick="openPlacesRoom()" style="cursor:pointer">
 <span class="room-number">02</span>
 <div class="room-icon">⌖</div>
 <h3>Our Places</h3>
@@ -6260,5 +6325,76 @@ function closeBirthdayReveal(){
 }
 function enterBirthdayHome(){ closeBirthdayReveal(); }
 </script>
+
+<button class="discovery-badge" id="discoveryBadge" type="button" onclick="openHomeSecret('complete')">You found HOME · <span id="discoveryCount">0/6</span></button>
+<div class="home-secret-modal" id="homeSecretModal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="home-secret-box">
+    <div class="home-secret-mark">♡</div>
+    <div class="experience-kicker" id="homeSecretKicker">A tiny secret</div>
+    <h3 id="homeSecretTitle">You found something.</h3>
+    <p id="homeSecretText">Not everything in HOME was meant to be obvious.</p>
+    <button class="home-secret-close" type="button" onclick="closeHomeSecret()">Keep exploring</button>
+  </div>
+</div>
+
+
+<script id="home-experience-js">
+(function(){
+  const KEY='homeExperienceVisitedV1';
+  const roomNames={story:'Our Story',places:'Our Places',little:'Our Little Things',museum:'The Museum',miss:'When I Miss You',magic:'Little Magic'};
+  const whispers={
+    0:'Some memories are meant to be discovered slowly. <em>♡</em>',
+    1:'Okay. You found your way in. <em>Now snoop.</em>',
+    2:'You know where this started. <em>But not everything is here yet.</em>',
+    3:'Three rooms in. <em>You are officially curious.</em>',
+    4:'Halfway through HOME. <em>I hope you are smiling.</em>',
+    5:'You are collecting pieces of us now. <em>♡</em>',
+    6:'You found almost everything. <em>Almost.</em>'
+  };
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return []}}
+  function save(a){try{localStorage.setItem(KEY,JSON.stringify(a))}catch(e){}}
+  window.markHomeRoom=function(id){
+    const a=load(); if(!a.includes(id)){a.push(id);save(a)} updateExperience(a);
+  };
+  function updateExperience(a){
+    document.querySelectorAll('.room-card').forEach(c=>c.classList.remove('room-visited'));
+    const map={story:0,places:1,little:2,museum:3,miss:4,magic:5};
+    Object.keys(map).forEach(id=>{if(a.includes(id)){const cards=document.querySelectorAll('.room-card'); if(cards[map[id]])cards[map[id]].classList.add('room-visited')}});
+    const count=Math.min(a.length,6); const badge=document.getElementById('discoveryBadge');
+    const dc=document.getElementById('discoveryCount'); if(dc)dc.textContent=count+'/6';
+    if(badge && count>0) badge.classList.add('show');
+    const whisper=document.getElementById('homeWhisper'); if(whisper)whisper.innerHTML=whispers[count]||whispers[6];
+    if(count===6){ if(badge)badge.innerHTML='You found HOME · <span id="discoveryCount">6/6</span> · ♡'; }
+  }
+  const oldOpenStory=window.openStory, oldOpenPlaces=window.openPlacesRoom, oldOpenLittle=window.openLittleThings, oldOpenMuseum=window.openMuseum, oldOpenMiss=window.openMissYou, oldOpenMagic=window.openMagic;
+  if(oldOpenStory)window.openStory=function(){markHomeRoom('story');return oldOpenStory.apply(this,arguments)};
+  if(oldOpenPlaces)window.openPlacesRoom=function(){markHomeRoom('places');return oldOpenPlaces.apply(this,arguments)};
+  if(oldOpenLittle)window.openLittleThings=function(){markHomeRoom('little');return oldOpenLittle.apply(this,arguments)};
+  if(oldOpenMuseum)window.openMuseum=function(){markHomeRoom('museum');return oldOpenMuseum.apply(this,arguments)};
+  if(oldOpenMiss)window.openMissYou=function(){markHomeRoom('miss');return oldOpenMiss.apply(this,arguments)};
+  if(oldOpenMagic)window.openMagic=function(){markHomeRoom('magic');return oldOpenMagic.apply(this,arguments)};
+
+  window.openHomeSecret=function(kind){
+    const m=document.getElementById('homeSecretModal'); if(!m)return;
+    const k=document.getElementById('homeSecretKicker'),t=document.getElementById('homeSecretTitle'),p=document.getElementById('homeSecretText'),spark=document.getElementById('secretSpark');
+    if(kind==='spark'){
+      if(spark)spark.classList.add('found');
+      k.textContent='You found the tiny secret';
+      t.textContent='Not everything needs a room.';
+      p.textContent='Some things are better left tucked into the corners — like this little reminder: I put a lot of you into HOME. More than you probably realise. ♡';
+    }else{
+      k.textContent='HOME · COMPLETE';
+      t.textContent='You found almost everything.';
+      p.textContent='Six rooms. A ridiculous number of memories. And somehow, there is still more I could say. For now, just know this: every path in here keeps leading back to you. ♡';
+    }
+    m.classList.add('show');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+  };
+  window.closeHomeSecret=function(){const m=document.getElementById('homeSecretModal');if(m){m.classList.remove('show');m.setAttribute('aria-hidden','true')}document.body.style.overflow='auto'};
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeHomeSecret()});
+  document.addEventListener('click',function(e){const m=document.getElementById('homeSecretModal');if(m&&e.target===m)closeHomeSecret()});
+  document.addEventListener('DOMContentLoaded',function(){updateExperience(load())});
+})();
+</script>
+
 </body>
 </html>
