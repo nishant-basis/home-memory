@@ -772,199 +772,60 @@
       margin-top: 10px;
     }
 /* =========================
-       WHEN I MISS YOU
+       WHEN I MISS YOU — ROMANTIC LOVE-NOTE TEMPLATE
     ========================== */
-
-        .miss-room {
-      position: fixed !important;
-      top: 0 !important;
-      right: 0 !important;
-      bottom: 0 !important;
-      left: 0 !important;
-      width: 100% !important;
-      min-height: 100vh !important;
+    .miss-room{
+      position:fixed !important; inset:0 !important; width:100% !important; min-height:100vh !important;
       background:
-        radial-gradient(circle at 50% 25%, rgba(86, 60, 45, 0.16), transparent 34%),
-        #0a0909;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding: 34px 24px;
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transition: opacity 0.45s ease, visibility 0.45s ease;
-      z-index: 9999;
-      overflow-y: auto;
+        radial-gradient(circle at 15% 18%,rgba(126,47,65,.22),transparent 28%),
+        radial-gradient(circle at 86% 22%,rgba(177,104,82,.13),transparent 26%),
+        linear-gradient(135deg,#10090b 0%,#16090d 46%,#090708 100%);
+      display:flex; align-items:flex-start; justify-content:center; padding:26px 24px 54px;
+      opacity:0; visibility:hidden; pointer-events:none; transition:opacity .45s ease,visibility .45s ease;
+      z-index:9999; overflow-y:auto;
     }
-
-    .miss-room.show {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-      pointer-events: auto;
-    }
-
-    .miss-shell {
-      width: min(900px, 100%);
-      padding: 30px 0 70px;
-      text-align: center;
-    }
-
-    .miss-topline {
-      color: #927763;
-      font-size: 9px;
-      letter-spacing: 0.34em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-
-    .miss-shell h2 {
-      margin: 0;
-      font-size: clamp(42px, 6vw, 72px);
-      font-weight: 400;
-      letter-spacing: 0.04em;
-    }
-
-    .miss-intro {
-      max-width: 620px;
-      margin: 18px auto 42px;
-      color: #b9aaa0;
-      font-style: italic;
-      line-height: 1.8;
-    }
-
-    .miss-entry {
-      text-align: left;
-      border: 1px solid rgba(210, 193, 176, 0.14);
-      background: rgba(24, 20, 18, 0.78);
-      margin: 18px 0;
-      overflow: hidden;
-    }
-
-    .miss-entry-button {
-      width: 100%;
-      border: 0;
-      background: transparent;
-      color: #eee5dc;
-      padding: 24px 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      text-align: left;
-      cursor: pointer;
-      font-family: inherit;
-    }
-
-    .miss-entry-button:hover {
-      background: rgba(210, 193, 176, 0.035);
-    }
-
-    .miss-date {
-      display: block;
-      color: #8f7562;
-      font-size: 9px;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      margin-bottom: 9px;
-    }
-
-    .miss-title {
-      font-size: 22px;
-      font-family: Georgia, serif;
-    }
-
-    .miss-symbol {
-      color: #b99778;
-      font-size: 18px;
-      transition: transform 0.3s ease;
-      flex: 0 0 auto;
-    }
-
-    .miss-entry.open .miss-symbol {
-      transform: rotate(45deg);
-    }
-
-    .miss-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease;
-    }
-
-    .miss-content-inner {
-      padding: 0 28px 28px;
-      color: #b9aaa0;
-      line-height: 1.9;
-      font-size: 16px;
-    }
-
-    .miss-content-inner p {
-      margin: 0 0 16px;
-    }
-
-    .miss-content-inner p:last-child {
-      margin-bottom: 0;
-    }
-
-    .miss-writing {
-      color: #c4a283;
-      font-style: italic;
-    }
-
-    .miss-footer {
-      margin-top: 42px;
-      color: #6f5e52;
-      font-size: 9px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-    }
-
-    .miss-close {
-      position: fixed;
-      right: 28px;
-      top: 22px;
-      z-index: 2;
-      border: 1px solid rgba(220, 205, 190, 0.24);
-      background: rgba(8, 8, 8, 0.55);
-      color: #b9aa9d;
-      padding: 9px 15px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      font-size: 9px;
-      cursor: pointer;
-    }
-
-    @media (max-width: 700px) {
-      .miss-room {
-        padding: 26px 14px 50px;
-      }
-
-      .miss-shell {
-        padding-top: 42px;
-      }
-
-      .miss-close {
-        right: 14px;
-        top: 14px;
-      }
-
-      .miss-entry-button {
-        padding: 20px;
-      }
-
-      .miss-content-inner {
-        padding: 0 20px 22px;
-      }
-
-      .miss-title {
-        font-size: 19px;
-      }
-    }
+    .miss-room.show{opacity:1;visibility:visible;pointer-events:auto}
+    .miss-room::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.28;background:radial-gradient(circle at 50% 100%,rgba(255,180,150,.06),transparent 35%)}
+    .miss-shell{width:min(1180px,100%);padding:10px 0 70px;position:relative}
+    .miss-close{position:fixed;left:28px;top:22px;z-index:30;border:1px solid rgba(231,197,181,.25);background:rgba(12,7,9,.62);color:#e2c8bc;padding:9px 15px;letter-spacing:.16em;text-transform:uppercase;font-size:9px;cursor:pointer;backdrop-filter:blur(9px)}
+    .miss-hero{display:grid;grid-template-columns:1.02fr .98fr;gap:30px;align-items:stretch;margin:26px 0 34px}
+    .miss-copy{display:flex;flex-direction:column;justify-content:center;padding:38px 18px 34px 34px;position:relative}
+    .miss-copy::before{content:"♡";position:absolute;left:0;top:28px;color:#c66d7c;font-size:18px;opacity:.9}
+    .miss-topline{color:#c18779;font-size:9px;letter-spacing:.34em;text-transform:uppercase;margin-bottom:18px}
+    .miss-shell h2{margin:0;font-size:clamp(52px,7vw,92px);font-weight:400;letter-spacing:.01em;line-height:.92;color:#f5e8df}
+    .miss-shell h2::after{content:"";display:block;width:72px;height:1px;background:linear-gradient(90deg,#d7898d,transparent);margin-top:24px}
+    .miss-intro{max-width:580px;margin:22px 0 0;color:#cfb8ae;font-style:italic;line-height:1.85;font-size:17px}
+    .miss-prompt{margin-top:25px;color:#e2a0a0;font-family:Georgia,serif;font-size:18px;font-style:italic}
+    .miss-visual{min-height:410px;position:relative;overflow:hidden;border:1px solid rgba(224,184,163,.23);background:#140a0c;box-shadow:0 24px 70px rgba(0,0,0,.38)}
+    .miss-visual::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,5,7,.06),rgba(10,5,7,.22)),linear-gradient(180deg,rgba(10,5,7,.03),rgba(10,5,7,.30));z-index:1;pointer-events:none}
+    .miss-visual img{width:100%;height:100%;min-height:410px;object-fit:cover;display:block;filter:saturate(.92) contrast(1.03)}
+    .miss-visual-note{position:absolute;right:22px;top:18px;z-index:3;color:#f0d7cc;font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-style:italic;text-shadow:0 2px 14px #000}
+    .miss-visual-note::after{content:"♡";margin-left:8px;color:#d97f8c;font-size:16px}
+    .miss-note-heading{display:flex;align-items:center;justify-content:center;gap:16px;margin:4px 0 18px;color:#c88d7c;font-size:9px;letter-spacing:.32em;text-transform:uppercase}
+    .miss-note-heading::before,.miss-note-heading::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,rgba(206,140,122,.34),transparent)}
+    .miss-notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .miss-entry{position:relative;text-align:left;border:1px solid rgba(93,44,49,.45);background:linear-gradient(145deg,#f0d9c9 0%,#e8cbbb 100%);margin:0;overflow:hidden;min-height:218px;box-shadow:0 18px 36px rgba(0,0,0,.25);transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}
+    .miss-entry::before{content:"";position:absolute;left:0;right:0;top:0;height:78px;background:linear-gradient(145deg,rgba(255,255,255,.16),transparent);clip-path:polygon(0 0,100% 0,50% 100%);z-index:0;opacity:.9}
+    .miss-entry::after{content:"";position:absolute;left:50%;bottom:14px;width:28px;height:28px;transform:translateX(-50%) rotate(45deg);border:1px solid rgba(111,39,52,.55);background:#a94e64;box-shadow:0 3px 10px rgba(69,20,31,.3);z-index:4}
+    .miss-entry:hover{transform:translateY(-4px);box-shadow:0 24px 44px rgba(0,0,0,.35);border-color:rgba(194,109,119,.58)}
+    .miss-entry-button{position:relative;z-index:3;width:100%;min-height:218px;border:0;background:transparent;color:#351c20;padding:38px 30px 54px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:12px;text-align:center;cursor:pointer;font-family:inherit}
+    .miss-entry-button:hover{background:rgba(255,255,255,.06)}
+    .miss-date{display:block;color:#8b4e4e;font-size:8px;letter-spacing:.25em;text-transform:uppercase;margin-bottom:10px}
+    .miss-title{font-size:22px;font-family:Georgia,serif;line-height:1.22;color:#351c20;max-width:250px}
+    .miss-symbol{color:#7f3047;font-size:17px;transition:transform .3s ease;margin-top:8px}
+    .miss-entry.open .miss-symbol{transform:rotate(45deg)}
+    .miss-content{position:relative;z-index:5;max-height:0;overflow:hidden;transition:max-height .55s ease;background:#f1ded1;border-top:1px solid rgba(111,58,62,.18)}
+    .miss-content-inner{padding:22px 25px 27px;color:#493035;line-height:1.78;font-size:15px}
+    .miss-content-inner p{margin:0 0 14px}.miss-content-inner p:last-child{margin-bottom:0}.miss-writing{color:#8d4051;font-style:italic}
+    .miss-footer{margin-top:34px;text-align:center;color:#9f7168;font-size:9px;letter-spacing:.25em;text-transform:uppercase}.miss-footer::after{content:" ♡";color:#cf7582;font-size:15px}
+    @media(max-width:900px){
+      .miss-room{padding:22px 14px 42px}.miss-shell{padding-top:48px}.miss-close{left:14px;top:14px}.miss-hero{grid-template-columns:1fr;gap:18px;margin:16px 0 28px}.miss-copy{padding:24px 10px 12px 22px}.miss-shell h2{font-size:clamp(48px,13vw,76px)}.miss-visual,.miss-visual img{min-height:300px}.miss-notes{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.miss-entry,.miss-entry-button{min-height:205px}.miss-title{font-size:19px}.miss-entry-button{padding:32px 18px 50px}.miss-content-inner{font-size:14px}}
+    @media(max-width:560px){.miss-notes{grid-template-columns:1fr}.miss-entry,.miss-entry-button{min-height:190px}.miss-title{font-size:20px}.miss-visual-note{font-size:8px;right:12px;top:12px}.miss-intro{font-size:15px}}
 
     /* =========================
        LITTLE MAGIC
     ========================== */
+
 
     .magic-room {
       position: fixed;
@@ -3526,8 +3387,6 @@
 .room-card.room-visited:after{content:"♡";position:absolute;right:14px;top:12px;color:rgba(212,154,146,.65);font-size:11px}
 @media(max-width:760px){.home-experience{padding:0 14px}.home-experience-grid{grid-template-columns:1fr}.experience-card{padding:21px}.experience-title{font-size:25px}.then-now{gap:9px}.then-now .moment strong{font-size:15px}.fragment{font-size:13px}.home-secret-box{padding:34px 24px}.home-secret-box h3{font-size:31px}.discovery-badge{right:12px;bottom:12px;font-size:9px}}
 </style>
-
-
 <style id="home-romantic-atmosphere">
 /* HOME — romantic atmosphere: warm wine, blush, candlelight. Kept restrained. */
 :root{--rom-wine:#2a1118;--rom-burg:#4a1f2a;--rom-rose:#b86b78;--rom-blush:#d7a1a5;--rom-gold:#c5a276;--rom-cream:#f3e7dc;--rom-muted:#bca9a1}
@@ -3544,8 +3403,6 @@ body{background:radial-gradient(ellipse 70% 32% at 50% 5%,rgba(88,30,48,.34),tra
 .room-card:nth-child(1)::after,.room-card:nth-child(4)::after{content:"";position:absolute;inset:auto 0 0;height:1px;background:linear-gradient(90deg,transparent,rgba(190,95,113,.35),transparent);pointer-events:none}
 @media(max-width:760px){.secret-clue{right:10px;bottom:9px}.story-two h2 .secret-clue{right:-28px}.home-secret-box{background:radial-gradient(circle at 50% 0%,rgba(106,32,51,.3),transparent 55%),rgba(24,10,14,.98)!important}}
 </style>
-
-
 <style id="interaction-hardening">
 /* Final interaction hardening */
 #littleThingModal.lt-modal.active{
@@ -3589,30 +3446,28 @@ body{background:radial-gradient(ellipse 70% 32% at 50% 5%,rgba(88,30,48,.34),tra
        HOME
   ========================== -->
 <section class="home" id="home">
-
-    <!-- BIRTHDAY COUNTDOWN -->
-    <div class="birthday-countdown-wrap">
-      <div class="birthday-countdown">
-        <div class="birthday-countdown-copy">
-          <div class="birthday-eyebrow">♡ Counting down to you ♡</div>
-          <div class="birthday-date">24 · 09 · 2026</div>
-          <div class="birthday-subtitle">Something special is getting closer...</div>
-          <div class="birthday-timer" aria-live="polite">
-            <div class="birthday-unit"><strong id="bdDays">--</strong><span>Days</span></div>
-            <div class="birthday-unit"><strong id="bdHours">--</strong><span>Hours</span></div>
-            <div class="birthday-unit"><strong id="bdMinutes">--</strong><span>Minutes</span></div>
-            <div class="birthday-unit"><strong id="bdSeconds">--</strong><span>Seconds</span></div>
-          </div>
-        </div>
-        <div class="birthday-countdown-action">
-          <button class="birthday-cake-button" type="button" onclick="openBirthdayReveal()" aria-label="Open birthday surprise">
-            <span class="birthday-cake">🎂</span>
-            <span class="birthday-cake-label">Tap the cake ♡</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
+<!-- BIRTHDAY COUNTDOWN -->
+<div class="birthday-countdown-wrap">
+<div class="birthday-countdown">
+<div class="birthday-countdown-copy">
+<div class="birthday-eyebrow">♡ Counting down to you ♡</div>
+<div class="birthday-date">24 · 09 · 2026</div>
+<div class="birthday-subtitle">Something special is getting closer...</div>
+<div aria-live="polite" class="birthday-timer">
+<div class="birthday-unit"><strong id="bdDays">--</strong><span>Days</span></div>
+<div class="birthday-unit"><strong id="bdHours">--</strong><span>Hours</span></div>
+<div class="birthday-unit"><strong id="bdMinutes">--</strong><span>Minutes</span></div>
+<div class="birthday-unit"><strong id="bdSeconds">--</strong><span>Seconds</span></div>
+</div>
+</div>
+<div class="birthday-countdown-action">
+<button aria-label="Open birthday surprise" class="birthday-cake-button" onclick="openBirthdayReveal()" type="button">
+<span class="birthday-cake">🎂</span>
+<span class="birthday-cake-label">Tap the cake ♡</span>
+</button>
+</div>
+</div>
+</div>
 <!-- MEMORY SKY -->
 <div class="memory-sky">
 <span class="star s1">✦</span>
@@ -3622,7 +3477,7 @@ body{background:radial-gradient(ellipse 70% 32% at 50% 5%,rgba(88,30,48,.34),tra
 <span class="star s5">✦</span>
 <span class="sky-heart h1">♡</span>
 <span class="sky-heart h2">♡</span>
-<button class="secret-spark" id="secretSpark" type="button" aria-label="A tiny secret" onclick="openHomeSecret('spark')">✦</button>
+<button aria-label="A tiny secret" class="secret-spark" id="secretSpark" onclick="openHomeSecret('spark')" type="button">✦</button>
 <div class="sky-title">
 <div class="small">
           Welcome home
@@ -3641,36 +3496,33 @@ body{background:radial-gradient(ellipse 70% 32% at 50% 5%,rgba(88,30,48,.34),tra
         we became HOME.
       </p>
 </div>
-
-
 <!-- HOME EXPERIENCE LAYER -->
 <div class="home-whisper" id="homeWhisper">Some memories are meant to be discovered slowly. <em>♡</em></div>
 <div class="home-experience">
-  <div class="home-experience-grid">
-    <section class="experience-card" aria-label="Then and now">
-      <div class="experience-kicker">A little time machine</div>
-      <h3 class="experience-title">Then → Now</h3>
-      <p class="experience-copy">It started with one look. Somewhere along the way, “me” quietly became “us”.</p>
-      <div class="then-now">
-        <div class="moment"><span>THEN</span><strong>“Who is she?”</strong></div>
-        <div class="arrow">→</div>
-        <div class="moment"><span>NOW</span><strong>“Where are we going?”</strong></div>
-      </div>
-    </section>
-    <section class="experience-card" aria-label="Things I never wrote down">
-      <div class="experience-kicker">Things I never wrote down</div>
-      <h3 class="experience-title">Just between us.</h3>
-      <div class="fragment-list">
-        <div class="fragment">I noticed you before I knew why.</div>
-        <div class="fragment">I still remember that first hot, no-sugar coffee.</div>
-        <div class="fragment">You taught me that together is better than alone.</div>
-        <div class="fragment">I love listening to your chattar pattar.</div>
-        <div class="fragment">Now when I imagine the future, I imagine us.</div>
-      </div>
-    </section>
-  </div>
+<div class="home-experience-grid">
+<section aria-label="Then and now" class="experience-card">
+<div class="experience-kicker">A little time machine</div>
+<h3 class="experience-title">Then → Now</h3>
+<p class="experience-copy">It started with one look. Somewhere along the way, “me” quietly became “us”.</p>
+<div class="then-now">
+<div class="moment"><span>THEN</span><strong>“Who is she?”</strong></div>
+<div class="arrow">→</div>
+<div class="moment"><span>NOW</span><strong>“Where are we going?”</strong></div>
 </div>
-
+</section>
+<section aria-label="Things I never wrote down" class="experience-card">
+<div class="experience-kicker">Things I never wrote down</div>
+<h3 class="experience-title">Just between us.</h3>
+<div class="fragment-list">
+<div class="fragment">I noticed you before I knew why.</div>
+<div class="fragment">I still remember that first hot, no-sugar coffee.</div>
+<div class="fragment">You taught me that together is better than alone.</div>
+<div class="fragment">I love listening to your chattar pattar.</div>
+<div class="fragment">Now when I imagine the future, I imagine us.</div>
+</div>
+</section>
+</div>
+</div>
 <!-- ROOMS -->
 <div class="rooms">
 <div class="room-card" onclick="openStory()">
@@ -4065,174 +3917,7 @@ Instead, we fought. We laughed. We got irritated. We ate pasta. We worried about
 <!-- =========================
        WHEN I MISS YOU ROOM
   ========================== -->
-<section class="miss-room" id="missRoom">
-<button class="miss-close" onclick="closeMissYou()">← HOME</button>
-<div class="miss-shell">
-<div class="miss-topline">A room for the words that don't need a reason</div>
-<h2>When I Miss You</h2>
-<p class="miss-intro">
-        Not every thought needs a particular date, occasion or reason.
-        Some simply arrive — and deserve somewhere to stay.
-      </p>
-<article class="miss-entry">
-<button class="miss-entry-button" onclick="toggleMissEntry(this)">
-<span><span class="miss-date">01 · The first page</span><span class="miss-title">For the days I don't know what to say</span></span><span class="miss-symbol">+</span>
-</button>
-<div class="miss-content"><div class="miss-content-inner">
-<p>When I miss you, the first thing that comes to mind isn't some big, cinematic memory.</p>
-<p>It's the little things.</p>
-<p>Your smile in the middle of an ordinary moment.<br/>That specific tone in your voice when you're teasing me.<br/>Those lighthearted taunts that somehow always catch me off guard.</p>
-<p>It's realizing how strangely quiet a routine day can feel without the spontaneous, silly fun we usually share.</p>
-<p>The inside jokes.<br/>The banter over absolutely nothing.<br/>The effortless comfort of simply having you around.</p>
-<p>I think that's what missing you really starts with.</p>
-<p>Not one particular moment.</p>
-<p>Just all those tiny things that became so familiar that I stopped noticing how much they meant.</p>
-<p class="miss-writing">Because somewhere along the way, those little things became home.</p>
-</div></div>
-</article>
-<article class="miss-entry">
-<button class="miss-entry-button" onclick="toggleMissEntry(this)">
-<span><span class="miss-date">02 · The version of me</span><span class="miss-title">The version of me that only you get to see</span></span><span class="miss-symbol">+</span>
-</button>
-<div class="miss-content"><div class="miss-content-inner">
-<p>You will probably never fully understand what you mean to me — or all the ways you've changed me as a human.</p>
-<p>Because when I'm with you, I feel like the real me.</p>
-<p>The version without the filters.<br/>The version that doesn't have to be serious all the time.<br/>The version whose inner child somehow gets permission to come out and play.</p>
-<p>Sometimes I honestly feel like <strong>I'm the girlfriend in this relationship.</strong> 😂</p>
-<p>The way you handle my tantrums.<br/>The way you somehow always make me feel special.<br/>The way you feed me with your own hands.</p>
-<p>The little things that probably don't even register as big moments to you.</p>
-<p>Like sitting beside each other at a restaurant instead of across the table — just so you can lean over my shoulder.</p>
-<p>Or the way you keep updating me about the smallest, most random things happening in your day.</p>
-<p>None of these things would make sense as some grand romantic gesture.</p>
-<p>But that's exactly the point.</p>
-<p>Somewhere between the teasing, the tantrums, the little updates, the food you make me eat, and the shoulder you lean on...</p>
-<p>I became a version of myself that I didn't know was still there.</p>
-<p>And maybe that's one of the biggest things you've given me.</p>
-<p class="miss-writing">You made me feel completely comfortable being me.</p>
-</div></div>
-</article>
-<article class="miss-entry">
-<button class="miss-entry-button" onclick="toggleMissEntry(this)">
-<span><span class="miss-date">03 · The way you care</span><span class="miss-title">The Way You Care</span></span><span class="miss-symbol">+</span>
-</button>
-<div class="miss-content"><div class="miss-content-inner">
-<p>You don't always say that you care about me.</p><p>You just... do things.</p>
-<p>You make me eat when I would happily keep talking and forget about food.</p>
-<p>You notice the little things.</p>
-<p>You keep updating me about the smallest things happening around you — something from work, something your friend said, some random story you just discovered — because somehow I always become the person you want to tell first.</p>
-<p>You even change what you eat sometimes because I don't eat spicy food.</p>
-<p>And then, once in a while, you look at something with that <strong>"tadak bhadak chahiye"</strong> expression and go back to your Kurkure anyway. 😂</p>
-<p>You scold me when I waste money.</p>
-<p>You find coupons when we go out and somehow turn my so-called <em>"high maintenance girl"</em> into the person making sure we don't pay more than we need to.</p>
-<p>My ambitions.<br/>My decisions.<br/>The things you think I should be doing better.</p>
-<p>Sometimes it feels less like you're giving advice and more like you're my very own personal management department. 😂</p>
-<p>But underneath all of that is something I've come to understand.</p>
-<p>You care deeply.</p>
-<p>About me.<br/>About your family.<br/>About the people you love.<br/>About the things that matter to you.</p>
-<p>You may have your tantrums.<br/>You may get upset when you don't feel prioritized.<br/>You may sometimes feel like nobody understands you.</p>
-<p>But give you a little love and attention... and somehow you multiply it and give it all back.</p>
-<p>That's the thing about you.</p>
-<p>You always say:</p>
-<p class="miss-writing">"I have loved you the most."</p>
-<p>And you know what?</p>
-<p>I believe you.</p>
-<p class="miss-writing">Because honestly, no one has ever loved me the way you do.</p>
-<p>You were also the one who taught me something I don't think I'll forget:</p>
-<p class="miss-writing">There is no "love you." There is only "I love you."</p>
-<p>Because love isn't something that simply exists between two people. It's something one person chooses to give to the other.</p>
-<p>And you're also the one who keeps reminding me that when it's <em>us</em>, there isn't always a right person and a wrong person.</p>
-<p>There is just <strong>us.</strong></p>
-<p>I don't think you realise how deeply this particular thought has stayed with me.</p>
-<p>When you say:</p>
-<p class="miss-writing">"Tum sahi galat karte reh jaoge... aur sab khatm ho jayega."</p>
-<p>It hits me every single time.</p>
-<p>Because you're right.</p>
-<p>I can keep proving that I'm right.<br/>You can keep proving that you're right.</p>
-<p>We can keep counting who said what, who did what, who was wrong and who was justified.</p>
-<p>And somewhere in all that...</p>
-<p class="miss-writing">sab khatm ho jayega.</p>
-<p>Sometimes the relationship matters more than winning the argument.</p>
-<p>Sometimes saying <em>"I'm right"</em> isn't worth losing <em>"us."</em></p>
-<p>And maybe that's another way you love me.</p>
-<p class="miss-writing">You don't just love the person I am.<br/>You keep reminding me to become a better person for the person I love.</p>
-<p>So yes...</p><p>You always say you've loved me the most.</p><p class="miss-writing">I accept.</p>
-<p>No one has ever loved me quite the way you do.</p>
-<p>And maybe that's why I've learned to notice the little things too.</p>
-<p>The food you make me eat.<br/>The random updates.<br/>The scolding.<br/>The coupons.<br/>The <strong>"Kya hai aapko?"</strong> when I start pulling your leg.</p>
-<p>All those tiny things that, individually, don't look like much.</p>
-<p>But put them together...</p>
-<p class="miss-writing">that's how you love.</p>
-</div></div>
-</article>
-<article class="miss-entry">
-<button class="miss-entry-button" onclick="toggleMissEntry(this)">
-<span><span class="miss-date">04 · Your little things</span><span class="miss-title">You and Your Little Things</span></span><span class="miss-symbol">+</span>
-</button>
-<div class="miss-content"><div class="miss-content-inner">
-<p>There are so many things about you that make absolutely no sense to me.</p>
-<p class="miss-writing">And somehow, I love every single one of them.</p>
-<p>The way you can turn the smallest thing into a full discussion.</p>
-<p><strong>Kisi ki ek Instagram pic se poori story bana leti ho.</strong></p>
-<p>And somehow, we have probably fixed the relationships of half the people on Instagram without them even knowing about it.</p>
-<p>Breakup.<br/>Patch-up.<br/>Who is cheating.<br/>Who should leave whom.</p>
-<p>Pata nahi kitne logon ki love life humne hawa mein hi solve kar di hai. 😂</p>
-<p>And then there are our random stories.</p>
-<p>One minute we're talking about something completely normal, and suddenly we're discussing something so random that I genuinely don't remember how we got there.</p>
-<p>And if you remember...</p>
-<p><strong>we have almost travelled half the world together without actually going anywhere.</strong></p>
-<p>We've planned countries.<br/>Checked flights.<br/>Compared hotels.<br/>Looked at places to visit.<br/>Made itineraries.<br/>Discussed what we would eat.</p>
-<p>And then knowingly closed everything because <strong>abhi koi plan nahi hai.</strong> 😂</p>
-<p>But somehow, the planning itself becomes a trip.</p>
-<p>Then there is the way you choose gifts for me.</p>
-<p>You seriously surprise me.</p>
-<p>Two months before someone's birthday, you will start:</p>
-<p class="miss-writing">"Birthday aa raha hai..."</p>
-<p>And then the investigation begins.</p>
-<p>Because you remember things I said months ago that I don't even remember saying.</p>
-<p>You somehow manage to get things out of me without me realising that I'm giving you the answer.</p>
-<p>You figure out what I want before I even know I'm going to get it.</p>
-<p>Whether it's the Adidas shoes.<br/>The Armani bag.<br/>Or something completely random that I mentioned once and forgot about five minutes later.</p>
-<p>And then comes the actual operation.</p>
-<p>Finding it.<br/>Getting it.<br/>Hiding it.<br/>Getting it packed.<br/>Making sure I don't find out.</p>
-<p class="miss-writing">Seriously... WTF.</p>
-<p>Who pays this much attention to such tiny things?</p>
-<p>And then there were the tulips.</p>
-<p>I had casually told you that roses are common and that I like tulips.</p>
-<p>That's it.<br/>Just something I said.</p>
-<p>And you somehow got tulips arranged all the way from <strong>Bangalore.</strong></p>
-<p>I was literally crying when I saw them.</p>
-<p>Because it wasn't really about the flowers.</p>
-<p class="miss-writing">It was about the fact that you remembered.</p>
-<p>And then I said I was fed up with Nike...</p>
-<p>and you got me <strong>Superstars.</strong> 😂</p>
-<p>Like seriously...</p>
-<p class="miss-writing">who cares about these minute things?</p>
-<p>Apparently, you do.</p>
-<p>And then, as if all of this wasn't enough... there is our completely unnecessary talent of <strong>bitching about random people.</strong></p>
-<p>Someone's face we don't like.<br/>Someone's dressing.<br/>Someone's attitude.<br/>Someone's harkatein.</p>
-<p>Someone says something weird.<br/>Someone does something stupid.</p>
-<p>And somehow...</p>
-<p class="miss-writing">everyone becomes a discussion topic.</p>
-<p>We can find a topic in literally anyone. 😂</p>
-<p>And honestly?</p>
-<p>I think that's one of my favourite things about us.</p>
-<p>Because all these things are so ridiculously ordinary.</p>
-<p>The random Instagram investigation.<br/>The imaginary world tours.<br/>The flights and hotels we have no plans of booking.<br/>The gifts you've secretly researched for months.<br/>The flowers you remembered.<br/>The shoes you somehow figured out I wanted.<br/>The completely unnecessary analysis of strangers.</p>
-<p>None of these things, individually, should mean this much.</p>
-<p>But they do.</p>
-<p>Because they're <strong>your little things.</strong></p>
-<p class="miss-writing">And somewhere along the way, they became our little things.</p>
-<p>And I don't think you realise how much I love that.</p>
-</div></div>
-</article>
-<div class="miss-footer">
-        This room is allowed to keep growing.
-      </div>
-</div>
-</section>
-<!-- =========================
-       LITTLE MAGIC ROOM
-  ========================== -->
+<section class="miss-room" id="missRoom"><div class="wimu-stage"><img alt="When I Miss You" class="wimu-bg" src="when-i-miss-you-exact-bg.png"/><button aria-label="Back to HOME" class="wimu-home-hotspot" onclick="closeMissYou()"></button><button aria-label="When you want to hear my voice" class="wimu-note-hotspot wimu-note-1" onclick="openMissLetter(1)"></button><button aria-label="When we're fighting" class="wimu-note-hotspot wimu-note-2" onclick="openMissLetter(2)"></button><button aria-label="When you need a hug" class="wimu-note-hotspot wimu-note-3" onclick="openMissLetter(3)"></button><button aria-label="When you feel overwhelmed" class="wimu-note-hotspot wimu-note-4" onclick="openMissLetter(4)"></button><button aria-label="When you just want to feel close" class="wimu-note-hotspot wimu-note-5" onclick="openMissLetter(5)"></button><button aria-label="When it's late at night" class="wimu-note-hotspot wimu-note-6" onclick="openMissLetter(6)"></button></div><div aria-hidden="true" class="wimu-letter-modal" id="wimuLetterModal"><div class="wimu-letter-backdrop" onclick="closeMissLetter()"></div><article class="wimu-letter"><button aria-label="Close" class="wimu-letter-close" onclick="closeMissLetter()">×</button><div class="wimu-letter-kicker" id="wimuLetterKicker"></div><h3 id="wimuLetterTitle"></h3><div class="wimu-letter-body" id="wimuLetterBody"></div></article></div></section>
 <section class="magic-room" id="magicRoom">
 <div class="magic-inner">
 <button class="magic-close" onclick="closeMagic()">← HOME</button>
@@ -5143,14 +4828,13 @@ function closeGoaToPlaces(){
       const home = document.getElementById("home");
       const room = document.getElementById("missRoom");
       if (!room) return;
-
       if (home) home.style.display = "none";
       room.classList.add("show");
       document.body.style.overflow = "hidden";
-      room.scrollTop = 0;
     }
 
     function closeMissYou() {
+      closeMissNote();
       const home = document.getElementById("home");
       const room = document.getElementById("missRoom");
       if (room) room.classList.remove("show");
@@ -5159,19 +4843,29 @@ function closeGoaToPlaces(){
       window.scrollTo(0, 0);
     }
 
-    function toggleMissEntry(button) {
-      const entry = button.closest(".miss-entry");
-      const content = entry && entry.querySelector(".miss-content");
-      if (!entry || !content) return;
-
-      if (entry.classList.contains("open")) {
-        entry.classList.remove("open");
-        content.style.maxHeight = "0px";
-      } else {
-        entry.classList.add("open");
-        content.style.maxHeight = content.scrollHeight + "px";
-      }
+    function openMissNote(index) {
+      const sources = document.querySelectorAll("#missNoteSources .miss-source");
+      const source = sources[index];
+      const modal = document.getElementById("missNoteModal");
+      if (!source || !modal) return;
+      document.getElementById("missModalKicker").textContent = source.querySelector(".kicker").textContent;
+      document.getElementById("missModalTitle").textContent = source.querySelector(".title").textContent;
+      document.getElementById("missModalBody").innerHTML = source.querySelector(".body").innerHTML;
+      modal.classList.add("show");
+      document.body.style.overflow = "hidden";
     }
+
+    function closeMissNote(e) {
+      if (e && e.target !== e.currentTarget) return;
+      const modal = document.getElementById("missNoteModal");
+      if (modal) modal.classList.remove("show");
+      const room = document.getElementById("missRoom");
+      if (room && room.classList.contains("show")) document.body.style.overflow = "hidden";
+    }
+
+    document.addEventListener("keydown", function(e){
+      if(e.key === "Escape") closeMissNote();
+    });
 
     document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll(".room-card").forEach(function (card) {
@@ -6187,15 +5881,14 @@ function backToChapter4(){
 <div class="lt-foot">The little things are rarely little. ❤️</div>
 </div>
 </section>
-</div>
+
 <div class="lt-modal" id="littleThingModal" onclick="if(event.target===this)closeLittleThing()">
 <div class="lt-modal-box">
-<button class="lt-modal-close" onclick="closeLittleThing()" aria-label="Close">×</button>
-<div class="lt-modal-media"><img id="littleThingModalImage" src="" alt=""></div>
+<button aria-label="Close" class="lt-modal-close" onclick="closeLittleThing()">×</button>
+<div class="lt-modal-media"><img alt="" id="littleThingModalImage" src=""/></div>
 <div class="lt-modal-copy" id="littleThingModalContent"></div>
 </div>
 </div>
-
 <script>
 (function(){
   const ltData={
@@ -6256,52 +5949,44 @@ function backToChapter4(){
   };
 })();
 </script>
-
-  <!-- =========================
+<!-- =========================
        BIRTHDAY REVEAL
   ========================== -->
-  <section class="birthday-reveal" id="birthdayReveal" aria-hidden="true">
-    <div class="birthday-reveal-backdrop"></div>
-    <div class="birthday-lights"></div>
-    <button class="birthday-music-toggle" id="birthdayMusicToggle" type="button" onclick="toggleBirthdayMusic()" aria-label="Toggle music">♫</button>
-    <button class="birthday-reveal-close" type="button" onclick="closeBirthdayReveal()" aria-label="Close birthday surprise">×</button>
-    <div class="birthday-confetti" id="birthdayConfetti"></div>
-
-    <div class="birthday-reveal-inner">
-      <div class="birthday-kicker">A little something before HOME</div>
-      <h2>Happy Birthday</h2>
-      <div class="birthday-reveal-name">My Bubu ♡</div>
-
-      <div class="birthday-characters" aria-hidden="true">
-        <img class="birthday-character birthday-dudu" src="dudu.png" alt="">
-        <img class="birthday-character birthday-bubu" src="bubu.png" alt="">
-
-        <div class="birthday-cake-stage">
-          <div class="cake-candle"><span class="cake-flame"></span></div>
-          <div class="cake-candle"><span class="cake-flame"></span></div>
-          <div class="cake-candle"><span class="cake-flame"></span></div>
-          <div class="cake-top"></div>
-          <div class="cake-icing"></div>
-          <div class="cake-base"></div>
-          <div class="cake-dot"></div>
-          <div class="cake-dot"></div>
-          <div class="cake-dot"></div>
-        </div>
-      </div>
-
-      <div class="birthday-letter">
-        <h3>Hey you... ❤️</h3>
-        <p>Before you explore HOME, there is one thing I need to say.</p>
-        <div class="birthday-highlight">Happy Birthday.</div>
-        <p>I hope this little place makes you smile, laugh at some stupid memories, remember some beautiful ones, and maybe... fall in love with us all over again.</p>
-        <p><strong>This HOME was made for you.</strong></p>
-      </div>
-
-      <button class="birthday-enter" type="button" onclick="enterBirthdayHome()">Now go inside →</button>
-    </div>
-  </section>
-
-
+<section aria-hidden="true" class="birthday-reveal" id="birthdayReveal">
+<div class="birthday-reveal-backdrop"></div>
+<div class="birthday-lights"></div>
+<button aria-label="Toggle music" class="birthday-music-toggle" id="birthdayMusicToggle" onclick="toggleBirthdayMusic()" type="button">♫</button>
+<button aria-label="Close birthday surprise" class="birthday-reveal-close" onclick="closeBirthdayReveal()" type="button">×</button>
+<div class="birthday-confetti" id="birthdayConfetti"></div>
+<div class="birthday-reveal-inner">
+<div class="birthday-kicker">A little something before HOME</div>
+<h2>Happy Birthday</h2>
+<div class="birthday-reveal-name">My Bubu ♡</div>
+<div aria-hidden="true" class="birthday-characters">
+<img alt="" class="birthday-character birthday-dudu" src="dudu.png"/>
+<img alt="" class="birthday-character birthday-bubu" src="bubu.png"/>
+<div class="birthday-cake-stage">
+<div class="cake-candle"><span class="cake-flame"></span></div>
+<div class="cake-candle"><span class="cake-flame"></span></div>
+<div class="cake-candle"><span class="cake-flame"></span></div>
+<div class="cake-top"></div>
+<div class="cake-icing"></div>
+<div class="cake-base"></div>
+<div class="cake-dot"></div>
+<div class="cake-dot"></div>
+<div class="cake-dot"></div>
+</div>
+</div>
+<div class="birthday-letter">
+<h3>Hey you... ❤️</h3>
+<p>Before you explore HOME, there is one thing I need to say.</p>
+<div class="birthday-highlight">Happy Birthday.</div>
+<p>I hope this little place makes you smile, laugh at some stupid memories, remember some beautiful ones, and maybe... fall in love with us all over again.</p>
+<p><strong>This HOME was made for you.</strong></p>
+</div>
+<button class="birthday-enter" onclick="enterBirthdayHome()" type="button">Now go inside →</button>
+</div>
+</section>
 <script>
 /* =========================
    BIRTHDAY COUNTDOWN + REVEAL
@@ -6388,19 +6073,16 @@ function closeBirthdayReveal(){
 }
 function enterBirthdayHome(){ closeBirthdayReveal(); }
 </script>
-
-<button class="discovery-badge" id="discoveryBadge" type="button" onclick="openHomeSecret('complete')">You found HOME · <span id="discoveryCount">0/6</span></button>
-<div class="home-secret-modal" id="homeSecretModal" aria-hidden="true" role="dialog" aria-modal="true">
-  <div class="home-secret-box">
-    <div class="home-secret-mark">♡</div>
-    <div class="experience-kicker" id="homeSecretKicker">A tiny secret</div>
-    <h3 id="homeSecretTitle">You found something.</h3>
-    <p id="homeSecretText">Not everything in HOME was meant to be obvious.</p>
-    <button class="home-secret-close" type="button" onclick="closeHomeSecret()">Keep exploring</button>
-  </div>
+<button class="discovery-badge" id="discoveryBadge" onclick="openHomeSecret('complete')" type="button">You found HOME · <span id="discoveryCount">0/6</span></button>
+<div aria-hidden="true" aria-modal="true" class="home-secret-modal" id="homeSecretModal" role="dialog">
+<div class="home-secret-box">
+<div class="home-secret-mark">♡</div>
+<div class="experience-kicker" id="homeSecretKicker">A tiny secret</div>
+<h3 id="homeSecretTitle">You found something.</h3>
+<p id="homeSecretText">Not everything in HOME was meant to be obvious.</p>
+<button class="home-secret-close" onclick="closeHomeSecret()" type="button">Keep exploring</button>
 </div>
-
-
+</div>
 <script id="home-experience-js">
 (function(){
   const ROOM_KEY='homeExperienceVisitedV1';
@@ -6499,6 +6181,23 @@ function enterBirthdayHome(){ closeBirthdayReveal(); }
   });
 })();
 </script>
-
 </body>
-</html>
+</html><style id="wimu-exact-template-css">
+#missRoom.miss-room{position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;padding:0!important;margin:0!important;overflow:hidden!important;background:#10070a!important;z-index:100000!important}
+#missRoom .wimu-stage{position:relative;width:100%;height:100%;overflow:hidden}
+#missRoom .wimu-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;user-select:none;-webkit-user-drag:none}
+#missRoom .wimu-home-hotspot{position:absolute;left:1%;top:1%;width:12%;height:6%;border:0;background:transparent;cursor:pointer;z-index:4}
+#missRoom .wimu-note-hotspot{position:absolute;top:56%;height:20.5%;width:14.1%;border:0;background:transparent;cursor:pointer;z-index:4;border-radius:10px;transition:.25s}
+#missRoom .wimu-note-hotspot:hover{background:rgba(255,215,225,.045);box-shadow:0 0 24px rgba(220,94,119,.18);transform:translateY(-2px)}
+#missRoom .wimu-note-1{left:4.4%}#missRoom .wimu-note-2{left:19.9%}#missRoom .wimu-note-3{left:35.4%}#missRoom .wimu-note-4{left:50.9%}#missRoom .wimu-note-5{left:66.4%}#missRoom .wimu-note-6{left:81.9%}
+#wimuLetterModal{position:fixed!important;inset:0!important;z-index:110000!important;display:none;align-items:center;justify-content:center;padding:5vh 5vw}
+#wimuLetterModal.open{display:flex}
+#wimuLetterModal .wimu-letter-backdrop{position:absolute;inset:0;background:rgba(7,2,5,.78);backdrop-filter:blur(7px)}
+#wimuLetterModal .wimu-letter{position:relative;z-index:2;width:min(760px,88vw);max-height:82vh;overflow:auto;padding:54px 58px 50px;background:linear-gradient(145deg,#f1ddcf,#ead0c1);color:#2c161b;border:1px solid rgba(116,53,64,.42);box-shadow:0 28px 90px rgba(0,0,0,.55)}
+#wimuLetterModal .wimu-letter-close{position:absolute;right:18px;top:12px;width:36px;height:36px;border:0;background:transparent;color:#6d3040;font-size:28px;cursor:pointer}
+#wimuLetterModal .wimu-letter-kicker{font:10px Georgia,serif;letter-spacing:.24em;text-transform:uppercase;color:#8a4a59;margin-bottom:14px}
+#wimuLetterModal h3{margin:0 0 24px;font:500 clamp(27px,3vw,42px)/1.08 Georgia,serif;color:#32171d}
+#wimuLetterModal .wimu-letter-body{font:16px/1.72 Georgia,serif}
+#wimuLetterModal .wimu-letter-body p{margin:0 0 14px}.wimu-letter-body .miss-writing{color:#8e3d50;font-style:italic}
+@media(max-width:800px){#missRoom .wimu-note-hotspot{top:57%;height:20%;width:27%}#missRoom .wimu-note-1{left:5%}#missRoom .wimu-note-2{left:36.5%}#missRoom .wimu-note-3{left:68%}#missRoom .wimu-note-4{left:5%;top:78%}#missRoom .wimu-note-5{left:36.5%;top:78%}#missRoom .wimu-note-6{left:68%;top:78%}#wimuLetterModal .wimu-letter{padding:42px 28px 32px;width:90vw}}
+</style><script id="wimu-exact-template-js">(function(){const WIMU_NOTES=[{"title": "For the days I don't know what to say", "date": "01 · The first page", "html": "<div class=\"miss-content-inner\">\n<p>When I miss you, the first thing that comes to mind isn't some big, cinematic memory.</p>\n<p>It's the little things.</p>\n<p>Your smile in the middle of an ordinary moment.<br/>That specific tone in your voice when you're teasing me.<br/>Those lighthearted taunts that somehow always catch me off guard.</p>\n<p>It's realizing how strangely quiet a routine day can feel without the spontaneous, silly fun we usually share.</p>\n<p>The inside jokes.<br/>The banter over absolutely nothing.<br/>The effortless comfort of simply having you around.</p>\n<p>I think that's what missing you really starts with.</p>\n<p>Not one particular moment.</p>\n<p>Just all those tiny things that became so familiar that I stopped noticing how much they meant.</p>\n<p class=\"miss-writing\">Because somewhere along the way, those little things became home.</p>\n</div>"}, {"title": "The version of me that only you get to see", "date": "02 · The version of me", "html": "<div class=\"miss-content-inner\">\n<p>You will probably never fully understand what you mean to me — or all the ways you've changed me as a human.</p>\n<p>Because when I'm with you, I feel like the real me.</p>\n<p>The version without the filters.<br/>The version that doesn't have to be serious all the time.<br/>The version whose inner child somehow gets permission to come out and play.</p>\n<p>Sometimes I honestly feel like <strong>I'm the girlfriend in this relationship.</strong> 😂</p>\n<p>The way you handle my tantrums.<br/>The way you somehow always make me feel special.<br/>The way you feed me with your own hands.</p>\n<p>The little things that probably don't even register as big moments to you.</p>\n<p>Like sitting beside each other at a restaurant instead of across the table — just so you can lean over my shoulder.</p>\n<p>Or the way you keep updating me about the smallest, most random things happening in your day.</p>\n<p>None of these things would make sense as some grand romantic gesture.</p>\n<p>But that's exactly the point.</p>\n<p>Somewhere between the teasing, the tantrums, the little updates, the food you make me eat, and the shoulder you lean on...</p>\n<p>I became a version of myself that I didn't know was still there.</p>\n<p>And maybe that's one of the biggest things you've given me.</p>\n<p class=\"miss-writing\">You made me feel completely comfortable being me.</p>\n</div>"}, {"title": "The Way You Care", "date": "03 · The way you care", "html": "<div class=\"miss-content-inner\">\n<p>You don't always say that you care about me.</p><p>You just... do things.</p>\n<p>You make me eat when I would happily keep talking and forget about food.</p>\n<p>You notice the little things.</p>\n<p>You keep updating me about the smallest things happening around you — something from work, something your friend said, some random story you just discovered — because somehow I always become the person you want to tell first.</p>\n<p>You even change what you eat sometimes because I don't eat spicy food.</p>\n<p>And then, once in a while, you look at something with that <strong>\"tadak bhadak chahiye\"</strong> expression and go back to your Kurkure anyway. 😂</p>\n<p>You scold me when I waste money.</p>\n<p>You find coupons when we go out and somehow turn my so-called <em>\"high maintenance girl\"</em> into the person making sure we don't pay more than we need to.</p>\n<p>My ambitions.<br/>My decisions.<br/>The things you think I should be doing better.</p>\n<p>Sometimes it feels less like you're giving advice and more like you're my very own personal management department. 😂</p>\n<p>But underneath all of that is something I've come to understand.</p>\n<p>You care deeply.</p>\n<p>About me.<br/>About your family.<br/>About the people you love.<br/>About the things that matter to you.</p>\n<p>You may have your tantrums.<br/>You may get upset when you don't feel prioritized.<br/>You may sometimes feel like nobody understands you.</p>\n<p>But give you a little love and attention... and somehow you multiply it and give it all back.</p>\n<p>That's the thing about you.</p>\n<p>You always say:</p>\n<p class=\"miss-writing\">\"I have loved you the most.\"</p>\n<p>And you know what?</p>\n<p>I believe you.</p>\n<p class=\"miss-writing\">Because honestly, no one has ever loved me the way you do.</p>\n<p>You were also the one who taught me something I don't think I'll forget:</p>\n<p class=\"miss-writing\">There is no \"love you.\" There is only \"I love you.\"</p>\n<p>Because love isn't something that simply exists between two people. It's something one person chooses to give to the other.</p>\n<p>And you're also the one who keeps reminding me that when it's <em>us</em>, there isn't always a right person and a wrong person.</p>\n<p>There is just <strong>us.</strong></p>\n<p>I don't think you realise how deeply this particular thought has stayed with me.</p>\n<p>When you say:</p>\n<p class=\"miss-writing\">\"Tum sahi galat karte reh jaoge... aur sab khatm ho jayega.\"</p>\n<p>It hits me every single time.</p>\n<p>Because you're right.</p>\n<p>I can keep proving that I'm right.<br/>You can keep proving that you're right.</p>\n<p>We can keep counting who said what, who did what, who was wrong and who was justified.</p>\n<p>And somewhere in all that...</p>\n<p class=\"miss-writing\">sab khatm ho jayega.</p>\n<p>Sometimes the relationship matters more than winning the argument.</p>\n<p>Sometimes saying <em>\"I'm right\"</em> isn't worth losing <em>\"us.\"</em></p>\n<p>And maybe that's another way you love me.</p>\n<p class=\"miss-writing\">You don't just love the person I am.<br/>You keep reminding me to become a better person for the person I love.</p>\n<p>So yes...</p><p>You always say you've loved me the most.</p><p class=\"miss-writing\">I accept.</p>\n<p>No one has ever loved me quite the way you do.</p>\n<p>And maybe that's why I've learned to notice the little things too.</p>\n<p>The food you make me eat.<br/>The random updates.<br/>The scolding.<br/>The coupons.<br/>The <strong>\"Kya hai aapko?\"</strong> when I start pulling your leg.</p>\n<p>All those tiny things that, individually, don't look like much.</p>\n<p>But put them together...</p>\n<p class=\"miss-writing\">that's how you love.</p>\n</div>"}, {"title": "You and Your Little Things", "date": "04 · Your little things", "html": "<div class=\"miss-content-inner\">\n<p>There are so many things about you that make absolutely no sense to me.</p>\n<p class=\"miss-writing\">And somehow, I love every single one of them.</p>\n<p>The way you can turn the smallest thing into a full discussion.</p>\n<p><strong>Kisi ki ek Instagram pic se poori story bana leti ho.</strong></p>\n<p>And somehow, we have probably fixed the relationships of half the people on Instagram without them even knowing about it.</p>\n<p>Breakup.<br/>Patch-up.<br/>Who is cheating.<br/>Who should leave whom.</p>\n<p>Pata nahi kitne logon ki love life humne hawa mein hi solve kar di hai. 😂</p>\n<p>And then there are our random stories.</p>\n<p>One minute we're talking about something completely normal, and suddenly we're discussing something so random that I genuinely don't remember how we got there.</p>\n<p>And if you remember...</p>\n<p><strong>we have almost travelled half the world together without actually going anywhere.</strong></p>\n<p>We've planned countries.<br/>Checked flights.<br/>Compared hotels.<br/>Looked at places to visit.<br/>Made itineraries.<br/>Discussed what we would eat.</p>\n<p>And then knowingly closed everything because <strong>abhi koi plan nahi hai.</strong> 😂</p>\n<p>But somehow, the planning itself becomes a trip.</p>\n<p>Then there is the way you choose gifts for me.</p>\n<p>You seriously surprise me.</p>\n<p>Two months before someone's birthday, you will start:</p>\n<p class=\"miss-writing\">\"Birthday aa raha hai...\"</p>\n<p>And then the investigation begins.</p>\n<p>Because you remember things I said months ago that I don't even remember saying.</p>\n<p>You somehow manage to get things out of me without me realising that I'm giving you the answer.</p>\n<p>You figure out what I want before I even know I'm going to get it.</p>\n<p>Whether it's the Adidas shoes.<br/>The Armani bag.<br/>Or something completely random that I mentioned once and forgot about five minutes later.</p>\n<p>And then comes the actual operation.</p>\n<p>Finding it.<br/>Getting it.<br/>Hiding it.<br/>Getting it packed.<br/>Making sure I don't find out.</p>\n<p class=\"miss-writing\">Seriously... WTF.</p>\n<p>Who pays this much attention to such tiny things?</p>\n<p>And then there were the tulips.</p>\n<p>I had casually told you that roses are common and that I like tulips.</p>\n<p>That's it.<br/>Just something I said.</p>\n<p>And you somehow got tulips arranged all the way from <strong>Bangalore.</strong></p>\n<p>I was literally crying when I saw them.</p>\n<p>Because it wasn't really about the flowers.</p>\n<p class=\"miss-writing\">It was about the fact that you remembered.</p>\n<p>And then I said I was fed up with Nike...</p>\n<p>and you got me <strong>Superstars.</strong> 😂</p>\n<p>Like seriously...</p>\n<p class=\"miss-writing\">who cares about these minute things?</p>\n<p>Apparently, you do.</p>\n<p>And then, as if all of this wasn't enough... there is our completely unnecessary talent of <strong>bitching about random people.</strong></p>\n<p>Someone's face we don't like.<br/>Someone's dressing.<br/>Someone's attitude.<br/>Someone's harkatein.</p>\n<p>Someone says something weird.<br/>Someone does something stupid.</p>\n<p>And somehow...</p>\n<p class=\"miss-writing\">everyone becomes a discussion topic.</p>\n<p>We can find a topic in literally anyone. 😂</p>\n<p>And honestly?</p>\n<p>I think that's one of my favourite things about us.</p>\n<p>Because all these things are so ridiculously ordinary.</p>\n<p>The random Instagram investigation.<br/>The imaginary world tours.<br/>The flights and hotels we have no plans of booking.<br/>The gifts you've secretly researched for months.<br/>The flowers you remembered.<br/>The shoes you somehow figured out I wanted.<br/>The completely unnecessary analysis of strangers.</p>\n<p>None of these things, individually, should mean this much.</p>\n<p>But they do.</p>\n<p>Because they're <strong>your little things.</strong></p>\n<p class=\"miss-writing\">And somewhere along the way, they became our little things.</p>\n<p>And I don't think you realise how much I love that.</p>\n</div>"}, {"title": "For the days you forget how loved you are", "date": "05 · When you need a reminder", "html": "<div class=\"miss-content-inner\"><p>You don't have to be okay every day.</p><p>You don't have to have the right words, the right mood, or everything figured out.</p><p>If one of those days finds you, remember this:</p><p class=\"miss-writing\">You are loved. You are important. And you never have to earn your place beside me.</p><p>Even on the messy days. Especially on those.</p></div>"}, {"title": "For the nights when you wish I was there", "date": "06 · When it's late at night", "html": "<div class=\"miss-content-inner\"><p>If it is late and you are thinking about me, don't make it complicated.</p><p>Close your eyes. Imagine me sitting beside you, listening to all your chattar pattar like I always do.</p><p>Imagine the stupid smile I would give you.</p><p class=\"miss-writing\">And then remember — somewhere, I'm probably missing you too.</p><p>Same sky. Same us. Good night. ❤️</p></div>"}];window.openMissLetter=function(n){const item=WIMU_NOTES[n-1];if(!item)return;document.getElementById('wimuLetterKicker').textContent=item.date;document.getElementById('wimuLetterTitle').textContent=item.title;document.getElementById('wimuLetterBody').innerHTML=item.html;const m=document.getElementById('wimuLetterModal');m.classList.add('open');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'};window.closeMissLetter=function(){const m=document.getElementById('wimuLetterModal');if(!m)return;m.classList.remove('open');m.setAttribute('aria-hidden','true');document.body.style.overflow=''};document.addEventListener('keydown',e=>{if(e.key==='Escape')window.closeMissLetter()})})();</script>
