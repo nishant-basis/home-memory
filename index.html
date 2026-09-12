@@ -3517,7 +3517,7 @@
 .discovery-badge{display:none;position:fixed;right:18px;bottom:18px;z-index:6800;border:1px solid rgba(239,209,161,.3);background:rgba(24,19,18,.92);color:#eadfce;padding:10px 14px;border-radius:999px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 12px 30px rgba(0,0,0,.25);backdrop-filter:blur(10px)}
 .discovery-badge.show{display:block;animation:badgeIn .55s ease both}
 @keyframes badgeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.home-secret-modal{position:fixed;inset:0;z-index:99000;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(8,6,6,.82);backdrop-filter:blur(14px)}
+.home-secret-modal{position:fixed;inset:0;z-index:2147483646;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(8,6,6,.82);backdrop-filter:blur(14px)}
 .home-secret-modal.show{display:flex}
 .home-secret-box{width:min(620px,92vw);padding:44px 42px;text-align:center;border:1px solid rgba(239,209,161,.25);border-radius:22px;background:radial-gradient(circle at 50% 0%,rgba(185,154,107,.11),transparent 42%),#191414;box-shadow:0 35px 100px rgba(0,0,0,.55);animation:secretIn .55s ease both}
 @keyframes secretIn{from{opacity:0;transform:translateY(15px) scale(.98)}to{opacity:1;transform:none}}
@@ -6443,6 +6443,11 @@ function enterBirthdayHome(){ closeBirthdayReveal(); }
     if(kind==='complete' && loadSecrets().length<6)return;
     activeSecretKind=kind;
     const data=secrets[kind]||secrets.spark,m=document.getElementById('homeSecretModal');if(!m)return;
+    /* Keep the secret dialog above every room, including Little Things. */
+    if(m.parentElement!==document.body) document.body.appendChild(m);
+    m.style.position='fixed';
+    m.style.inset='0';
+    m.style.zIndex='2147483646';
     document.getElementById('homeSecretKicker').textContent=data.k;document.getElementById('homeSecretTitle').textContent=data.t;
     document.getElementById('homeSecretText').innerHTML=data.p.replace(/\n\n/g,'<br><br>').replace(/\n/g,'<br>');
     m.classList.add('show');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
