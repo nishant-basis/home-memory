@@ -1592,8 +1592,8 @@
 }
 .places-chapter{
   position:relative;
-  min-height:270px;
-  padding:28px;
+  min-height:300px;
+  padding:28px 28px 62px;
   text-align:left;
   border:1px solid rgba(215,198,181,.18);
   background:linear-gradient(145deg,#191513,#120f0e);
@@ -1635,7 +1635,7 @@
 .places-chapter span{
   position:absolute;
   left:28px;
-  bottom:26px;
+  bottom:28px;
   color:#c0a27f;
   font-size:10px;
   letter-spacing:.18em;
@@ -1650,6 +1650,8 @@
 }
 @media(max-width:700px){
   .places-chapters{grid-template-columns:1fr;}
+  .places-chapter{min-height:270px;padding:26px 24px 60px;}
+  .places-chapter span{left:24px;bottom:24px;}
 }
 
 
