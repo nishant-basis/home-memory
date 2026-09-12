@@ -3438,7 +3438,7 @@
 
 
 /* LITTLE THINGS — EXPANDABLE MEMORY VIEW */
-.lt-modal{z-index:120000;padding:28px;background:rgba(8,7,6,.88);backdrop-filter:blur(14px)}
+.lt-modal{z-index:200000;padding:28px;background:rgba(8,7,6,.88);backdrop-filter:blur(14px)}
 .lt-modal-box{
   width:min(1120px,94vw);max-height:90vh;overflow:auto;
   padding:0;background:#efe6d7;color:#2a2520;border:1px solid rgba(155,128,96,.55);
@@ -3539,7 +3539,7 @@ body{background:radial-gradient(ellipse 70% 32% at 50% 5%,rgba(88,30,48,.34),tra
 .home-experience{position:relative}.experience-card{border-color:rgba(202,130,142,.24);background:linear-gradient(145deg,rgba(48,23,29,.9),rgba(25,13,17,.9));box-shadow:0 14px 40px rgba(30,0,10,.22)}.experience-card:after{background:radial-gradient(circle,rgba(206,128,142,.12),transparent 68%)}.experience-kicker{color:#c69a70}.experience-title{color:#f4e8df}.experience-copy{color:#b8a5a1}.then-now .moment span{color:#a88a82}.then-now .moment strong{color:#eadbd4}.then-now .arrow{color:#cf8a96}.fragment{color:#dfcfca}.fragment:before{color:#c46f7c}.home-whisper{color:#aa9494}.home-whisper em{color:#d08a93}
 .discovery-badge{border-color:rgba(205,130,143,.35);background:rgba(38,14,21,.94);color:#e8d4d2}.home-secret-box{border-color:rgba(208,132,144,.3)!important;background:radial-gradient(circle at 50% 0%,rgba(106,32,51,.32),transparent 55%),rgba(24,10,14,.97)!important;box-shadow:0 28px 90px rgba(40,0,15,.5)!important}.home-secret-mark{color:#d17e8b!important;text-shadow:0 0 18px rgba(209,126,139,.35)}.home-secret-box h3{color:#f3e5df!important}.home-secret-box p{color:#cdb9b7!important}.home-secret-close{border-color:rgba(208,132,144,.32)!important;color:#e0caca!important}.home-secret-close:hover{background:rgba(154,67,85,.18)!important}
 /* tiny, discoverable marks */
-.secret-clue{position:absolute;right:16px;bottom:13px;width:24px;height:24px;border:0;background:transparent;color:rgba(205,126,139,.52);font:16px Georgia,serif;cursor:pointer;z-index:8;transition:transform .3s ease,color .3s ease,text-shadow .3s ease}.secret-clue:hover{transform:scale(1.3);color:#e19ba4;text-shadow:0 0 12px rgba(225,155,164,.45)}.story-two h2{position:relative;display:inline-block}.story-two h2 .secret-clue{right:-34px;bottom:1px}.goa-card .secret-clue{right:10px;bottom:10px}.lt-card .secret-clue{right:10px;bottom:10px}.museum-card .secret-clue{right:11px;bottom:11px}
+.secret-clue{position:absolute;right:16px;bottom:13px;width:24px;height:24px;border:0;background:transparent;color:rgba(205,126,139,.52);font:16px Georgia,serif;cursor:pointer;z-index:8;transition:transform .3s ease,color .3s ease,text-shadow .3s ease}.secret-clue:hover{transform:scale(1.3);color:#e19ba4;text-shadow:0 0 12px rgba(225,155,164,.45)}.story-two h2{position:relative;display:inline-block}.story-two h2 .secret-clue{right:-34px;bottom:1px}.goa-card .secret-clue{right:43px;bottom:9px}.lt-card .secret-clue{right:10px;bottom:10px}.museum-card .secret-clue{right:11px;bottom:11px}
 /* subtle romantic edge glow without turning HOME pink */
 .room-card:nth-child(1)::after,.room-card:nth-child(4)::after{content:"";position:absolute;inset:auto 0 0;height:1px;background:linear-gradient(90deg,transparent,rgba(190,95,113,.35),transparent);pointer-events:none}
 @media(max-width:760px){.secret-clue{right:10px;bottom:9px}.story-two h2 .secret-clue{right:-28px}.home-secret-box{background:radial-gradient(circle at 50% 0%,rgba(106,32,51,.3),transparent 55%),rgba(24,10,14,.98)!important}}
@@ -6158,6 +6158,7 @@ function backToChapter4(){
 <div class="lt-foot">The little things are rarely little. ❤️</div>
 </div>
 </section>
+</div>
 <div class="lt-modal" id="littleThingModal" onclick="if(event.target===this)closeLittleThing()">
 <div class="lt-modal-box">
 <button class="lt-modal-close" onclick="closeLittleThing()" aria-label="Close">×</button>
@@ -6165,7 +6166,7 @@ function backToChapter4(){
 <div class="lt-modal-copy" id="littleThingModalContent"></div>
 </div>
 </div>
-</div>
+
 <script>
 (function(){
   const ltData={
