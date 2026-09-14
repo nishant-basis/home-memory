@@ -3415,6 +3415,114 @@ body{background:radial-gradient(ellipse 70% 32% at 50% 5%,rgba(88,30,48,.34),tra
   z-index:2147483647 !important;
 }
 </style>
+
+<style id="mobile-final-fixes">
+/* FINAL MOBILE QA FIXES — do not alter desktop layout */
+@media (max-width:700px){
+  /* 1. Birthday countdown: give the cake its own clean row */
+  .birthday-countdown{
+    grid-template-columns:1fr;
+    padding:18px 16px 20px;
+  }
+  .birthday-countdown-copy{
+    width:100%;
+    padding:0;
+  }
+  .birthday-date{
+    white-space:nowrap;
+    font-size:clamp(30px,8vw,42px);
+  }
+  .birthday-timer{
+    padding-right:0;
+    justify-content:center;
+  }
+  .birthday-countdown-action{
+    position:static;
+    display:flex;
+    justify-content:center;
+    margin-top:12px;
+  }
+  .birthday-cake-button{
+    padding:2px 10px;
+  }
+
+  /* 2. Chapter I: never squeeze the story into a narrow right-hand column */
+  #storyRoom .chapter-collage{
+    width:min(680px,92%);
+    grid-template-columns:1fr;
+    grid-template-rows:auto;
+    gap:14px;
+  }
+  #storyRoom .photo-one{
+    grid-column:1; grid-row:1;
+    width:100%; height:210px; min-height:210px;
+  }
+  #storyRoom .photo-two{
+    grid-column:1; grid-row:2;
+    width:100%; height:210px; min-height:210px;
+  }
+  #storyRoom .story-one{
+    grid-column:1; grid-row:3;
+    width:100%; height:auto; min-height:0;
+    padding:28px 22px;
+  }
+  #storyRoom .story-two{
+    grid-column:1; grid-row:4;
+    width:100%; height:auto; min-height:0;
+    padding:28px 22px;
+  }
+  #storyRoom .photo-three{
+    position:relative;
+    grid-column:1; grid-row:5;
+    inset:auto; width:100%; height:180px; min-height:180px; margin:0;
+  }
+  #storyRoom .story-three{
+    grid-column:1; grid-row:6;
+    width:100%; height:auto; min-height:0;
+    padding:28px 22px;
+  }
+  #storyRoom .photo-four{
+    position:relative;
+    grid-column:1; grid-row:7;
+    inset:auto; width:100%; height:180px; min-height:180px; margin:0;
+  }
+  #storyRoom .chapter-story h2{
+    font-size:clamp(29px,8vw,38px);
+    line-height:1.08;
+  }
+  #storyRoom .chapter-story{
+    font-size:15px;
+    line-height:1.8;
+  }
+  #storyRoom .chapter-story blockquote{
+    font-size:17px;
+    margin:18px 0;
+  }
+
+  /* 3. Little Magic: separate HOME button from the centered topline */
+  #magicRoom .magic-close{
+    top:12px;
+    right:12px;
+    padding:8px 12px;
+    z-index:20;
+  }
+  #magicRoom .magic-topline{
+    top:58px;
+    padding:0 18px;
+    box-sizing:border-box;
+    line-height:1.5;
+  }
+}
+
+@media (max-width:420px){
+  #storyRoom .chapter-collage{width:94%;}
+  #storyRoom .chapter-story{padding:25px 19px;}
+  #storyRoom .photo-one, #storyRoom .photo-two{height:190px;min-height:190px;}
+  #storyRoom .photo-three, #storyRoom .photo-four{height:165px;min-height:165px;}
+  #magicRoom .magic-topline{top:56px;font-size:8px;letter-spacing:.27em;}
+}
+</style>
+
 </head>
 <body>
 <!-- =========================
